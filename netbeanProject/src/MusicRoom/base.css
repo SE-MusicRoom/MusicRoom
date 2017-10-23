@@ -1,0 +1,10 @@
+
+.background {
+    -fx-background-image: url("background.jpg");
+}
+
+.button {
+    -fx-background-color:
+        rgba(255, 43, 0, 1)
+        
+}
