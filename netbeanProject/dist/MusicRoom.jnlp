@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="MusicRoom.jnlp">
+  <information>
+    <title>MusicRoom</title>
+    <vendor>Oracle</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="MusicRoom.jar" size="55102" download="eager" />
+  </resources>
+<security>
+  <all-permissions/>
+</security>
+  <applet-desc  width="700" height="550" main-class="com.javafx.main.NoJavaFXFallback"  name="MusicRoom" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="700" height="550" main-class="MusicRoom.Main"  name="MusicRoom" />
+  <update check="background"/>
+</jnlp>
