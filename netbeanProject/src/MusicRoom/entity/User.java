@@ -5,13 +5,14 @@
  */
 package MusicRoom.entity;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class User {
 
     private String username = "";
     private String password = "";
+    private ArrayList<Calendar> bookedTimes;
 
     private String id;
 
@@ -19,6 +20,7 @@ public class User {
         this.id = id;
         this.username = username;
         this.password = password;
+        bookedTimes = new ArrayList<Calendar>();
     }
 
     public String getId() {
@@ -41,5 +43,11 @@ public class User {
         this.password = password;
     }
 
+    public ArrayList<Calendar> getBookedTimes() {
+        return bookedTimes;
+    }
 
+    public void addBookedTime(Calendar time) {
+        bookedTimes.add(time);
+    }
 }
