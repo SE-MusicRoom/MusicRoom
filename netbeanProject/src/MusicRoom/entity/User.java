@@ -5,15 +5,15 @@
  */
 package MusicRoom.entity;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
 public class User {
-
+    private final String id;
     private String username = "";
     private String password = "";
-
-    private String id;
+    private String displayname = "";
+    private ArrayList<RoomDate> bookedDate = new ArrayList<RoomDate>();
+    
 
     public User(String id, String username, String password) {
         this.id = id;
