@@ -7,8 +7,27 @@ package MusicRoom.entity;
 
 /**
  *
- * @author YAY
+ * @author Kittinan
  */
 public class Instrument {
+    private String name;
+    private String model;
+    private float price;
+
+    public Instrument() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+    
     
 }
