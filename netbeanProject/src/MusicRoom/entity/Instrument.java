@@ -9,7 +9,7 @@ package MusicRoom.entity;
  *
  * @author Kittinan
  */
-public class Instrument {
+abstract public class Instrument {
     private String name;
     private String model;
     private float price;
