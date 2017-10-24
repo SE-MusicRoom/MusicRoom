@@ -60,7 +60,7 @@ Contributor(s):
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="768.0" stroke="TRANSPARENT" strokeType="INSIDE" width="264.0" />
       <Text fill="#ff2b00" layoutX="30.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN MENU">
          <font>
-            <Font name="Arial Bold" size="36.0" />
+            <Font name="Cloud-Bold" size="36.0" />
          </font>
       </Text>
       <VBox layoutX="142.0" layoutY="113.0" prefHeight="118.0" prefWidth="308.0">
