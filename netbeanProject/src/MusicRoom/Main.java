@@ -26,8 +26,8 @@ public class Main extends Application {
     private Stage stage;
     private User currentUser;
     private ArrayList<User> users = new ArrayList<User>();
-    private final double MINIMUM_WINDOW_WIDTH = 390.0;
-    private final double MINIMUM_WINDOW_HEIGHT = 500.0;
+    private final double MINIMUM_WINDOW_WIDTH = 1366;
+    private final double MINIMUM_WINDOW_HEIGHT = 768;
 
     /**
      * @param args the command line arguments
