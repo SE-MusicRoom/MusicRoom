@@ -43,7 +43,7 @@ public class Main extends Application {
             stage.setTitle("MusicRoom");
             stage.setMinWidth(MINIMUM_WINDOW_WIDTH);
             stage.setMinHeight(MINIMUM_WINDOW_HEIGHT);
-            gotoLogin();
+            gotoMainMenu();
             primaryStage.show();
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -97,6 +97,15 @@ public class Main extends Application {
         try {
             LoginController login = (LoginController) replaceSceneContent("login.fxml");
             login.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void gotoMainMenu() {
+        try {
+            MainMenuController reg = (MainMenuController) replaceSceneContent("base.fxml");
+            reg.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }

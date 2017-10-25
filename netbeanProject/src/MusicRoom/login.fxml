@@ -40,9 +40,19 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 
+<<<<<<< HEAD
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+=======
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+>>>>>>> 7e5fd1672c562161e71eba1ad6f94b8fd9696b8e
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -52,7 +62,7 @@ Contributor(s):
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1368.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1368.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.LoginController">
    <children>
       <ImageView fitHeight="904.0" fitWidth="1430.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -88,6 +98,7 @@ Contributor(s):
             <Font name="Cloud-Bold" size="42.0" />
          </font>
       </Text>
+<<<<<<< HEAD
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="159.0" layoutX="156.0" layoutY="327.0" stroke="TRANSPARENT" strokeType="INSIDE" width="494.0" />
       <Text fill="#ff3a00" layoutX="172.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USERNAME" wrappingWidth="187.8040008544922">
          <font>
@@ -111,5 +122,12 @@ Contributor(s):
          </font>
       </Button>
       <PasswordField layoutX="344.0" layoutY="425.0" prefHeight="27.0" prefWidth="282.0" style="-fx-background-color: ffccb3;" />
+=======
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="230.0" layoutX="156.0" layoutY="344.0" stroke="TRANSPARENT" strokeType="INSIDE" width="668.0" />
+      <TextField fx:id="userId" layoutX="234.0" layoutY="383.0" />
+      <PasswordField fx:id="password" layoutX="234.0" layoutY="428.0" />
+      <Label fx:id="errorMessage" layoutX="234.0" layoutY="494.0" text="Label" />
+      <Button fx:id="login" layoutX="234.0" layoutY="527.0" mnemonicParsing="false" text="Button" />
+>>>>>>> 7e5fd1672c562161e71eba1ad6f94b8fd9696b8e
    </children>
 </AnchorPane>

@@ -45,17 +45,9 @@ import javafx.scene.layout.AnchorPane;
 /**
  * Login Controller.
  */
-public class LoginController extends AnchorPane implements Initializable {
+public class CustomizeController extends AnchorPane implements Initializable {
 
-    @FXML
-    TextField userId;
-    @FXML
-    PasswordField password;
-    @FXML
-    Button login;
-    @FXML
-    Label errorMessage;
-
+    @FXML Button profileBtn;
     private Main application;
     
     
@@ -65,26 +57,11 @@ public class LoginController extends AnchorPane implements Initializable {
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        errorMessage.setText("");
-        userId.setPromptText("demo");
-        password.setPromptText("demo");
+
         
     }
     
     
-    public void onClickLogin(ActionEvent event) {
-        if (application == null){
-            // We are running in isolated FXML, possibly in Scene Builder.
-            // NO-OP.
-            errorMessage.setText("Hello " + userId.getText());
-        } else {
-            if (!application.userLogging(userId.getText(), password.getText())){
-                errorMessage.setText("Username/Password is incorrect");
-            }
-        }
-    }
     
-    public void onClickGoRegister(ActionEvent event) {
-        application.gotoRegister();
-    }
+    
 }

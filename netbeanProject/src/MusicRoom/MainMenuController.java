@@ -31,31 +31,31 @@
  */
 package MusicRoom;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 /**
  * Login Controller.
  */
-public class LoginController extends AnchorPane implements Initializable {
+public class MainMenuController extends AnchorPane implements Initializable {
 
     @FXML
-    TextField userId;
+    AnchorPane includePane;
     @FXML
-    PasswordField password;
-    @FXML
-    Button login;
-    @FXML
-    Label errorMessage;
+    Button reservationBtn;
 
+    
     private Main application;
     
     
@@ -65,26 +65,52 @@ public class LoginController extends AnchorPane implements Initializable {
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        errorMessage.setText("");
-        userId.setPromptText("demo");
-        password.setPromptText("demo");
         
     }
     
     
-    public void onClickLogin(ActionEvent event) {
-        if (application == null){
-            // We are running in isolated FXML, possibly in Scene Builder.
-            // NO-OP.
-            errorMessage.setText("Hello " + userId.getText());
-        } else {
-            if (!application.userLogging(userId.getText(), password.getText())){
-                errorMessage.setText("Username/Password is incorrect");
-            }
+    private Initializable showIncludePane(String fxml) throws IOException {
+        
+        FXMLLoader loader = new FXMLLoader();
+        InputStream in = Main.class.getResourceAsStream(fxml);
+        loader.setBuilderFactory(new JavaFXBuilderFactory());
+        loader.setLocation(Main.class.getResource(fxml));
+        AnchorPane page;
+        try {
+            page = (AnchorPane) loader.load(in);
+        } finally {
+            in.close();
+        } 
+        
+        includePane.getChildren().clear();
+        includePane.getChildren().add(page);
+        
+        return (Initializable) loader.getController();
+    }
+    
+    public void gotoReservation() {
+        try {
+            CustomizeController con = (CustomizeController) showIncludePane("customize.fxml");
+            con.setApp(application);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public void onClickGoRegister(ActionEvent event) {
-        application.gotoRegister();
+    public void gotoProfile() {
+        try {
+            ProfileController con = (ProfileController) showIncludePane("profile.fxml");
+            con.setApp(application);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void onClickReservation(ActionEvent event) {
+        gotoReservation();
+    }
+    
+    public void onClickProfile(ActionEvent event) {
+        gotoProfile();
     }
 }
