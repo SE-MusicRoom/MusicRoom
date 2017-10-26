@@ -6,32 +6,18 @@
 package MusicRoom.entity;
 
 import javafx.scene.image.Image;
+
 /**
  *
- * @author Kittinan
+ * @author kyttpwned
  */
-abstract public class Instrument {
+public class Saxophone extends Woodwind{
     private String name;
     private String model;
     private float price;
     private Image img;
 
-    public Instrument() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public float getPrice() {
-        return price;
+    public Saxophone() {
     }
     
-    public Image getImage() {
-        return img;
-    }
 }

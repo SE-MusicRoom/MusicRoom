@@ -6,32 +6,20 @@
 package MusicRoom.entity;
 
 import javafx.scene.image.Image;
+
 /**
  *
- * @author Kittinan
+ * @author kyttpwned
  */
-abstract public class Instrument {
+public class Brass extends Instrument{
     private String name;
     private String model;
     private float price;
     private Image img;
 
-    public Instrument() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public float getPrice() {
-        return price;
+    public Brass() {
     }
     
-    public Image getImage() {
-        return img;
-    }
 }
+
+

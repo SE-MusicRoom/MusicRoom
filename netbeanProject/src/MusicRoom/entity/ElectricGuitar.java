@@ -6,32 +6,22 @@
 package MusicRoom.entity;
 
 import javafx.scene.image.Image;
+
 /**
  *
- * @author Kittinan
+ * @author kyttpwned
  */
-abstract public class Instrument {
+public class ElectricGuitar extends Guitar{
     private String name;
     private String model;
     private float price;
     private Image img;
 
-    public Instrument() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public float getPrice() {
-        return price;
+    public ElectricGuitar(String name, String model, float price, Image img) {
+        this.name = name;
+        this.model = model;
+        this.price = price;
+        this.img = img;
     }
     
-    public Image getImage() {
-        return img;
-    }
 }
