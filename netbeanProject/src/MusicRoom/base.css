@@ -1,14 +1,13 @@
-.root{
-    -fx-font-family: "Cloud";
-}
-
 
 .background {
-    -fx-background-image: url("background.jpg");
-	-fx-background-size: 1366 768;
+    -fx-background-image: url("img/background.jpg");
+    -fx-background-size: 1366 768;
 }
 
 .button {
     -fx-background-color: rgba(255, 43, 0, 1);
-    -fx-font-family: "Cloud";
+}
+
+#customize_myRoom{
+    -fx-background-image: url("emptyRoom.jpg");
 }
