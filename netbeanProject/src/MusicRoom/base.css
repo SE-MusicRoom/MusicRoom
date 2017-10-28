@@ -8,6 +8,12 @@
     -fx-background-color: rgba(255, 43, 0, 1);
 }
 
+.check-box .box {
+
+	-fx-background-color: #ffccb3;
+
+}
+
 #customize_myRoom{
-    -fx-background-image: url("emptyRoom.jpg");
+    -fx-background-image: url("img/emptyRoom.jpg");
 }

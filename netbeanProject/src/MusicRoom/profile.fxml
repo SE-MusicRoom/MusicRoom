@@ -32,89 +32,217 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="MusicRoom.ProfileController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.ProfileController">
   <children>
-    <AnchorPane id="anchorPane1" prefHeight="371.0" prefWidth="500.0" styleClass="top-segment" AnchorPane.bottomAnchor="129.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <children>
-        <VBox id="VBox" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="32.5" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="10.0">
-          <children>
-            <GridPane id="GridPane" hgap="15.0" vgap="15.0">
-              <children>
-                <Label id="Label" styleClass="profileTitle" text="Please review your profile." GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
-                  <font>
-                    <Font size="20.0" fx:id="x1" />
-                  </font>
-                </Label>
-                <Hyperlink fx:id="logout" onAction="#processLogout" text="logout" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />
-                <Label id="Label" font="$x1" text="User:" GridPane.columnIndex="0" GridPane.rowIndex="2">
-                  <GridPane.margin>
-                    <Insets top="2.0" fx:id="x3" />
-                  </GridPane.margin>
-                </Label>
-                <TextField fx:id="user" editable="false" minWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <Label id="Label" font="$x1" text="Email:" GridPane.columnIndex="0" GridPane.margin="$x3" GridPane.rowIndex="3" />
-                <TextField fx:id="email" minWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                <Label id="Label" font="$x1" text="Phone:" GridPane.columnIndex="0" GridPane.margin="$x3" GridPane.rowIndex="4" />
-                <TextField fx:id="phone" minWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                <Label id="Label" font="$x1" text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.valignment="TOP">
-                  <GridPane.margin>
-                    <Insets top="8.0" />
-                  </GridPane.margin>
-                </Label>
-                <TextArea fx:id="address" maxHeight="82.0" minHeight="82.0" minWidth="200.0" prefHeight="82.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                <CheckBox id="" fx:id="subscribed" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                  <font>
-                    <Font size="16.0" fx:id="x2" />
-                  </font>
-                  <GridPane.margin>
-                    <Insets left="1.0" />
-                  </GridPane.margin>
-                </CheckBox>
-                <Label id="Label" font="$x1" text="Subscribe to newsletter" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                  <GridPane.margin>
-                    <Insets left="28.0" top="3.0" />
-                  </GridPane.margin>
-                </Label>
-              </children>
-              <columnConstraints>
-                <ColumnConstraints hgrow="NEVER" minWidth="60.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints />
-              </rowConstraints>
-            </GridPane>
-          </children>
-        </VBox>
-      </children>
-    </AnchorPane>
-    <HBox id="HBox" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
-      <children>
-        <Label fx:id="success" font="$x2" opacity="0.0" text="Profile  successfully updated!" />
-      </children>
-    </HBox>
-    <HBox id="HBox" alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
-      <children>
-        <Button fx:id="reset" defaultButton="true" font="$x1" maxHeight="2.147483647E9" onAction="#resetProfile" prefHeight="50.0" prefWidth="205.0" text="Reset" HBox.hgrow="ALWAYS" />
-        <Button fx:id="save" defaultButton="true" font="$x1" maxHeight="2.147483647E9" onAction="#saveProfile" prefHeight="50.0" prefWidth="205.0" text="Save" HBox.hgrow="ALWAYS" />
-      </children>
-    </HBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="772.0" layoutX="-2.0" layoutY="-3.0" stroke="TRANSPARENT" strokeType="INSIDE" width="974.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#822b05a4" />
+                  <Stop color="#94420775" offset="0.785440613026819" />
+                  <Stop color="#85580500" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <VBox layoutX="50.0" layoutY="35.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff6000" height="77.0" stroke="TRANSPARENT" strokeType="INSIDE" width="276.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="483.0" stroke="#00000001" strokeType="INSIDE" width="668.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="60.0" layoutY="40.0" prefHeight="687.0" prefWidth="569.0">
+         <children>
+            <Text fill="#fcf9f9" strokeType="OUTSIDE" strokeWidth="0.0" text="PROFILE" wrappingWidth="261.8040008544922">
+               <font>
+                  <Font name="Cloud-Bold" size="64.0" />
+               </font>
+            </Text>
+      <GridPane id="GridPane" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="549.0" vgap="10.0">
+        <children>
+          <TextField fx:id="user" editable="false" minWidth="200.0" style="-fx-background-color: FFCCB3;" GridPane.columnIndex="1" />
+                  <Text fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your name use ONLY aphabet." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></Text>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
+          <Label id="Label" styleClass="profileTitle" GridPane.columnSpan="2147483647" GridPane.rowIndex="8">
+            <font>
+              <Font size="20.0" fx:id="x1" />
+            </font>
+          </Label>
+          <Hyperlink fx:id="logout" onAction="#processLogout" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />
+          <Label id="Label" prefHeight="30.0" prefWidth="175.0" text="Name">
+            <GridPane.margin>
+              <Insets top="2.0" fx:id="x3" />
+            </GridPane.margin>
+                     <font>
+                        <Font name="Cloud-Bold" size="20.0" />
+                     </font>
+          </Label>
+          <Label id="Label" text="Surname" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Cloud-Bold" size="20.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+          <TextField fx:id="email" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></TextField>
+          <TextField fx:id="phone" minWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+          <CheckBox id="" fx:id="subscribed" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="28.0" GridPane.columnIndex="1" GridPane.rowIndex="21">
+            <font>
+              <Font size="16.0" fx:id="x2" />
+            </font>
+            <GridPane.margin>
+              <Insets left="1.0" />
+            </GridPane.margin>
+          </CheckBox>
+                  <Text fill="#8a8686" layoutX="124.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your surname use ONLY aphabet." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Text>
+                  <Label id="Label" layoutX="10.0" layoutY="51.0" text="E-Mail" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Cloud-Bold" size="20.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Text fill="#8a8686" layoutX="124.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your e-mail use to send comfirmation code." wrappingWidth="299.19921875" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Text>
+                  <TextField fx:id="email1" layoutX="124.0" layoutY="53.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label id="Label" layoutX="10.0" layoutY="100.0" text="Band Name" GridPane.rowIndex="9">
+                     <font>
+                        <Font name="Cloud-Bold" size="20.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="email11" layoutX="124.0" layoutY="103.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label id="Label" layoutX="10.0" layoutY="225.0" text="Username" GridPane.rowIndex="12">
+                     <font>
+                        <Font name="Cloud-Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                     <children>
+                        <Text fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="If you are new band. Type your band name." wrappingWidth="299.19921875" />
+                        <Text fill="#8a8686" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="If you have existing band. Type band id (B#xxxx)" wrappingWidth="299.19921875" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets top="15.0" />
+                     </padding>
+                  </VBox>
+                  <TextField fx:id="email111" layoutX="124.0" layoutY="228.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <Label id="Label" layoutX="10.0" layoutY="300.0" text="Password" GridPane.rowIndex="15">
+                     <font>
+                        <Font name="Cloud-Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <PasswordField style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                  <Text fill="#8a8686" layoutX="124.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your password." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                  <Label id="Label" layoutX="10.0" layoutY="300.0" prefHeight="30.0" prefWidth="186.0" text="Confirm Password" GridPane.rowIndex="18">
+                     <font>
+                        <Font name="Cloud-Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <PasswordField layoutX="124.0" layoutY="303.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                  <Text fill="#8a8686" layoutX="124.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Confirm Again" wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+                  <Text fill="#8a8686" layoutX="201.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your username 15 or less charecters." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <Label id="Label" layoutX="10.0" layoutY="300.0" text="E-Mail Subscribe" GridPane.rowIndex="21">
+                     <font>
+                        <Font name="Cloud-Bold" size="20.0" />
+                     </font>
+                  </Label>
+        </children>
+        <columnConstraints>
+          <ColumnConstraints hgrow="NEVER" maxWidth="191.33334350585938" minWidth="60.0" prefWidth="191.33334350585938" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="501.0" minWidth="10.0" prefWidth="357.6666564941406" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        </rowConstraints>
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+      </GridPane>
+         </children>
+      </VBox>
+  <Button fx:id="save" defaultButton="true" layoutX="226.0" layoutY="595.0" maxHeight="2.147483647E9" onAction="#saveProfile" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: ff6000;" text="BACK">
+         <font>
+            <Font name="Cloud-Bold" size="25.0" fx:id="x5" />
+         </font>
+         <padding>
+            <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+         </padding>
+      </Button>
+  <Button fx:id="reset" defaultButton="true" layoutX="51.0" layoutY="594.0" maxHeight="2.147483647E9" onAction="#resetProfile" prefHeight="47.0" prefWidth="175.0" style="-fx-background-color: #000000;" text="CONFIRM" textFill="#ff6000">
+         <font>
+            <Font name="Cloud-Bold" size="34.0" fx:id="x4" />
+         </font>
+         <padding>
+            <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+         </padding>
+      </Button>
   </children>
-  <stylesheets>
-    <URL value="@Login.css" />
-  </stylesheets>
 </AnchorPane>
