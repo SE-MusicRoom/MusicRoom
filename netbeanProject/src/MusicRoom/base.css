@@ -1,7 +1,7 @@
 
 .background {
     -fx-background-image: url("img/background.jpg");
-    -fx-background-size: 1366 768;
+   /* -fx-background-size: 1366 768; */
 }
 
 .button {
