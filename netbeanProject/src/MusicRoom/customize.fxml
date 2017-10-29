@@ -7,7 +7,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -21,6 +20,11 @@
          </children>
       </AnchorPane>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="479.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+      <AnchorPane layoutX="17.0" layoutY="80.0" prefHeight="214.0" prefWidth="384.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="214.0" stroke="BLACK" strokeType="INSIDE" width="384.0" />
+         </children>
+      </AnchorPane>
       <HBox layoutY="549.0" prefHeight="53.0" prefWidth="323.0">
          <children>
             <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="52.0" prefWidth="179.0" text="Confirm!" textFill="WHITE">
@@ -96,7 +100,6 @@
             <Font name="Arial Bold" size="21.0" />
          </font>
       </Button>
-      <Pane id="customize_myRoom" layoutX="14.0" layoutY="82.0" prefHeight="220.0" prefWidth="392.0" stylesheets="@base.css" />
       <ScrollPane layoutX="19.0" layoutY="310.0" prefHeight="151.0" prefWidth="384.0">
          <content>
             <VBox prefHeight="150.0" prefWidth="380.0">

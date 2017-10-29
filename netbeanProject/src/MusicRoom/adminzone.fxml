@@ -58,27 +58,24 @@ Contributor(s):
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff76" height="768.0" layoutX="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1368.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="768.0" stroke="TRANSPARENT" strokeType="INSIDE" width="264.0" />
-      <Text fill="#ff2b00" layoutX="30.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN MENU">
+      <Text fill="#ff2b00" layoutX="30.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATABASE">
          <font>
             <Font name="Arial Bold" size="36.0" />
          </font>
       </Text>
       <VBox layoutX="142.0" layoutY="113.0" prefHeight="118.0" prefWidth="308.0">
          <children>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="52.0" prefWidth="323.0" text="+ New Reservations" textFill="WHITE">
-               <font>
-                  <Font name="Arial Bold" size="28.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </Button>
-            <Button fx:id="profileBtn" mnemonicParsing="false" onAction="#onClickProfile" text="View History" textFill="WHITE">
+            <Button fx:id="profileBtn" mnemonicParsing="false" onAction="#onClickProfile" text="Database1" textFill="WHITE">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" stylesheets="@base.css" text="News &amp; Promotion" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" stylesheets="@base.css" text="Database2" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" stylesheets="@base.css" text="Database3" textFill="WHITE">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
@@ -99,6 +96,58 @@ Contributor(s):
             </Button>
          </children>
       </VBox>
-      <AnchorPane fx:id="includePane" layoutX="225.0" layoutY="-27.0" prefHeight="603.0" prefWidth="1072.0" scaleX="0.5" scaleY="0.5" />
+      <AnchorPane layoutX="395.0" layoutY="-4.0" prefHeight="143.0" prefWidth="325.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff391f" height="143.0" layoutY="4.0" stroke="TRANSPARENT" strokeType="INSIDE" width="325.0" />
+            <Text layoutX="14.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DatabaseName">
+               <font>
+                  <Font name="Arial Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <TextField layoutX="87.0" layoutY="94.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="395.0" layoutY="140.0" prefHeight="601.0" prefWidth="686.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="626.0" stroke="TRANSPARENT" strokeType="INSIDE" width="933.0" />
+            <ScrollPane layoutY="1.0" prefHeight="626.0" prefWidth="933.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="636.0" prefWidth="931.0">
+                     <children>
+                        <VBox prefHeight="626.0" prefWidth="912.0">
+                           <children>
+                              <AnchorPane prefHeight="115.0" prefWidth="907.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="118.0" stroke="BLACK" strokeType="INSIDE" width="911.0" />
+                                    <Text layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xID = 0" />
+                                    <Text layoutX="14.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" />
+                                    <ChoiceBox layoutX="72.0" layoutY="71.0" prefWidth="150.0" />
+                                    <VBox layoutX="241.0" layoutY="5.0" prefHeight="109.0" prefWidth="90.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data1: 0" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data2: 0" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data3: 0" />
+                                       </children>
+                                    </VBox>
+                                    <Button layoutX="142.0" layoutY="27.0" mnemonicParsing="false" text="Action" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
