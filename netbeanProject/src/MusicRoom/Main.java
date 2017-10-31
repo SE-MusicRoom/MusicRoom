@@ -5,6 +5,8 @@
  */
 package MusicRoom;
 
+import MusicRoom.entity.AcousticGuitar;
+import MusicRoom.entity.Instrument;
 import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,6 +19,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import MusicRoom.entity.User;
 import java.util.ArrayList;
+import javafx.scene.image.Image;
 
 /**
  * Main Application. This class handles navigation and user session.
@@ -26,6 +29,8 @@ public class Main extends Application {
     private Stage stage;
     private User currentUser;
     private ArrayList<User> users = new ArrayList<User>();
+    private ArrayList<Instrument> instruments = new ArrayList<Instrument>();
+    
     private final double MINIMUM_WINDOW_WIDTH = 1366;
     private final double MINIMUM_WINDOW_HEIGHT = 768;
 
@@ -43,8 +48,13 @@ public class Main extends Application {
             stage.setTitle("MusicRoom");
             stage.setMinWidth(MINIMUM_WINDOW_WIDTH);
             stage.setMinHeight(MINIMUM_WINDOW_HEIGHT);
-            gotoMainMenu();
+            gotoLogin();
             primaryStage.show();
+            
+            // Test
+            
+            instruments.add(new AcousticGuitar("Guitar","Gibson V Flyer",120,null));
+            instruments.add(new AcousticGuitar("Guitar","Something else",150,null));
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -53,6 +63,12 @@ public class Main extends Application {
     public User getLoggedUser() {
         return currentUser;
     }
+
+    public ArrayList<Instrument> getInstruments() {
+        return instruments;
+    }
+    
+    
     
     public User createUser(String username,String password) {
         String id = Integer.toString(users.size());
@@ -62,20 +78,22 @@ public class Main extends Application {
     }
         
     public boolean userLogging(String userId, String password){
-        for(int i=0;i<users.size();i++) {
-            System.out.println(users.get(i).getUsername()+" "+userId);
-            System.out.println(users.get(i).getPassword()+" "+password);
-            if(users.get(i).getUsername().equals(userId)) {
-                System.out.println("1");
-                if(users.get(i).getPassword().equals(password)) {
-                    currentUser = users.get(i);
-                    gotoProfile();
-                    return true;
-                } else
-                    return false;
-            }
-        }
-        return false;
+        gotoMainMenu();
+            return true;
+//        for(int i=0;i<users.size();i++) {
+//            //System.out.println(users.get(i).getUsername()+" "+userId);
+//            //System.out.println(users.get(i).getPassword()+" "+password);
+//            if(users.get(i).getUsername().equals(userId)) {
+//                System.out.println("1");
+//                if(users.get(i).getPassword().equals(password)) {
+//                    currentUser = users.get(i);
+//                    gotoProfile();
+//                    return true;
+//                } else
+//                    return false;
+//            }
+//        }
+//        return false;
 
     }
     
