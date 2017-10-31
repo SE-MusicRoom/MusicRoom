@@ -47,6 +47,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 /**
  * Login Controller.
@@ -97,7 +98,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         System.out.println("Start");
         for (int i = 0; i < instruments.size(); i++) {
             System.out.println(instruments.get(i).getName());
-            AnchorPane newToken = copyListToken();
+            AnchorPane newToken = copyListToken(instruments.get(i).getModel(),instruments.get(i).getName(),Float.toString(instruments.get(i).getPrice()));
             listScroll.getChildren().add(newToken);
             
         }
@@ -109,7 +110,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         
     }
     
-    private AnchorPane copyListToken() {
+    private AnchorPane copyListToken(String name,String path,String price) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("customize.fxml"));
         
         try {
@@ -119,7 +120,13 @@ public class CustomizeController extends AnchorPane implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        return (AnchorPane)loader.getNamespace().get("listToken");
+        AnchorPane newToken = (AnchorPane)loader.getNamespace().get("listToken");
+        Text t0 = (Text) newToken.getChildren().get(0);
+        Text t1 = (Text) newToken.getChildren().get(1);
+        Text t2 = (Text) newToken.getChildren().get(2);
+        t0.setText(name);
+        t1.setText(path);
+        t2.setText(price);
+        return newToken;
     }
 }
