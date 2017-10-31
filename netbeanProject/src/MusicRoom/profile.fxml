@@ -44,39 +44,26 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.ProfileController">
   <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="1200.0" layoutX="-2.0" layoutY="-3.0" stroke="TRANSPARENT" strokeType="INSIDE" width="974.0">
-         <fill>
-            <LinearGradient endX="1.0" endY="1.0" startY="1.0">
-               <stops>
-                  <Stop color="#822b05a4" />
-                  <Stop color="#94420775" offset="0.785440613026819" />
-                  <Stop color="#85580500" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Rectangle>
-      <VBox layoutX="50.0" layoutY="35.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.rightAnchor="648.0">
+      <VBox layoutX="50.0" layoutY="35.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.leftAnchor="60.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff6000" height="77.0" stroke="TRANSPARENT" strokeType="INSIDE" width="276.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="483.0" stroke="#00000001" strokeType="INSIDE" width="668.0" />
          </children>
       </VBox>
-      <VBox layoutX="60.0" layoutY="40.0" prefHeight="687.0" prefWidth="569.0" AnchorPane.rightAnchor="737.0">
+      <VBox layoutX="70.0" layoutY="39.0" prefHeight="687.0" prefWidth="622.0" AnchorPane.leftAnchor="70.0">
          <children>
             <Text fill="#fcf9f9" strokeType="OUTSIDE" strokeWidth="0.0" text="PROFILE" wrappingWidth="261.8040008544922">
                <font>
                   <Font name="Cloud-Bold" size="64.0" />
                </font>
             </Text>
-      <GridPane id="GridPane" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="549.0" vgap="10.0">
+      <GridPane id="GridPane" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="592.0" vgap="10.0">
         <children>
                   <Text fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your name use ONLY aphabet." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
@@ -105,7 +92,7 @@
                         <Insets />
                      </GridPane.margin>
                   </Label>
-          <TextField fx:id="email" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+          <TextField fx:id="surname" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin></TextField>
@@ -136,7 +123,7 @@
                         <Insets />
                      </GridPane.margin>
                   </Text>
-                  <TextField fx:id="email1" layoutX="124.0" layoutY="53.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <TextField fx:id="email" layoutX="124.0" layoutY="53.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
@@ -149,7 +136,7 @@
                         <Insets />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="email11" layoutX="124.0" layoutY="103.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                  <TextField fx:id="bandName" layoutX="124.0" layoutY="103.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="9">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
@@ -171,20 +158,20 @@
                         <Insets top="15.0" />
                      </padding>
                   </VBox>
-                  <TextField fx:id="email111" layoutX="124.0" layoutY="228.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <TextField fx:id="username" layoutX="124.0" layoutY="228.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="12" />
                   <Label id="Label" layoutX="10.0" layoutY="300.0" text="Password" GridPane.rowIndex="15">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
-                  <PasswordField style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                  <PasswordField fx:id="password" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="15" />
                   <Text fill="#8a8686" layoutX="124.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your password." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="16" />
                   <Label id="Label" layoutX="10.0" layoutY="300.0" prefHeight="30.0" prefWidth="186.0" text="Confirm Password" GridPane.rowIndex="18">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
-                  <PasswordField layoutX="124.0" layoutY="303.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                  <PasswordField fx:id="confirmPassword" layoutX="124.0" layoutY="303.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="18" />
                   <Text fill="#8a8686" layoutX="124.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Confirm Again" wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="19" />
                   <Text fill="#8a8686" layoutX="201.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your username 15 or less charecters." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="13" />
                   <Label id="Label" layoutX="10.0" layoutY="300.0" text="E-Mail Subscribe" GridPane.rowIndex="21">
@@ -192,7 +179,7 @@
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="email2" layoutX="201.0" layoutY="63.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" />
+                  <TextField fx:id="name" layoutX="201.0" layoutY="63.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" />
         </children>
         <columnConstraints>
           <ColumnConstraints hgrow="NEVER" maxWidth="191.33334350585938" minWidth="60.0" prefWidth="191.33334350585938" />
@@ -228,7 +215,7 @@
       </GridPane>
          </children>
       </VBox>
-  <Button fx:id="save" defaultButton="true" layoutX="225.0" layoutY="595.0" maxHeight="2.147483647E9" onAction="#saveProfile" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: ff6000;" text="BACK" AnchorPane.rightAnchor="1037.0">
+  <Button fx:id="back" defaultButton="true" layoutX="225.0" layoutY="595.0" maxHeight="2.147483647E9" onAction="#saveProfile" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: ff6000;" text="BACK" AnchorPane.leftAnchor="235.0">
          <font>
             <Font name="Cloud-Bold" size="25.0" fx:id="x5" />
          </font>
@@ -236,7 +223,7 @@
             <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
          </padding>
       </Button>
-  <Button fx:id="reset" defaultButton="true" layoutX="50.0" layoutY="594.0" maxHeight="2.147483647E9" onAction="#resetProfile" prefHeight="47.0" prefWidth="175.0" style="-fx-background-color: #000000;" text="CONFIRM" textFill="#ff6000" AnchorPane.rightAnchor="1141.0">
+  <Button fx:id="comfirm" defaultButton="true" layoutX="50.0" layoutY="594.0" maxHeight="2.147483647E9" onAction="#resetProfile" prefHeight="47.0" prefWidth="175.0" style="-fx-background-color: #000000;" text="CONFIRM" textFill="#ff6000" AnchorPane.leftAnchor="60.0">
          <font>
             <Font name="Cloud-Bold" size="34.0" fx:id="x4" />
          </font>
