@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.CustomizeController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -27,7 +27,7 @@
       </AnchorPane>
       <HBox layoutY="549.0" prefHeight="53.0" prefWidth="323.0">
          <children>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="52.0" prefWidth="179.0" text="Confirm!" textFill="WHITE">
+            <Button fx:id="confirmBtn" mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="52.0" prefWidth="179.0" text="Confirm!" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -35,7 +35,7 @@
                   <Font name="Arial Bold" size="28.0" />
                </font>
             </Button>
-            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="27.0" prefWidth="129.0" text="Go Back." textFill="WHITE">
+            <Button fx:id="backBtn" mnemonicParsing="false" onAction="#onClickBack" prefHeight="27.0" prefWidth="129.0" text="Go Back." textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -74,7 +74,7 @@
       </ScrollPane>
       <AnchorPane layoutX="419.0" layoutY="127.0" prefHeight="40.0" prefWidth="281.0">
          <children>
-            <TextField layoutX="57.0" layoutY="1.0" />
+            <TextField fx:id="searchTxtField" layoutX="57.0" layoutY="1.0" />
             <Label layoutY="7.0" text="Search">
                <font>
                   <Font name="System Bold" size="18.0" />
@@ -92,7 +92,7 @@
             <ChoiceBox layoutX="57.0" prefHeight="39.0" prefWidth="224.0" />
          </children>
       </AnchorPane>
-      <Button fx:id="reservationBtn11" layoutX="708.0" layoutY="128.0" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="39.0" prefWidth="73.0" text="Go!" textFill="WHITE">
+      <Button fx:id="GoBtn" layoutX="708.0" layoutY="128.0" mnemonicParsing="false" onAction="#onClickGo" prefHeight="39.0" prefWidth="73.0" text="Go!" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>

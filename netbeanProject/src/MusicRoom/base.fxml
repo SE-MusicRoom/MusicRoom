@@ -99,6 +99,6 @@ Contributor(s):
             </Button>
          </children>
       </VBox>
-      <AnchorPane fx:id="includePane" layoutX="225.0" layoutY="-27.0" prefHeight="603.0" prefWidth="1072.0" scaleX="0.5" scaleY="0.5" />
+      <AnchorPane fx:id="includePane" layoutX="30.0" layoutY="-108.0" prefHeight="985.0" prefWidth="1751.0" scaleX="0.5" scaleY="0.5" />
    </children>
 </AnchorPane>

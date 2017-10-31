@@ -47,7 +47,10 @@ import javafx.scene.layout.AnchorPane;
  */
 public class CustomizeController extends AnchorPane implements Initializable {
 
-    @FXML Button profileBtn;
+    @FXML TextField searchTxtField;
+    @FXML Button backBtn;
+    @FXML Button goBtn;
+    @FXML Button confirmBtn;
     private Main application;
     
     
@@ -61,7 +64,15 @@ public class CustomizeController extends AnchorPane implements Initializable {
         
     }
     
-    
+    public void onClickGo(ActionEvent event) {
+        
+    }
+    public void onClickBack(ActionEvent event) {
+        
+    }
+    public void onClickConfirm(ActionEvent event) {
+        
+    }
     
     
 }
