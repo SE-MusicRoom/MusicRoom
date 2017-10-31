@@ -88,10 +88,14 @@ public class MainMenuController extends AnchorPane implements Initializable {
         return (Initializable) loader.getController();
     }
     
+    public void hideIncludePane() {
+        includePane.getChildren().clear();
+    }
+    
     public void gotoReservation() {
         try {
             CustomizeController con = (CustomizeController) showIncludePane("customize.fxml");
-            con.setApp(application);
+            con.setApp(application,this);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }

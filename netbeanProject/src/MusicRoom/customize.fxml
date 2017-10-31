@@ -47,9 +47,9 @@
       </HBox>
       <ScrollPane layoutX="419.0" layoutY="182.0" prefHeight="345.0" prefWidth="362.0">
          <content>
-            <VBox prefHeight="390.0" prefWidth="357.0">
+            <VBox fx:id="listScroll" prefHeight="390.0" prefWidth="357.0">
                <children>
-                  <AnchorPane prefHeight="67.0" prefWidth="357.0">
+                  <AnchorPane fx:id="listToken" prefHeight="67.0" prefWidth="357.0">
                      <children>
                         <Text layoutX="7.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gibson V Flyer">
                            <font>
@@ -102,9 +102,9 @@
       </Button>
       <ScrollPane layoutX="19.0" layoutY="310.0" prefHeight="151.0" prefWidth="384.0">
          <content>
-            <VBox prefHeight="150.0" prefWidth="380.0">
+            <VBox fx:id="addedScroll" prefHeight="150.0" prefWidth="380.0">
                <children>
-                  <AnchorPane prefHeight="44.0" prefWidth="380.0">
+                  <AnchorPane fx:id="addedToken" prefHeight="44.0" prefWidth="380.0">
                      <children>
                         <Text layoutX="7.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gibson V Flyer" />
                         <Text fill="#f21010" layoutX="278.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT">

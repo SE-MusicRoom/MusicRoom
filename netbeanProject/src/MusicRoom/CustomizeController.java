@@ -31,31 +31,60 @@
  */
 package MusicRoom;
 
+import MusicRoom.entity.Instrument;
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 /**
  * Login Controller.
  */
 public class CustomizeController extends AnchorPane implements Initializable {
 
-    @FXML TextField searchTxtField;
-    @FXML Button backBtn;
-    @FXML Button goBtn;
-    @FXML Button confirmBtn;
+    @FXML
+    private AnchorPane listToken;
+
+    @FXML
+    private Button backBtn;
+
+    @FXML
+    private TextField searchTxtField;
+
+    @FXML
+    private Button GoBtn;
+
+    @FXML
+    private Button confirmBtn;
+
+    @FXML
+    private VBox listScroll;
+
+    @FXML
+    private AnchorPane addedToken;
+
+    @FXML
+    private VBox addedScroll;
+    
     private Main application;
+    private MainMenuController mainmenu;
     
     
-    public void setApp(Main application){
+    public void setApp(Main application,MainMenuController mainmenu){
         this.application = application;
+        this.mainmenu = mainmenu;
     }
     
     @Override
@@ -65,14 +94,39 @@ public class CustomizeController extends AnchorPane implements Initializable {
     }
     
     public void onClickGo(ActionEvent event) {
-        
+        ArrayList<Instrument> instruments = application.getInstruments();
+        System.out.println("Start");
+        for (int i = 0; i < instruments.size(); i++) {
+            System.out.println(instruments.get(i).getName());
+            AnchorPane newToken = copyListToken(instruments.get(i).getModel(),instruments.get(i).getName(),Float.toString(instruments.get(i).getPrice()));
+            listScroll.getChildren().add(newToken);
+            
+        }
     }
     public void onClickBack(ActionEvent event) {
-        
+        mainmenu.hideIncludePane();
     }
     public void onClickConfirm(ActionEvent event) {
         
     }
     
-    
+    private AnchorPane copyListToken(String name,String path,String price) {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("customize.fxml"));
+        
+        try {
+            
+            loader.load();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        AnchorPane newToken = (AnchorPane)loader.getNamespace().get("listToken");
+        Text t0 = (Text) newToken.getChildren().get(0);
+        Text t1 = (Text) newToken.getChildren().get(1);
+        Text t2 = (Text) newToken.getChildren().get(2);
+        t0.setText(name);
+        t1.setText(path);
+        t2.setText(price);
+        return newToken;
+    }
 }
