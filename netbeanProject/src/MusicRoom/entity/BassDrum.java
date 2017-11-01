@@ -5,23 +5,14 @@
  */
 package MusicRoom.entity;
 
-import javafx.scene.image.Image;
-
 /**
  *
  * @author kyttpwned
  */
 public class BassDrum extends Drums{
-    private String name;
-    private String model;
-    private float price;
-    private Image img;
 
-    public BassDrum(String name, String model, float price, Image img) {
-        this.name = name;
-        this.model = model;
-        this.price = price;
-        this.img = img;
+    public BassDrum(String name ,String model ,float price ,String img) {
+        super(name ,model ,price ,img);
     }
     
 }

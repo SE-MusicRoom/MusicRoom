@@ -5,19 +5,14 @@
  */
 package MusicRoom.entity;
 
-import javafx.scene.image.Image;
-
 /**
  *
  * @author kyttpwned
  */
 public class Guitar extends Strings{
-    private String name;
-    private String model;
-    private float price;
-    private Image img;
 
-    public Guitar() {
+    public Guitar(String name ,String model ,float price ,String img) {
+        super(name ,model ,price ,img);
     }
     
 }
