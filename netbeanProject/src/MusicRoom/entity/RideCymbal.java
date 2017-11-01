@@ -11,8 +11,8 @@ package MusicRoom.entity;
  */
 public class RideCymbal extends Drums{
 
-    public RideCymbal(String name ,String model ,float price ,String img) {
-        super(name ,model ,price ,img);
+    public RideCymbal(int id ,String name ,String model ,float price ,String img) {
+        super(id, name ,model ,price ,img);
     }
     
 }

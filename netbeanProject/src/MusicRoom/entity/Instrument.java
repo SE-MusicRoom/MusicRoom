@@ -10,18 +10,23 @@ package MusicRoom.entity;
  * @author Kittinan
  */
 abstract public class Instrument {
+    private int id;
     private String name;
     private String model;
     private float price;
     private String img;
 
-    public Instrument(String name ,String model ,float price ,String img) {
+    public Instrument(int id, String name, String model, float price, String img) {
         this.name = name;
         this.model = model;
         this.price = price;
         this.img = img;
     }
-
+    
+    public int getId() {
+        return id;
+    }
+    
     public String getName() {
         return name;
     }

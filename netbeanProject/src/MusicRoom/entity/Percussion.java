@@ -11,8 +11,8 @@ package MusicRoom.entity;
  */
 public class Percussion extends Instrument{
 
-    public Percussion(String name ,String model ,float price ,String img) {
-        super(name ,model ,price ,img);
+    public Percussion(int id ,String name ,String model ,float price ,String img) {
+        super(id, name ,model ,price ,img);
     }
     
 }

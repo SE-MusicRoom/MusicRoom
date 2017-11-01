@@ -11,8 +11,8 @@ package MusicRoom.entity;
  */
 public class Cowbell extends Drums{
 
-    public Cowbell(String name ,String model ,float price ,String img) {
-        super(name ,model ,price ,img);
+    public Cowbell(int id ,String name ,String model ,float price ,String img) {
+        super(id, name ,model ,price ,img);
     }
     
 }

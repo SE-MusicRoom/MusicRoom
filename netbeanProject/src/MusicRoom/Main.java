@@ -53,8 +53,8 @@ public class Main extends Application {
             
             // Test
             
-            instruments.add(new AcousticGuitar("Guitar","Gibson V Flyer",120,null));
-            instruments.add(new AcousticGuitar("Guitar","Something else",150,null));
+            instruments.add(new AcousticGuitar(1, "Guitar","Gibson V Flyer",120,null));
+            instruments.add(new AcousticGuitar(2, "Guitar","Something else",150,null));
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }

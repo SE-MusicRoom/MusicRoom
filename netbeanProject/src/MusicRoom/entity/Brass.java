@@ -11,8 +11,8 @@ package MusicRoom.entity;
  */
 public class Brass extends Instrument{
 
-    public Brass(String name ,String model ,float price ,String img) {
-        super(name ,model ,price ,img);
+    public Brass(int id ,String name ,String model ,float price ,String img) {
+        super(id, name ,model ,price ,img);
     }
     
 }

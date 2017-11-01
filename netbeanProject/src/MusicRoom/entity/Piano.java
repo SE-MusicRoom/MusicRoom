@@ -11,8 +11,8 @@ package MusicRoom.entity;
  */
 public class Piano extends Keyboard{
 
-    public Piano(String name ,String model ,float price ,String img) {
-        super(name ,model ,price ,img);
+    public Piano(int id ,String name ,String model ,float price ,String img) {
+        super(id, name ,model ,price ,img);
     }
     
 }
