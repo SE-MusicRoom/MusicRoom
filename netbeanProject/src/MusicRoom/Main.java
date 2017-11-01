@@ -146,10 +146,11 @@ public class Main extends Application {
         AnchorPane page;
         try {
             page = (AnchorPane) loader.load(in);
+            //page.setStyle("base.css");
         } finally {
             in.close();
         } 
-        Scene scene = new Scene(page, 800, 600);
+        Scene scene = new Scene(page, 1366, 768);
         stage.setScene(scene);
         stage.sizeToScene();
         return (Initializable) loader.getController();
