@@ -5,19 +5,14 @@
  */
 package MusicRoom.entity;
 
-import javafx.scene.image.Image;
-
 /**
  *
  * @author kyttpwned
  */
 public class Percussion extends Instrument{
-    private String name;
-    private String model;
-    private float price;
-    private Image img;
 
-    public Percussion() {
+    public Percussion(String name ,String model ,float price ,String img) {
+        super(name ,model ,price ,img);
     }
     
 }

@@ -5,7 +5,6 @@
  */
 package MusicRoom.entity;
 
-import javafx.scene.image.Image;
 /**
  *
  * @author Kittinan
@@ -14,9 +13,13 @@ abstract public class Instrument {
     private String name;
     private String model;
     private float price;
-    private Image img;
+    private String img;
 
-    public Instrument() {
+    public Instrument(String name ,String model ,float price ,String img) {
+        this.name = name;
+        this.model = model;
+        this.price = price;
+        this.img = img;
     }
 
     public String getName() {
@@ -31,7 +34,7 @@ abstract public class Instrument {
         return price;
     }
     
-    public Image getImage() {
+    public String getImage() {
         return img;
     }
 }
