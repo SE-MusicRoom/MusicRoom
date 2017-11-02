@@ -11,8 +11,8 @@ package MusicRoom.entity;
  */
 public class RackTom extends Drums{
 
-    public RackTom(int id ,String name ,String model ,float price ,String img) {
-        super(id, name ,model ,price ,img);
+    public RackTom(String name ,String model ,float price ,String img) {
+        super(name ,model ,price ,img);
     }
     
 }

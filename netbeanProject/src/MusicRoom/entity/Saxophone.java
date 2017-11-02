@@ -11,8 +11,8 @@ package MusicRoom.entity;
  */
 public class Saxophone extends Woodwind{
 
-    public Saxophone(int id ,String name ,String model ,float price ,String img) {
-        super(id, name ,model ,price ,img);
+    public Saxophone(String name ,String model ,float price ,String img) {
+        super(name ,model ,price ,img);
     }
     
 }

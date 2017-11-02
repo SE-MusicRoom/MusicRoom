@@ -11,8 +11,8 @@ package MusicRoom.entity;
  */
 public class BassDrum extends Drums{
 
-    public BassDrum(int id ,String name ,String model ,float price ,String img) {
-        super(id, name ,model ,price ,img);
+    public BassDrum(String name ,String model ,float price ,String img) {
+        super(name ,model ,price ,img);
     }
     
 }
