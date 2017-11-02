@@ -118,7 +118,6 @@ public class MainMenuController extends AnchorPane implements Initializable {
     }
     
      public void onClickLogOut(ActionEvent event) {
-         System.out.println("slkfjs");
         application.gotoLogin();
     }
 }

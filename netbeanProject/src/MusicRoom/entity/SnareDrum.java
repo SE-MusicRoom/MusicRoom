@@ -11,8 +11,8 @@ package MusicRoom.entity;
  */
 public class SnareDrum extends Drums{
 
-    public SnareDrum(int id ,String name ,String model ,float price ,String img) {
-        super(id, name ,model ,price ,img);
+    public SnareDrum(String name ,String model ,float price ,String img) {
+        super(name ,model ,price ,img);
     }
     
 }
