@@ -123,7 +123,7 @@
             <Font name="Arial" size="24.0" />
          </font>
       </Text>
-      <Text fontSmoothingType="LCD" layoutX="273.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB1200/hr">
+      <Text fx:id="total" fontSmoothingType="LCD" layoutX="273.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB1200/hr">
          <font>
             <Font name="Arial" size="24.0" />
          </font>

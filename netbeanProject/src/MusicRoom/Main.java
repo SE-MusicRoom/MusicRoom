@@ -7,6 +7,7 @@ package MusicRoom;
 
 import MusicRoom.entity.AcousticGuitar;
 import MusicRoom.entity.Instrument;
+import MusicRoom.entity.RoomTemplate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -29,9 +30,12 @@ public class Main extends Application {
     private User currentUser;
     private ArrayList<User> users;
     private ArrayList<Instrument> instruments;
+    private ArrayList<RoomTemplate> roomTemplete;
+    private ArrayList<RoomTemplate> customTemplete;
     
     //Customize
     private ArrayList<Instrument> addedInstruments;
+    private float totalPrice = 0f;
     
     private final double MINIMUM_WINDOW_WIDTH = 1366;
     private final double MINIMUM_WINDOW_HEIGHT = 768;
@@ -86,9 +90,27 @@ public class Main extends Application {
         return currentUser;
     }
 
+    public float getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(float totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+    
     public ArrayList<Instrument> getInstruments() {
         return instruments;
     }
+
+    public ArrayList<Instrument> getAddedInstruments() {
+        return addedInstruments;
+    }
+
+    public void addCustomTemplete(RoomTemplate customTemplete) {
+        this.customTemplete.add(customTemplete);
+    }
+    
+    
     
     public Instrument addSelectedInstruments(int i) {
         addedInstruments.add(instruments.get(i));

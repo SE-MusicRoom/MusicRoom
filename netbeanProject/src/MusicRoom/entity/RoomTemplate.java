@@ -12,14 +12,13 @@ import java.util.ArrayList;
  * @author YAY
  */
 public class RoomTemplate {
-    private final int id;
+    private int id;
     private String name;
     private String detail;
     private float price;
     private ArrayList<Instrument> instruments;
 
-    public RoomTemplate(int id, String name, String detail, float price) {
-        this.id = id;
+    public RoomTemplate(String name, String detail, float price) {
         this.name = name;
         this.detail = detail;
         this.price = price;
