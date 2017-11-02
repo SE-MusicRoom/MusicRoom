@@ -92,7 +92,7 @@ Contributor(s):
                   <Font name="Arial" size="24.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" text="Logout" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" onAction="#onClickLogOut" text="Logout" textFill="WHITE">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>

@@ -102,12 +102,11 @@ public class MainMenuController extends AnchorPane implements Initializable {
     }
     
     public void gotoProfile() {
-        try {
-            ProfileController con = (ProfileController) showIncludePane("profile.fxml");
-            con.setApp(application);
-        } catch (Exception ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+    }
+    
+    public void gotoLogOut() {
+        application.gotoMainMenu();
     }
     
     public void onClickReservation(ActionEvent event) {
@@ -116,5 +115,10 @@ public class MainMenuController extends AnchorPane implements Initializable {
     
     public void onClickProfile(ActionEvent event) {
         gotoProfile();
+    }
+    
+     public void onClickLogOut(ActionEvent event) {
+         System.out.println("slkfjs");
+        application.gotoLogin();
     }
 }
