@@ -42,7 +42,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -125,8 +124,17 @@ public class CustomizeController extends AnchorPane implements Initializable {
         
         AnchorPane newToken = copyAddedToken(selectedInstrument.getModel(),selectedInstrument.getName(),Float.toString(selectedInstrument.getPrice()));
         newToken.setId(String.valueOf(addedScroll.getChildren().size()));
-        System.out.println(newToken);
         parent.getAddedScroll().getChildren().add(newToken);
+        
+        
+    }
+    
+        public void onRemoveInstrument(MouseEvent event) {
+        int selectedId = Integer.parseInt( ((AnchorPane)event.getSource()).getId() );
+        Instrument selectedInstrument = Main.getInstance().removeSelectedInstruments(selectedId);
+        System.out.println("Removed " +  selectedInstrument.getModel());
+        
+        parent.getAddedScroll().getChildren().remove(selectedId);
         
         
     }
@@ -142,10 +150,8 @@ public class CustomizeController extends AnchorPane implements Initializable {
     private AnchorPane copyListToken(String name,String path,String price) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("customize.fxml"));
         
-        try {
-            
+        try {   
             loader.load();
-            
         } catch (IOException ex) {
             Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -157,6 +163,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         t1.setText(path);
         t2.setText(price);
         
+         // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
         CustomizeController cus = (CustomizeController)loader.getController();
         cus.setApp(this);
         
@@ -176,7 +183,9 @@ public class CustomizeController extends AnchorPane implements Initializable {
         t0.setText(name);
         t1.setText(price);
         
-        
+        // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
+        CustomizeController cus = (CustomizeController)loader.getController();
+        cus.setApp(this.parent);
         
         return newToken;
     }

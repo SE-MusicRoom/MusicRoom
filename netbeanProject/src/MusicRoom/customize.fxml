@@ -104,7 +104,7 @@
          <content>
             <VBox fx:id="addedScroll" prefHeight="150.0" prefWidth="380.0">
                <children>
-                  <AnchorPane fx:id="addedToken" prefHeight="44.0" prefWidth="380.0">
+                  <AnchorPane fx:id="addedToken" onMouseClicked="#onRemoveInstrument" prefHeight="44.0" prefWidth="380.0">
                      <children>
                         <Text layoutX="7.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gibson V Flyer" />
                         <Text fill="#f21010" layoutX="278.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT">

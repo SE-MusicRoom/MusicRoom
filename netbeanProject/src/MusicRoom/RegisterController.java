@@ -71,7 +71,6 @@ public class RegisterController extends AnchorPane implements Initializable {
         errorMessage.setText("");
         username.setPromptText("Enter your name");
         password.setPromptText("Enter your password");
-        
     }
     
     
