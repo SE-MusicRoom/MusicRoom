@@ -45,6 +45,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -78,31 +79,59 @@ public class CustomizeController extends AnchorPane implements Initializable {
     @FXML
     private VBox addedScroll;
     
-    private Main application;
     private MainMenuController mainmenu;
+    private CustomizeController parent;
+    public static CustomizeController instance;
     
+
     
-    public void setApp(Main application,MainMenuController mainmenu){
-        this.application = application;
+    public void setApp(MainMenuController mainmenu){
         this.mainmenu = mainmenu;
+    }
+    
+    public void setApp(CustomizeController parent){
+        this.parent = parent;
     }
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        addedScroll.getChildren().clear();
+        listScroll.getChildren().clear();
+    }
 
+    public VBox getAddedScroll() {
+        return addedScroll;
+    }
+    
+    
+    
+    public void onClickGo(ActionEvent event) {
+        ArrayList<Instrument> listedInstruments = Main.getInstance().getInstruments();
+        System.out.println("Start");
+        for (int i = 0; i < listedInstruments.size(); i++) {
+            System.out.println(listedInstruments.get(i).getName());
+            AnchorPane newToken = copyListToken(listedInstruments.get(i).getModel(),listedInstruments.get(i).getName(),Float.toString(listedInstruments.get(i).getPrice()));
+            newToken.setId(String.valueOf(i));
+            listScroll.getChildren().add(newToken);
+        }
+    }
+    
+    
+    public void onAddInstrument(MouseEvent event) {
+        int selectedId = Integer.parseInt( ((AnchorPane)event.getSource()).getId() );
+        Instrument selectedInstrument = Main.getInstance().addSelectedInstruments(selectedId);
+        System.out.println("Added " +  selectedInstrument.getModel());
+        
+        
+        AnchorPane newToken = copyAddedToken(selectedInstrument.getModel(),selectedInstrument.getName(),Float.toString(selectedInstrument.getPrice()));
+        newToken.setId(String.valueOf(addedScroll.getChildren().size()));
+        System.out.println(newToken);
+        parent.getAddedScroll().getChildren().add(newToken);
+        
         
     }
     
-    public void onClickGo(ActionEvent event) {
-        ArrayList<Instrument> instruments = application.getInstruments();
-        System.out.println("Start");
-        for (int i = 0; i < instruments.size(); i++) {
-            System.out.println(instruments.get(i).getName());
-            AnchorPane newToken = copyListToken(instruments.get(i).getModel(),instruments.get(i).getName(),Float.toString(instruments.get(i).getPrice()));
-            listScroll.getChildren().add(newToken);
-            
-        }
-    }
+    
     public void onClickBack(ActionEvent event) {
         mainmenu.hideIncludePane();
     }
@@ -127,6 +156,28 @@ public class CustomizeController extends AnchorPane implements Initializable {
         t0.setText(name);
         t1.setText(path);
         t2.setText(price);
+        
+        CustomizeController cus = (CustomizeController)loader.getController();
+        cus.setApp(this);
+        
+        return newToken;
+    }
+    
+    private AnchorPane copyAddedToken(String name,String path,String price) {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("customize.fxml"));
+        try {
+            loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        AnchorPane newToken = (AnchorPane)loader.getNamespace().get("addedToken");
+        Text t0 = (Text) newToken.getChildren().get(0);
+        Text t1 = (Text) newToken.getChildren().get(1);
+        t0.setText(name);
+        t1.setText(price);
+        
+        
+        
         return newToken;
     }
 }

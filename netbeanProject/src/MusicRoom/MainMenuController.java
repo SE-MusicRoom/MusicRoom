@@ -56,11 +56,10 @@ public class MainMenuController extends AnchorPane implements Initializable {
     Button reservationBtn;
 
     
-    private Main application;
     
     
-    public void setApp(Main application){
-        this.application = application;
+    public void setApp(){
+        
     }
     
     @Override
@@ -95,7 +94,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
     public void gotoReservation() {
         try {
             CustomizeController con = (CustomizeController) showIncludePane("customize.fxml");
-            con.setApp(application,this);
+            con.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -106,7 +105,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
     }
     
     public void gotoLogOut() {
-        application.gotoMainMenu();
+        Main.getInstance().gotoMainMenu();
     }
     
     public void onClickReservation(ActionEvent event) {
@@ -118,6 +117,6 @@ public class MainMenuController extends AnchorPane implements Initializable {
     }
     
      public void onClickLogOut(ActionEvent event) {
-        application.gotoLogin();
+        Main.getInstance().gotoLogin();
     }
 }

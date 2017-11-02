@@ -49,7 +49,7 @@
          <content>
             <VBox fx:id="listScroll" prefHeight="390.0" prefWidth="357.0">
                <children>
-                  <AnchorPane fx:id="listToken" prefHeight="67.0" prefWidth="357.0">
+                  <AnchorPane fx:id="listToken" onMouseClicked="#onAddInstrument" prefHeight="67.0" prefWidth="357.0">
                      <children>
                         <Text layoutX="7.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gibson V Flyer">
                            <font>

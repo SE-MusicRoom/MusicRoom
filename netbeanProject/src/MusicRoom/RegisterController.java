@@ -60,12 +60,10 @@ public class RegisterController extends AnchorPane implements Initializable {
 
     @FXML
     private TextField username;
-
-    private Main application;
     
     
     public void setApp(Main application){
-        this.application = application;
+        
     }
     
     @Override
@@ -78,14 +76,14 @@ public class RegisterController extends AnchorPane implements Initializable {
     
     
     public void onClickRegister(ActionEvent event) {
-        if (application == null){
+        if (Main.getInstance() == null){
             // We are running in isolated FXML, possibly in Scene Builder.
             // NO-OP.
             errorMessage.setText("Hello " + username.getText());
         } else {
             if(username.getText()!="" && password.getText()!="") {
                 errorMessage.setText("Registered");
-                application.createUser(username.getText(), password.getText());
+                Main.getInstance().createUser(username.getText(), password.getText());
             }
             
             
@@ -93,12 +91,12 @@ public class RegisterController extends AnchorPane implements Initializable {
     }    
     
     public void onClickBack(ActionEvent event) {
-        if (application == null){
+        if (Main.getInstance() == null){
             // We are running in isolated FXML, possibly in Scene Builder.
             // NO-OP.
             errorMessage.setText("Hello " + username.getText());
         } else {
-            application.gotoLogin();
+            Main.getInstance().gotoLogin();
             
             
         }
