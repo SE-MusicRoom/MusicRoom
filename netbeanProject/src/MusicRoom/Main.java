@@ -74,7 +74,10 @@ public class Main extends Application {
             primaryStage.setResizable(false);
             
             // Test
-            
+            /*
+            DatabaseManager DbManager = DatabaseManager.getInstance();
+            List<Instrument> instruments = DbManager.fetchAllInstrument(insert path of file.odb);
+            */
             instruments.add(new AcousticGuitar("Guitar","Gibson V Flyer",120,null));
             instruments.add(new AcousticGuitar("Guitar","Something else",150,null));
         } catch (Exception ex) {

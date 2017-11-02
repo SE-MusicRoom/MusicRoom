@@ -5,13 +5,18 @@
  */
 package MusicRoom.entity;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  *
  * @author Kittinan
  */
+@MappedSuperclass
 abstract public class Instrument implements Serializable{
+    @Id@GeneratedValue
+    private long id;
+
     private String name;
     private String model;
     private float price;

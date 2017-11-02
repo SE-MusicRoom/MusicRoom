@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 package MusicRoom.entity;
-
+import javax.persistence.*;
 /**
  *
  * @author kyttpwned
  */
+@Entity
 public class AltoSaxophone extends Saxophone{
 
     public AltoSaxophone(String name ,String model ,float price ,String img) {
