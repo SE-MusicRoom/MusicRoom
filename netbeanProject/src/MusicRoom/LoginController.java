@@ -56,12 +56,8 @@ public class LoginController extends AnchorPane implements Initializable {
     //@FXML
     //Label errorMessage;
 
-    private Main application;
     
-    
-    public void setApp(Main application){
-        this.application = application;
-    }
+   
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -73,18 +69,18 @@ public class LoginController extends AnchorPane implements Initializable {
     
     
     public void onClickLogin(ActionEvent event) {
-        if (application == null){
+        if (Main.getInstance() == null){
             // We are running in isolated FXML, possibly in Scene Builder.
             // NO-OP.
             //errorMessage.setText("Hello " + userId.getText());
         } else {
-            if (!application.userLogging(userId.getText(), password.getText())){
+            if (!Main.getInstance().userLogging(userId.getText(), password.getText())){
                 //errorMessage.setText("Username/Password is incorrect");
             }
         }
     }
     
     public void onClickGoRegister(ActionEvent event) {
-        application.gotoRegister();
+        Main.getInstance().gotoRegister();
     }
 }

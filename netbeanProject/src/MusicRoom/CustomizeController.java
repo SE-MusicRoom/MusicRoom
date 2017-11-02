@@ -32,6 +32,7 @@
 package MusicRoom;
 
 import MusicRoom.entity.Instrument;
+import MusicRoom.entity.RoomTemplate;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -42,9 +43,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -54,6 +55,9 @@ import javafx.scene.text.Text;
  */
 public class CustomizeController extends AnchorPane implements Initializable {
 
+    @FXML
+    private Text total;
+    
     @FXML
     private AnchorPane listToken;
 
@@ -78,45 +82,105 @@ public class CustomizeController extends AnchorPane implements Initializable {
     @FXML
     private VBox addedScroll;
     
-    private Main application;
     private MainMenuController mainmenu;
+    private CustomizeController parent;
+    public static CustomizeController instance;
     
+
     
-    public void setApp(Main application,MainMenuController mainmenu){
-        this.application = application;
+    public void setApp(MainMenuController mainmenu){
         this.mainmenu = mainmenu;
+    }
+    
+    public void setApp(CustomizeController parent){
+        this.parent = parent;
     }
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        addedScroll.getChildren().clear();
+        listScroll.getChildren().clear();
+    }
 
+    public VBox getAddedScroll() {
+        return addedScroll;
+    }
+
+    public void setTotal(String total) {
+        this.total.setText("THB"+total+"/hr");
+    }
+    
+    
+    
+    public void onClickGo(ActionEvent event) {
+        ArrayList<Instrument> listedInstruments = Main.getInstance().getInstruments();
+        System.out.println("Start");
+        for (int i = 0; i < listedInstruments.size(); i++) {
+            System.out.println(listedInstruments.get(i).getName());
+            AnchorPane newToken = copyListToken(listedInstruments.get(i).getModel(),listedInstruments.get(i).getName(),Float.toString(listedInstruments.get(i).getPrice()));
+            newToken.setId(String.valueOf(i));
+            listScroll.getChildren().add(newToken);
+        }
+    }
+    
+    
+    public void onAddInstrument(MouseEvent event) {
+        int selectedId = Integer.parseInt( ((AnchorPane)event.getSource()).getId() );
+        Instrument selectedInstrument = Main.getInstance().addSelectedInstruments(selectedId);
+        System.out.println("Added " +  selectedInstrument.getModel());
+        
+        
+        AnchorPane newToken = copyAddedToken(selectedInstrument.getModel(),selectedInstrument.getName(),Float.toString(selectedInstrument.getPrice()));
+        newToken.setId(String.valueOf(parent.getAddedScroll().getChildren().size()));
+        parent.getAddedScroll().getChildren().add(newToken);
+        
+        // Total
+        parent.setTotal(String.valueOf(calculateTotal()));
         
     }
     
-    public void onClickGo(ActionEvent event) {
-        ArrayList<Instrument> instruments = application.getInstruments();
-        System.out.println("Start");
-        for (int i = 0; i < instruments.size(); i++) {
-            System.out.println(instruments.get(i).getName());
-            AnchorPane newToken = copyListToken(instruments.get(i).getModel(),instruments.get(i).getName(),Float.toString(instruments.get(i).getPrice()));
-            listScroll.getChildren().add(newToken);
-            
+        public void onRemoveInstrument(MouseEvent event) {
+        int selectedId = Integer.parseInt( ((AnchorPane)event.getSource()).getId() );
+        Instrument selectedInstrument = Main.getInstance().removeSelectedInstruments(selectedId);
+        System.out.println("Removed " +  selectedInstrument.getModel());
+        
+        parent.getAddedScroll().getChildren().remove(selectedId);
+        // Reassign ID
+        for (int i = 0; i < parent.getAddedScroll().getChildren().size(); i++) {
+            parent.getAddedScroll().getChildren().get(i).setId(String.valueOf(i));
+                
         }
+        
+        // Total
+        parent.setTotal(String.valueOf(calculateTotal()));
     }
+    
+    
     public void onClickBack(ActionEvent event) {
         mainmenu.hideIncludePane();
     }
     public void onClickConfirm(ActionEvent event) {
-        
+        System.out.println("SET!");
+        RoomTemplate newRoom = new RoomTemplate("Custom","A new custom room", calculateTotal());
+        Main.getInstance().addCustomTemplete(newRoom);
+    }
+    
+    private float calculateTotal() {
+        ArrayList<Instrument> addedInstruments = Main.getInstance().getAddedInstruments();
+        float price = 0f;
+        for (int i = 0; i < addedInstruments.size(); i++) {
+            price += addedInstruments.get(i).getPrice();
+            
+        }
+        Main.getInstance().setTotalPrice(price);
+        return price;
     }
     
     private AnchorPane copyListToken(String name,String path,String price) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("customize.fxml"));
         
-        try {
-            
+        try {   
             loader.load();
-            
         } catch (IOException ex) {
             Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -126,7 +190,32 @@ public class CustomizeController extends AnchorPane implements Initializable {
         Text t2 = (Text) newToken.getChildren().get(2);
         t0.setText(name);
         t1.setText(path);
-        t2.setText(price);
+        t2.setText("THB"+price+"/hr");
+        
+         // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
+        CustomizeController cus = (CustomizeController)loader.getController();
+        cus.setApp(this);
+        
+        return newToken;
+    }
+    
+    private AnchorPane copyAddedToken(String name,String path,String price) {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("customize.fxml"));
+        try {
+            loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        AnchorPane newToken = (AnchorPane)loader.getNamespace().get("addedToken");
+        Text t0 = (Text) newToken.getChildren().get(0);
+        Text t1 = (Text) newToken.getChildren().get(1);
+        t0.setText(name);
+        t1.setText("THB"+price+"/hr");
+        
+        // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
+        CustomizeController cus = (CustomizeController)loader.getController();
+        cus.setApp(this.parent);
+        
         return newToken;
     }
 }

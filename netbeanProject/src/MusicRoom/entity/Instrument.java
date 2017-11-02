@@ -5,23 +5,30 @@
  */
 package MusicRoom.entity;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
 /**
  *
  * @author Kittinan
  */
-abstract public class Instrument {
+@MappedSuperclass
+abstract public class Instrument implements Serializable{
+    @Id@GeneratedValue
+    private long id;
+
     private String name;
     private String model;
     private float price;
     private String img;
 
-    public Instrument(String name ,String model ,float price ,String img) {
+    public Instrument(String name, String model, float price, String img) {
         this.name = name;
         this.model = model;
         this.price = price;
         this.img = img;
     }
-
+    
     public String getName() {
         return name;
     }

@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 package MusicRoom.entity;
-
+import javax.persistence.*;
 /**
  *
  * @author kyttpwned
  */
+@Entity
 public class Piano extends Keyboard{
 
     public Piano(String name ,String model ,float price ,String img) {

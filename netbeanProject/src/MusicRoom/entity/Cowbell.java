@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 package MusicRoom.entity;
-
+import javax.persistence.*;
 /**
  *
  * @author kyttpwned
  */
+@Entity
 public class Cowbell extends Drums{
 
     public Cowbell(String name ,String model ,float price ,String img) {

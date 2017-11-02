@@ -12,10 +12,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -24,39 +26,63 @@ import javafx.scene.layout.AnchorPane;
 public class RegisterController extends AnchorPane implements Initializable {
 
     @FXML
-    TextField userId;
+    private Text errorMessage;
+        
     @FXML
-    PasswordField password;
-    @FXML
-    Button login;
-    @FXML
-    Label errorMessage;
+    private Button back;
 
-    private Main application;
+    @FXML
+    private TextField bandName;
+
+    @FXML
+    private CheckBox subscribed;
+
+    @FXML
+    private PasswordField password;
+
+    @FXML
+    private TextField phone;
+
+    @FXML
+    private TextField surname;
+
+    @FXML
+    private TextField name;
+
+    @FXML
+    private PasswordField confirmPassword;
+
+    @FXML
+    private Button comfirm;
+
+    @FXML
+    private TextField email;
+
+    @FXML
+    private TextField username;
     
     
     public void setApp(Main application){
-        this.application = application;
+        
     }
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         errorMessage.setText("");
-        userId.setPromptText("Enter your name");
+        username.setPromptText("Enter your name");
         password.setPromptText("Enter your password");
-        
     }
     
     
     public void onClickRegister(ActionEvent event) {
-        if (application == null){
+        if (Main.getInstance() == null){
             // We are running in isolated FXML, possibly in Scene Builder.
             // NO-OP.
-            errorMessage.setText("Hello " + userId.getText());
+            errorMessage.setText("Hello " + username.getText());
         } else {
-            if(userId.getText()!="" && password.getText()!="") {
+            if(username.getText()!="" && password.getText()!="") {
                 errorMessage.setText("Registered");
-                application.createUser(userId.getText(), password.getText());
+                Main.getInstance().createUser(username.getText(), password.getText());
             }
             
             
@@ -64,12 +90,12 @@ public class RegisterController extends AnchorPane implements Initializable {
     }    
     
     public void onClickBack(ActionEvent event) {
-        if (application == null){
+        if (Main.getInstance() == null){
             // We are running in isolated FXML, possibly in Scene Builder.
             // NO-OP.
-            errorMessage.setText("Hello " + userId.getText());
+            errorMessage.setText("Hello " + username.getText());
         } else {
-            application.gotoLogin();
+            Main.getInstance().gotoLogin();
             
             
         }
