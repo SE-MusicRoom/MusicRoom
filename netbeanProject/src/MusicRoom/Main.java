@@ -6,6 +6,7 @@
 package MusicRoom;
 
 import MusicRoom.entity.AcousticGuitar;
+import MusicRoom.entity.Violin;
 import MusicRoom.entity.Instrument;
 import MusicRoom.entity.RoomTemplate;
 import java.util.logging.Level;
@@ -18,7 +19,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import MusicRoom.entity.User;
 import java.util.ArrayList;
-
+import java.util.List;
 /**
  * Main Application. This class handles navigation and user session.
  */
@@ -41,6 +42,7 @@ public class Main extends Application {
     private final double MINIMUM_WINDOW_HEIGHT = 768;
     
     public Main() {
+
         this.addedInstruments = new ArrayList<Instrument>();
         //this.instruments = (ArrayList<Instrument>) DatabaseManager.getInstance().fetchAllInstrument("/database/");
         System.out.println(DatabaseManager.getInstance().fetchAllInstrument("src/MusicRoom/database/"));

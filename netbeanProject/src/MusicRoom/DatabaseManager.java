@@ -21,7 +21,7 @@ public class DatabaseManager {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(path + "Instruments.odb");
         EntityManager em = emf.createEntityManager();
 
-        TypedQuery<Instrument> query = em.createQuery("SELECT l FROM Instrument l", Instrument.class);
+        TypedQuery<Instrument> query = em.createQuery("SELECT l FROM MusicRoom.entity.Instrument l", Instrument.class);
         List<Instrument> results = query.getResultList();
         em.close();
         emf.close();
