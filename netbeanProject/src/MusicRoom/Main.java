@@ -42,7 +42,8 @@ public class Main extends Application {
     
     public Main() {
         this.addedInstruments = new ArrayList<Instrument>();
-        this.instruments = new ArrayList<Instrument>();
+        //this.instruments = (ArrayList<Instrument>) DatabaseManager.getInstance().fetchAllInstrument("/database/");
+        System.out.println(DatabaseManager.getInstance().fetchAllInstrument("src/MusicRoom/database/"));
         this.users = new ArrayList<User>();
         Main.instance = this;
     }
@@ -78,8 +79,7 @@ public class Main extends Application {
             DatabaseManager DbManager = DatabaseManager.getInstance();
             List<Instrument> instruments = DbManager.fetchAllInstrument(insert path of file.odb);
             */
-            instruments.add(new AcousticGuitar("Guitar","Gibson V Flyer",120,null));
-            instruments.add(new AcousticGuitar("Guitar","Something else",150,null));
+
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -165,6 +165,7 @@ public class Main extends Application {
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
     
     public void gotoMainMenu() {
@@ -173,6 +174,7 @@ public class Main extends Application {
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
     
     public void gotoRegister() {

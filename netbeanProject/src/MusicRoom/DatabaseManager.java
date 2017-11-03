@@ -18,7 +18,7 @@ public class DatabaseManager {
     }
 
     public List<Instrument> fetchAllInstrument (String path){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory(path + "instruments.odb");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory(path + "Instruments.odb");
         EntityManager em = emf.createEntityManager();
 
         TypedQuery<Instrument> query = em.createQuery("SELECT l FROM Instrument l", Instrument.class);
