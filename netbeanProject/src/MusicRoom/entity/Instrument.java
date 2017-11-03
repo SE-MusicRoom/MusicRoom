@@ -5,7 +5,9 @@
  */
 package MusicRoom.entity;
 
-import javax.persistence.*;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
 import java.io.Serializable;
 
 /**

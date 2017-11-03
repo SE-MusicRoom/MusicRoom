@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package MusicRoom.entity;
-import javax.persistence.*;
+import javax.persistence.Entity;
 /**
  *
  * @author kyttpwned
