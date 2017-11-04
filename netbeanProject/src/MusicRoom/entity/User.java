@@ -26,6 +26,7 @@ public class User {
         bookedTimes = new ArrayList<Calendar>();
     }
 
+
     public long getId() {
         return id;
     }

@@ -45,8 +45,9 @@ public class Main extends Application {
 
         this.addedInstruments = new ArrayList<Instrument>();
         //this.instruments = (ArrayList<Instrument>) DatabaseManager.getInstance().fetchAllInstrument("/database/");
-        System.out.println(DatabaseManager.getInstance().fetchAllInstrument("src/MusicRoom/database/"));
-        this.users = new ArrayList<User>();
+        //System.out.println(DatabaseManager.getInstance().fetchAllInstrument("src/MusicRoom/database/"));
+        this.users = (ArrayList<User>) DatabaseManager.getInstance().fetchAllUser("src/MusicRoom/database/");
+    
         Main.instance = this;
     }
 
@@ -129,29 +130,29 @@ public class Main extends Application {
     }
     
     public User createUser(String username,String password) {
-        String id = Integer.toString(users.size());
-        User newUser = new User(id,username,password);
+        User newUser = new User(username,password);
         users.add(newUser);
+        DatabaseManager.getInstance().addUser(newUser, "src/MusicRoom/database/");
         return newUser;
     }
         
     public boolean userLogging(String userId, String password){
-        gotoMainMenu();
-            return true;
-//        for(int i=0;i<users.size();i++) {
-//            //System.out.println(users.get(i).getUsername()+" "+userId);
-//            //System.out.println(users.get(i).getPassword()+" "+password);
-//            if(users.get(i).getUsername().equals(userId)) {
-//                System.out.println("1");
-//                if(users.get(i).getPassword().equals(password)) {
-//                    currentUser = users.get(i);
-//                    gotoProfile();
-//                    return true;
-//                } else
-//                    return false;
-//            }
-//        }
-//        return false;
+        //gotoMainMenu();
+        //  return true;
+        for(int i=0;i<users.size();i++) {
+            //System.out.println(users.get(i).getUsername()+" "+userId);
+            //System.out.println(users.get(i).getPassword()+" "+password);
+            if(users.get(i).getUsername().equals(userId)) {
+                System.out.println("1");
+                if(users.get(i).getPassword().equals(password)) {
+                    currentUser = users.get(i);
+                    gotoMainMenu();
+                    return true;
+                } else
+                    return false;
+            }
+        }
+        return false;
 
     }
     

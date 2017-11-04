@@ -48,7 +48,7 @@ public class DatabaseManager {
         closeEMF();
     }
 
-    public List<User> fetchAllUser(String path, int id){
+    public List<User> fetchAllUser(String path){
         createEMF(path + "user.odb");
 
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u ", User.class);
