@@ -20,6 +20,8 @@ import javafx.stage.Stage;
 import MusicRoom.entity.User;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
+
 /**
  * Main Application. This class handles navigation and user session.
  */
@@ -132,7 +134,7 @@ public class Main extends Application {
     public User createUser(String username,String password) {
         User newUser = new User(username,password);
         users.add(newUser);
-        DatabaseManager.getInstance().addUser(newUser, "src/MusicRoom/database/");
+        DatabaseManager.getInstance().addUser(newUser);
         return newUser;
     }
         
