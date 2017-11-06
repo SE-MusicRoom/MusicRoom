@@ -31,11 +31,14 @@
  */
 package MusicRoom;
 
+import MusicRoom.entity.Booking;
 import MusicRoom.entity.Instrument;
 import MusicRoom.entity.RoomTemplate;
+import MusicRoom.entity.TimeTable;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -86,9 +89,10 @@ public class CustomizeController extends AnchorPane implements Initializable {
     private CustomizeController parent;
     public static CustomizeController instance;
     
-
+    private ArrayList<Instrument> addedInstruments;
     
     public void setApp(MainMenuController mainmenu){
+        this.addedInstruments = new ArrayList<Instrument>();
         this.mainmenu = mainmenu;
     }
     
@@ -110,7 +114,21 @@ public class CustomizeController extends AnchorPane implements Initializable {
         this.total.setText("THB"+total+"/hr");
     }
     
+    public ArrayList<Instrument> getAddedInstruments() {
+        return addedInstruments;
+    }
     
+    public void addInstrument(Instrument instrument) {
+        addedInstruments.add(instrument);
+    }
+    
+    public void removeInstrument(Instrument instrument) {
+        addedInstruments.remove(instrument);
+    }
+    
+    public void removeInstrument(int i) {
+        addedInstruments.remove(i);
+    }
     
     public void onClickGo(ActionEvent event) {
         ArrayList<Instrument> listedInstruments = Main.getInstance().getInstruments();
@@ -127,9 +145,11 @@ public class CustomizeController extends AnchorPane implements Initializable {
     
     
     public void onAddInstrument(MouseEvent event) {
+        
         int selectedId = Integer.parseInt( ((AnchorPane)event.getSource()).getId() );
-        Instrument selectedInstrument = Main.getInstance().addSelectedInstruments(selectedId);
-        System.out.println("Added " +  selectedInstrument.getModel());
+        Instrument selectedInstrument = Main.getInstance().getInstrument(selectedId);
+        parent.addInstrument(selectedInstrument);
+        System.out.println("Added " +  selectedInstrument.getName() +  selectedInstrument.getModel());
         
         String name = selectedInstrument.getName()+ ' ' +selectedInstrument.getModel();
         String path = selectedInstrument.getClass().getSimpleName();
@@ -138,17 +158,18 @@ public class CustomizeController extends AnchorPane implements Initializable {
         AnchorPane newToken = copyAddedToken(name,path,price);
         newToken.setId(String.valueOf(parent.getAddedScroll().getChildren().size()));
         parent.getAddedScroll().getChildren().add(newToken);
-        
+
         // Total
-        parent.setTotal(String.valueOf(calculateTotal()));
+        parent.setTotal(String.valueOf(parent.calculateTotal()));
         
     }
     
-        public void onRemoveInstrument(MouseEvent event) {
+    public void onRemoveInstrument(MouseEvent event) {
         int selectedId = Integer.parseInt( ((AnchorPane)event.getSource()).getId() );
-        Instrument selectedInstrument = Main.getInstance().removeSelectedInstruments(selectedId);
-        System.out.println("Removed " +  selectedInstrument.getModel());
-        
+        Instrument selectedInstrument = parent.getAddedInstruments().get(selectedId);
+        System.out.println("Removed " +  selectedInstrument.getName() +  selectedInstrument.getModel());
+        parent.removeInstrument(selectedId);
+
         parent.getAddedScroll().getChildren().remove(selectedId);
         // Reassign ID
         for (int i = 0; i < parent.getAddedScroll().getChildren().size(); i++) {
@@ -157,7 +178,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         }
         
         // Total
-        parent.setTotal(String.valueOf(calculateTotal()));
+        parent.setTotal(String.valueOf(parent.calculateTotal()));
     }
     
     
@@ -167,17 +188,26 @@ public class CustomizeController extends AnchorPane implements Initializable {
     public void onClickConfirm(ActionEvent event) {
         System.out.println("SET!");
         RoomTemplate newRoom = new RoomTemplate("Custom","A new custom room", calculateTotal());
-        Main.getInstance().addCustomTemplete(newRoom);
+        for (int i = 0; i < addedInstruments.size(); i++) {
+            newRoom.addInstrument(addedInstruments.get(i));
+        }
+        Main.getInstance().setCurrentRoom(newRoom);
+        ArrayList<Calendar> test = new ArrayList<Calendar>();
+        test.add(Calendar.getInstance());
+        Main.getInstance().setCurrentTimeTable(new TimeTable(test));
+        Main.getInstance().addCustomTemplete(newRoom); 
+        
+        Booking ssss = Main.getInstance().createBooking();
+        System.out.println(ssss);
+        
     }
     
     private float calculateTotal() {
-        ArrayList<Instrument> addedInstruments = Main.getInstance().getAddedInstruments();
         float price = 0f;
         for (int i = 0; i < addedInstruments.size(); i++) {
             price += addedInstruments.get(i).getPrice();
             
         }
-        Main.getInstance().setTotalPrice(price);
         return price;
     }
     

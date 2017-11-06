@@ -5,10 +5,7 @@
  */
 package MusicRoom;
 
-import MusicRoom.entity.AcousticGuitar;
-import MusicRoom.entity.Violin;
-import MusicRoom.entity.Instrument;
-import MusicRoom.entity.RoomTemplate;
+import MusicRoom.entity.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -17,10 +14,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import MusicRoom.entity.User;
+
 import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.*;
 
 /**
  * Main Application. This class handles navigation and user session.
@@ -30,24 +25,25 @@ public class Main extends Application {
     private static Main instance;
     
     private Stage stage;
-    private User currentUser;
     private ArrayList<User> users;
     private ArrayList<Instrument> instruments;
     private ArrayList<RoomTemplate> roomTemplete;
     private ArrayList<RoomTemplate> customTemplete;
     
-    //Customize
-    private ArrayList<Instrument> addedInstruments;
-    private float totalPrice = 0f;
+    // Reservation
+    private User currentUser;
+    private Booking currentBooking;
+    private RoomTemplate currentRoom;
+    private TimeTable currentTimeTable;
+   
     
     private final double MINIMUM_WINDOW_WIDTH = 1366;
     private final double MINIMUM_WINDOW_HEIGHT = 768;
     
     public Main() {
 
-        this.addedInstruments = new ArrayList<Instrument>();
         this.instruments = (ArrayList<Instrument>) DatabaseManager.getInstance().fetchAllInstrument();
-        this.users = (ArrayList<User>) DatabaseManager.getInstance().fetchAllUser();
+        updateUserDB();
         this.customTemplete = new ArrayList<RoomTemplate>();
         Main.instance = this;
     }
@@ -96,64 +92,76 @@ public class Main extends Application {
     public User getLoggedUser() {
         return currentUser;
     }
-
-    public float getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(float totalPrice) {
-        this.totalPrice = totalPrice;
-    }
     
     public ArrayList<Instrument> getInstruments() {
         return instruments;
     }
-
-    public ArrayList<Instrument> getAddedInstruments() {
-        return addedInstruments;
+    
+    public Instrument getInstrument(int id) {
+        return instruments.get(id);
     }
+
 
     public void addCustomTemplete(RoomTemplate customTemplete) {
         this.customTemplete.add(customTemplete);
     }
-    
-    
-    
-    public Instrument addSelectedInstruments(int i) {
-        addedInstruments.add(instruments.get(i));
-        return instruments.get(i);
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
+    }
+
+    public void setCurrentBooking(Booking currentBooking) {
+        this.currentBooking = currentBooking;
+    }
+
+    public void setCurrentRoom(RoomTemplate currentRoom) {
+        this.currentRoom = currentRoom;
+    }
+
+    public void setCurrentTimeTable(TimeTable currentTimeTable) {
+        this.currentTimeTable = currentTimeTable;
     }
     
-     public Instrument removeSelectedInstruments(int i) {
-        Instrument tobeRemoved = addedInstruments.get(i);
-        addedInstruments.remove(i);
-        return tobeRemoved;
-    }
+    
+    
+
+     
+    public Booking createBooking() {
+        Booking newBooking = new Booking(currentRoom, currentTimeTable, currentUser);
+        return newBooking;
+    } 
     
     public User createUser(String username,String password) {
         User newUser = new User(username,password);
-        users.add(newUser);
         DatabaseManager.getInstance().addUser(newUser);
+        updateUserDB();
         return newUser;
+    }
+    
+    public void updateUserDB() {
+        this.users = (ArrayList<User>) DatabaseManager.getInstance().fetchAllUser();
     }
         
     public boolean userLogging(String userId, String password){
-        gotoMainMenu();
-          return true;
-//        for(int i=0;i<users.size();i++) {
-//            //System.out.println(users.get(i).getUsername()+" "+userId);
-//            //System.out.println(users.get(i).getPassword()+" "+password);
-//            if(users.get(i).getUsername().equals(userId)) {
-//                System.out.println("1");
-//                if(users.get(i).getPassword().equals(password)) {
-//                    currentUser = users.get(i);
-//                    gotoMainMenu();
-//                    return true;
-//                } else
-//                    return false;
-//            }
-//        }
-//        return false;
+//        gotoMainMenu();
+//          return true;
+        for(int i=0;i<users.size();i++) {
+            //System.out.println(users.get(i).getUsername()+" "+userId);
+            //System.out.println(users.get(i).getPassword()+" "+password);
+            if(users.get(i).getUsername().equals(userId)) {
+                System.out.println("1");
+                if(users.get(i).getPassword().equals(password)) {
+                    currentUser = users.get(i);
+                    if(i!=0) // normal user
+                        gotoMainMenu();
+                    else    // admin
+                        gotoAdmin();
+                    return true;
+                } else
+                    return false;
+            }
+        }
+        return false;
 
     }
     
@@ -175,6 +183,15 @@ public class Main extends Application {
     public void gotoMainMenu() {
         try {
             MainMenuController reg = (MainMenuController) replaceSceneContent("mainmenu.fxml");
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    public void gotoAdmin() {
+        try {
+            AdminMenuController reg = (AdminMenuController) replaceSceneContent("user-admin.fxml");
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }

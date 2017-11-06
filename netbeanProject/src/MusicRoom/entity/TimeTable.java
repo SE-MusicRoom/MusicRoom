@@ -18,9 +18,21 @@ public class TimeTable {
     public TimeTable() {
         this.reservedTimes = new ArrayList<Calendar>();
     }
+    
+    public TimeTable(ArrayList<Calendar> reservedTimes) {
+        this.reservedTimes = reservedTimes;
+    }
 
     public ArrayList<Calendar> getReservedTimes() {
         return reservedTimes;
+    }
+    
+    public String ToString() {
+        String string = "";
+        for (int i = 0; i < reservedTimes.size(); i++) {
+            string += reservedTimes.get(i).toString() + "||";
+        }
+        return string;
     }
     
     

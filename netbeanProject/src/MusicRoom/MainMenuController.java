@@ -100,20 +100,12 @@ public class MainMenuController extends AnchorPane implements Initializable {
         }
     }
     
-    public void gotoProfile() {
-
-    }
-    
-    public void gotoLogOut() {
-        Main.getInstance().gotoMainMenu();
-    }
-    
     public void onClickReservation(ActionEvent event) {
         gotoReservation();
     }
     
     public void onClickProfile(ActionEvent event) {
-        gotoProfile();
+       
     }
     
      public void onClickLogOut(ActionEvent event) {

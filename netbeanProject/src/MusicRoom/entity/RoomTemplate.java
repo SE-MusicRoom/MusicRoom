@@ -28,4 +28,26 @@ public class RoomTemplate {
     public void addInstrument(Instrument newInstrument) {
         instruments.add(newInstrument);
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public ArrayList<Instrument> getInstruments() {
+        return instruments;
+    }
+    
+    
 }
