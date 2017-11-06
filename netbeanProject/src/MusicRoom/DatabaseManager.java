@@ -1,12 +1,13 @@
 package MusicRoom;
 
 import MusicRoom.entity.AcousticGuitar;
+import MusicRoom.entity.Booking;
 import MusicRoom.entity.Instrument;
 import MusicRoom.entity.User;
 import MusicRoom.entity.Violin;
+import java.util.ArrayList;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseManager {
@@ -80,12 +81,32 @@ public class DatabaseManager {
 
         closeEMF();
     }
+    
+    public void addBooking(Booking booking){
+        createEMF("src/MusicRoom/database/booking.odb");
+
+        em.getTransaction().begin();
+        em.persist(booking);
+        em.getTransaction().commit();
+
+        closeEMF();
+    }
 
     public List<User> fetchAllUser(){
         createEMF("src/MusicRoom/database/user.odb");
 
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u ", User.class);
         List<User> results = query.getResultList();
+
+        closeEMF();
+        return results;
+    }
+    
+    public List<Booking> fetchAllBooking(){
+        createEMF("src/MusicRoom/database/booking.odb");
+
+        TypedQuery<Booking> query = em.createQuery("SELECT b FROM Booking b ", Booking.class);
+        List<Booking> results = query.getResultList();
 
         closeEMF();
         return results;

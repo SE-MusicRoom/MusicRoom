@@ -39,6 +39,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -89,7 +90,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
     private CustomizeController parent;
     public static CustomizeController instance;
     
-    private ArrayList<Instrument> addedInstruments;
+    private List<Instrument> addedInstruments;
     
     public void setApp(MainMenuController mainmenu){
         this.addedInstruments = new ArrayList<Instrument>();
@@ -114,7 +115,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         this.total.setText("THB"+total+"/hr");
     }
     
-    public ArrayList<Instrument> getAddedInstruments() {
+    public List<Instrument> getAddedInstruments() {
         return addedInstruments;
     }
     
@@ -131,13 +132,11 @@ public class CustomizeController extends AnchorPane implements Initializable {
     }
     
     public void onClickGo(ActionEvent event) {
-        ArrayList<Instrument> listedInstruments = Main.getInstance().getInstruments();
+        List<Instrument> listedInstruments = Main.getInstance().getInstruments();
         System.out.println("Start");
         for (int i = 0; i < listedInstruments.size(); i++) {
-            String name = listedInstruments.get(i).getName()+ ' '+listedInstruments.get(i).getModel();
-            String path = listedInstruments.get(i).getClass().getSimpleName();
-            String price = Float.toString(listedInstruments.get(i).getPrice());
-            AnchorPane newToken = copyListToken(name,path,price);
+            System.out.println(listedInstruments.get(i).getName());
+            AnchorPane newToken = copyListToken(listedInstruments.get(i).getModel(),listedInstruments.get(i).getName(),Float.toString(listedInstruments.get(i).getPrice()));
             newToken.setId(String.valueOf(i));
             listScroll.getChildren().add(newToken);
         }
@@ -151,11 +150,8 @@ public class CustomizeController extends AnchorPane implements Initializable {
         parent.addInstrument(selectedInstrument);
         System.out.println("Added " +  selectedInstrument.getName() +  selectedInstrument.getModel());
         
-        String name = selectedInstrument.getName()+ ' ' +selectedInstrument.getModel();
-        String path = selectedInstrument.getClass().getSimpleName();
-        String price = Float.toString(selectedInstrument.getPrice());
-           
-        AnchorPane newToken = copyAddedToken(name,path,price);
+        
+        AnchorPane newToken = copyAddedToken(selectedInstrument.getModel(),selectedInstrument.getName(),Float.toString(selectedInstrument.getPrice()));
         newToken.setId(String.valueOf(parent.getAddedScroll().getChildren().size()));
         parent.getAddedScroll().getChildren().add(newToken);
 
@@ -184,8 +180,11 @@ public class CustomizeController extends AnchorPane implements Initializable {
     
     public void onClickBack(ActionEvent event) {
         mainmenu.hideIncludePane();
+        List<Booking> nnn = (List<Booking>) DatabaseManager.getInstance().fetchAllBooking();
+        System.out.println(nnn.get(0));
     }
     public void onClickConfirm(ActionEvent event) {
+        
         System.out.println("SET!");
         RoomTemplate newRoom = new RoomTemplate("Custom","A new custom room", calculateTotal());
         for (int i = 0; i < addedInstruments.size(); i++) {
@@ -194,11 +193,12 @@ public class CustomizeController extends AnchorPane implements Initializable {
         Main.getInstance().setCurrentRoom(newRoom);
         ArrayList<Calendar> test = new ArrayList<Calendar>();
         test.add(Calendar.getInstance());
-        Main.getInstance().setCurrentTimeTable(new TimeTable(test));
+        Main.getInstance().setCurrentTimeTable(test);
         Main.getInstance().addCustomTemplete(newRoom); 
         
         Booking ssss = Main.getInstance().createBooking();
         System.out.println(ssss);
+        DatabaseManager.getInstance().addBooking(ssss);
         
     }
     

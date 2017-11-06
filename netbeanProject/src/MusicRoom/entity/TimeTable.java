@@ -7,30 +7,33 @@ package MusicRoom.entity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Locale;
 
 /**
  *
  * @author YAY
  */
 public class TimeTable {
-    private ArrayList<Calendar> reservedTimes;
+    private List<Calendar> reservedTimes;
 
     public TimeTable() {
         this.reservedTimes = new ArrayList<Calendar>();
     }
     
-    public TimeTable(ArrayList<Calendar> reservedTimes) {
+    public TimeTable(List<Calendar> reservedTimes) {
         this.reservedTimes = reservedTimes;
     }
 
-    public ArrayList<Calendar> getReservedTimes() {
+    public List<Calendar> getReservedTimes() {
         return reservedTimes;
     }
     
-    public String ToString() {
+    @Override
+    public String toString() {
         String string = "";
         for (int i = 0; i < reservedTimes.size(); i++) {
-            string += reservedTimes.get(i).toString() + "||";
+            string += reservedTimes.get(i).getTime().toString() + "||";
         }
         return string;
     }

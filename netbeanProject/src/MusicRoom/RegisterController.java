@@ -5,7 +5,6 @@
  */
 package MusicRoom;
 
-import MusicRoom.entity.User;
 import java.awt.Color;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -83,7 +82,7 @@ public class RegisterController extends AnchorPane implements Initializable {
         } else {
             if(username.getText()!="" && password.getText()!="") {
                 errorMessage.setText("Registered");
-                User createdUser = Main.getInstance().createUser(username.getText(), password.getText());
+                Main.getInstance().createUser(username.getText(), password.getText());
             }
             
             

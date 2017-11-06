@@ -6,18 +6,38 @@
 package MusicRoom.entity;
 
 import java.util.Calendar;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
  * @author YAY
  */
+@Entity
 public class Booking {
+    @Id@GeneratedValue
+    private long id;
+    
+    @OneToOne
     private RoomTemplate room;
-    private TimeTable timeTable;
+    
+    @OneToMany(mappedBy="timeTable")
+    private List<Calendar> timeTable;
+    
+    @OneToOne @MapsId
     private User user;
+    
+    @Temporal(TemporalType.TIMESTAMP)
     private Calendar createTime;
 
-    public Booking(RoomTemplate room, TimeTable timeTable,User user) {
+    public Booking(RoomTemplate room, List<Calendar> timeTable,User user) {
         this.room = room;
         this.timeTable = timeTable;
         this.user = user;
@@ -25,7 +45,8 @@ public class Booking {
     }
     
     
-    public String ToString() {
+    @Override
+    public String toString() {
         return "Name:" + this.room.getName() +
                "\nTHB" + this.room.getPrice() +
                "\nInstruments:" + this.room.getInstruments().size()  +

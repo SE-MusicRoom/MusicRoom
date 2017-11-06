@@ -6,6 +6,7 @@
 package MusicRoom;
 
 import MusicRoom.entity.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -15,7 +16,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 /**
  * Main Application. This class handles navigation and user session.
@@ -25,26 +27,27 @@ public class Main extends Application {
     private static Main instance;
     
     private Stage stage;
-    private ArrayList<User> users;
-    private ArrayList<Instrument> instruments;
-    private ArrayList<RoomTemplate> roomTemplete;
-    private ArrayList<RoomTemplate> customTemplete;
+    private List<User> users;
+    private List<Instrument> instruments;
+    private List<RoomTemplate> roomTemplete;
+    private List<RoomTemplate> customTemplete;
     
     // Reservation
     private User currentUser;
     private Booking currentBooking;
     private RoomTemplate currentRoom;
-    private TimeTable currentTimeTable;
+    private List<Calendar> currentTimeTable;
    
     
     private final double MINIMUM_WINDOW_WIDTH = 1366;
     private final double MINIMUM_WINDOW_HEIGHT = 768;
     
     public Main() {
-
-        this.instruments = (ArrayList<Instrument>) DatabaseManager.getInstance().fetchAllInstrument();
+        this.instruments =  DatabaseManager.getInstance().fetchAllInstrument();
         updateUserDB();
         this.customTemplete = new ArrayList<RoomTemplate>();
+
+        this.users = DatabaseManager.getInstance().fetchAllUser();
         Main.instance = this;
     }
 
@@ -93,7 +96,7 @@ public class Main extends Application {
         return currentUser;
     }
     
-    public ArrayList<Instrument> getInstruments() {
+    public List<Instrument> getInstruments() {
         return instruments;
     }
     
@@ -118,7 +121,7 @@ public class Main extends Application {
         this.currentRoom = currentRoom;
     }
 
-    public void setCurrentTimeTable(TimeTable currentTimeTable) {
+    public void setCurrentTimeTable(List<Calendar> currentTimeTable) {
         this.currentTimeTable = currentTimeTable;
     }
     
@@ -139,12 +142,16 @@ public class Main extends Application {
     }
     
     public void updateUserDB() {
-        this.users = (ArrayList<User>) DatabaseManager.getInstance().fetchAllUser();
+        this.users = (List<User>) DatabaseManager.getInstance().fetchAllUser();
     }
         
     public boolean userLogging(String userId, String password){
 //        gotoMainMenu();
 //          return true;
+
+        //gotoMainMenu();
+        //  return true;
+
         for(int i=0;i<users.size();i++) {
             //System.out.println(users.get(i).getUsername()+" "+userId);
             //System.out.println(users.get(i).getPassword()+" "+password);
@@ -152,6 +159,7 @@ public class Main extends Application {
                 System.out.println("1");
                 if(users.get(i).getPassword().equals(password)) {
                     currentUser = users.get(i);
+
                     if(i!=0) // normal user
                         gotoMainMenu();
                     else    // admin

@@ -6,17 +6,27 @@
 package MusicRoom.entity;
 
 import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author YAY
  */
+@Entity
 public class RoomTemplate {
+    @Id@GeneratedValue
     private int id;
+    
     private String name;
     private String detail;
     private float price;
-    private ArrayList<Instrument> instruments;
+    
+    @OneToMany(mappedBy="instruments")
+    private List<Instrument> instruments;
 
     public RoomTemplate(String name, String detail, float price) {
         this.name = name;
@@ -45,7 +55,7 @@ public class RoomTemplate {
         return price;
     }
 
-    public ArrayList<Instrument> getInstruments() {
+    public List<Instrument> getInstruments() {
         return instruments;
     }
     

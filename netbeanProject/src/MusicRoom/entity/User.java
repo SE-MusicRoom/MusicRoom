@@ -7,6 +7,7 @@ package MusicRoom.entity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
@@ -16,7 +17,7 @@ public class User {
 
     private String username = "";
     private String password = "";
-    private ArrayList<Calendar> bookedTimes;
+    private List<Calendar> bookedTimes;
     @Id@GeneratedValue
     private long id;
 
@@ -47,7 +48,7 @@ public class User {
         this.password = password;
     }
 
-    public ArrayList<Calendar> getBookedTimes() {
+    public List<Calendar> getBookedTimes() {
         return bookedTimes;
     }
 

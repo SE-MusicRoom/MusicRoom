@@ -1,0 +1,259 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-07 01:12:59 #1 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is opened by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:12:59 #2 store] 
+Configuration path: ?
+
+[2017-11-07 01:13:11 #3 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is closed by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:13:12 #4 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is opened by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:13:12 #5 store] 
+Configuration path: ?
+
+[2017-11-07 01:29:19 #6 type.registry] 
+New type java.lang.Object[]
+
+[2017-11-07 01:30:31 #7 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is closed by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:31:00 #8 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is opened by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:31:00 #9 store] 
+Configuration path: ?
+
+[2017-11-07 01:43:00 #10 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is closed by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:43:48 #11 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is opened by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:43:48 #12 store] 
+Configuration path: ?
+
+[2017-11-07 01:46:15 #13 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is closed by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:50:21 #14 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is opened by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:50:21 #15 store] 
+Configuration path: ?
+
+[2017-11-07 01:50:32 #16 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is closed by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:50:59 #17 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\user.odb' is opened by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:50:59 #18 store] 
+Configuration path: ?
+
+[2017-11-07 01:51:05 #19 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\user.odb' is closed by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:51:08 #20 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\Instruments.odb' is opened by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:51:08 #21 store] 
+Configuration path: ?
+
+[2017-11-07 01:51:11 #22 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\Instruments.odb' is closed by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:51:11 #23 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is opened by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 01:51:11 #24 store] 
+Configuration path: ?
+
+[2017-11-07 01:51:31 #25 explorer] 
+[ObjectDB 2.7.2] java.lang.IllegalArgumentException
+Attempt to lock a non entity object [RoomTemplate] (error 635)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.AbstractButton.doClick(Unknown Source)
+	at javax.swing.plaf.basic.BasicMenuItemUI.doClick(Unknown Source)
+	at javax.swing.plaf.basic.BasicMenuItemUI$Handler.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+[2017-11-07 01:51:35 #26 explorer] 
+java.lang.NullPointerException
+	at com.objectdb.o.ARI.G(ARI.java:123)
+	at com.objectdb.o.CNI.K(CNI.java:161)
+	at com.objectdb.o.MultiValueItem.K(MultiValueItem.java:14)
+	at com.objectdb.o.ITP.D(ITP.java:456)
+	at com.objectdb.o.ITP.VR(ITP.java:340)
+	at com.objectdb.o.RTR.VR(RTR.java:69)
+	at com.objectdb.o.CMD.actionPerformed(CMD.java:470)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.AbstractButton.doClick(Unknown Source)
+	at javax.swing.plaf.basic.BasicMenuItemUI.doClick(Unknown Source)
+	at javax.swing.plaf.basic.BasicMenuItemUI$Handler.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+[2017-11-07 01:59:09 #27 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is closed by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 02:06:30 #28 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is opened by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 02:06:30 #29 store] 
+Configuration path: ?
+
+[2017-11-07 02:06:36 #30 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is closed by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 02:06:51 #31 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is opened by 13316@DESKTOP-EIUSTU3
+
+[2017-11-07 02:06:51 #32 store] 
+Configuration path: ?
+
+[2017-11-07 02:06:52 #33 *] 
+java.lang.ClassCastException: com.objectdb.o.NLT cannot be cast to com.objectdb.o.UTY
+	at com.objectdb.o.InvMemberQuery.<init>(InvMemberQuery.java:63)
+	at com.objectdb.o.UMR.v(UMR.java:510)
+	at com.objectdb.o.ENT.loadInverse(ENT.java:1529)
+	at com.objectdb.o.IVP.m(IVP.java:149)
+	at com.objectdb.o.IVP.l(IVP.java:137)
+	at com.objectdb.o.ILP.size(ILP.java:232)
+	at com.objectdb.o.CLI.getChildCount(CLI.java:122)
+	at com.objectdb.o.MultiValueItem.toString(MultiValueItem.java:56)
+	at com.objectdb.o.DIT.toString(DIT.java:550)
+	at com.objectdb.o.ITC.prepareRenderer(ITC.java:228)
+	at javax.swing.plaf.basic.BasicTableUI.paintCell(Unknown Source)
+	at javax.swing.plaf.basic.BasicTableUI.paintCells(Unknown Source)
+	at javax.swing.plaf.basic.BasicTableUI.paint(Unknown Source)
+	at javax.swing.plaf.ComponentUI.update(Unknown Source)
+	at javax.swing.JComponent.paintComponent(Unknown Source)
+	at javax.swing.JComponent.paint(Unknown Source)
+	at javax.swing.JComponent.paintChildren(Unknown Source)
+	at javax.swing.JComponent.paint(Unknown Source)
+	at javax.swing.JViewport.paint(Unknown Source)
+	at javax.swing.JComponent.paintChildren(Unknown Source)
+	at javax.swing.JComponent.paint(Unknown Source)
+	at javax.swing.JComponent.paintChildren(Unknown Source)
+	at javax.swing.JComponent.paint(Unknown Source)
+	at javax.swing.JComponent.paintChildren(Unknown Source)
+	at javax.swing.JComponent.paint(Unknown Source)
+	at javax.swing.JViewport.paint(Unknown Source)
+	at javax.swing.JComponent.paintChildren(Unknown Source)
+	at javax.swing.JComponent.paint(Unknown Source)
+	at javax.swing.JComponent.paintChildren(Unknown Source)
+	at javax.swing.JComponent.paint(Unknown Source)
+	at javax.swing.JComponent.paintChildren(Unknown Source)
+	at javax.swing.JComponent.paint(Unknown Source)
+	at javax.swing.JComponent.paintChildren(Unknown Source)
+	at javax.swing.JComponent.paint(Unknown Source)
+	at javax.swing.JLayeredPane.paint(Unknown Source)
+	at javax.swing.JComponent.paintChildren(Unknown Source)
+	at javax.swing.JComponent.paint(Unknown Source)
+	at javax.swing.JComponent.paintChildren(Unknown Source)
+	at javax.swing.JComponent.paint(Unknown Source)
+	at javax.swing.JComponent.paintChildren(Unknown Source)
+	at javax.swing.JComponent.paint(Unknown Source)
+	at javax.swing.JLayeredPane.paint(Unknown Source)
+	at javax.swing.JComponent.paintToOffscreen(Unknown Source)
+	at javax.swing.RepaintManager$PaintManager.paintDoubleBuffered(Unknown Source)
+	at javax.swing.RepaintManager$PaintManager.paint(Unknown Source)
+	at javax.swing.RepaintManager.paint(Unknown Source)
+	at javax.swing.JComponent._paintImmediately(Unknown Source)
+	at javax.swing.JComponent.paintImmediately(Unknown Source)
+	at javax.swing.RepaintManager$4.run(Unknown Source)
+	at javax.swing.RepaintManager$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at javax.swing.RepaintManager.paintDirtyRegions(Unknown Source)
+	at javax.swing.RepaintManager.paintDirtyRegions(Unknown Source)
+	at javax.swing.RepaintManager.prePaintDirtyRegions(Unknown Source)
+	at javax.swing.RepaintManager.access$1200(Unknown Source)
+	at javax.swing.RepaintManager$ProcessingRunnable.run(Unknown Source)
+	at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+[2017-11-07 02:08:19 #34 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\booking.odb' is closed by 13316@DESKTOP-EIUSTU3
+
