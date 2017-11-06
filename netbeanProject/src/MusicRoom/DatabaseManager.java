@@ -39,7 +39,7 @@ public class DatabaseManager {
         EntityManager em = emf.createEntityManager();
 
         em.getTransaction().begin();
-        ArrayList<Instrument> l = new ArrayList<Instrument>();
+        List<Instrument> l = new ArrayList<>();
         // Violin
         l.add(new Violin("Andrea Schudtz","2800",50000,(violinPath + "Andrea Schudtz.jpg")));
         l.add(new Violin("Dario II Vettori","2006",600000,(violinPath + "Dario II Vettori.jpg")));

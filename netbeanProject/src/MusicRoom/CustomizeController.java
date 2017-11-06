@@ -116,10 +116,8 @@ public class CustomizeController extends AnchorPane implements Initializable {
         ArrayList<Instrument> listedInstruments = Main.getInstance().getInstruments();
         System.out.println("Start");
         for (int i = 0; i < listedInstruments.size(); i++) {
-            String name = listedInstruments.get(i).getName()+ ' '+listedInstruments.get(i).getModel();
-            String path = listedInstruments.get(i).getClass().getSimpleName();
-            String price = Float.toString(listedInstruments.get(i).getPrice());
-            AnchorPane newToken = copyListToken(name,path,price);
+            System.out.println(listedInstruments.get(i).getName());
+            AnchorPane newToken = copyListToken(listedInstruments.get(i).getModel(),listedInstruments.get(i).getName(),Float.toString(listedInstruments.get(i).getPrice()));
             newToken.setId(String.valueOf(i));
             listScroll.getChildren().add(newToken);
         }
@@ -131,11 +129,8 @@ public class CustomizeController extends AnchorPane implements Initializable {
         Instrument selectedInstrument = Main.getInstance().addSelectedInstruments(selectedId);
         System.out.println("Added " +  selectedInstrument.getModel());
         
-        String name = selectedInstrument.getName()+ ' ' +selectedInstrument.getModel();
-        String path = selectedInstrument.getClass().getSimpleName();
-        String price = Float.toString(selectedInstrument.getPrice());
-           
-        AnchorPane newToken = copyAddedToken(name,path,price);
+        
+        AnchorPane newToken = copyAddedToken(selectedInstrument.getModel(),selectedInstrument.getName(),Float.toString(selectedInstrument.getPrice()));
         newToken.setId(String.valueOf(parent.getAddedScroll().getChildren().size()));
         parent.getAddedScroll().getChildren().add(newToken);
         

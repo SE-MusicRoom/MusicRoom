@@ -46,9 +46,10 @@ public class Main extends Application {
     public Main() {
 
         this.addedInstruments = new ArrayList<Instrument>();
-        this.instruments = (ArrayList<Instrument>) DatabaseManager.getInstance().fetchAllInstrument();
-        this.users = (ArrayList<User>) DatabaseManager.getInstance().fetchAllUser();
-        this.customTemplete = new ArrayList<RoomTemplate>();
+        //this.instruments = (ArrayList<Instrument>) DatabaseManager.getInstance().fetchAllInstrument("/database/");
+        //System.out.println(DatabaseManager.getInstance().fetchAllInstrument("src/MusicRoom/database/"));
+        this.users = (ArrayList<User>) DatabaseManager.getInstance().fetchAllUser("src/MusicRoom/database/");
+    
         Main.instance = this;
     }
 
@@ -138,22 +139,22 @@ public class Main extends Application {
     }
         
     public boolean userLogging(String userId, String password){
-        gotoMainMenu();
-          return true;
-//        for(int i=0;i<users.size();i++) {
-//            //System.out.println(users.get(i).getUsername()+" "+userId);
-//            //System.out.println(users.get(i).getPassword()+" "+password);
-//            if(users.get(i).getUsername().equals(userId)) {
-//                System.out.println("1");
-//                if(users.get(i).getPassword().equals(password)) {
-//                    currentUser = users.get(i);
-//                    gotoMainMenu();
-//                    return true;
-//                } else
-//                    return false;
-//            }
-//        }
-//        return false;
+        //gotoMainMenu();
+        //  return true;
+        for(int i=0;i<users.size();i++) {
+            //System.out.println(users.get(i).getUsername()+" "+userId);
+            //System.out.println(users.get(i).getPassword()+" "+password);
+            if(users.get(i).getUsername().equals(userId)) {
+                System.out.println("1");
+                if(users.get(i).getPassword().equals(password)) {
+                    currentUser = users.get(i);
+                    gotoMainMenu();
+                    return true;
+                } else
+                    return false;
+            }
+        }
+        return false;
 
     }
     
