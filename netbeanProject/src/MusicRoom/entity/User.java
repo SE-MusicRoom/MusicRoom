@@ -14,12 +14,13 @@ import javax.persistence.GeneratedValue;
 
 @Entity
 public class User {
+    @Id@GeneratedValue
+    private long id;
 
     private String username = "";
     private String password = "";
     private List<Calendar> bookedTimes;
-    @Id@GeneratedValue
-    private long id;
+    
 
     public User(String username, String password) {
         this.username = username;

@@ -191,7 +191,8 @@ public class CustomizeController extends AnchorPane implements Initializable {
             newRoom.addInstrument(addedInstruments.get(i));
         }
         Main.getInstance().setCurrentRoom(newRoom);
-        ArrayList<Calendar> test = new ArrayList<Calendar>();
+        List<Calendar> test = new ArrayList<Calendar>();
+        test.add(Calendar.getInstance());
         test.add(Calendar.getInstance());
         Main.getInstance().setCurrentTimeTable(test);
         Main.getInstance().addCustomTemplete(newRoom); 

@@ -14,7 +14,7 @@ import java.io.Serializable;
  *
  * @author Kittinan
  */
-@MappedSuperclass
+@MappedSuperclass 
 abstract public class Instrument implements Serializable{
     @Id@GeneratedValue
     private long id;
@@ -23,6 +23,8 @@ abstract public class Instrument implements Serializable{
     private String model;
     private float price;
     private String img;
+    
+    private RoomTemplate roomid;
 
     public Instrument(String name, String model, float price, String img) {
         this.name = name;

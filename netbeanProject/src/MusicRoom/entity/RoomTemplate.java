@@ -7,10 +7,14 @@ package MusicRoom.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 /**
  *
@@ -25,7 +29,12 @@ public class RoomTemplate {
     private String detail;
     private float price;
     
-    @OneToMany(mappedBy="instruments")
+    @ElementCollection
+    @ManyToMany(fetch=FetchType.EAGER)
+    @JoinTable(
+      name="ROOM_INSTRUMENT",
+      joinColumns=@JoinColumn(name="ROOM_ID", referencedColumnName="id"),
+      inverseJoinColumns=@JoinColumn(name="INSTRUMENT_ID", referencedColumnName="id"))
     private List<Instrument> instruments;
 
     public RoomTemplate(String name, String detail, float price) {
@@ -59,5 +68,12 @@ public class RoomTemplate {
         return instruments;
     }
     
+    @Override
+    public String toString() {
+        return "Name:" + this.name +
+               "\nTHB" + this.price +
+               "\nInstruments:" + this.instruments /*+
+               "\nTimeTable: " + this.timeTable.toString() */;
+    }
     
 }

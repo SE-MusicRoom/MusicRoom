@@ -7,12 +7,17 @@ package MusicRoom.entity;
 
 import java.util.Calendar;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -25,13 +30,13 @@ public class Booking {
     @Id@GeneratedValue
     private long id;
     
-    @OneToOne
+    @ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
     private RoomTemplate room;
     
-    @OneToMany(mappedBy="timeTable")
+    @ElementCollection(fetch=FetchType.EAGER)
     private List<Calendar> timeTable;
     
-    @OneToOne @MapsId
+    @ManyToOne(cascade=CascadeType.ALL)
     private User user;
     
     @Temporal(TemporalType.TIMESTAMP)
@@ -43,15 +48,14 @@ public class Booking {
         this.user = user;
         this.createTime = Calendar.getInstance();
     }
+
     
     
     @Override
     public String toString() {
-        return "Name:" + this.room.getName() +
-               "\nTHB" + this.room.getPrice() +
-               "\nInstruments:" + this.room.getInstruments().size()  +
-               "\nUser: " + this.user.getUsername() +
-               "\nTimeTable: " + this.timeTable.toString() ;
+        return "\nUser: " + this.user.getUsername() + "\n" +
+               this.room.toString() +
+               "\nTimeTable: " + this.timeTable;
     }
     
     
