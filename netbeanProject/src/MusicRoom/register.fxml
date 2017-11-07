@@ -41,13 +41,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.RegisterController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.RegisterController">
   <children>
       <VBox layoutX="50.0" layoutY="35.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.leftAnchor="60.0">
          <children>
@@ -64,28 +65,28 @@
             </Text>
       <GridPane id="GridPane" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="592.0" vgap="10.0">
         <children>
-                  <Label id="Label" layoutX="10.0" layoutY="225.0" text="Username">
+                  <Label id="Label" layoutX="10.0" layoutY="225.0" style="-fx-font-size: 20;" text="Username">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
                   <Text fill="#8a8686" layoutX="201.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your username 15 or less charecters." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField fx:id="username" layoutX="124.0" layoutY="228.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" />
-                  <Label id="Label" layoutX="10.0" layoutY="300.0" text="Password" GridPane.rowIndex="3">
+                  <Label id="Label" layoutX="10.0" layoutY="300.0" style="-fx-font-size: 20;" text="Password" GridPane.rowIndex="3">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
                   <PasswordField fx:id="password" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Text fill="#8a8686" layoutX="124.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your password." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Label id="Label" layoutX="10.0" layoutY="300.0" prefHeight="30.0" prefWidth="186.0" text="Confirm Password" GridPane.rowIndex="6">
+                  <Label id="Label" layoutX="10.0" layoutY="300.0" prefHeight="30.0" prefWidth="186.0" style="-fx-font-size: 20;" text="Confirm Password" GridPane.rowIndex="6">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
                   <PasswordField fx:id="confirmPassword" layoutX="124.0" layoutY="303.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                   <Text fill="#8a8686" layoutX="124.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Confirm Again" wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-          <Label id="Label" prefHeight="30.0" prefWidth="175.0" text="Name" GridPane.rowIndex="9">
+          <Label id="Label" prefHeight="30.0" prefWidth="175.0" style="-fx-font-size: 20;" text="Name" GridPane.rowIndex="9">
             <GridPane.margin>
               <Insets top="2.0" fx:id="x3" />
             </GridPane.margin>
@@ -98,7 +99,7 @@
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin></Text>
-          <Label id="Label" text="Surname" GridPane.rowIndex="12">
+          <Label id="Label" style="-fx-font-size: 20;" text="Surname" GridPane.rowIndex="12">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
@@ -115,7 +116,7 @@
                         <Insets />
                      </GridPane.margin>
                   </Text>
-                  <Label id="Label" layoutX="10.0" layoutY="100.0" text="Band Name" GridPane.rowIndex="15">
+                  <Label id="Label" layoutX="10.0" layoutY="100.0" style="-fx-font-size: 20;" text="Band Name" GridPane.rowIndex="15">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
@@ -140,7 +141,7 @@
                         <Insets top="15.0" />
                      </padding>
                   </VBox>
-                  <Label id="Label" layoutX="10.0" layoutY="51.0" text="E-Mail" GridPane.rowIndex="18">
+                  <Label id="Label" layoutX="10.0" layoutY="51.0" style="-fx-font-size: 20;" text="E-Mail" GridPane.rowIndex="18">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
@@ -158,7 +159,7 @@
                         <Insets />
                      </GridPane.margin>
                   </Text>
-                  <Label id="Label" layoutX="10.0" layoutY="300.0" text="E-Mail Subscribe" GridPane.rowIndex="21">
+                  <Label id="Label" layoutX="10.0" layoutY="300.0" style="-fx-font-size: 20;" text="E-Mail Subscribe" GridPane.rowIndex="21">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
@@ -206,23 +207,27 @@
       </GridPane>
          </children>
       </VBox>
-  <Button fx:id="back" defaultButton="true" layoutX="237.0" layoutY="595.0" maxHeight="2.147483647E9" onAction="#onClickBack" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: ff6000;" text="BACK" AnchorPane.leftAnchor="237.0">
-         <font>
-            <Font name="Cloud-Bold" size="25.0" fx:id="x5" />
-         </font>
-         <padding>
-            <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
-         </padding>
-      </Button>
-  <Button fx:id="comfirm" defaultButton="true" layoutX="50.0" layoutY="594.0" maxHeight="2.147483647E9" onAction="#onClickRegister" prefHeight="47.0" prefWidth="175.0" style="-fx-background-color: #000000;" text="CONFIRM" textFill="#ff6000" AnchorPane.leftAnchor="60.0">
-         <font>
-            <Font name="Cloud-Bold" size="34.0" fx:id="x4" />
-         </font>
-         <padding>
-            <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
-         </padding>
-      </Button>
-      <Text fx:id="errorMessage" fill="WHITE" layoutX="92.0" layoutY="726.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Hello" wrappingWidth="622.0">
+      <HBox layoutX="59.900001525878906" layoutY="594.9000244140625">
+         <children>
+        <Button fx:id="back" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickBack" prefHeight="47.0" prefWidth="129.0" style="-fx-background-color: #000000; -fx-font-size: 28; -fx-padding: 2; -fx-text-fill: ff6000;" text="BACK">
+               <font>
+                  <Font name="Cloud-Bold" size="25.0" fx:id="x5" />
+               </font>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </Button>
+        <Button fx:id="comfirm" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickRegister" prefHeight="47.0" prefWidth="175.0" style="-fx-background-color: ff6000; -fx-font-size: 28; -fx-padding: 2; -fx-text-fill: ffffff;" text="CONFIRM" textFill="#ff6000">
+               <font>
+                  <Font name="Cloud-Bold" size="34.0" fx:id="x4" />
+               </font>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </Button>
+         </children>
+      </HBox>
+      <Text fx:id="errorMessage" fill="WHITE" layoutX="92.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Hello" wrappingWidth="622.0">
          <font>
             <Font size="19.0" />
          </font>
