@@ -73,7 +73,7 @@
                   <Font name="Arial Bold" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="67.0" prefWidth="191.0" text="Confirm" textFill="WHITE">
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickCustomize" prefHeight="67.0" prefWidth="191.0" text="Confirm" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
