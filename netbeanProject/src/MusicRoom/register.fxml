@@ -64,92 +64,12 @@
             </Text>
       <GridPane id="GridPane" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="592.0" vgap="10.0">
         <children>
-                  <Text fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your name use ONLY aphabet." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="10">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin></Text>
-          <Label id="Label" prefHeight="30.0" prefWidth="175.0" text="Name" GridPane.rowIndex="9">
-            <GridPane.margin>
-              <Insets top="2.0" fx:id="x3" />
-            </GridPane.margin>
-                     <font>
-                        <Font name="Cloud-Bold" size="20.0" />
-                     </font>
-          </Label>
-          <Label id="Label" text="Surname" GridPane.rowIndex="12">
-                     <font>
-                        <Font name="Cloud-Bold" size="20.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </Label>
-          <TextField fx:id="surname" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="12">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin></TextField>
-          <TextField fx:id="phone" minWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="18" />
-          <CheckBox id="" fx:id="subscribed" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="28.0" GridPane.columnIndex="1" GridPane.rowIndex="21">
-            <font>
-              <Font size="16.0" fx:id="x2" />
-            </font>
-            <GridPane.margin>
-              <Insets left="1.0" />
-            </GridPane.margin>
-          </CheckBox>
-                  <Text fill="#8a8686" layoutX="124.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your surname use ONLY aphabet." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="13">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </Text>
-                  <Label id="Label" layoutX="10.0" layoutY="51.0" text="E-Mail" GridPane.rowIndex="18">
-                     <font>
-                        <Font name="Cloud-Bold" size="20.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </Label>
-                  <Text fill="#8a8686" layoutX="124.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your e-mail use to send comfirmation code." wrappingWidth="299.19921875" GridPane.columnIndex="1" GridPane.rowIndex="19">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </Text>
-                  <TextField fx:id="email" layoutX="124.0" layoutY="53.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="18">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </TextField>
-                  <Label id="Label" layoutX="10.0" layoutY="100.0" text="Band Name" GridPane.rowIndex="15">
-                     <font>
-                        <Font name="Cloud-Bold" size="20.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </Label>
-                  <TextField fx:id="bandName" layoutX="124.0" layoutY="103.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="15">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </TextField>
                   <Label id="Label" layoutX="10.0" layoutY="225.0" text="Username">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
-                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="16">
-                     <children>
-                        <Text fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="If you are new band. Type your band name." wrappingWidth="299.19921875" />
-                        <Text fill="#8a8686" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="If you have existing band. Type band id (B#xxxx)" wrappingWidth="299.19921875" />
-                     </children>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                     <padding>
-                        <Insets top="15.0" />
-                     </padding>
-                  </VBox>
+                  <Text fill="#8a8686" layoutX="201.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your username 15 or less charecters." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField fx:id="username" layoutX="124.0" layoutY="228.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" />
                   <Label id="Label" layoutX="10.0" layoutY="300.0" text="Password" GridPane.rowIndex="3">
                      <font>
@@ -165,13 +85,92 @@
                   </Label>
                   <PasswordField fx:id="confirmPassword" layoutX="124.0" layoutY="303.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                   <Text fill="#8a8686" layoutX="124.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Confirm Again" wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <Text fill="#8a8686" layoutX="201.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your username 15 or less charecters." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+          <Label id="Label" prefHeight="30.0" prefWidth="175.0" text="Name" GridPane.rowIndex="9">
+            <GridPane.margin>
+              <Insets top="2.0" fx:id="x3" />
+            </GridPane.margin>
+                     <font>
+                        <Font name="Cloud-Bold" size="20.0" />
+                     </font>
+          </Label>
+                  <TextField fx:id="name" layoutX="201.0" layoutY="63.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Text fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your name use ONLY aphabet." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></Text>
+          <Label id="Label" text="Surname" GridPane.rowIndex="12">
+                     <font>
+                        <Font name="Cloud-Bold" size="20.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+          <TextField fx:id="surname" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></TextField>
+                  <Text fill="#8a8686" layoutX="124.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your surname use ONLY aphabet." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Text>
+                  <Label id="Label" layoutX="10.0" layoutY="100.0" text="Band Name" GridPane.rowIndex="15">
+                     <font>
+                        <Font name="Cloud-Bold" size="20.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="bandName" layoutX="124.0" layoutY="103.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="15">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="16">
+                     <children>
+                        <Text fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="If you are new band. Type your band name." wrappingWidth="299.19921875" />
+                        <Text fill="#8a8686" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="If you have existing band. Type band id (B#xxxx)" wrappingWidth="299.19921875" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets top="15.0" />
+                     </padding>
+                  </VBox>
+                  <Label id="Label" layoutX="10.0" layoutY="51.0" text="E-Mail" GridPane.rowIndex="18">
+                     <font>
+                        <Font name="Cloud-Bold" size="20.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="email" layoutX="124.0" layoutY="53.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="18">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Text fill="#8a8686" layoutX="124.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your e-mail use to send comfirmation code." wrappingWidth="299.19921875" GridPane.columnIndex="1" GridPane.rowIndex="19">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Text>
                   <Label id="Label" layoutX="10.0" layoutY="300.0" text="E-Mail Subscribe" GridPane.rowIndex="21">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="name" layoutX="201.0" layoutY="63.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <CheckBox id="" fx:id="subscribed" contentDisplay="GRAPHIC_ONLY" prefHeight="25.0" prefWidth="28.0" GridPane.columnIndex="1" GridPane.rowIndex="21">
+            <font>
+              <Font size="16.0" fx:id="x2" />
+            </font>
+            <GridPane.margin>
+              <Insets left="1.0" />
+            </GridPane.margin>
+            </CheckBox>
         </children>
         <columnConstraints>
           <ColumnConstraints hgrow="NEVER" maxWidth="191.33334350585938" minWidth="60.0" prefWidth="191.33334350585938" />
