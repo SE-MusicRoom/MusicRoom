@@ -1,3 +1,11 @@
+@font-face {
+    src: url("Cloud-Bold.otf");
+}
+
+.text {
+    -fx-font-family: 'Cloud';
+}
+
 .background {
     -fx-background-image: url("img/background.jpg");
     -fx-background-size: cover;

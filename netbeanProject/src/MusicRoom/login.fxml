@@ -138,5 +138,10 @@ Contributor(s):
             </HBox>
          </children>
       </VBox>
+      <Text id="test" fill="WHITE" layoutX="328.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MUSIC" wrappingWidth="95.13671875">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
