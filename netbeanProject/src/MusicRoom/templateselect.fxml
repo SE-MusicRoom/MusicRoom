@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1201.0" prefWidth="1701.0" stylesheets="@netbeanProject/src/MusicRoom/base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1201.0" prefWidth="1701.0" stylesheets="@netbeanProject/src/MusicRoom/base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TemplateController">
    <children>
       <AnchorPane prefHeight="154.0" prefWidth="1004.0">
          <children>
@@ -28,7 +28,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="946.0" layoutY="153.0" stroke="BLACK" strokeType="INSIDE" width="1701.0" />
       <HBox layoutY="1099.0" prefHeight="102.0" prefWidth="734.0">
          <children>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" prefHeight="102.0" prefWidth="461.0" text="or Customize!" textFill="WHITE">
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickCustomize" prefHeight="102.0" prefWidth="461.0" text="or Customize!" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>

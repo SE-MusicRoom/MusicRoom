@@ -49,6 +49,22 @@ public class Booking {
         this.createTime = Calendar.getInstance();
     }
 
+    public RoomTemplate getRoom() {
+        return room;
+    }
+
+    public List<Calendar> getTimeTable() {
+        return timeTable;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Calendar getCreateTime() {
+        return createTime;
+    }
+
     
     
     @Override
