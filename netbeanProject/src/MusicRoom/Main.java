@@ -134,8 +134,9 @@ public class Main extends Application {
         return newBooking;
     } 
     
-    public User createUser(String username,String password) {
-        User newUser = new User(username,password);
+    public User createUser(String username ,String password ,String name ,String surname ,
+                           String email ,String bandName) {
+        User newUser = new User(username ,password ,name, surname ,email ,bandName);
         DatabaseManager.getInstance().addUser(newUser);
         updateUserDB();
         return newUser;

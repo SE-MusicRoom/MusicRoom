@@ -82,7 +82,8 @@ public class RegisterController extends AnchorPane implements Initializable {
         } else {
             if(username.getText()!="" && password.getText()!="") {
                 errorMessage.setText("Registered");
-                Main.getInstance().createUser(username.getText(), password.getText());
+                Main.getInstance().createUser(username.getText(), password.getText()
+                , name.getText(), surname.getText(), email.getText(), bandName.getText());
             }
             
             

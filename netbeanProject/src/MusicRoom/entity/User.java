@@ -17,15 +17,25 @@ public class User {
     @Id@GeneratedValue
     private long id;
 
-    private String username = "";
-    private String password = "";
+    private String username;
+    private String password;
     private List<Calendar> bookedTimes;
     
+    private String name;
+    private String surname;
+    private String email;
+    private String bandName;
 
-    public User(String username, String password) {
+    public User(String username, String password, String name, 
+            String surname, String email, String bandName) {
         this.username = username;
         this.password = password;
         bookedTimes = new ArrayList<Calendar>();
+        
+        this.name = name;
+        this.name = surname;
+        this.name = email;
+        this.name = bandName;
     }
 
 
@@ -37,16 +47,8 @@ public class User {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public List<Calendar> getBookedTimes() {
@@ -56,4 +58,22 @@ public class User {
     public void addBookedTime(Calendar time) {
         bookedTimes.add(time);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getBandName() {
+        return bandName;
+    }
+    
+    
 }
