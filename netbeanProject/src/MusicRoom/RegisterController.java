@@ -95,12 +95,19 @@ public class RegisterController extends AnchorPane implements Initializable {
         if (Main.getInstance() == null) {
             // We are running in isolated FXML, possibly in Scene Builder.
             // NO-OP.
-            message.setText("Hello " + username.getText());
         } else {
-            if (username.getText() != "" && password.getText() != "") {
-                message.setText("Registered");
+            if (username.getText().equals("")
+                    || password.getText().equals("")
+                    || confirmPassword.getText().equals("")
+                    || name.getText().equals("")
+                    || surname.getText().equals("")
+                    || email.getText().equals("")
+                    || bandName.getText().equals("")) {
+                message.setText("Please fill in the blanks");
+            } else {
                 Main.getInstance().createUser(username.getText(), password.getText(),
-                        name.getText(), surname.getText(), email.getText(), bandName.getText());
+                        name.getText(), surname.getText(),
+                        email.getText(), bandName.getText());
             }
 
         }

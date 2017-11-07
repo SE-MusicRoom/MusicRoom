@@ -233,7 +233,7 @@
             </Button>
          </children>
       </HBox>
-      <Text fx:id="errorMessage" fill="WHITE" layoutX="92.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Hello" wrappingWidth="622.0">
+      <Text fx:id="message" fill="WHITE" layoutX="92.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Hello" wrappingWidth="622.0">
          <font>
             <Font size="19.0" />
          </font>
