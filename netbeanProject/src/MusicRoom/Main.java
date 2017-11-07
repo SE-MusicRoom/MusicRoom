@@ -39,8 +39,8 @@ public class Main extends Application {
     private List<Calendar> currentTimeTable;
    
     
-    private final double MINIMUM_WINDOW_WIDTH = 1366;
-    private final double MINIMUM_WINDOW_HEIGHT = 768;
+    private final double MINIMUM_WINDOW_WIDTH = 1024;
+    private final double MINIMUM_WINDOW_HEIGHT = 700;
     
     public Main() {
         this.instruments =  DatabaseManager.getInstance().fetchAllInstrument();
@@ -223,7 +223,7 @@ public class Main extends Application {
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Scene scene = new Scene(page, 1366, 768);
+        Scene scene = new Scene(page, 1024, 700);
         stage.setScene(scene);
         stage.sizeToScene();
         return (Initializable) loader.getController();
