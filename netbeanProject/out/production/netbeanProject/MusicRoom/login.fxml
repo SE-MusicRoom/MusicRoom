@@ -106,7 +106,7 @@ Contributor(s):
             </Text>
             <HBox prefHeight="44.0" prefWidth="479.0">
                <children>
-                  <Text fill="#ff6000" strokeType="OUTSIDE" strokeWidth="0.0" text="USERNAME" wrappingWidth="187.8040008544922">
+                  <Text fill="#ff6000" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="USERNAME" wrappingWidth="187.8040008544922">
                      <font>
                         <Font name="Cloud-Bold" size="28.0" />
                      </font>
@@ -122,7 +122,7 @@ Contributor(s):
             </HBox>
             <HBox prefHeight="51.0" prefWidth="486.0">
                <children>
-                  <Text fill="#ff6000" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD" wrappingWidth="187.8040008544922">
+                  <Text fill="#ff6000" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="root" text="PASSWORD" wrappingWidth="187.8040008544922">
                      <font>
                         <Font name="Cloud-Bold" size="28.0" />
                      </font>

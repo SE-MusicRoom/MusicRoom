@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1201.0" prefWidth="1701.0" stylesheets="@netbeanProject/src/MusicRoom/base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TemplateController">
+   <children>
+      <AnchorPane prefHeight="154.0" prefWidth="1004.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="154.0" layoutX="160.0" stroke="BLACK" strokeType="INSIDE" width="864.0" />
+            <Text fill="#ff2b00" layoutX="174.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEMPLATE SELECT" textAlignment="CENTER" wrappingWidth="843.0">
+               <font>
+                  <Font name="Arial Bold" size="83.0" />
+               </font>
+            </Text>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff2500" height="154.0" stroke="BLACK" strokeType="INSIDE" width="161.0" />
+            <Text layoutX="49.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="63.0">
+               <font>
+                  <Font name="Arial Bold" size="92.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="946.0" layoutY="153.0" stroke="BLACK" strokeType="INSIDE" width="1701.0" />
+      <HBox layoutY="1099.0" prefHeight="102.0" prefWidth="734.0">
+         <children>
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickCustomize" prefHeight="102.0" prefWidth="461.0" text="or Customize!" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <font>
+                  <Font name="Arial Bold" size="56.0" />
+               </font>
+            </Button>
+            <Button fx:id="reservationBtn1" mnemonicParsing="false" prefHeight="75.0" prefWidth="263.0" text="Go Back." textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <font>
+                  <Font name="Arial Bold" size="40.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <ScrollPane layoutX="8.0" layoutY="161.0" prefHeight="936.0" prefWidth="1690.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="946.0" prefWidth="1681.0">
+               <children>
+                  <VBox layoutX="14.0" layoutY="14.0" prefHeight="910.0" prefWidth="1645.0">
+                     <children>
+                        <HBox prefHeight="400.0" prefWidth="1645.0">
+                           <children>
+                              <AnchorPane fx:id="templateBox" prefHeight="385.0" prefWidth="534.0">
+                                 <children>
+                                    <Rectangle fx:id="templatePic" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="385.0" stroke="BLACK" strokeType="INSIDE" width="521.0" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="75.0" layoutY="310.0" stroke="BLACK" strokeType="INSIDE" width="521.0" />
+                                    <Button layoutX="390.0" layoutY="317.0" mnemonicParsing="false" text="Details" textFill="WHITE">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font></Button>
+                                    <Text fx:id="templateName" layoutX="7.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TemplateName">
+                                       <font>
+                                          <Font size="48.0" />
+                                       </font></Text>
+                                    <Button layoutX="400.0" layoutY="242.0" mnemonicParsing="false" text="Select" textFill="WHITE">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font></Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="385.0" prefWidth="534.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="385.0" stroke="BLACK" strokeType="INSIDE" width="521.0" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="75.0" layoutY="310.0" stroke="BLACK" strokeType="INSIDE" width="521.0" />
+                                    <Button layoutX="390.0" layoutY="317.0" mnemonicParsing="false" text="Details" textFill="WHITE">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Button>
+                                    <Text layoutX="7.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TemplateName">
+                                       <font>
+                                          <Font size="48.0" />
+                                       </font>
+                                    </Text>
+                                    <Button layoutX="400.0" layoutY="242.0" mnemonicParsing="false" text="Select" textFill="WHITE">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="385.0" prefWidth="534.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="385.0" stroke="BLACK" strokeType="INSIDE" width="521.0" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="75.0" layoutY="310.0" stroke="BLACK" strokeType="INSIDE" width="521.0" />
+                                    <Button layoutX="390.0" layoutY="317.0" mnemonicParsing="false" text="Details" textFill="WHITE">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Button>
+                                    <Text layoutX="7.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TemplateName">
+                                       <font>
+                                          <Font size="48.0" />
+                                       </font>
+                                    </Text>
+                                    <Button layoutX="400.0" layoutY="242.0" mnemonicParsing="false" text="Select" textFill="WHITE">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="400.0" prefWidth="1645.0">
+                           <children>
+                              <AnchorPane prefHeight="385.0" prefWidth="534.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="385.0" stroke="BLACK" strokeType="INSIDE" width="521.0" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="75.0" layoutY="310.0" stroke="BLACK" strokeType="INSIDE" width="521.0" />
+                                    <Button layoutX="390.0" layoutY="317.0" mnemonicParsing="false" text="Details" textFill="WHITE">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Button>
+                                    <Text layoutX="7.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TemplateName">
+                                       <font>
+                                          <Font size="48.0" />
+                                       </font>
+                                    </Text>
+                                    <Button layoutX="400.0" layoutY="242.0" mnemonicParsing="false" text="Select" textFill="WHITE">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="385.0" prefWidth="534.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="385.0" stroke="BLACK" strokeType="INSIDE" width="521.0" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="75.0" layoutY="310.0" stroke="BLACK" strokeType="INSIDE" width="521.0" />
+                                    <Button layoutX="390.0" layoutY="317.0" mnemonicParsing="false" text="Details" textFill="WHITE">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Button>
+                                    <Text layoutX="7.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TemplateName">
+                                       <font>
+                                          <Font size="48.0" />
+                                       </font>
+                                    </Text>
+                                    <Button layoutX="400.0" layoutY="242.0" mnemonicParsing="false" text="Select" textFill="WHITE">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="385.0" prefWidth="534.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="385.0" stroke="BLACK" strokeType="INSIDE" width="521.0" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="75.0" layoutY="310.0" stroke="BLACK" strokeType="INSIDE" width="521.0" />
+                                    <Button layoutX="390.0" layoutY="317.0" mnemonicParsing="false" text="Details" textFill="WHITE">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Button>
+                                    <Text layoutX="7.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TemplateName">
+                                       <font>
+                                          <Font size="48.0" />
+                                       </font>
+                                    </Text>
+                                    <Button layoutX="400.0" layoutY="242.0" mnemonicParsing="false" text="Select" textFill="WHITE">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
