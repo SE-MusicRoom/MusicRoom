@@ -179,9 +179,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
     
     
     public void onClickBack(ActionEvent event) {
-        mainmenu.hideIncludePane();
-        List<Booking> nnn = (List<Booking>) DatabaseManager.getInstance().fetchAllBooking();
-        System.out.println(nnn.get(0));
+        mainmenu.gotoTemplate();
     }
     public void onClickConfirm(ActionEvent event) {
         

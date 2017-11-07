@@ -69,7 +69,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
     
     
     private Initializable showIncludePane(String fxml) throws IOException {
-        
+        hideIncludePane();
         FXMLLoader loader = new FXMLLoader();
         InputStream in = Main.class.getResourceAsStream(fxml);
         loader.setBuilderFactory(new JavaFXBuilderFactory());
@@ -100,8 +100,17 @@ public class MainMenuController extends AnchorPane implements Initializable {
         }
     }
     
+    public void gotoTemplate() {
+        try {
+            TemplateController con = (TemplateController) showIncludePane("templateselect.fxml");
+            con.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void onClickReservation(ActionEvent event) {
-        gotoReservation();
+        gotoTemplate();
     }
     
     public void onClickProfile(ActionEvent event) {
