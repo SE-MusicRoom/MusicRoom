@@ -116,6 +116,16 @@ public class DatabaseManager {
         closeEMF();
         return results;
     }
+    
+    public List<RoomTemplate> fetchAllRoomTemplate (){
+        createEMF("objectdb://"+ip+"/RoomTemplates.odb;user=admin;password=admin");
+
+        TypedQuery<RoomTemplate> query = em.createQuery("SELECT l FROM RoomTemplate l", RoomTemplate.class);
+        List<RoomTemplate> results = query.getResultList();
+
+        closeEMF();
+        return results;
+    }
 
     public void addUser(User user){
         createEMF("objectdb://"+ip+"/user.odb;user=admin;password=admin");

@@ -44,6 +44,7 @@ public class Main extends Application {
     
     public Main() {
         this.instruments =  DatabaseManager.getInstance().fetchAllInstrument();
+        this.roomTemplete =  DatabaseManager.getInstance().fetchAllRoomTemplate();
         updateUserDB();
         this.customTemplete = new ArrayList<RoomTemplate>();
 
@@ -114,6 +115,11 @@ public class Main extends Application {
         return null;
     }
 
+    public List<RoomTemplate> getRoomTemplete() {
+        return roomTemplete;
+    }
+
+    
 
     public void addCustomTemplete(RoomTemplate customTemplete) {
         this.customTemplete.add(customTemplete);
