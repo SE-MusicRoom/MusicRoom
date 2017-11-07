@@ -2,6 +2,10 @@
     src: url("Cloud-Bold.otf");
 }
 
+.root{
+    -fx-font-family: 'Cloud';
+}
+
 .text {
     -fx-font-family: 'Cloud';
 }
