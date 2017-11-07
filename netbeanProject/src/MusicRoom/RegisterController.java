@@ -69,8 +69,8 @@ public class RegisterController extends AnchorPane implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         errorMessage.setText("");
-        username.setPromptText("Enter your name");
-        password.setPromptText("Enter your password");
+//        username.setPromptText("Enter your name");
+//        password.setPromptText("Enter your password");
     }
     
     
