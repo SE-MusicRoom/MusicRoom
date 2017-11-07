@@ -63,7 +63,7 @@ public class DatabaseManager {
     }
 
     public List<Instrument> fetchAllInstrument (){
-        createEMF("src/MusicRoom/database/instruments.odb");
+        createEMF("objectdb://10.66.15.12/instrument.odb;user=admin;password=admin");
 
         TypedQuery<Instrument> query = em.createQuery("SELECT l FROM Instrument l", Instrument.class);
         List<Instrument> results = query.getResultList();
@@ -73,7 +73,7 @@ public class DatabaseManager {
     }
 
     public void addUser(User user){
-        createEMF("src/MusicRoom/database/user.odb");
+        createEMF("objectdb://local/user.odb;user=admin;password=admin");
 
         em.getTransaction().begin();
         em.persist(user);
@@ -83,7 +83,7 @@ public class DatabaseManager {
     }
     
     public void addBooking(Booking booking){
-        createEMF("src/MusicRoom/database/booking.odb");
+        createEMF("objectdb://10.66.15.12/booking.odb;user=admin;password=admin");
 
         em.getTransaction().begin();
         em.persist(booking);
@@ -93,7 +93,7 @@ public class DatabaseManager {
     }
 
     public List<User> fetchAllUser(){
-        createEMF("src/MusicRoom/database/user.odb");
+        createEMF("objectdb://10.66.15.12/user.odb;user=admin;password=admin");
 
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u ", User.class);
         List<User> results = query.getResultList();
@@ -103,7 +103,7 @@ public class DatabaseManager {
     }
     
     public List<Booking> fetchAllBooking(){
-        createEMF("src/MusicRoom/database/booking.odb");
+        createEMF("objectdb://10.66.15.12/booking.odb;user=admin;password=admin");
 
         TypedQuery<Booking> query = em.createQuery("SELECT b FROM Booking b ", Booking.class);
         List<Booking> results = query.getResultList();
@@ -113,7 +113,7 @@ public class DatabaseManager {
     }
 
     public User fetchUser(int id){
-        createEMF("src/MusicRoom/database/user.odb");
+        createEMF("objectdb://10.66.15.12/user.odb;user=admin;password=admin");
 
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.id =" + String.valueOf(id), User.class);
         User result = query.getSingleResult();

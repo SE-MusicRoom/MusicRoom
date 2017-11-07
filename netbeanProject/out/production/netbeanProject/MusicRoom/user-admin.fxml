@@ -32,6 +32,12 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -41,7 +47,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.ProfileController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminMenuController">
   <children>
       <VBox layoutX="50.0" layoutY="35.0" prefHeight="76.0" prefWidth="438.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="24.0">
          <children>
@@ -70,7 +76,7 @@
                   <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                </padding>
             </Button>
-        <Button fx:id="userBtn" alignment="CENTER" defaultButton="true" maxHeight="2.147483647E9" prefHeight="41.0" prefWidth="86.0" style="-fx-background-color: ff6000;" text="Users">
+        <Button fx:id="userBtn" alignment="CENTER" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickUsers" prefHeight="41.0" prefWidth="86.0" style="-fx-background-color: ff6000;" text="Users">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x5" />
                </font>
@@ -78,7 +84,7 @@
                   <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                </padding>
             </Button>
-            <Button fx:id="bandBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="60.0" maxHeight="2.147483647E9" prefHeight="41.0" prefWidth="86.0" style="-fx-background-color: ff6000;" text="Bands">
+            <Button fx:id="bandBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="60.0" maxHeight="2.147483647E9" onAction="#onClickBands" prefHeight="41.0" prefWidth="86.0" style="-fx-background-color: ff6000;" text="Bands">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x51" />
                </font>
@@ -86,7 +92,7 @@
                   <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                </padding>
             </Button>
-            <Button fx:id="newsBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="101.0" maxHeight="2.147483647E9" prefHeight="41.0" prefWidth="86.0" style="-fx-background-color: ff6000;" text="News">
+            <Button fx:id="newsBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="101.0" maxHeight="2.147483647E9" onAction="#onClickNews" prefHeight="41.0" prefWidth="86.0" style="-fx-background-color: ff6000;" text="News">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x511" />
                </font>
@@ -94,7 +100,7 @@
                   <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                </padding>
             </Button>
-            <Button fx:id="templateBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="142.0" maxHeight="2.147483647E9" prefHeight="41.0" prefWidth="144.0" style="-fx-background-color: ff6000;" text="Templates">
+            <Button fx:id="templateBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="142.0" maxHeight="2.147483647E9" onAction="#onClickTemplates" prefHeight="41.0" prefWidth="144.0" style="-fx-background-color: ff6000;" text="Templates">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x5111" />
                </font>
@@ -102,7 +108,7 @@
                   <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                </padding>
             </Button>
-            <Button fx:id="instrumentBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="183.0" maxHeight="2.147483647E9" prefHeight="41.0" prefWidth="165.0" style="-fx-background-color: ff6000;" text="Instruments">
+            <Button fx:id="instrumentBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="183.0" maxHeight="2.147483647E9" onAction="#onClickInstruments" prefHeight="41.0" prefWidth="165.0" style="-fx-background-color: ff6000;" text="Instruments">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x51111" />
                </font>
@@ -110,7 +116,7 @@
                   <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                </padding>
             </Button>
-            <Button fx:id="promotionCodeBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="224.0" maxHeight="2.147483647E9" prefHeight="41.0" prefWidth="214.0" style="-fx-background-color: ff6000;" text="Promotion Code">
+            <Button fx:id="promotionCodeBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="224.0" maxHeight="2.147483647E9" onAction="#onClickPromotions" prefHeight="41.0" prefWidth="214.0" style="-fx-background-color: ff6000;" text="Promotion Code">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x511111" />
                </font>
@@ -122,7 +128,7 @@
       </VBox>
       <VBox layoutX="60.0" layoutY="642.0" prefHeight="65.0" prefWidth="100.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="60.0">
          <children>
-            <Button fx:id="logoutBtn" alignment="CENTER" defaultButton="true" maxHeight="2.147483647E9" prefHeight="41.0" prefWidth="101.0" style="-fx-background-color: ff6000;" text="Logout">
+            <Button fx:id="logoutBtn" alignment="CENTER" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickLogOut" prefHeight="41.0" prefWidth="101.0" style="-fx-background-color: ff6000;" text="Logout">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x52" />
                </font>
@@ -132,6 +138,7 @@
             </Button>
          </children>
       </VBox>
+      <AnchorPane fx:id="includePane" layoutX="357.0" layoutY="158.0" prefHeight="519.0" prefWidth="956.0" />
   </children>
    <styleClass>
       <String fx:value="background" />
