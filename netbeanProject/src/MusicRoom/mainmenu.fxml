@@ -40,32 +40,39 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 
-<?import java.lang.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.MainMenuController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.MainMenuController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff76" height="768.0" layoutX="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1368.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="768.0" stroke="TRANSPARENT" strokeType="INSIDE" width="264.0" />
-      <Text fill="#ff2b00" layoutX="30.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAIN MENU">
-         <font>
-            <Font name="Arial Bold" size="36.0" />
-         </font>
-      </Text>
-      <VBox layoutX="142.0" layoutY="113.0" prefHeight="118.0" prefWidth="308.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff76" height="700.0" layoutX="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1031.0" />
+      <StackPane layoutX="87.0" layoutY="26.0">
          <children>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="52.0" prefWidth="323.0" text="+ New Reservations" textFill="WHITE">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff6000" height="81.0" stroke="TRANSPARENT" strokeType="INSIDE" width="358.0">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+            </Rectangle>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 60;" styleClass="root" text="MAIN MENU">
+               <font>
+                  <Font name="Arial Bold" size="36.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets top="10.0" />
+               </StackPane.margin>
+            </Text>
+         </children>
+      </StackPane>
+      <VBox layoutX="87.0" layoutY="153.0" prefHeight="118.0" prefWidth="308.0" AnchorPane.leftAnchor="87.0">
+         <children>
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="52.0" prefWidth="323.0" styleClass="root" text="+ New Reservations" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="28.0" />
                </font>
@@ -73,25 +80,20 @@ Contributor(s):
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Button>
-            <Button fx:id="profileBtn" mnemonicParsing="false" onAction="#onClickProfile" text="View History" textFill="WHITE">
+            <Button fx:id="profileBtn" mnemonicParsing="false" onAction="#onClickProfile" styleClass="root" text="View History" textFill="WHITE">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" stylesheets="@base.css" text="News &amp; Promotion" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" styleClass="root" stylesheets="@base.css" text="News &amp; Promotion" textFill="WHITE">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
             </Button>
          </children>
       </VBox>
-      <VBox layoutX="140.0" layoutY="582.0" prefHeight="118.0" prefWidth="308.0">
+      <VBox layoutX="94.0" layoutY="581.0" prefHeight="77.0" prefWidth="308.0">
          <children>
-            <Button mnemonicParsing="false" text="Setting" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="24.0" />
-               </font>
-            </Button>
             <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" onAction="#onClickLogOut" text="Logout" textFill="WHITE">
                <font>
                   <Font name="Arial" size="24.0" />
