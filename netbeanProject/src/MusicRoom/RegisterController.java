@@ -26,7 +26,7 @@ import javafx.scene.text.Text;
 public class RegisterController extends AnchorPane implements Initializable {
 
     @FXML
-    private Text errorMessage;
+    private Text message;
         
     @FXML
     private Button back;
@@ -68,20 +68,20 @@ public class RegisterController extends AnchorPane implements Initializable {
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        errorMessage.setText("");
+        message.setText("");
 //        username.setPromptText("Enter your name");
 //        password.setPromptText("Enter your password");
     }
     
     
-    public void onClickRegister(ActionEvent event) {
+    public void onClickConfirm(ActionEvent event) {
         if (Main.getInstance() == null){
             // We are running in isolated FXML, possibly in Scene Builder.
             // NO-OP.
-            errorMessage.setText("Hello " + username.getText());
+            message.setText("Hello " + username.getText());
         } else {
             if(username.getText()!="" && password.getText()!="") {
-                errorMessage.setText("Registered");
+                message.setText("Registered");
                 Main.getInstance().createUser(username.getText(), password.getText()
                 , name.getText(), surname.getText(), email.getText(), bandName.getText());
             }
@@ -94,7 +94,7 @@ public class RegisterController extends AnchorPane implements Initializable {
         if (Main.getInstance() == null){
             // We are running in isolated FXML, possibly in Scene Builder.
             // NO-OP.
-            errorMessage.setText("Hello " + username.getText());
+            message.setText("Hello " + username.getText());
         } else {
             Main.getInstance().gotoLogin();
             
