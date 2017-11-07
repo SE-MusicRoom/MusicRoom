@@ -17,8 +17,8 @@ public class User {
     @Id@GeneratedValue
     private long id;
 
-    private String username = "";
-    private String password = "";
+    private String username;
+    private String password;
     private List<Calendar> bookedTimes;
     
 
