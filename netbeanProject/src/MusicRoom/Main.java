@@ -48,6 +48,7 @@ public class Main extends Application {
         this.customTemplete = new ArrayList<RoomTemplate>();
 
         this.users = DatabaseManager.getInstance().fetchAllUser();
+        
         Main.instance = this;
     }
 
@@ -102,6 +103,15 @@ public class Main extends Application {
     
     public Instrument getInstrument(int id) {
         return instruments.get(id);
+    }
+    
+    public Instrument getInstrument(String name,String model) {
+        for (int i = 0; i < instruments.size(); i++) {
+            Instrument o = instruments.get(i);
+            if(o.getName().equals(name) && o.getModel().equals(model))
+                return o;
+        }
+        return null;
     }
 
 

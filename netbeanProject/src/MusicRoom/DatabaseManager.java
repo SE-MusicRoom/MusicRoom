@@ -3,6 +3,7 @@ package MusicRoom;
 import MusicRoom.entity.AcousticGuitar;
 import MusicRoom.entity.Booking;
 import MusicRoom.entity.Instrument;
+import MusicRoom.entity.RoomTemplate;
 import MusicRoom.entity.User;
 import MusicRoom.entity.Violin;
 import java.util.ArrayList;
@@ -64,6 +65,46 @@ public class DatabaseManager {
         em.getTransaction().commit();
         em.close();
         emf.close();
+    }
+    
+    public void createDummyRoomTemplate (){
+
+        createEMF("objectdb://"+ip+"/RoomTemplates.odb;user=admin;password=admin");
+        /*
+        RoomTemplate l = new RoomTemplate("Violin Madness","Full of Violin",6000);
+        
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+
+        */
+        
+        RoomTemplate l = new RoomTemplate("Guitar Madness","Full of Guitar",5000);
+        
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        
+        em.getTransaction().begin();
+        em.persist(l);
+
+        em.getTransaction().commit();
+        
+        closeEMF();
     }
 
     public List<Instrument> fetchAllInstrument (){
