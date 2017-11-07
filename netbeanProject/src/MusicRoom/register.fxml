@@ -71,20 +71,20 @@
                      </font>
                   </Label>
                   <Text fill="#8a8686" layoutX="201.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your username 15 or less charecters." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="username" layoutX="124.0" layoutY="228.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" />
+                  <TextField fx:id="username" layoutX="124.0" layoutY="228.0" minWidth="200.0" style="-fx-background-color: fff0e6;" GridPane.columnIndex="1" />
                   <Label id="Label" layoutX="10.0" layoutY="300.0" style="-fx-font-size: 20;" text="Password" GridPane.rowIndex="3">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="password" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <PasswordField fx:id="password" style="-fx-background-color: fff0e6;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Text fill="#8a8686" layoutX="124.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your password." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <Label id="Label" layoutX="10.0" layoutY="300.0" prefHeight="30.0" prefWidth="186.0" style="-fx-font-size: 20;" text="Confirm Password" GridPane.rowIndex="6">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="confirmPassword" layoutX="124.0" layoutY="303.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <PasswordField fx:id="confirmPassword" layoutX="124.0" layoutY="303.0" style="-fx-background-color: fff0e6;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                   <Text fill="#8a8686" layoutX="124.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Confirm Again" wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="7" />
           <Label id="Label" prefHeight="30.0" prefWidth="175.0" style="-fx-font-size: 20;" text="Name" GridPane.rowIndex="9">
             <GridPane.margin>
@@ -94,7 +94,7 @@
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
           </Label>
-                  <TextField fx:id="name" layoutX="201.0" layoutY="63.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <TextField fx:id="name" layoutX="201.0" layoutY="63.0" minWidth="200.0" style="-fx-background-color: fff0e6;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                   <Text fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your name use ONLY aphabet." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="10">
                      <GridPane.margin>
                         <Insets />
@@ -107,7 +107,7 @@
                         <Insets />
                      </GridPane.margin>
                   </Label>
-          <TextField fx:id="surname" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="12">
+          <TextField fx:id="surname" minWidth="200.0" style="-fx-background-color: fff0e6;" GridPane.columnIndex="1" GridPane.rowIndex="12">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin></TextField>
@@ -124,7 +124,7 @@
                         <Insets />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="bandName" layoutX="124.0" layoutY="103.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="15">
+                  <TextField fx:id="bandName" layoutX="124.0" layoutY="103.0" minWidth="200.0" style="-fx-background-color: fff0e6;" GridPane.columnIndex="1" GridPane.rowIndex="15">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
@@ -149,7 +149,7 @@
                         <Insets />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="email" layoutX="124.0" layoutY="53.0" minWidth="200.0" style="-fx-background-color: ffccb3;" GridPane.columnIndex="1" GridPane.rowIndex="18">
+                  <TextField fx:id="email" layoutX="124.0" layoutY="53.0" minWidth="200.0" style="-fx-background-color: fff0e6;" GridPane.columnIndex="1" GridPane.rowIndex="18">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
