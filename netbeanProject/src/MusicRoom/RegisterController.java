@@ -8,6 +8,8 @@ package MusicRoom;
 import java.awt.Color;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,8 +28,8 @@ import javafx.scene.text.Text;
 public class RegisterController extends AnchorPane implements Initializable {
 
     @FXML
-    private Text errorMessage;
-        
+    private Text message;
+
     @FXML
     private Button back;
 
@@ -60,45 +62,58 @@ public class RegisterController extends AnchorPane implements Initializable {
 
     @FXML
     private TextField username;
-    
-    
-    public void setApp(Main application){
-        
+
+    public void setApp(Main application) {
+
     }
-    
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        errorMessage.setText("");
+        message.setText("");
 //        username.setPromptText("Enter your name");
 //        password.setPromptText("Enter your password");
     }
-    
-    
-    public void onClickRegister(ActionEvent event) {
-        if (Main.getInstance() == null){
-            // We are running in isolated FXML, possibly in Scene Builder.
-            // NO-OP.
-            errorMessage.setText("Hello " + username.getText());
+
+    public static boolean validation(String password, String str) {
+        Pattern letter = Pattern.compile("[a-zA-z]");
+        Pattern digit = Pattern.compile("[0-9]");
+        Pattern special = Pattern.compile("[!@#$%&*()_+=|<>?{}\\[\\]~-]");
+        //Pattern eight = Pattern.compile (".{8}");
+
+        Matcher hasLetter = letter.matcher(password);
+        Matcher hasDigit = digit.matcher(password);
+        Matcher hasSpecial = special.matcher(password);
+
+        if (str.equals("password")) {
+            return hasLetter.find() || hasDigit.find() || hasSpecial.find();
         } else {
-            if(username.getText()!="" && password.getText()!="") {
-                errorMessage.setText("Registered");
-                Main.getInstance().createUser(username.getText(), password.getText()
-                , name.getText(), surname.getText(), email.getText(), bandName.getText());
-            }
-            
-            
+            return hasLetter.find() || hasDigit.find();
         }
-    }    
-    
-    public void onClickBack(ActionEvent event) {
-        if (Main.getInstance() == null){
+    }
+
+    public void onClickConfirm(ActionEvent event) {
+        if (Main.getInstance() == null) {
             // We are running in isolated FXML, possibly in Scene Builder.
             // NO-OP.
-            errorMessage.setText("Hello " + username.getText());
+            message.setText("Hello " + username.getText());
+        } else {
+            if (username.getText() != "" && password.getText() != "") {
+                message.setText("Registered");
+                Main.getInstance().createUser(username.getText(), password.getText(),
+                        name.getText(), surname.getText(), email.getText(), bandName.getText());
+            }
+
+        }
+    }
+
+    public void onClickBack(ActionEvent event) {
+        if (Main.getInstance() == null) {
+            // We are running in isolated FXML, possibly in Scene Builder.
+            // NO-OP.
+            message.setText("Hello " + username.getText());
         } else {
             Main.getInstance().gotoLogin();
-            
-            
+
         }
-    }    
+    }
 }

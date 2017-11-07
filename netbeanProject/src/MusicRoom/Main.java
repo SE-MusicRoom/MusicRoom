@@ -44,10 +44,12 @@ public class Main extends Application {
     
     public Main() {
         this.instruments =  DatabaseManager.getInstance().fetchAllInstrument();
+        this.roomTemplete =  DatabaseManager.getInstance().fetchAllRoomTemplate();
         updateUserDB();
         this.customTemplete = new ArrayList<RoomTemplate>();
 
         this.users = DatabaseManager.getInstance().fetchAllUser();
+        
         Main.instance = this;
     }
 
@@ -103,7 +105,21 @@ public class Main extends Application {
     public Instrument getInstrument(int id) {
         return instruments.get(id);
     }
+    
+    public Instrument getInstrument(String name,String model) {
+        for (int i = 0; i < instruments.size(); i++) {
+            Instrument o = instruments.get(i);
+            if(o.getName().equals(name) && o.getModel().equals(model))
+                return o;
+        }
+        return null;
+    }
 
+    public List<RoomTemplate> getRoomTemplete() {
+        return roomTemplete;
+    }
+
+    
 
     public void addCustomTemplete(RoomTemplate customTemplete) {
         this.customTemplete.add(customTemplete);
