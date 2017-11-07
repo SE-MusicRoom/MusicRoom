@@ -20591,3 +20591,23 @@ Caused by: com.objectdb.o.UserException: Attempt to open a database file 'D:\Mus
 	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:150)
 	... 40 more
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-07 17:19:58 #1 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\user.odb' is opened by 12628@DESKTOP-EIUSTU3
+
+[2017-11-07 17:19:58 #2 store] 
+Configuration path: ?
+
+[2017-11-07 17:20:10 #3 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\user.odb' is closed by 12628@DESKTOP-EIUSTU3
+
+[2017-11-07 17:29:36 #4 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\user.odb' is opened by 12628@DESKTOP-EIUSTU3
+
+[2017-11-07 17:29:36 #5 store] 
+Configuration path: ?
+
+[2017-11-07 18:17:27 #6 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\user.odb' is closed by 12628@DESKTOP-EIUSTU3
+

@@ -76,6 +76,7 @@ public class LoginController extends AnchorPane implements Initializable {
         } else {
             if (!Main.getInstance().userLogging(userId.getText(), password.getText())){
                 //errorMessage.setText("Username/Password is incorrect");
+                
             }
         }
     }

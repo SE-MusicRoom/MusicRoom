@@ -157,7 +157,6 @@ public class Main extends Application {
             //System.out.println(users.get(i).getUsername()+" "+userId);
             //System.out.println(users.get(i).getPassword()+" "+password);
             if(users.get(i).getUsername().equals(userId)) {
-                System.out.println("1");
                 if(users.get(i).getPassword().equals(password)) {
                     currentUser = users.get(i);
 

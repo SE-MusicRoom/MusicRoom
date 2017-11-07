@@ -18,3 +18,6 @@ netbeanProject/src/MusicRoom/database/booking.odb
 netbeanProject/src/MusicRoom/database/booking.odb
 *.log
 netbeanProject/src/MusicRoom/database/user.odb
+*.odb
+*.log
+*.properties
