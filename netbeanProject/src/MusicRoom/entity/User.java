@@ -23,7 +23,7 @@ public class User {
     private String password;
     
     @ElementCollection(fetch=FetchType.EAGER)
-    private List<Calendar> bookedTimes;
+    private List<Booking> bookedTimes;
     
     private String name;
     private String surname;
@@ -34,7 +34,7 @@ public class User {
             String surname, String email, String bandName) {
         this.username = username;
         this.password = password;
-        bookedTimes = new ArrayList<Calendar>();
+        bookedTimes = new ArrayList<Booking>();
         
         this.name = name;
         this.name = surname;
@@ -55,11 +55,11 @@ public class User {
         return password;
     }
 
-    public List<Calendar> getBookedTimes() {
+    public List<Booking> getBookedTimes() {
         return bookedTimes;
     }
 
-    public void addBookedTime(Calendar time) {
+    public void addBookedTime(Booking time) {
         bookedTimes.add(time);
     }
 

@@ -31,6 +31,7 @@ public class Main extends Application {
     private List<Instrument> instruments;
     private List<RoomTemplate> roomTemplete;
     private List<RoomTemplate> customTemplete;
+    private List<Booking> bookedTimes;
     
     // Reservation
     private User currentUser;
@@ -49,6 +50,7 @@ public class Main extends Application {
         this.customTemplete = new ArrayList<RoomTemplate>();
 
         this.users = DatabaseManager.getInstance().fetchAllUser();
+        this.bookedTimes = DatabaseManager.getInstance().fetchAllBooking();
         
         Main.instance = this;
     }
@@ -139,6 +141,10 @@ public class Main extends Application {
 
     public void setCurrentTimeTable(List<Calendar> currentTimeTable) {
         this.currentTimeTable = currentTimeTable;
+    }
+
+    public List<Booking> getBookedTimes() {
+        return bookedTimes;
     }
     
     

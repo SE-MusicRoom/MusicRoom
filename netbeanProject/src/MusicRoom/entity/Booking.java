@@ -34,6 +34,7 @@ public class Booking {
     private RoomTemplate room;
     
     @ElementCollection(fetch=FetchType.EAGER)
+    @Temporal(TemporalType.TIMESTAMP)
     private List<Calendar> timeTable;
     
     @ManyToOne(cascade=CascadeType.ALL)
