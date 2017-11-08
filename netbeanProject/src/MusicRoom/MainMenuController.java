@@ -91,9 +91,18 @@ public class MainMenuController extends AnchorPane implements Initializable {
         includePane.getChildren().clear();
     }
     
-    public void gotoReservation() {
+    public void gotoCustomize() {
         try {
             CustomizeController con = (CustomizeController) showIncludePane("customize.fxml");
+            con.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+     public void gotoTimeSelect() {
+        try {
+            TimeSelectController con = (TimeSelectController) showIncludePane("timeselector.fxml");
             con.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

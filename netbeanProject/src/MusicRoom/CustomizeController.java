@@ -184,21 +184,15 @@ public class CustomizeController extends AnchorPane implements Initializable {
     public void onClickConfirm(ActionEvent event) {
         
         System.out.println("SET!");
+        
         RoomTemplate newRoom = new RoomTemplate("Custom","A new custom room", calculateTotal());
         for (int i = 0; i < addedInstruments.size(); i++) {
             newRoom.addInstrument(addedInstruments.get(i));
         }
         Main.getInstance().setCurrentRoom(newRoom);
-        List<Calendar> test = new ArrayList<Calendar>();
-        test.add(Calendar.getInstance());
-        test.add(Calendar.getInstance());
-        Main.getInstance().setCurrentTimeTable(test);
-        Main.getInstance().addCustomTemplete(newRoom); 
+        mainmenu.gotoTimeSelect();
         
-        Booking ssss = Main.getInstance().createBooking();
-        System.out.println(ssss);
-        DatabaseManager.getInstance().addBooking(ssss);
-        System.out.println(DatabaseManager.getInstance().fetchAllBooking().get(0));
+        
         
     }
     
