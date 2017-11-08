@@ -3,6 +3,7 @@ package MusicRoom;
 import MusicRoom.entity.AcousticGuitar;
 import MusicRoom.entity.Booking;
 import MusicRoom.entity.Instrument;
+import MusicRoom.entity.RoomTemplate;
 import MusicRoom.entity.User;
 import MusicRoom.entity.Violin;
 import java.util.ArrayList;
@@ -14,8 +15,12 @@ public class DatabaseManager {
     private static DatabaseManager instance;
     private EntityManagerFactory emf;
     private EntityManager em;
+    
+    private String ip;
 
-    private DatabaseManager(){};
+    private DatabaseManager(){
+        ip = "161.246.6.16";
+    };
 
     public static DatabaseManager getInstance() {
         if(instance == null){
@@ -61,9 +66,49 @@ public class DatabaseManager {
         em.close();
         emf.close();
     }
+    
+    public void createDummyRoomTemplate (){
+
+        createEMF("objectdb://"+ip+"/RoomTemplates.odb;user=admin;password=admin");
+        /*
+        RoomTemplate l = new RoomTemplate("Violin Madness","Full of Violin",6000);
+        
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
+
+        */
+        
+        RoomTemplate l = new RoomTemplate("Guitar Madness","Full of Guitar",5000);
+        
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        
+        em.getTransaction().begin();
+        em.persist(l);
+
+        em.getTransaction().commit();
+        
+        closeEMF();
+    }
 
     public List<Instrument> fetchAllInstrument (){
-        createEMF("objectdb://10.66.15.12/instrument.odb;user=admin;password=admin");
+        createEMF("objectdb://"+ip+"/Instruments.odb;user=admin;password=admin");
 
         TypedQuery<Instrument> query = em.createQuery("SELECT l FROM Instrument l", Instrument.class);
         List<Instrument> results = query.getResultList();
@@ -71,9 +116,19 @@ public class DatabaseManager {
         closeEMF();
         return results;
     }
+    
+    public List<RoomTemplate> fetchAllRoomTemplate (){
+        createEMF("objectdb://"+ip+"/RoomTemplates.odb;user=admin;password=admin");
+
+        TypedQuery<RoomTemplate> query = em.createQuery("SELECT l FROM RoomTemplate l", RoomTemplate.class);
+        List<RoomTemplate> results = query.getResultList();
+
+        closeEMF();
+        return results;
+    }
 
     public void addUser(User user){
-        createEMF("objectdb://local/user.odb;user=admin;password=admin");
+        createEMF("objectdb://"+ip+"/user.odb;user=admin;password=admin");
 
         em.getTransaction().begin();
         em.persist(user);
@@ -82,8 +137,10 @@ public class DatabaseManager {
         closeEMF();
     }
     
+    
+    
     public void addBooking(Booking booking){
-        createEMF("objectdb://10.66.15.12/booking.odb;user=admin;password=admin");
+        createEMF("objectdb://"+ip+"/booking.odb;user=admin;password=admin");
 
         em.getTransaction().begin();
         em.persist(booking);
@@ -93,7 +150,7 @@ public class DatabaseManager {
     }
 
     public List<User> fetchAllUser(){
-        createEMF("objectdb://10.66.15.12/user.odb;user=admin;password=admin");
+        createEMF("objectdb://"+ip+"/user.odb;user=admin;password=admin");
 
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u ", User.class);
         List<User> results = query.getResultList();
@@ -103,7 +160,7 @@ public class DatabaseManager {
     }
     
     public List<Booking> fetchAllBooking(){
-        createEMF("objectdb://10.66.15.12/booking.odb;user=admin;password=admin");
+        createEMF("objectdb://"+ip+"/booking.odb;user=admin;password=admin");
 
         TypedQuery<Booking> query = em.createQuery("SELECT b FROM Booking b ", Booking.class);
         List<Booking> results = query.getResultList();
@@ -113,7 +170,7 @@ public class DatabaseManager {
     }
 
     public User fetchUser(int id){
-        createEMF("objectdb://10.66.15.12/user.odb;user=admin;password=admin");
+        createEMF("objectdb://"+ip+"/user.odb;user=admin;password=admin");
 
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.id =" + String.valueOf(id), User.class);
         User result = query.getSingleResult();

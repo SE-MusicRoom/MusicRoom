@@ -5,6 +5,7 @@
  */
 package MusicRoom;
 
+import MusicRoom.entity.RoomTemplate;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -26,7 +27,10 @@ public class TemplateController extends AnchorPane implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+        for (int i = 0; i < Main.getInstance().getRoomTemplete().size(); i++) {
+            RoomTemplate r = Main.getInstance().getRoomTemplete().get(i);
+            System.out.println(r);
+        }
     }
     
     public void onClickCustomize(ActionEvent event) {

@@ -198,6 +198,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         Booking ssss = Main.getInstance().createBooking();
         System.out.println(ssss);
         DatabaseManager.getInstance().addBooking(ssss);
+        System.out.println(DatabaseManager.getInstance().fetchAllBooking().get(0));
         
     }
     
