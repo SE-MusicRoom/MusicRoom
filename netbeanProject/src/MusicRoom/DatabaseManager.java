@@ -178,6 +178,37 @@ public class DatabaseManager {
         return result;
     }
 
+    public void updateUser (User user, int id){
+        User DbUser = fetchUser(id);
+        createEMF("objectdb://"+ip+"/user.odb;user=admin;password=admin");
+        em.getTransaction().begin();
+        if(user.getName() != DbUser.getName()){
+            Query query = em.createQuery("UPDATE User u SET u.name = \"" + user.getName() + "\" WHERE u.id = " + String.valueOf(id) );
+            query.executeUpdate();
+        }
+        if(user.getSurname() != DbUser.getSurname()){
+            Query query = em.createQuery("UPDATE User u SET u.surname = \"" + user.getSurname() + "\" WHERE u.id = " + String.valueOf(id) );
+            query.executeUpdate();
+        }
+        if(user.getBandName() != DbUser.getBandName()){
+            Query query = em.createQuery("UPDATE User u SET u.bandname = \"" + user.getBandName() + "\" WHERE u.id = " + String.valueOf(id) );
+            query.executeUpdate();
+        }
+        if(user.getEmail() != DbUser.getEmail()){
+            Query query = em.createQuery("UPDATE User u SET u.email = \"" + user.getEmail() + "\" WHERE u.id = " + String.valueOf(id) );
+            query.executeUpdate();
+        }
+        if(user.getUsername() != DbUser.getUsername()){
+            Query query = em.createQuery("UPDATE User u SET u.username = \"" + user.getUsername() + "\" WHERE u.id = " + String.valueOf(id) );
+            query.executeUpdate();
+        }
+        if(user.getPassword() != DbUser.getPassword()){
+            Query query = em.createQuery("UPDATE User u SET u.password = \"" + user.getPassword() + "\" WHERE u.id = " + String.valueOf(id) );
+            query.executeUpdate();
+        }
+        em.getTransaction().commit();
+        closeEMF();
+    }
 
 
 
