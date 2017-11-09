@@ -37,10 +37,13 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     private MainMenuController mainmenu;
     private List<Calendar> selectedTimes;
     private LocalDate currentDate;
+    private List<Integer> selectedHours;
+    private int selectedHoursSize;
     
     public void setApp(MainMenuController mainmenu){
         this.mainmenu = mainmenu;
         this.selectedTimes = new ArrayList<Calendar>();
+        this.selectedHours = new ArrayList<Integer>();
         listTime(-1);
     }
 
@@ -52,17 +55,18 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     
     
     public void onClickDatePicker(ActionEvent event) {
+        commitDay();
+        currentDate = datePicker.getValue();
         //Date currentDate = Date.from(datePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
         for (int i = 0; i < selectedTimes.size(); i++) {
             LocalDate d = selectedTimes.get(i).getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            if(d.isEqual(datePicker.getValue())) {
-                listTime(i);
-                return;
+            if(d.isEqual(currentDate)) {
+                selectedHours.add(selectedTimes.get(i).get(Calendar.HOUR_OF_DAY));
             }
             
         }
         
-        
+        System.out.println(selectedHours);
         
     }
     
@@ -70,24 +74,72 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         if(dayi<0) {
             //List<Booking> 
         }
+        
+        List<Booking> allBookings = DatabaseManager.getInstance().fetchAllBooking();
+        for (int i = 0; i < allBookings.size(); i++) {
+            Booking booking = allBookings.get(i);
+            for (int j = 0; j < booking.getTimeTable().size(); j++) {
+                Calendar calendar = booking.getTimeTable().get(i);
+                
+            }
+        }
+        
+        
+    }
+    
+    private int findDuplicateHour(int hour) {
+        for (int j = 0; j < selectedTimes.size(); j++) { // check if already in selectedTimes
+            LocalDate d = selectedTimes.get(j).getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            if(d.isEqual(currentDate) && selectedTimes.get(j).get(Calendar.HOUR_OF_DAY) == hour)
+                return j;
+        }
+        return -1;
+    }
+    
+    private void commitDay() {
+        for (int i = 0; i < selectedHours.size(); i++) {
+            
+            if(findDuplicateHour(selectedHours.get(i))>-1) // check if already in selectedTimes
+                continue;
+            
+            Calendar newCalendar = Calendar.getInstance();
+            newCalendar.setTime(Date.from(currentDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
+            newCalendar.set(Calendar.HOUR_OF_DAY, selectedHours.get(i));
+            newCalendar.set(Calendar.MINUTE, 0);
+            newCalendar.set(Calendar.SECOND, 0);
+
+            
+            selectedTimes.add(newCalendar);
+        }
+        selectedHours.clear();
+        for (int i = 0; i < selectedTimes.size(); i++) {
+            System.out.println(i + ": "+ selectedTimes.get(i).get(Calendar.HOUR_OF_DAY) + " " + selectedTimes.get(i).get(Calendar.DAY_OF_YEAR));
+        }
     }
     
     public void onClickTime(ActionEvent event) {
         Button timeSelectedBtn = (Button)event.getSource();
         String timeSelectedName = timeSelectedBtn.getId();
         int timeSelectedID = Integer.parseInt(timeSelectedName.split("_")[1]);
-        System.out.println(timeSelectedID);
-        timeSelectedBtn.getStyleClass().add("full");
         
-        
-        Calendar newCalendar = Calendar.getInstance();
-        newCalendar.setTime(Date.from(currentDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        newCalendar.set(Calendar.HOUR_OF_DAY, timeSelectedID);
-        newCalendar.set(Calendar.MINUTE, 0);
-        newCalendar.set(Calendar.SECOND, 0);
-        
-        System.out.println(newCalendar);
-        selectedTimes.add(newCalendar);
+        if(selectedHours.indexOf(timeSelectedID)<0) { //add
+            timeSelectedBtn.getStyleClass().add("full");
+
+            selectedHours.add(timeSelectedID);
+        } else { // remove
+            int j = findDuplicateHour(timeSelectedID);
+            if(j>-1)
+                selectedTimes.remove(j);
+            
+            for (int i = 0; i < selectedTimes.size(); i++) { // remove in selectedTimes
+                LocalDate d = selectedTimes.get(i).getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                if(d.isEqual(currentDate) && selectedTimes.get(i).get(Calendar.HOUR_OF_DAY) == timeSelectedID) 
+                    selectedTimes.remove(i);
+            }
+            selectedHours.remove(Integer.valueOf(timeSelectedID)); // remove in selectedHours
+            
+        }
+        System.out.println(selectedHours);
     }
     
     public void onClickConfirm(ActionEvent event) {
@@ -96,7 +148,6 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         Booking ssss = Main.getInstance().createBooking();
         System.out.println(ssss);
         DatabaseManager.getInstance().addBooking(ssss);
-        System.out.println(DatabaseManager.getInstance().fetchAllBooking().get(0));
         
         
         mainmenu.hideIncludePane();
