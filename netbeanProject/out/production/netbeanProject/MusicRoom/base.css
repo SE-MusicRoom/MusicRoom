@@ -36,7 +36,7 @@
     -fx-text-fill: rgb(255,255,255);
 }
 
-.button, .avaliable { 
+.button, .available { 
     // Add 'avalible' in button in time select if it avaliable 
     -fx-background-color: rgb(255,255,255);
     -fx-text-fill: rgb(0,0,0);

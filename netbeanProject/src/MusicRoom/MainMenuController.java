@@ -118,12 +118,21 @@ public class MainMenuController extends AnchorPane implements Initializable {
         }
     }
     
+    public void gotoHistory() {
+        try {
+            HistoryController con = (HistoryController) showIncludePane("history.fxml");
+            con.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void onClickReservation(ActionEvent event) {
         gotoTemplate();
     }
     
-    public void onClickProfile(ActionEvent event) {
-       
+    public void onClickHistory(ActionEvent event) {
+       gotoHistory();
     }
     
      public void onClickLogOut(ActionEvent event) {

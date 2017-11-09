@@ -32,7 +32,7 @@
                <children>
                   <AnchorPane prefHeight="465.0" prefWidth="268.0">
                      <children>
-                        <VBox layoutX="13.0" layoutY="220.0" prefHeight="175.0" prefWidth="240.0">
+                        <VBox fx:id="selectedBox" layoutX="13.0" layoutY="219.0" prefHeight="175.0" prefWidth="240.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13/02/60 (13:00 - 16:59)" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="14/02/60 (13:00 - 16:59)" />
@@ -54,7 +54,7 @@
                               <Font size="28.0" />
                            </font>
                         </Text>
-                        <Text layoutX="117.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB10000" textAlignment="RIGHT">
+                        <Text fx:id="totalTxt" layoutX="117.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB10000" textAlignment="RIGHT">
                            <font>
                               <Font name="System Bold Italic" size="28.0" />
                            </font>
@@ -71,12 +71,12 @@
                         <DatePicker fx:id="datePicker" layoutX="3.0" layoutY="63.0" onAction="#onClickDatePicker" />
                         <VBox layoutY="127.0" prefHeight="222.0" prefWidth="300.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="White - Avaliable/Mostly Avaliable ">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="White - Available/Mostly Available ">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Yellow - Nearly Full">
+                              <Text fill="#c9b500" strokeType="OUTSIDE" strokeWidth="0.0" text="Yellow - Nearly Full">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
@@ -112,20 +112,20 @@
                           </rowConstraints>
                            <children>
                               <Button fx:id="T_10_Btn" mnemonicParsing="false" prefHeight="41.0" prefWidth="84.0" text="10:00" />
-                              <Button fx:id="T_11_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="11:00" GridPane.columnIndex="1" />
-                              <Button fx:id="T_12_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="12:00" GridPane.columnIndex="2" />
-                              <Button fx:id="T_13_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="13:00" GridPane.rowIndex="1" />
-                              <Button fx:id="T_14_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="14:00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Button fx:id="T_15_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="15:00" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <Button fx:id="T_16_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="16:00" GridPane.rowIndex="2" />
-                              <Button fx:id="T_17_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="17:00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Button fx:id="T_18_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="18:00" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <Button fx:id="T_19_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="19:00" GridPane.rowIndex="3" />
-                              <Button fx:id="T_10_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="10:00" />
-                              <Button fx:id="T_20_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="20:00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Button fx:id="T_21_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="21:00" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                              <Button fx:id="T_22_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="22:00" GridPane.rowIndex="4" />
-                              <Button fx:id="T_23_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" text="23:00" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Button fx:id="T_11_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="11:00" GridPane.columnIndex="1" />
+                              <Button fx:id="T_12_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="12:00" GridPane.columnIndex="2" />
+                              <Button fx:id="T_13_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="13:00" GridPane.rowIndex="1" />
+                              <Button fx:id="T_14_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="14:00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="T_15_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="15:00" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Button fx:id="T_16_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="16:00" GridPane.rowIndex="2" />
+                              <Button fx:id="T_17_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="17:00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Button fx:id="T_18_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="18:00" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Button fx:id="T_19_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="19:00" GridPane.rowIndex="3" />
+                              <Button fx:id="T_10_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="10:00" />
+                              <Button fx:id="T_20_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="20:00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Button fx:id="T_21_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="21:00" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Button fx:id="T_22_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="22:00" GridPane.rowIndex="4" />
+                              <Button fx:id="T_23_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="41.0" prefWidth="84.0" styleClass="avaliable" text="23:00" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                            </children>
                         </GridPane>
                      </children>
