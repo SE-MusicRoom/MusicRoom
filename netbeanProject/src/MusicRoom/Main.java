@@ -80,6 +80,8 @@ public class Main extends Application {
             gotoLogin();
             primaryStage.show();
             primaryStage.setResizable(false);
+
+            DatabaseManager.getInstance().createInstrumentDB();
             
             // Test
             /*

@@ -41,7 +41,7 @@ public class DatabaseManager {
         String violinPath = new String("src\\MusicRoom\\img\\Instrument\\Violin\\");
         String AcousticGuitarPath = new String("src\\MusicRoom\\img\\Instrument\\AcousticGuitar\\");
 
-        createEMF(ip+"/Instruments.odb;user=admin;password=admin");
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
 
         em.getTransaction().begin();
         ArrayList<Instrument> l = new ArrayList<Instrument>();
@@ -68,7 +68,7 @@ public class DatabaseManager {
     
     public void createDummyRoomTemplate (){
 
-        createEMF(ip+"/RoomTemplates.odb;user=admin;password=admin");
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
         /*
         RoomTemplate l = new RoomTemplate("Violin Madness","Full of Violin",6000);
         
@@ -107,7 +107,7 @@ public class DatabaseManager {
     }
 
     public List<Instrument> fetchAllInstrument (){
-        createEMF(ip+"/Instruments.odb;user=admin;password=admin");
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
 
         TypedQuery<Instrument> query = em.createQuery("SELECT l FROM Instrument l", Instrument.class);
         List<Instrument> results = query.getResultList();
@@ -117,7 +117,7 @@ public class DatabaseManager {
     }
     
     public List<RoomTemplate> fetchAllRoomTemplate (){
-        createEMF(ip+"/RoomTemplates.odb;user=admin;password=admin");
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
 
         TypedQuery<RoomTemplate> query = em.createQuery("SELECT l FROM RoomTemplate l", RoomTemplate.class);
         List<RoomTemplate> results = query.getResultList();
@@ -127,7 +127,7 @@ public class DatabaseManager {
     }
 
     public void addUser(User user){
-        createEMF(ip+"/user.odb;user=admin;password=admin");
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
 
         em.getTransaction().begin();
         em.persist(user);
@@ -139,7 +139,7 @@ public class DatabaseManager {
     
     
     public void addBooking(Booking booking){
-        createEMF(ip+"/booking.odb;user=admin;password=admin");
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
 
         em.getTransaction().begin();
         em.persist(booking);
@@ -149,7 +149,7 @@ public class DatabaseManager {
     }
 
     public List<User> fetchAllUser(){
-        createEMF(ip+"/user.odb;user=admin;password=admin");
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
 
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u ", User.class);
         List<User> results = query.getResultList();
@@ -169,7 +169,7 @@ public class DatabaseManager {
     }
 
     public User fetchUser(int id){
-        createEMF(ip+"/user.odb;user=admin;password=admin");
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
 
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.id =" + String.valueOf(id), User.class);
         User result = query.getSingleResult();
@@ -180,7 +180,7 @@ public class DatabaseManager {
 
     public void updateUser (User user, int id){
         User DbUser = fetchUser(id);
-        createEMF("objectdb://"+ip+"/user.odb;user=admin;password=admin");
+        createEMF("objectdb://"+ip+"/MusicRoom.odb;user=admin;password=admin");
         em.getTransaction().begin();
         if(user.getName() != DbUser.getName()){
             Query query = em.createQuery("UPDATE User u SET u.name = \"" + user.getName() + "\" WHERE u.id = " + String.valueOf(id) );
