@@ -182,7 +182,7 @@ public class DatabaseManager {
     }
     
     public List<Booking> fetchAllBooking(){
-        createEMF(ip+"/booking.odb;user=admin;password=admin");
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
 
         TypedQuery<Booking> query = em.createQuery("SELECT b FROM Booking b ", Booking.class);
         List<Booking> results = query.getResultList();

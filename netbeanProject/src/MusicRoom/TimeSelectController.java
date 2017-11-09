@@ -32,31 +32,61 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     @FXML
     private DatePicker datePicker;
     
+    @FXML    private Button T_10_Btn;
+    @FXML    private Button T_11_Btn;
+    @FXML    private Button T_12_Btn;
+    @FXML    private Button T_13_Btn;
+    @FXML    private Button T_14_Btn;
+    @FXML    private Button T_15_Btn;
+    @FXML    private Button T_16_Btn;
+    @FXML    private Button T_17_Btn;
+    @FXML    private Button T_18_Btn;
+    @FXML    private Button T_19_Btn;
+    @FXML    private Button T_20_Btn;
+    @FXML    private Button T_21_Btn;
+    @FXML    private Button T_22_Btn;
+    @FXML    private Button T_23_Btn;
     
     
     private MainMenuController mainmenu;
+    private List<Calendar> notAvailableTimes;
     private List<Calendar> selectedTimes;
     private LocalDate currentDate;
     private List<Integer> selectedHours;
-    private int selectedHoursSize;
+    private Button[] TimeBtn;
     
     public void setApp(MainMenuController mainmenu){
         this.mainmenu = mainmenu;
         this.selectedTimes = new ArrayList<Calendar>();
+        this.notAvailableTimes = new ArrayList<Calendar>();
         this.selectedHours = new ArrayList<Integer>();
-        listTime(-1);
+        TimeBtn = new Button[]{null,null,null,null,null,null,null,null,null,null,T_10_Btn,T_11_Btn,T_12_Btn,T_13_Btn,T_14_Btn,T_15_Btn,T_16_Btn,T_17_Btn,T_18_Btn,T_19_Btn,T_20_Btn,T_21_Btn,T_22_Btn,T_10_Btn}; 
+        
+        List<Booking> allBookings = DatabaseManager.getInstance().fetchAllBooking();
+        for (int i = 0; i < allBookings.size(); i++) {
+            Booking booking = allBookings.get(i);
+            for (int j = 0; j < booking.getTimeTable().size(); j++) {
+                Calendar calendar = booking.getTimeTable().get(j);
+                notAvailableTimes.add(calendar);
+                System.out.println(calendar);
+            }
+        }
+        
+        listTime();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
        datePicker.setValue(LocalDate.now());
        currentDate = LocalDate.now();
+       
     }
     
     
     public void onClickDatePicker(ActionEvent event) {
         commitDay();
         currentDate = datePicker.getValue();
+        listTime();
         //Date currentDate = Date.from(datePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
         for (int i = 0; i < selectedTimes.size(); i++) {
             LocalDate d = selectedTimes.get(i).getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -66,23 +96,25 @@ public class TimeSelectController extends AnchorPane implements Initializable{
             
         }
         
-        System.out.println(selectedHours);
+        System.out.println("Selected: "+selectedHours);
         
     }
     
-    private void listTime(int dayi) {
-        if(dayi<0) {
-            //List<Booking> 
+    private void listTime() {
+        for (int i = 10; i < TimeBtn.length; i++) {
+            TimeBtn[i].setVisible(true);
         }
-        
-        List<Booking> allBookings = DatabaseManager.getInstance().fetchAllBooking();
-        for (int i = 0; i < allBookings.size(); i++) {
-            Booking booking = allBookings.get(i);
-            for (int j = 0; j < booking.getTimeTable().size(); j++) {
-                Calendar calendar = booking.getTimeTable().get(i);
-                
+        int counter = 0;
+        for (int i = 0; i < notAvailableTimes.size(); i++) {
+            LocalDate d = notAvailableTimes.get(i).getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            if(d.isEqual(currentDate)) {
+                TimeBtn[notAvailableTimes.get(i).get(Calendar.HOUR_OF_DAY)].setVisible(false);
+                counter++;
             }
+                
+                //selectedTimes.add(selectedTimes.get(j).get(Calendar.HOUR_OF_DAY));
         }
+        System.out.println("Booked: "+counter);
         
         
     }
