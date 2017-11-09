@@ -13,6 +13,7 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -27,7 +28,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 public class Booking {
-    @Id@GeneratedValue
+    @Id@GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
     
     @ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
@@ -37,7 +38,7 @@ public class Booking {
     @Temporal(TemporalType.TIMESTAMP)
     private List<Calendar> timeTable;
     
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne
     private User user;
     
     @Temporal(TemporalType.TIMESTAMP)

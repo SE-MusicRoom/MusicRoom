@@ -53,6 +53,7 @@ public class Main extends Application {
         this.bookedTimes = DatabaseManager.getInstance().fetchAllBooking();
         
         Main.instance = this;
+        DatabaseManager.getInstance().createDummyRoomTemplate ();
     }
 
     /**
@@ -81,7 +82,6 @@ public class Main extends Application {
             primaryStage.show();
             primaryStage.setResizable(false);
 
-            DatabaseManager.getInstance().createInstrumentDB();
             
             // Test
             /*

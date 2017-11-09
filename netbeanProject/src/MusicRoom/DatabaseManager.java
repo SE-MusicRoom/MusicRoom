@@ -36,6 +36,28 @@ public class DatabaseManager {
         this.em.close();
         this.emf.close();
     }
+    
+    public void createDummyAll() {
+        createInstrumentDB();
+        createDummyRoomTemplate();
+        createDummyUser();
+    }
+    
+    public void createDummyUser() {
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+
+        em.getTransaction().begin();
+        User l = new User("1234", "1234", "1234", "1234", "1234", "1234");
+        User m = new User("123", "123", "123", "123", "123", "123");
+        
+        em.getTransaction().begin();
+        em.persist(l);
+        em.persist(m);
+
+        em.getTransaction().commit();
+        
+        closeEMF();
+    }
 
     public void createInstrumentDB (){
         String violinPath = new String("src\\MusicRoom\\img\\Instrument\\Violin\\");
@@ -62,14 +84,14 @@ public class DatabaseManager {
         }
 
         em.getTransaction().commit();
-        em.close();
-        emf.close();
+        closeEMF();
     }
     
     public void createDummyRoomTemplate (){
 
         createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
-        /*
+        em.getTransaction().begin();
+        
         RoomTemplate l = new RoomTemplate("Violin Madness","Full of Violin",6000);
         
         l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
@@ -82,24 +104,25 @@ public class DatabaseManager {
         l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
         l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
         l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
-
-        */
-        
-        RoomTemplate l = new RoomTemplate("Guitar Madness","Full of Guitar",5000);
-        
-        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        l.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        
-        em.getTransaction().begin();
         em.persist(l);
+       
+        /*
+        RoomTemplate m = new RoomTemplate("Guitar Madness","Full of Guitar",5000);
+        
+        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
+        
+        
+        
+        em.persist(m);*/
 
         em.getTransaction().commit();
         
@@ -209,6 +232,8 @@ public class DatabaseManager {
         em.getTransaction().commit();
         closeEMF();
     }
+
+
 
 
 

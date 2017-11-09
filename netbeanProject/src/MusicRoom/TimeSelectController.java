@@ -143,6 +143,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     }
     
     public void onClickConfirm(ActionEvent event) {
+        commitDay();
         Main.getInstance().setCurrentTimeTable(selectedTimes);
         
         Booking ssss = Main.getInstance().createBooking();

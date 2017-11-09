@@ -9,6 +9,7 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import java.io.Serializable;
+import javax.persistence.GenerationType;
 
 /**
  *
@@ -16,15 +17,13 @@ import java.io.Serializable;
  */
 @MappedSuperclass 
 abstract public class Instrument implements Serializable{
-    @Id@GeneratedValue
+    @Id@GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
 
     private String name;
     private String model;
     private float price;
     private String img;
-    
-    private RoomTemplate roomid;
 
     public Instrument(String name, String model, float price, String img) {
         this.name = name;

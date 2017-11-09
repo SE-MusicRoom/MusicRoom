@@ -8,21 +8,25 @@ package MusicRoom.entity;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
-    @Id@GeneratedValue
+    @Id@GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
 
     private String username;
     private String password;
     
-    @ElementCollection(fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    //@ElementCollection(fetch=FetchType.EAGER)
     private List<Booking> bookedTimes;
     
     private String name;
