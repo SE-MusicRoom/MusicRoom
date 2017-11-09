@@ -58,7 +58,7 @@ Contributor(s):
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff6000" height="87.0" stroke="TRANSPARENT" strokeType="INSIDE" width="282.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff6000" height="73.0" stroke="TRANSPARENT" strokeType="INSIDE" width="222.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d0601" height="51.0" stroke="TRANSPARENT" strokeType="INSIDE" width="331.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="117.0" stroke="TRANSPARENT" strokeType="INSIDE" width="494.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="130.0" stroke="TRANSPARENT" strokeType="INSIDE" width="494.0" />
             <HBox prefHeight="73.0" prefWidth="431.0">
                <children>
                   <Button fx:id="login" mnemonicParsing="false" onAction="#onClickLogin" prefHeight="64.0" prefWidth="170.0" style="-fx-background-color: #000000; -fx-font-size: 48;" text="LOGIN" textAlignment="CENTER" textFill="#ff6000">
@@ -111,10 +111,10 @@ Contributor(s):
                         <Font name="Cloud-Bold" size="28.0" />
                      </font>
                      <HBox.margin>
-                        <Insets top="3.0" />
+                        <Insets top="6.0" />
                      </HBox.margin>
                   </Text>
-                  <TextField fx:id="userId" prefHeight="41.0" prefWidth="282.0" style="-fx-background-color: fff0e6; -fx-font-size: 18; -fx-border-color: #ffd1b3;" />
+                  <TextField fx:id="userId" prefHeight="41.0" prefWidth="282.0" style="-fx-background-color: fff0e6; -fx-font-size: 18; -fx-border-color: #ffd1b3; -fx-border-width: 3;" />
                </children>
                <VBox.margin>
                   <Insets top="10.0" />
@@ -127,10 +127,10 @@ Contributor(s):
                         <Font name="Cloud-Bold" size="28.0" />
                      </font>
                      <HBox.margin>
-                        <Insets top="4.0" />
+                        <Insets top="7.0" />
                      </HBox.margin>
                   </Text>
-                  <PasswordField fx:id="password" prefHeight="41.0" prefWidth="282.0" style="-fx-background-color: fff0e6; -fx-font-size: 18; -fx-border-color: #ffd1b3;" />
+                  <PasswordField fx:id="password" prefHeight="41.0" prefWidth="282.0" style="-fx-background-color: fff0e6; -fx-font-size: 18; -fx-border-color: #ffd1b3; -fx-border-width: 3;" />
                </children>
                <VBox.margin>
                   <Insets top="12.0" />

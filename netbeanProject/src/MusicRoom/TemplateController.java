@@ -34,7 +34,7 @@ public class TemplateController extends AnchorPane implements Initializable {
     }
     
     public void onClickCustomize(ActionEvent event) {
-        mainmenu.gotoReservation();
+        mainmenu.gotoCustomize();
     }
     
     public void onClickBack(ActionEvent event) {

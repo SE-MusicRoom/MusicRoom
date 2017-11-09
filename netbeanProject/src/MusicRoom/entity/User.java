@@ -8,22 +8,26 @@ package MusicRoom.entity;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
-    @Id@GeneratedValue
+    @Id@GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
 
     private String username;
     private String password;
     
-    @ElementCollection(fetch=FetchType.EAGER)
-    private List<Calendar> bookedTimes;
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    //@ElementCollection(fetch=FetchType.EAGER)
+    private List<Booking> bookedTimes;
     
     private String name;
     private String surname;
@@ -34,7 +38,7 @@ public class User {
             String surname, String email, String bandName) {
         this.username = username;
         this.password = password;
-        bookedTimes = new ArrayList<Calendar>();
+        bookedTimes = new ArrayList<Booking>();
         
         this.name = name;
         this.name = surname;
@@ -55,11 +59,11 @@ public class User {
         return password;
     }
 
-    public List<Calendar> getBookedTimes() {
+    public List<Booking> getBookedTimes() {
         return bookedTimes;
     }
 
-    public void addBookedTime(Calendar time) {
+    public void addBookedTime(Booking time) {
         bookedTimes.add(time);
     }
 
