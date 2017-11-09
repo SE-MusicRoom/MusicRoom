@@ -24,25 +24,25 @@
 }
 
 // For Calendar Only
-.calendar-cell, .warning { 
+.calendar-cell .warning { 
     // Add 'warning' when nears full 
     -fx-background-color: rgb(255,255,0);
     -fx-text-fill: rgb(0,0,0);
 }
 
-.calendar-cell, .danger { 
+.calendar-cell .danger { 
     // Add 'full' when full 
     -fx-background-color: rgb(255,0,0);
     -fx-text-fill: rgb(255,255,255);
 }
 
-.button, .avaliable { 
+.button .avaliable { 
     // Add 'avalible' in button in time select if it avaliable 
     -fx-background-color: rgb(255,255,255);
     -fx-text-fill: rgb(0,0,0);
 }
 
-.button, .full { 
+.button .full { 
     // Add 'full' in button in time select if it full
     -fx-background-color: rgb(255,0,0);
     -fx-text-fill: rgb(255,255,255);
