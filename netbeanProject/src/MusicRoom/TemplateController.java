@@ -5,11 +5,10 @@
  */
 package MusicRoom;
 
-import MusicRoom.entity.Instrument;
+import MusicRoom.entity.CustomRoomTemplate;
 import MusicRoom.entity.RoomTemplate;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,7 +17,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -45,6 +43,9 @@ public class TemplateController extends AnchorPane implements Initializable {
         templateGrid.setPrefHeight(200*Math.ceil(Main.getInstance().getRoomTemplete().size()/3));
         for (int i = 0; i < Main.getInstance().getRoomTemplete().size(); i++) {
             RoomTemplate r = Main.getInstance().getRoomTemplete().get(i);
+            if(r instanceof CustomRoomTemplate)
+                continue;
+            
             AnchorPane ac = copyTemplateToken(r.getName());
             ac.setId(String.valueOf(i));
             

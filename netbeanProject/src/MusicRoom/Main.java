@@ -118,8 +118,13 @@ public class Main extends Application {
         return instruments;
     }
     
-    public Instrument getInstrument(int id) {
-        return instruments.get(id);
+    public Instrument getInstrument(long id) {
+        for (int i = 0; i < instruments.size(); i++) {
+            Instrument o = instruments.get(i);
+            if(o.getId() == id)
+                return o;
+        }
+        return null;
     }
     
     public Instrument getInstrument(String name,String model) {

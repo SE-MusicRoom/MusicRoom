@@ -35,7 +35,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <ChoiceBox layoutX="73.0" layoutY="1.0" prefHeight="39.0" prefWidth="235.0" />
+                  <ChoiceBox fx:id="choiceBox" layoutX="73.0" layoutY="1.0" prefHeight="39.0" prefWidth="235.0" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="439.0" layoutY="54.0" prefHeight="40.0" prefWidth="281.0">

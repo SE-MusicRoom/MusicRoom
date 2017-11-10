@@ -10,6 +10,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
+import javax.persistence.Transient;
 
 
 /**
@@ -19,7 +20,8 @@ import javax.persistence.ManyToMany;
 @Entity
 public class CustomRoomTemplate extends RoomTemplate {
     
-    //@ManyToMany(fetch = FetchType.EAGER)
+    //@OneToMany(mappedBy = "room",fetch=FetchType.EAGER)
+    //@Transient
     private static List<Booking> bookings;
     
     public CustomRoomTemplate(String name, String detail, float price) {

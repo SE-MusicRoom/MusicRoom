@@ -17,6 +17,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -35,7 +37,7 @@ public class RoomTemplate {
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Instrument> instruments;
     
-    @ManyToMany(fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "room",fetch=FetchType.EAGER)
     private List<Booking> bookings;
 
     public RoomTemplate(String name, String detail, float price) {
@@ -54,6 +56,11 @@ public class RoomTemplate {
         bookings.add(newBooking);
     }
 
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    
     public List<Booking> getBookings() {
         return bookings;
     }

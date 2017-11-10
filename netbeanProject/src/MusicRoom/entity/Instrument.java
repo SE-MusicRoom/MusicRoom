@@ -43,6 +43,12 @@ abstract public class Instrument implements Serializable{
         }
         return str.substring(0, str.length() - 1);
     }
+
+    public long getId() {
+        return id;
+    }
+    
+    
     
     public String getName() {
         return name;

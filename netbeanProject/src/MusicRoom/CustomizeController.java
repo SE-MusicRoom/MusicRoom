@@ -41,11 +41,14 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -80,6 +83,9 @@ public class CustomizeController extends AnchorPane implements Initializable {
 
     @FXML
     private AnchorPane addedToken;
+    
+    @FXML
+    private ChoiceBox<String> choiceBox;
 
     @FXML
     private VBox addedScroll;
@@ -93,6 +99,19 @@ public class CustomizeController extends AnchorPane implements Initializable {
     public void setApp(MainMenuController mainmenu){
         this.addedInstruments = new ArrayList<Instrument>();
         this.mainmenu = mainmenu;
+        
+        List<Instrument> listedInstruments = Main.getInstance().getInstruments();
+        for (int i = 0; i < listedInstruments.size(); i++) {
+            if(!choiceBox.getItems().contains(listedInstruments.get(i).getClass().getSimpleName()))
+                choiceBox.getItems().add(listedInstruments.get(i).getClass().getSimpleName());
+        }
+        
+        choiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+                System.out.println(newValue);
+            }
+            });
     }
     
     public void setApp(CustomizeController parent){
@@ -104,6 +123,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         addedScroll.getChildren().clear();
         listScroll.getChildren().clear();
         setTotal(0);
+        
     }
 
     public VBox getAddedScroll() {
@@ -131,12 +151,15 @@ public class CustomizeController extends AnchorPane implements Initializable {
     }
     
     public void onClickGo(ActionEvent event) {
+        listScroll.getChildren().clear();
         List<Instrument> listedInstruments = Main.getInstance().getInstruments();
-        System.out.println("Start");
         for (int i = 0; i < listedInstruments.size(); i++) {
-            System.out.println(listedInstruments.get(i).getName());
+            if(!listedInstruments.get(i).getClass().getSimpleName().equals(choiceBox.getSelectionModel().getSelectedItem()) && choiceBox.getSelectionModel().getSelectedItem() != null)
+                continue;
+            if(!listedInstruments.get(i).getName().toLowerCase().contains(searchTxtField.getText().toLowerCase()) && !listedInstruments.get(i).getModel().toLowerCase().contains(searchTxtField.getText().toLowerCase() ) && !searchTxtField.getText().equals(""))
+                continue;
             AnchorPane newToken = copyListToken(listedInstruments.get(i).getName()+" "+listedInstruments.get(i).getModel(),listedInstruments.get(i).getClassPath(),Float.toString(listedInstruments.get(i).getRentPrice()));
-            newToken.setId(String.valueOf(i));
+            newToken.setId(String.valueOf(listedInstruments.get(i).getId()));
             listScroll.getChildren().add(newToken);
         }
     }

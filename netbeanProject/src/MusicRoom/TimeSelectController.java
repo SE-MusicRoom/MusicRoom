@@ -292,11 +292,12 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         
         if(Main.getInstance().getCurrentRoom() instanceof CustomRoomTemplate)
             DatabaseManager.getInstance().addCustomRoom((CustomRoomTemplate) Main.getInstance().getCurrentRoom());
-        
+                    
         Booking ssss = Main.getInstance().createBooking();
         System.out.println(ssss);
-        Main.getInstance().getCurrentRoom().addBooking(ssss);
         DatabaseManager.getInstance().addBooking(ssss);
+        Main.getInstance().getCurrentRoom().addBooking(ssss);
+        
         
         
         mainmenu.hideIncludePane();
