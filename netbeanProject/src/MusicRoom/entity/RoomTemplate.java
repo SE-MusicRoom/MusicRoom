@@ -60,7 +60,7 @@ public class RoomTemplate {
         this.bookings = bookings;
     }
 
-    
+            
     public List<Booking> getBookings() {
         return bookings;
     }

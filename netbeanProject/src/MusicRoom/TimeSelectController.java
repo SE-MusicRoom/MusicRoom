@@ -26,6 +26,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -56,6 +58,10 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     @FXML    private Button T_22_Btn;
     @FXML    private Button T_23_Btn;
     
+    
+        @FXML
+    private ImageView SummaryImgView;
+        
    @FXML
     private Text totalTxt;
 
@@ -112,7 +118,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         this.notAvailableTimes = new ArrayList<Calendar>();
         this.selectedHours = new ArrayList<Integer>();
         TimeBtn = new Button[]{null,null,null,null,null,null,null,null,null,null,T_10_Btn,T_11_Btn,T_12_Btn,T_13_Btn,T_14_Btn,T_15_Btn,T_16_Btn,T_17_Btn,T_18_Btn,T_19_Btn,T_20_Btn,T_21_Btn,T_22_Btn,T_23_Btn}; 
-        
+        SummaryImgView.setImage(new Image("MusicRoom/img/RoomTemplate/"+Main.getInstance().getCurrentRoom().getName()+".jpg"));
         total = 0;
         totalTxt.setText("THB"+total);
         
@@ -133,6 +139,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
        datePicker.setDayCellFactory(dayCellFactory);
        currentDate = LocalDate.now();
        selectedBox.getChildren().clear();
+       
     }
     
     

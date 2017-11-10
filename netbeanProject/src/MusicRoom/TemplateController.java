@@ -17,6 +17,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -46,11 +48,11 @@ public class TemplateController extends AnchorPane implements Initializable {
             if(r instanceof CustomRoomTemplate)
                 continue;
             
-            AnchorPane ac = copyTemplateToken(r.getName());
+            AnchorPane ac = copyTemplateToken(r);
             ac.setId(String.valueOf(i));
-            
             templateGrid.add(ac,(i)%3,i/3);
         }
+        
     }
     
     public void setApp(TemplateController parent,MainMenuController mainmenu){
@@ -63,7 +65,7 @@ public class TemplateController extends AnchorPane implements Initializable {
         
     }
     
-    private AnchorPane copyTemplateToken(String name) {
+    private AnchorPane copyTemplateToken(RoomTemplate r) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("templateselect.fxml"));
         
         try {   
@@ -72,8 +74,11 @@ public class TemplateController extends AnchorPane implements Initializable {
             Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
         AnchorPane newToken = (AnchorPane)loader.getNamespace().get("templateToken");
-        Text t0 = (Text) newToken.getChildren().get(4);
-        t0.setText(name);
+        Text t0 = (Text) newToken.getChildren().get(5);
+        t0.setText(r.getName());
+        
+        ImageView imgV = (ImageView)newToken.getChildren().get(1);
+        imgV.setImage(new Image("MusicRoom/img/RoomTemplate/"+r.getName()+".jpg"));
         
          // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
         TemplateController cus = (TemplateController)loader.getController();

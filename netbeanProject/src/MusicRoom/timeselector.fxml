@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.shape.*?>
@@ -47,6 +48,7 @@
                         <AnchorPane layoutX="14.0" layoutY="53.0" prefHeight="144.0" prefWidth="230.0">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="149.0" stroke="BLACK" strokeType="INSIDE" width="230.0" />
+                              <ImageView fx:id="SummaryImgView" fitHeight="150.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </AnchorPane>
                         <Text layoutX="14.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
