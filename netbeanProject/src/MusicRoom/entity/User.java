@@ -25,8 +25,8 @@ public class User {
     private String username;
     private String password;
     
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-    //@ElementCollection(fetch=FetchType.EAGER)
+    @OneToMany(mappedBy = "user",fetch=FetchType.EAGER)
+    //@ElementCollection()
     private List<Booking> bookedTimes;
     
     private String name;

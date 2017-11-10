@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -40,20 +41,20 @@ public class TemplateController extends AnchorPane implements Initializable {
     
     public void setApp(MainMenuController mainmenu){
         this.mainmenu = mainmenu;
+        this.templateGrid.getChildren().clear();
+        templateGrid.setPrefHeight(200*Math.ceil(Main.getInstance().getRoomTemplete().size()/3));
         for (int i = 0; i < Main.getInstance().getRoomTemplete().size(); i++) {
             RoomTemplate r = Main.getInstance().getRoomTemplete().get(i);
             AnchorPane ac = copyTemplateToken(r.getName());
-
-            if(i%3==0)
-                templateGrid.addRow(i/3, ac);
-            //else
-                //templateGrid.add(ac,i%3,i/3);
-            System.out.println(r);
+            ac.setId(String.valueOf(i));
+            
+            templateGrid.add(ac,(i)%3,i/3);
         }
     }
     
-    public void setApp(TemplateController parent){
+    public void setApp(TemplateController parent,MainMenuController mainmenu){
         this.parent = parent;
+        this.mainmenu = mainmenu;
     }
 
     @Override
@@ -75,7 +76,7 @@ public class TemplateController extends AnchorPane implements Initializable {
         
          // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
         TemplateController cus = (TemplateController)loader.getController();
-        cus.setApp(this);
+        cus.setApp(this,mainmenu);
         
         return newToken;
     }
@@ -88,4 +89,16 @@ public class TemplateController extends AnchorPane implements Initializable {
         mainmenu.hideIncludePane();
     }
     
+    public void onSelectTemplate(ActionEvent event) {
+        int selectedId = Integer.parseInt( ((Button)event.getSource()).getParent().getId() );
+        Main.getInstance().setCurrentRoom(Main.getInstance().getRoomTemplete().get(selectedId));
+        mainmenu.gotoTimeSelect();
+        
+    }
+    
+    public void onSelectDetail(ActionEvent event) {
+        int selectedId = Integer.parseInt( ((Button)event.getSource()).getParent().getId() );
+        System.out.println(Main.getInstance().getRoomTemplete().get(selectedId));
+        
+    }
 }

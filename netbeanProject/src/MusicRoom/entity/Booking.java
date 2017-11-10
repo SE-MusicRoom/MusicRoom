@@ -31,7 +31,7 @@ public class Booking {
     @Id@GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
     
-    @ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+    @ManyToOne(fetch=FetchType.EAGER)
     private RoomTemplate room;
     
     @ElementCollection(fetch=FetchType.EAGER)

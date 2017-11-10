@@ -32,7 +32,7 @@ public class RoomTemplate {
     private float price;
     
     //@ElementCollection
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Instrument> instruments;
 
     public RoomTemplate(String name, String detail, float price) {
