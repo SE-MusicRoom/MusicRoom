@@ -38,6 +38,7 @@ public class Main extends Application {
     private Booking currentBooking;
     private RoomTemplate currentRoom;
     private List<Calendar> currentTimeTable;
+    private float currentPrice;
    
     
     private final double MINIMUM_WINDOW_WIDTH = 1024;
@@ -53,7 +54,7 @@ public class Main extends Application {
         this.bookedTimes = DatabaseManager.getInstance().fetchAllBooking();
         
         Main.instance = this;
-        //DatabaseManager.getInstance().createDummyRoomTemplate ();
+        
     }
 
     /**
@@ -82,8 +83,9 @@ public class Main extends Application {
             primaryStage.show();
             primaryStage.setResizable(false);
 
-            
+            Voice v = new Voice("", "", 10, "");
             // Test
+            //DatabaseManager.getInstance().createDummyRoomTemplate ();
             /*
             DatabaseManager DbManager = DatabaseManager.getInstance();
             List<Instrument> instruments = DbManager.fetchAllInstrument(insert path of file.odb);
@@ -101,6 +103,16 @@ public class Main extends Application {
     public User getLoggedUser() {
         return currentUser;
     }
+
+    public void setCurrentPrice(float currentPrice) {
+        this.currentPrice = currentPrice;
+    }
+
+    public RoomTemplate getCurrentRoom() {
+        return currentRoom;
+    }
+    
+    
     
     public List<Instrument> getInstruments() {
         return instruments;
@@ -158,7 +170,7 @@ public class Main extends Application {
 
      
     public Booking createBooking() {
-        Booking newBooking = new Booking(currentRoom, currentTimeTable, currentUser);
+        Booking newBooking = new Booking(currentRoom, currentTimeTable, currentUser,currentPrice);
         return newBooking;
     } 
     

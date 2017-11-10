@@ -6,6 +6,7 @@
 package MusicRoom;
 
 import MusicRoom.entity.Booking;
+import MusicRoom.entity.CustomRoomTemplate;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
@@ -67,6 +68,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     private LocalDate currentDate;
     private List<Integer> selectedHours;
     private Button[] TimeBtn;
+    private float total;
     
     final Callback<DatePicker, DateCell> dayCellFactory = 
             new Callback<DatePicker, DateCell>() {
@@ -111,7 +113,10 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         this.selectedHours = new ArrayList<Integer>();
         TimeBtn = new Button[]{null,null,null,null,null,null,null,null,null,null,T_10_Btn,T_11_Btn,T_12_Btn,T_13_Btn,T_14_Btn,T_15_Btn,T_16_Btn,T_17_Btn,T_18_Btn,T_19_Btn,T_20_Btn,T_21_Btn,T_22_Btn,T_23_Btn}; 
         
-        List<Booking> allBookings = DatabaseManager.getInstance().fetchAllBooking();
+        total = 0;
+        totalTxt.setText("THB"+total);
+        
+        List<Booking> allBookings = Main.getInstance().getCurrentRoom().getBookings();
         for (int i = 0; i < allBookings.size(); i++) {
             Booking booking = allBookings.get(i);
             for (int j = 0; j < booking.getTimeTable().size(); j++) {
@@ -205,6 +210,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         selectedHours.clear();
         
         Collections.sort(selectedTimes, new Comparator<Calendar>() {
+            @Override
             public int compare(Calendar o1, Calendar o2) {
                 return o1.getTime().compareTo(o2.getTime());
             }
@@ -245,6 +251,8 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         
         System.out.println(selectedTimes);
         
+        total = selectedTimes.size()*Main.getInstance().getCurrentRoom().getPrice();
+        totalTxt.setText("THB"+total);
     }
     
     public void onClickTime(ActionEvent event) {
@@ -270,15 +278,24 @@ public class TimeSelectController extends AnchorPane implements Initializable{
             
         }
         
-        
+        total = (selectedTimes.size()+selectedHours.size())*Main.getInstance().getCurrentRoom().getPrice();
+        totalTxt.setText("THB"+total);
     }
     
     public void onClickConfirm(ActionEvent event) {
         commitDay();
+        
+        if(selectedTimes.isEmpty())
+            System.out.println("Error: Please add some times first");
+        
         Main.getInstance().setCurrentTimeTable(selectedTimes);
+        
+        if(Main.getInstance().getCurrentRoom() instanceof CustomRoomTemplate)
+            DatabaseManager.getInstance().addCustomRoom((CustomRoomTemplate) Main.getInstance().getCurrentRoom());
         
         Booking ssss = Main.getInstance().createBooking();
         System.out.println(ssss);
+        Main.getInstance().getCurrentRoom().addBooking(ssss);
         DatabaseManager.getInstance().addBooking(ssss);
         
         

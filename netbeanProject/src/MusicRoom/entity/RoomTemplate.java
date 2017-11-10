@@ -34,17 +34,30 @@ public class RoomTemplate {
     //@ElementCollection
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Instrument> instruments;
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Booking> bookings;
 
     public RoomTemplate(String name, String detail, float price) {
         this.name = name;
         this.detail = detail;
         this.price = price;
-        instruments = new ArrayList<Instrument>();
+        this.instruments = new ArrayList<Instrument>();
+        this.bookings = new ArrayList<Booking>();
     }
     
     public void addInstrument(Instrument newInstrument) {
         instruments.add(newInstrument);
     }
+    
+    public void addBooking(Booking newBooking) {
+        bookings.add(newBooking);
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+    
 
     public int getId() {
         return id;
@@ -70,7 +83,7 @@ public class RoomTemplate {
     public String toString() {
         return "Name:" + this.name +
                "\nTHB" + this.price +
-               "\nInstruments:" + this.instruments /*+
+               "\nInstruments:" + this.instruments.size() /*+
                "\nTimeTable: " + this.timeTable.toString() */;
     }
     

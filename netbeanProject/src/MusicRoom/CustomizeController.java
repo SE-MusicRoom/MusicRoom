@@ -31,6 +31,7 @@
  */
 package MusicRoom;
 
+import MusicRoom.entity.CustomRoomTemplate;
 import MusicRoom.entity.Instrument;
 import MusicRoom.entity.RoomTemplate;
 import java.io.IOException;
@@ -102,13 +103,14 @@ public class CustomizeController extends AnchorPane implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         addedScroll.getChildren().clear();
         listScroll.getChildren().clear();
+        setTotal(0);
     }
 
     public VBox getAddedScroll() {
         return addedScroll;
     }
 
-    public void setTotal(String total) {
+    public void setTotal(float total) {
         this.total.setText("THB"+total+"/hr");
     }
     
@@ -133,7 +135,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         System.out.println("Start");
         for (int i = 0; i < listedInstruments.size(); i++) {
             System.out.println(listedInstruments.get(i).getName());
-            AnchorPane newToken = copyListToken(listedInstruments.get(i).getModel(),listedInstruments.get(i).getName(),Float.toString(listedInstruments.get(i).getPrice()));
+            AnchorPane newToken = copyListToken(listedInstruments.get(i).getName()+" "+listedInstruments.get(i).getModel(),listedInstruments.get(i).getClassPath(),Float.toString(listedInstruments.get(i).getRentPrice()));
             newToken.setId(String.valueOf(i));
             listScroll.getChildren().add(newToken);
         }
@@ -148,12 +150,12 @@ public class CustomizeController extends AnchorPane implements Initializable {
         System.out.println("Added " +  selectedInstrument.getName() +  selectedInstrument.getModel());
         
         
-        AnchorPane newToken = copyAddedToken(selectedInstrument.getModel(),selectedInstrument.getName(),Float.toString(selectedInstrument.getPrice()));
+        AnchorPane newToken = copyAddedToken(selectedInstrument.getClass().getSimpleName()+": "+selectedInstrument.getName()+" "+selectedInstrument.getModel(),Float.toString(selectedInstrument.getRentPrice()));
         newToken.setId(String.valueOf(parent.getAddedScroll().getChildren().size()));
         parent.getAddedScroll().getChildren().add(newToken);
 
         // Total
-        parent.setTotal(String.valueOf(parent.calculateTotal()));
+        parent.setTotal(parent.calculateTotal());
         
     }
     
@@ -171,7 +173,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         }
         
         // Total
-        parent.setTotal(String.valueOf(parent.calculateTotal()));
+        parent.setTotal(parent.calculateTotal());
     }
     
     
@@ -180,12 +182,18 @@ public class CustomizeController extends AnchorPane implements Initializable {
     }
     public void onClickConfirm(ActionEvent event) {
         
+        if(addedInstruments.isEmpty()) {
+            System.out.println("Error: Please add some instruments first");
+            return;
+        }
+        
         System.out.println("SET!");
         
-        RoomTemplate newRoom = new RoomTemplate("Custom","A new custom room", calculateTotal());
+        CustomRoomTemplate newRoom = new CustomRoomTemplate("Custom","A new custom room", calculateTotal());
         for (int i = 0; i < addedInstruments.size(); i++) {
             newRoom.addInstrument(addedInstruments.get(i));
         }
+        
         Main.getInstance().setCurrentRoom(newRoom);
         mainmenu.gotoTimeSelect();
         
@@ -196,7 +204,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
     private float calculateTotal() {
         float price = 0f;
         for (int i = 0; i < addedInstruments.size(); i++) {
-            price += addedInstruments.get(i).getPrice();
+            price += addedInstruments.get(i).getRentPrice();
             
         }
         return price;
@@ -225,7 +233,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         return newToken;
     }
     
-    private AnchorPane copyAddedToken(String name,String path,String price) {
+    private AnchorPane copyAddedToken(String name,String price) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("customize.fxml"));
         try {
             loader.load();

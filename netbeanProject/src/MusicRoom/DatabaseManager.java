@@ -2,6 +2,7 @@ package MusicRoom;
 
 import MusicRoom.entity.AcousticGuitar;
 import MusicRoom.entity.Booking;
+import MusicRoom.entity.CustomRoomTemplate;
 import MusicRoom.entity.Instrument;
 import MusicRoom.entity.RoomTemplate;
 import MusicRoom.entity.User;
@@ -159,7 +160,25 @@ public class DatabaseManager {
         closeEMF();
     }
     
+    public void addRoom(RoomTemplate roomTemplate){
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+
+        em.getTransaction().begin();
+        em.persist(roomTemplate);
+        em.getTransaction().commit();
+
+        closeEMF();
+    }
     
+    public void addCustomRoom(CustomRoomTemplate roomTemplate){
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+
+        em.getTransaction().begin();
+        em.persist(roomTemplate);
+        em.getTransaction().commit();
+
+        closeEMF();
+    }
     
     public void addBooking(Booking booking){
         createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
@@ -187,6 +206,15 @@ public class DatabaseManager {
         TypedQuery<Booking> query = em.createQuery("SELECT b FROM Booking b ", Booking.class);
         List<Booking> results = query.getResultList();
 
+        closeEMF();
+        return results;
+    }
+    
+    public List<Booking> fetchAllCustomBooking(){
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+
+        TypedQuery<Booking> query = em.createQuery("SELECT b FROM Booking b WHERE b.room.name = \"Custom\"", Booking.class);
+        List<Booking> results = query.getResultList();
         closeEMF();
         return results;
     }

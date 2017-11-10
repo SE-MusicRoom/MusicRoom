@@ -24,12 +24,24 @@ abstract public class Instrument implements Serializable{
     private String model;
     private float price;
     private String img;
+    
+    
 
     public Instrument(String name, String model, float price, String img) {
         this.name = name;
         this.model = model;
         this.price = price;
         this.img = img;
+    }
+    
+    public String getClassPath() {
+        String str = "";
+        Class C = getClass();
+        while (C != Instrument.class) {
+            str = C.getSimpleName() + "/" + str;
+            C = C.getSuperclass();
+        }
+        return str.substring(0, str.length() - 1);
     }
     
     public String getName() {
@@ -42,6 +54,10 @@ abstract public class Instrument implements Serializable{
 
     public float getPrice() {
         return price;
+    }
+    
+    public float getRentPrice() {
+        return price/100;
     }
     
     public String getImage() {

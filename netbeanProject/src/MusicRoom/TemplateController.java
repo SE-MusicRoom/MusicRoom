@@ -93,6 +93,7 @@ public class TemplateController extends AnchorPane implements Initializable {
         int selectedId = Integer.parseInt( ((Button)event.getSource()).getParent().getId() );
         Main.getInstance().setCurrentRoom(Main.getInstance().getRoomTemplete().get(selectedId));
         mainmenu.gotoTimeSelect();
+        Main.getInstance().setCurrentPrice(Main.getInstance().getRoomTemplete().get(selectedId).getPrice());
         
     }
     

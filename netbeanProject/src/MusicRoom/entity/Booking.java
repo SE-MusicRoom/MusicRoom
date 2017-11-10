@@ -30,6 +30,7 @@ import javax.persistence.TemporalType;
 public class Booking {
     @Id@GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
+    private float price;
     
     @ManyToOne(fetch=FetchType.EAGER)
     private RoomTemplate room;
@@ -44,11 +45,12 @@ public class Booking {
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar createTime;
 
-    public Booking(RoomTemplate room, List<Calendar> timeTable,User user) {
+    public Booking(RoomTemplate room, List<Calendar> timeTable,User user,float price) {
         this.room = room;
         this.timeTable = timeTable;
         this.user = user;
         this.createTime = Calendar.getInstance();
+        this.price = price;
     }
 
     public RoomTemplate getRoom() {
@@ -65,6 +67,14 @@ public class Booking {
 
     public Calendar getCreateTime() {
         return createTime;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
     }
 
     
