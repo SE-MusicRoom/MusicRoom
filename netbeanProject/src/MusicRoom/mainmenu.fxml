@@ -2,12 +2,9 @@
 
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
-
 Copyright (c) 2011, 2016 Oracle and/or its affiliates. All rights reserved.
-
 Oracle and Java are registered trademarks of Oracle and/or its affiliates.
 Other names may be trademarks of their respective owners.
-
 The contents of this file are subject to the terms of either the GNU
 General Public License Version 2 only ("GPL") or the Common
 Development and Distribution License("CDDL") (collectively, the
@@ -25,7 +22,6 @@ accompanied this code. If applicable, add the following below the
 License Header, with the fields enclosed by brackets [] replaced by
 your own identifying information:
 "Portions Copyrighted [year] [name of copyright owner]"
-
 If you wish your version of this file to be governed by only the CDDL
 or only the GPL Version 2, indicate your decision by adding
 "[Contributor] elects to include this software in this distribution
@@ -36,17 +32,9 @@ to extend the choice of license to its licensees as provided above.
 However, if you add GPL Version 2 code and therefore, elected the GPL
 Version 2 license, then the option applies only if the new code is
 made subject to such option by the copyright holder.
-
 Contributor(s):
 -->
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -57,17 +45,16 @@ Contributor(s):
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.MainMenuController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.MainMenuController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff76" height="700.0" layoutX="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1031.0" />
-      <StackPane layoutX="87.0" layoutY="26.0">
+      <StackPane layoutX="39.0" layoutY="41.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff6000" height="81.0" stroke="TRANSPARENT" strokeType="INSIDE" width="358.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="72.0" stroke="TRANSPARENT" strokeType="INSIDE" width="307.0">
                <StackPane.margin>
                   <Insets />
                </StackPane.margin>
             </Rectangle>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 60;" styleClass="root" text="MAIN MENU">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 50; -fx-fill: ff3900;" styleClass="root" text="MAIN MENU">
                <font>
                   <Font name="Arial Bold" size="36.0" />
                </font>
@@ -77,9 +64,9 @@ Contributor(s):
             </Text>
          </children>
       </StackPane>
-      <VBox layoutX="87.0" layoutY="153.0" prefHeight="118.0" prefWidth="308.0" AnchorPane.leftAnchor="87.0">
+      <VBox layoutX="39.0" layoutY="152.0" prefHeight="118.0" prefWidth="308.0" AnchorPane.leftAnchor="39.0">
          <children>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="52.0" prefWidth="323.0" styleClass="root" text="+ New Reservations" textFill="WHITE">
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="53.0" prefWidth="248.0" style="-fx-font-size: 24;" styleClass="root" text="+ New Reservations" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="28.0" />
                </font>
@@ -87,27 +74,27 @@ Contributor(s):
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Button>
-            <Button fx:id="profileBtn" mnemonicParsing="false" onAction="#onClickHistory" styleClass="root" text="View History" textFill="WHITE">
+            <Button fx:id="profileBtn" mnemonicParsing="false" onAction="#onClickHistory" style="-fx-font-size: 20;" styleClass="root" text="View History" textFill="WHITE">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" styleClass="root" stylesheets="@base.css" text="News &amp; Promotion" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" style="-fx-font-size: 20;" styleClass="root" stylesheets="@base.css" text="News &amp; Promotion" textFill="WHITE">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
             </Button>
          </children>
       </VBox>
-      <VBox layoutX="94.0" layoutY="581.0" prefHeight="77.0" prefWidth="308.0">
+      <VBox layoutX="39.0" layoutY="572.0" prefHeight="77.0" prefWidth="308.0">
          <children>
-            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" onAction="#onClickLogOut" text="Logout" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" onAction="#onClickLogOut" prefHeight="40.0" prefWidth="104.0" style="-fx-font-size: 20;" text="Logout" textFill="WHITE">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
             </Button>
          </children>
       </VBox>
-      <AnchorPane fx:id="includePane" layoutX="62.0" layoutY="-201.0" prefHeight="1201.0" prefWidth="1701.0" scaleX="0.5" scaleY="0.5" />
+      <AnchorPane fx:id="includePane" layoutX="62.0" layoutY="-201.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1201.0" prefWidth="1701.0" scaleX="0.5" scaleY="0.5" />
    </children>
 </AnchorPane>
