@@ -244,7 +244,7 @@ public class Main extends Application {
     
     public void gotoAdmin() {
         try {
-            AdminMenuController reg = (AdminMenuController) replaceSceneContent("user-admin.fxml");
+            AdminMenuController reg = (AdminMenuController) replaceSceneContent("controlPanel.fxml");
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
