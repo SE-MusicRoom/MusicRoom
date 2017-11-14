@@ -21,12 +21,22 @@ import javafx.scene.layout.AnchorPane;
 public class MainMenuController extends AnchorPane implements Initializable {
 
     @FXML
-    AnchorPane includePane;
+    private AnchorPane includePane;
     @FXML
-    Button reservationBtn;
+    private Button reservationBtn;
 
     
+    private AnchorPane customizePane;
+    private AnchorPane timeselectorPane;
+    private AnchorPane templateselectPane;
+    private AnchorPane historyPane;
+    private AnchorPane successReservationPane;
     
+    private CustomizeController customizeController;
+    private TimeSelectController timeselectorController;
+    private TemplateController templateselectController;
+    private HistoryController historyController;
+    private SuccessReservationController successReservationController;
     
     public void setApp(){
         
@@ -40,16 +50,13 @@ public class MainMenuController extends AnchorPane implements Initializable {
     
     private Initializable showIncludePane(String fxml) throws IOException {
         hideIncludePane();
-        FXMLLoader loader = new FXMLLoader();
-        InputStream in = Main.class.getResourceAsStream(fxml);
-        loader.setBuilderFactory(new JavaFXBuilderFactory());
-        loader.setLocation(Main.class.getResource(fxml));
-        AnchorPane page;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+        AnchorPane page = null;
         try {
-            page = (AnchorPane) loader.load(in);
-        } finally {
-            in.close();
-        } 
+            page = (AnchorPane) loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         includePane.getChildren().clear();
         includePane.getChildren().add(page);
@@ -57,53 +64,95 @@ public class MainMenuController extends AnchorPane implements Initializable {
         return (Initializable) loader.getController();
     }
     
+    public void swapIncludePane(AnchorPane pane) {
+        hideIncludePane();
+        pane.setVisible(true);
+    }
+    
     public void hideIncludePane() {
-        includePane.getChildren().clear();
+        for(int i=0;i<includePane.getChildren().size();i++) {
+            includePane.getChildren().get(i).setVisible(false);
+        }
     }
     
     public void gotoCustomize() {
-        try {
-            CustomizeController con = (CustomizeController) showIncludePane("customize.fxml");
-            con.setApp(this);
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        if(customizePane==null) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("customize.fxml"));
+            try {
+                customizePane = (AnchorPane) loader.load();
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            includePane.getChildren().add(customizePane);
+            customizeController = (CustomizeController) loader.getController();
+            customizeController.setApp(this);
         }
+        swapIncludePane(customizePane);
+        
     }
     
      public void gotoTimeSelect() {
-        try {
-            TimeSelectController con = (TimeSelectController) showIncludePane("timeselector.fxml");
-            con.setApp(this);
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        if(timeselectorPane==null) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("timeselector.fxml"));
+            try {
+                timeselectorPane = (AnchorPane) loader.load();
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            includePane.getChildren().add(timeselectorPane);
+            timeselectorController = (TimeSelectController) loader.getController();
+            
         }
+        timeselectorController.setApp(this);
+        swapIncludePane(timeselectorPane);
     }
     
     public void gotoTemplate() {
-        try {
-            TemplateController con = (TemplateController) showIncludePane("templateselect.fxml");
-            con.setApp(this);
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        if(templateselectPane==null) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("templateselect.fxml"));
+            try {
+                templateselectPane = (AnchorPane) loader.load();
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            includePane.getChildren().add(templateselectPane);
+            templateselectController = (TemplateController) loader.getController();
+            
         }
+        templateselectController.setApp(this);
+        swapIncludePane(templateselectPane);
     }
     
     public void gotoHistory() {
-        try {
-            HistoryController con = (HistoryController) showIncludePane("history.fxml");
-            con.setApp(this);
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        if(historyPane==null) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("history.fxml"));
+            try {
+                historyPane = (AnchorPane) loader.load();
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            includePane.getChildren().add(historyPane);
+            historyController = (HistoryController) loader.getController();
+            
         }
+        historyController.setApp(this);
+        swapIncludePane(historyPane);
     }
     
     public void gotoSuccess(Booking newBooking) {
-        try {
-            SuccessReservationController con = (SuccessReservationController) showIncludePane("success_reservation.fxml");
-            con.setApp(this,newBooking);
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        if(successReservationPane==null) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("success_reservation.fxml"));
+            try {
+                successReservationPane = (AnchorPane) loader.load();
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            includePane.getChildren().add(successReservationPane);
+            successReservationController = (SuccessReservationController) loader.getController();
+            
         }
+        successReservationController.setApp(this, newBooking);
+        swapIncludePane(successReservationPane);
     }
     
     public void onClickReservation(ActionEvent event) {

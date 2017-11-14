@@ -289,8 +289,10 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     public void onClickConfirm(ActionEvent event) {
         commitDay();
         
-        if(selectedTimes.isEmpty())
+        if(selectedTimes.isEmpty()) {
             System.out.println("Error: Please add some times first");
+            return;
+        }
         
         Main.getInstance().setCurrentTimeTable(selectedTimes);
         
@@ -302,11 +304,13 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         DatabaseManager.getInstance().addBooking(ssss);
         Main.getInstance().getCurrentRoom().addBooking(ssss);
         
-        
         mainmenu.gotoSuccess(ssss);
     }
     
     public void onClickBack(ActionEvent event) {
-        mainmenu.gotoCustomize();
+        if(Main.getInstance().getCurrentRoom() instanceof CustomRoomTemplate)
+            mainmenu.gotoCustomize();
+        else
+            mainmenu.gotoTemplate();
     }
 }

@@ -26,7 +26,7 @@ public class CustomRoomTemplate extends RoomTemplate {
     
     public CustomRoomTemplate(String name, String detail, float price) {
         super(name, detail, price);
-        bookings = DatabaseManager.getInstance().fetchAllCustomBooking();
+        //bookings = DatabaseManager.getInstance().fetchAllCustomBooking();
     }
 
     @Override

@@ -48,11 +48,11 @@ import javafx.scene.layout.AnchorPane;
 public class LoginController extends AnchorPane implements Initializable {
 
     @FXML
-    TextField userId;
+    private TextField userId;
     @FXML
-    PasswordField password;
+    private PasswordField password;
     @FXML
-    Button login;
+    private Button login;
     //@FXML
     //Label errorMessage;
 
