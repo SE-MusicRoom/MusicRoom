@@ -6,6 +6,7 @@
 package MusicRoom;
 
 import MusicRoom.entity.*;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -84,12 +85,7 @@ public class Main extends Application {
             primaryStage.setResizable(false);
 
             Voice v = new Voice("", "", 10, "");
-            // Test
-            //DatabaseManager.getInstance().createDummyRoomTemplate ();
-            /*
-            DatabaseManager DbManager = DatabaseManager.getInstance();
-            List<Instrument> instruments = DbManager.fetchAllInstrument(insert path of file.odb);
-            */
+
 
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -180,10 +176,10 @@ public class Main extends Application {
     } 
     
     public User createUser(String username ,String password ,String name ,String surname ,
-                           String email ,String bandName) {
-        User newUser = new User(username ,password ,name, surname ,email ,bandName);
-        DatabaseManager.getInstance().addUser(newUser);
-        updateUserDB();
+                           String email ,Band band) {
+        User newUser = new User(username ,password ,name, surname ,email ,band);
+        
+        currentUser = newUser;
         return newUser;
     }
     
@@ -258,6 +254,15 @@ public class Main extends Application {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void gotoRegisterConfirm() {
+        try {
+            RegisterConfirmController reg = (RegisterConfirmController) replaceSceneContent("confirm_register.fxml");
+            reg.setApp(currentUser);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     private Initializable replaceSceneContent(String fxml) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
@@ -265,7 +270,7 @@ public class Main extends Application {
         try {
             page = (AnchorPane) loader.load();
             //page.setStyle("base.css");
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         Scene scene = new Scene(page, 1024, 700);

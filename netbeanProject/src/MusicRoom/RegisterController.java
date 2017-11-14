@@ -5,6 +5,7 @@
  */
 package MusicRoom;
 
+import MusicRoom.entity.Band;
 import java.awt.Color;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -190,10 +191,13 @@ public class RegisterController extends AnchorPane implements Initializable {
             } else {
                 Main.getInstance().createUser(username.getText(), password.getText(),
                         name.getText(), surname.getText(),
-                        email.getText(), bandName.getText());
+                        email.getText(), Band.findBand(bandName.getText()));
+                Main.getInstance().gotoRegisterConfirm();
             }
 
         }
+        
+        
     }
 
     public void onClickBack(ActionEvent event) {

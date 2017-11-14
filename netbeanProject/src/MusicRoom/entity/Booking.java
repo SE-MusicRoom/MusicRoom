@@ -77,6 +77,10 @@ public class Booking {
         this.price = price;
     }
 
+    public long getID() {
+        return id;
+    }
+
     
     
     @Override

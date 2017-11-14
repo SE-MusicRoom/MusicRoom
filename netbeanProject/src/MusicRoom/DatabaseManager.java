@@ -1,6 +1,7 @@
 package MusicRoom;
 
 import MusicRoom.entity.AcousticGuitar;
+import MusicRoom.entity.Band;
 import MusicRoom.entity.Booking;
 import MusicRoom.entity.CustomRoomTemplate;
 import MusicRoom.entity.Instrument;
@@ -48,8 +49,8 @@ public class DatabaseManager {
         createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
 
         em.getTransaction().begin();
-        User l = new User("1234", "1234", "1234", "1234", "1234", "1234");
-        User m = new User("123", "123", "123", "123", "123", "123");
+        User l = new User("1234", "1234", "1234", "1234", "1234", null);
+        User m = new User("123", "123", "123", "123", "123", null);
         
         em.getTransaction().begin();
         em.persist(l);
@@ -160,6 +161,16 @@ public class DatabaseManager {
         closeEMF();
     }
     
+    public void addBand(Band band){
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+
+        em.getTransaction().begin();
+        em.persist(band);
+        em.getTransaction().commit();
+
+        closeEMF();
+    }
+    
     public void addRoom(RoomTemplate roomTemplate){
         createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
 
@@ -229,6 +240,21 @@ public class DatabaseManager {
         return result;
     }
 
+    public Band fetchBand(String name){
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+
+        TypedQuery<Band> query = em.createQuery("SELECT b FROM Band b WHERE b.name = \"" + name + "\"", Band.class);
+        Band result;
+        if(query.getResultList().size()!=0) {
+            result = query.getSingleResult();
+        } else {
+            result = null;
+        }
+            
+
+        closeEMF();
+        return result;
+    }
     public void updateUser (User user, int id){
         User DbUser = fetchUser(id);
         createEMF("objectdb://"+ip+"/MusicRoom.odb;user=admin;password=admin");
@@ -257,6 +283,7 @@ public class DatabaseManager {
             Query query = em.createQuery("UPDATE User u SET u.password = \"" + user.getPassword() + "\" WHERE u.id = " + String.valueOf(id) );
             query.executeUpdate();
         }
+        
         em.getTransaction().commit();
         closeEMF();
     }

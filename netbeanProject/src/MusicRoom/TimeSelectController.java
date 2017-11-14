@@ -9,7 +9,6 @@ import MusicRoom.entity.Booking;
 import MusicRoom.entity.CustomRoomTemplate;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -18,7 +17,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,7 +28,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 
@@ -306,8 +303,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         Main.getInstance().getCurrentRoom().addBooking(ssss);
         
         
-        
-        mainmenu.hideIncludePane();
+        mainmenu.gotoSuccess(ssss);
     }
     
     public void onClickBack(ActionEvent event) {

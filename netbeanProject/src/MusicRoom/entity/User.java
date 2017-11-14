@@ -15,6 +15,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -32,18 +33,20 @@ public class User {
     private String name;
     private String surname;
     private String email;
-    private String bandName;
+    
+    @ManyToOne
+    private Band band;
 
     public User(String username, String password, String name, 
-            String surname, String email, String bandName) {
+            String surname, String email, Band band) {
         this.username = username;
         this.password = password;
         bookedTimes = new ArrayList<Booking>();
         
         this.name = name;
-        this.name = surname;
-        this.name = email;
-        this.name = bandName;
+        this.surname = surname;
+        this.email = email;
+        this.band = band;
     }
 
 
@@ -79,8 +82,8 @@ public class User {
         return email;
     }
 
-    public String getBandName() {
-        return bandName;
+    public Band getBandName() {
+        return band;
     }
     
     

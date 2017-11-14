@@ -33,7 +33,6 @@ package MusicRoom;
 
 import MusicRoom.entity.CustomRoomTemplate;
 import MusicRoom.entity.Instrument;
-import MusicRoom.entity.RoomTemplate;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
