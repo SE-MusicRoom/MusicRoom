@@ -8,30 +8,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="860.0" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TemplateController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1200.0" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TemplateController">
    <children>
-      <AnchorPane prefHeight="66.0" prefWidth="326.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#110800" height="66.0" stroke="BLACK" strokeType="INSIDE" width="324.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff2b00" height="66.0" stroke="BLACK" strokeType="INSIDE" width="68.0" />
-            <Text layoutX="23.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
-               <font>
-                  <Font name="System Bold" size="40.0" />
-               </font>
-            </Text>
-            <Text fill="#ff2b00" layoutX="78.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Template Select">
-               <font>
-                  <Font name="System Bold" size="31.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="1.0" layoutY="67.0" prefHeight="244.0" prefWidth="524.0">
+      <AnchorPane layoutX="101.0" layoutY="98.0" prefHeight="244.0" prefWidth="524.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="465.0" stroke="BLACK" strokeType="INSIDE" width="859.0" />
-            <ScrollPane prefHeight="465.0" prefWidth="859.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <ScrollPane prefHeight="835.0" prefWidth="1107.0" AnchorPane.bottomAnchor="-370.0" AnchorPane.rightAnchor="-248.0">
                <content>
-                  <GridPane fx:id="templateGrid" maxHeight="1.7976931348623157E308" minHeight="200.0" minWidth="200.0" prefHeight="600.0" prefWidth="840.0">
+                  <GridPane fx:id="templateGrid" maxHeight="1.7976931348623157E308" minHeight="200.0" minWidth="200.0" prefHeight="858.0" prefWidth="1109.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
@@ -43,22 +27,25 @@
                       <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <AnchorPane fx:id="templateToken" prefHeight="189.0" prefWidth="271.0">
+                        <AnchorPane fx:id="templateToken" prefHeight="201.0" prefWidth="334.0">
                            <children>
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" stroke="BLACK" strokeType="INSIDE" width="279.0" />
-                              <ImageView fitHeight="201.0" fitWidth="279.0" pickOnBounds="true" preserveRatio="true" />
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="35.0" opacity="0.63" stroke="BLACK" strokeType="INSIDE" width="280.0" />
-                              <Button fx:id="selectBtn" layoutX="126.0" layoutY="153.0" mnemonicParsing="false" onAction="#onSelectTemplate" text="Select">
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" stroke="BLACK" strokeType="INSIDE" width="375.0" />
+                              <ImageView fitHeight="201.0" fitWidth="371.0" pickOnBounds="true" preserveRatio="true" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="35.0" opacity="0.63" stroke="BLACK" strokeType="INSIDE" width="375.0" />
+                              <Button fx:id="selectBtn" layoutX="207.0" layoutY="153.0" mnemonicParsing="false" onAction="#onSelectTemplate" text="Select">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="detailBtn" layoutX="197.0" layoutY="153.0" mnemonicParsing="false" onAction="#onSelectDetail" text="Details">
+                              <Button fx:id="detailBtn" layoutX="285.0" layoutY="153.0" mnemonicParsing="false" onAction="#onSelectDetail" text="Details">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
                               </Button>
-                              <Text fx:id="templateName" layoutX="8.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TemplateNames" />
+                              <Text fx:id="templateName" layoutX="8.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TemplateNames">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font></Text>
                            </children>
                         </AnchorPane>
                      </children>
@@ -67,9 +54,9 @@
             </ScrollPane>
          </children>
       </AnchorPane>
-      <HBox layoutX="1.0" layoutY="532.0" prefHeight="66.0" prefWidth="614.0">
+      <HBox layoutX="101.0" layoutY="934.0" prefHeight="66.0" prefWidth="614.0">
          <children>
-            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="67.0" prefWidth="158.0" text="Back" textFill="WHITE">
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickCustomize" prefHeight="66.0" prefWidth="253.0" text="or CUSTOMIZE IT!!" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -77,7 +64,7 @@
                   <Font name="Arial Bold" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickCustomize" prefHeight="67.0" prefWidth="191.0" text="Confirm" textFill="WHITE">
+            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="67.0" prefWidth="158.0" text="Back" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -87,5 +74,51 @@
             </Button>
          </children>
       </HBox>
+      <AnchorPane layoutX="1.0" prefHeight="98.0" prefWidth="491.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#110800" height="98.0" stroke="BLACK" strokeType="INSIDE" width="494.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff2b00" height="98.0" stroke="BLACK" strokeType="INSIDE" width="104.0" />
+            <Text layoutX="35.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font name="System Bold" size="60.0" />
+               </font>
+            </Text>
+            <Text fill="#ff2b00" layoutX="111.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Template Select">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="204.0" prefHeight="5.0" prefWidth="28.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="80.0" stroke="BLACK" strokeType="INSIDE" width="73.0" />
+            <Text layoutX="25.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font name="System Bold" size="39.0" />
+               </font>
+            </Text>
+            <Text layoutX="15.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm" textAlignment="CENTER">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="109.0" prefHeight="5.0" prefWidth="28.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="80.0" stroke="BLACK" strokeType="INSIDE" width="73.0" />
+            <Text layoutX="25.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font name="System Bold" size="39.0" />
+               </font>
+            </Text>
+            <Text layoutX="8.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date-Time">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
