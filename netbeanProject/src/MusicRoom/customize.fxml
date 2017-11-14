@@ -133,7 +133,7 @@
             </Text>
             <Text fx:id="total" fontSmoothingType="LCD" layoutX="280.0" layoutY="698.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB1200/hr" textAlignment="RIGHT">
                <font>
-                  <Font name="Arial Bold" size="60.0" />
+                  <Font name="System Bold Italic" size="60.0" />
                </font>
             </Text>
          </children>
