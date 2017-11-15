@@ -50,9 +50,9 @@ public class Main extends Application {
         this.roomTemplete =  DatabaseManager.getInstance().fetchAllRoomTemplate();
         updateUserDB();
         this.customTemplete = new ArrayList<RoomTemplate>();
-
         this.users = DatabaseManager.getInstance().fetchAllUser();
         this.bookedTimes = DatabaseManager.getInstance().fetchAllBooking();
+        
         
         Main.instance = this;
         
