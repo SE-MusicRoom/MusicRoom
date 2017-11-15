@@ -35,13 +35,6 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -52,16 +45,16 @@ Contributor(s):
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.MainMenuController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.MainMenuController">
    <children>
       <StackPane layoutX="39.0" layoutY="41.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="72.0" stroke="TRANSPARENT" strokeType="INSIDE" width="307.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="58.0" stroke="TRANSPARENT" strokeType="INSIDE" width="241.0">
                <StackPane.margin>
                   <Insets />
                </StackPane.margin>
             </Rectangle>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 50; -fx-fill: ff3900;" styleClass="root" text="MAIN MENU">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40; -fx-fill: ff3900;" styleClass="root" text="MAIN MENU">
                <font>
                   <Font name="Arial Bold" size="36.0" />
                </font>
@@ -71,9 +64,9 @@ Contributor(s):
             </Text>
          </children>
       </StackPane>
-      <VBox layoutX="39.0" layoutY="152.0" prefHeight="118.0" prefWidth="308.0" AnchorPane.leftAnchor="39.0">
+      <VBox layoutX="39.0" layoutY="152.0" prefHeight="132.0" prefWidth="215.0" AnchorPane.leftAnchor="39.0">
          <children>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="53.0" prefWidth="248.0" style="-fx-font-size: 24;" styleClass="root" text="+ New Reservations" textFill="WHITE">
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="44.0" prefWidth="208.0" style="-fx-font-size: 20;" styleClass="root" text="+ New Reservations" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="28.0" />
                </font>
@@ -81,27 +74,27 @@ Contributor(s):
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Button>
-            <Button fx:id="profileBtn" mnemonicParsing="false" onAction="#onClickHistory" style="-fx-font-size: 20;" styleClass="root" text="View History" textFill="WHITE">
+            <Button fx:id="profileBtn" mnemonicParsing="false" onAction="#onClickHistory" style="-fx-font-size: 18;" styleClass="root" text="View History" textFill="WHITE">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" style="-fx-font-size: 20;" styleClass="root" stylesheets="@base.css" text="News &amp; Promotion" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" style="-fx-font-size: 18;" styleClass="root" stylesheets="@base.css" text="News &amp; Promotion" textFill="WHITE">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
             </Button>
          </children>
       </VBox>
-      <VBox layoutX="39.0" layoutY="572.0" prefHeight="77.0" prefWidth="308.0">
+      <VBox layoutX="39.0" layoutY="572.0" prefHeight="44.0" prefWidth="83.0">
          <children>
-            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" onAction="#onClickLogOut" prefHeight="40.0" prefWidth="104.0" style="-fx-font-size: 20;" text="Logout" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" onAction="#onClickLogOut" prefHeight="41.0" prefWidth="82.0" style="-fx-font-size: 18;" text="Logout" textFill="WHITE">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
             </Button>
          </children>
       </VBox>
-      <AnchorPane fx:id="includePane" layoutX="71.0" layoutY="-150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1001.0" prefWidth="1200.0" scaleX="0.5" scaleY="0.5" />
+      <AnchorPane fx:id="includePane" layoutX="-48.0" layoutY="-143.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1023.0" prefWidth="1372.0" scaleX="0.5" scaleY="0.5" />
    </children>
 </AnchorPane>

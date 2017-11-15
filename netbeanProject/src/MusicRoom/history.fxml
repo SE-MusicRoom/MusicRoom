@@ -36,6 +36,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
@@ -43,60 +45,128 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.HistoryController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.HistoryController">
    <children>
-      <HBox layoutX="-1.0" prefHeight="102.0" prefWidth="958.0">
+      <StackPane layoutX="-1.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff6000" height="89.0" stroke="TRANSPARENT" strokeType="INSIDE" width="474.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 28;" text="Search">
-               <HBox.margin>
-                  <Insets left="15.0" top="46.0" />
-               </HBox.margin>
-            </Text>
-            <TextField fx:id="searchBox" minWidth="200.0" onKeyTyped="#onTypeDone" prefHeight="36.0" prefWidth="255.0" style="-fx-background-color: #fff0e6; -fx-font-size: 20; -fx-border-width: 2; -fx-border-color: #ffd1b3;">
-               <HBox.margin>
-                  <Insets left="18.0" top="35.0" />
-               </HBox.margin>
-            </TextField>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 50;" text="Reservation History" />
          </children>
-      </HBox>
-      <HBox prefHeight="116.0" prefWidth="475.0">
+      </StackPane>
+      <StackPane layoutX="785.0" layoutY="27.0" prefHeight="62.0" prefWidth="516.0">
          <children>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 50;" text="Reservation History">
-               <HBox.margin>
-                  <Insets left="9.0" top="15.0" />
-               </HBox.margin>
-            </Text>
-         </children>
-      </HBox>
-      <ScrollPane layoutY="88.0" prefHeight="465.0" prefWidth="870.0">
-         <content>
-            <VBox prefHeight="450.0" prefWidth="850.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="70.0" stroke="TRANSPARENT" strokeType="INSIDE" width="513.0">
+               <StackPane.margin>
+                  <Insets top="-10.0" />
+               </StackPane.margin>
+            </Rectangle>
+            <HBox prefHeight="62.0" prefWidth="547.0">
                <children>
-                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                  <Text fx:id="Search" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 28;" text="Search">
+                     <HBox.margin>
+                        <Insets left="20.0" top="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="searchBox" minWidth="200.0" onKeyTyped="#onTypeDone" prefHeight="48.0" prefWidth="341.0" style="-fx-background-color: #fff0e6; -fx-font-size: 20; -fx-border-width: 2; -fx-border-color: #ffd1b3;">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/search.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" top="4.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </StackPane>
+      <ScrollPane layoutX="-1.0" layoutY="89.0" prefHeight="844.0" prefWidth="1302.0">
+         <content>
+            <VBox prefHeight="837.0" prefWidth="1281.0">
+               <children>
+                  <StackPane prefHeight="175.0" prefWidth="1253.0">
                      <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffccb3" height="110.0" stroke="TRANSPARENT" strokeType="INSIDE" width="808.0" />
-                        <HBox prefHeight="70.0" prefWidth="790.0">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffccb3" height="165.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1246.0">
+                           <StackPane.margin>
+                              <Insets top="10.0" />
+                           </StackPane.margin></Rectangle>
+                        <HBox prefHeight="145.0" prefWidth="1261.0">
                            <children>
                               <VBox prefHeight="70.0" prefWidth="0.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Date:18/2/2017" />
-                                    <Text layoutX="10.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Status:USED" />
+                                    <HBox>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" text="Date : " />
+                                          <Text fill="#a49d9d" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" text="18/2/2017">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" text="Status : " />
+                                          <Text fill="#a49d9d" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" text="USED">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Text>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
                                  </children>
                                  <HBox.margin>
-                                    <Insets left="67.0" />
+                                    <Insets left="169.0" top="-2.0" />
                                  </HBox.margin>
                               </VBox>
-                              <VBox prefHeight="70.0" prefWidth="294.0">
+                              <VBox prefHeight="120.0" prefWidth="477.0">
                                  <children>
-                                    <Text fill="#fffbfb" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Template : My Custom" />
-                                    <Text fill="#fffbfb" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="Time : 6:00-7:59 P.M. " />
-                                    <Text fill="WHITE" layoutX="10.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="Price : THB 1400" />
+                                    <HBox>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Template : " />
+                                          <Text fill="#a49d9d" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="My Custom">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Time :  " />
+                                          <Text fill="#a49d9d" layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="6:00-7:59 P.M.">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Price :  " />
+                                          <Text fill="#a49d9d" layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="THB 1400" />
+                                       </children>
+                                    </HBox>
                                  </children>
                                  <HBox.margin>
-                                    <Insets left="240.0" top="-8.0" />
+                                    <Insets left="170.0" top="-12.0" />
                                  </HBox.margin>
                               </VBox>
+                              <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="178.0" style="-fx-font-size: 45; -fx-background-color: #000000;" text="Cancel" textFill="#ff6000">
+                                 <padding>
+                                    <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="-40.0" top="21.0" />
+                                 </HBox.margin>
+                              </Button>
                            </children>
                            <padding>
                               <Insets top="8.0" />
@@ -114,7 +184,7 @@
             </VBox>
          </content>
       </ScrollPane>
-      <Button layoutY="553.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="46.0" prefWidth="137.0" style="-fx-font-size: 30; -fx-background-color: #000000;" text="Go Back" textFill="#ff6000">
+      <Button layoutY="933.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="66.0" prefWidth="160.0" style="-fx-font-size: 45; -fx-background-color: #000000;" text="Back" textFill="#ff6000">
          <padding>
             <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
          </padding>
