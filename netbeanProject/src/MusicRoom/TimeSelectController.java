@@ -291,6 +291,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         
         if(selectedTimes.isEmpty()) {
             System.out.println("Error: Please add some times first");
+            Main.getInstance().showPopup("Wait Wait!","Please choose your preferred time");
             return;
         }
         

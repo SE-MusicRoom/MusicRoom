@@ -206,6 +206,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         
         if(addedInstruments.isEmpty()) {
             System.out.println("Error: Please add some instruments first");
+            Main.getInstance().showPopup("Wait Wait!","Please add some instruments first");
             return;
         }
         

@@ -84,9 +84,7 @@ public class Main extends Application {
             primaryStage.show();
             primaryStage.setResizable(false);
 
-            Voice v = new Voice("", "", 10, "");
-
-
+            
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -205,6 +203,9 @@ public class Main extends Application {
                         gotoMainMenu();
                     else    // admin
                         gotoAdmin();
+                    
+                    showPopup("Welcome "+currentUser.getName(),"Let's play some music !");
+                    
                     return true;
                 } else
                     return false;
@@ -219,6 +220,19 @@ public class Main extends Application {
         gotoLogin();
     }
     
+    public void showPopup(String title,String detail) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("popup.fxml"));
+        AnchorPane page = null;
+        AnchorPane root = (AnchorPane)stage.getScene().getRoot();
+        try {
+            page = (AnchorPane) loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        root.getChildren().add(page);
+        PopupController pop = (PopupController)loader.getController();
+        pop.setApp(title, detail, (AnchorPane)stage.getScene().getRoot());
+    }
 
     public void gotoLogin() {
         try {
