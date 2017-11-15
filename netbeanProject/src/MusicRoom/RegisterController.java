@@ -24,7 +24,7 @@ import javafx.scene.text.Text;
 
 /**
  *
- * @author YAY
+ * @author SE-MUSICROOM
  */
 public class RegisterController extends AnchorPane implements Initializable {
 

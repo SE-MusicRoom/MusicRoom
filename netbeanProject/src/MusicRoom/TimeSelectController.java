@@ -33,7 +33,7 @@ import javafx.util.Callback;
 
 /**
  *
- * @author YAY
+ * @author SE-MUSICROOM
  */
 public class TimeSelectController extends AnchorPane implements Initializable{
     
@@ -141,7 +141,6 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     
     
     public void onClickDatePicker(ActionEvent event) {
-        commitDay();
         currentDate = datePicker.getValue();
         listTime();
         //Date currentDate = Date.from(datePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
@@ -150,11 +149,9 @@ public class TimeSelectController extends AnchorPane implements Initializable{
             if(d.isEqual(currentDate)) {
                 int hour = selectedTimes.get(i).get(Calendar.HOUR_OF_DAY);
                 TimeBtn[hour].getStyleClass().add("selected");
-                selectedHours.add(hour);
             }
         }
         
-        System.out.println("Selected: "+selectedHours);
         
     }
     
@@ -196,30 +193,9 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         return -1;
     }
     
-    private void commitDay() {
-        for (int i = 0; i < selectedHours.size(); i++) {
-            
-            if(findDuplicateHour(selectedHours.get(i))>-1) // check if already in selectedTimes
-                continue;
-            
-            Calendar newCalendar = Calendar.getInstance();
-            newCalendar.setTime(Date.from(currentDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
-            newCalendar.set(Calendar.HOUR_OF_DAY, selectedHours.get(i));
-            newCalendar.set(Calendar.MINUTE, 0);
-            newCalendar.set(Calendar.SECOND, 0);
 
-            
-            selectedTimes.add(newCalendar);
-        }
-        selectedHours.clear();
-        
-        Collections.sort(selectedTimes, new Comparator<Calendar>() {
-            @Override
-            public int compare(Calendar o1, Calendar o2) {
-                return o1.getTime().compareTo(o2.getTime());
-            }
-        });
-
+    
+    private void updateSelectedTimeText() {
         selectedBox.getChildren().clear();
         int lastDay = -1;
         int lastHour = -1;
@@ -252,11 +228,6 @@ public class TimeSelectController extends AnchorPane implements Initializable{
             lastDay = thisDay;
             lastHour = thisHour;
         }
-        
-        System.out.println(selectedTimes);
-        
-        total = selectedTimes.size()*Main.getInstance().getCurrentRoom().getPrice();
-        totalTxt.setText("THB"+total);
     }
     
     public void onClickTime(ActionEvent event) {
@@ -264,30 +235,56 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         String timeSelectedName = timeSelectedBtn.getId();
         int timeSelectedID = Integer.parseInt(timeSelectedName.split("_")[1]);
         
-        if(selectedHours.indexOf(timeSelectedID)<0) { //add
-            timeSelectedBtn.getStyleClass().add("selected");
-            selectedHours.add(timeSelectedID);
-        } else { // remove
-            timeSelectedBtn.getStyleClass().remove("selected");
-            int j = findDuplicateHour(timeSelectedID);
-            if(j>-1)
-                selectedTimes.remove(j);
+        //if(selectedHours.indexOf(timeSelectedID)<0) { //add
+        //    
             
+        //} else { // remove
+            
+
+            boolean isNew = true;
             for (int i = 0; i < selectedTimes.size(); i++) { // remove in selectedTimes
                 LocalDate d = selectedTimes.get(i).getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                if(d.isEqual(currentDate) && selectedTimes.get(i).get(Calendar.HOUR_OF_DAY) == timeSelectedID) 
+                if(d.isEqual(currentDate) && selectedTimes.get(i).get(Calendar.HOUR_OF_DAY) == timeSelectedID) {
+                    timeSelectedBtn.getStyleClass().remove("selected");
                     selectedTimes.remove(i);
+                    isNew = false;
+                    System.out.println("REMOVING");
+                }
             }
-            selectedHours.remove(Integer.valueOf(timeSelectedID)); // remove in selectedHours
+            if(isNew) {
+                timeSelectedBtn.getStyleClass().add("selected");
+                Calendar newCalendar = Calendar.getInstance();
+                newCalendar.setTime(Date.from(currentDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
+                newCalendar.set(Calendar.HOUR_OF_DAY, timeSelectedID);
+                newCalendar.set(Calendar.MINUTE, 0);
+                newCalendar.set(Calendar.SECOND, 0);
+
+                selectedTimes.add(newCalendar);
+                System.out.println("ADDING");
+            }
+            //selectedHours.remove(Integer.valueOf(timeSelectedID)); // remove in selectedHours
             
-        }
+        //}
         
-        total = (selectedTimes.size()+selectedHours.size())*Main.getInstance().getCurrentRoom().getPrice();
+        
+            
+
+        Collections.sort(selectedTimes, new Comparator<Calendar>() {
+            @Override
+            public int compare(Calendar o1, Calendar o2) {
+                return o1.getTime().compareTo(o2.getTime());
+            }
+        });
+
+        updateSelectedTimeText();
+        
+        System.out.println(selectedTimes);
+        
+        total = selectedTimes.size()*Main.getInstance().getCurrentRoom().getPrice();
         totalTxt.setText("THB"+total);
     }
     
     public void onClickConfirm(ActionEvent event) {
-        commitDay();
         
         if(selectedTimes.isEmpty()) {
             System.out.println("Error: Please add some times first");

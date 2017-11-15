@@ -22,7 +22,7 @@ import javax.persistence.OneToMany;
 
 /**
  *
- * @author YAY
+ * @author SE-MUSICROOM
  */
 @Entity
 public class RoomTemplate {

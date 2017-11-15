@@ -20,7 +20,7 @@ import javafx.scene.text.Text;
 
 /**
  *
- * @author YAY
+ * @author SE-MUSICROOM
  */
 public class PopupController extends AnchorPane implements Initializable {
     

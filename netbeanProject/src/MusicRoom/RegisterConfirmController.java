@@ -26,7 +26,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 /**
  *
- * @author YAY
+ * @author SE-MUSICROOM
  */
 public class RegisterConfirmController extends AnchorPane implements Initializable{
 

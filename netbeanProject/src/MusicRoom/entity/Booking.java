@@ -24,7 +24,7 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author YAY
+ * @author SE-MUSICROOM
  */
 @Entity
 public class Booking {

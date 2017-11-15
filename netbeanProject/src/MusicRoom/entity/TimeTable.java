@@ -12,7 +12,7 @@ import java.util.Locale;
 
 /**
  *
- * @author YAY
+ * @author SE-MUSICROOM
  */
 public class TimeTable {
     private List<Calendar> reservedTimes;

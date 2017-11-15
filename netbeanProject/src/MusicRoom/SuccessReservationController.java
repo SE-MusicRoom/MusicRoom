@@ -16,7 +16,7 @@ import javafx.scene.text.Text;
 
 /**
  *
- * @author YAY
+ * @author SE-MUSICROOM
  */
 public class SuccessReservationController extends AnchorPane implements Initializable {
     

@@ -15,7 +15,7 @@ import javax.persistence.Transient;
 
 /**
  *
- * @author YAY
+ * @author SE-MUSICROOM
  */
 @Entity
 public class CustomRoomTemplate extends RoomTemplate {

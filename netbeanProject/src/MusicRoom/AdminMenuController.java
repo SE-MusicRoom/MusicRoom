@@ -20,7 +20,7 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  *
- * @author YAY
+ * @author SE-MUSICROOM
  */
 public class AdminMenuController  extends AnchorPane implements Initializable {
     
