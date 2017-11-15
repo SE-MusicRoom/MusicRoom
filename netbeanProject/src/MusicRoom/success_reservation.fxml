@@ -48,7 +48,8 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.SuccessReservationController">
+
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.HistoryController">
    <children>
       <StackPane layoutX="-1.0">
          <children>
@@ -68,7 +69,7 @@
             </HBox>
          </children>
       </StackPane>
-      <StackPane layoutY="88.0" prefHeight="465.0" prefWidth="870.0">
+      <StackPane layoutY="88.0" prefHeight="866.0" prefWidth="1200.0">
          <children>
             <ScrollPane prefHeight="512.0" prefWidth="874.0" style="-fx-background-color: #FFFFFF;" />
             <VBox>
@@ -77,6 +78,9 @@
                      <VBox.margin>
                         <Insets left="60.0" top="25.0" />
                      </VBox.margin>
+                     <font>
+                        <Font size="72.0" />
+                     </font>
                   </Text>
                   <Text fx:id="idtxt" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="root" text="..." wrappingWidth="297.34000396728516" />
                   <Text fill="#86817a" layoutX="70.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" styleClass="root" text="We have send e-mail to " wrappingWidth="215.34000396728516">
@@ -104,7 +108,7 @@
             </VBox>
          </children>
       </StackPane>
-      <Button layoutY="553.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="46.0" prefWidth="137.0" style="-fx-font-size: 30; -fx-background-color: #000000;" text="Go Back" textFill="#ff6000">
+      <Button fx:id="back" layoutX="-1.0" layoutY="954.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="137.0" style="-fx-font-size: 30; -fx-background-color: #000000;" text="Go Back" textFill="#ff6000">
          <padding>
             <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
          </padding>
