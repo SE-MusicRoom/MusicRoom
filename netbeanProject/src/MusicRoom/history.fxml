@@ -69,7 +69,7 @@
                   </Text>
                   <TextField fx:id="searchBox" minWidth="200.0" prefHeight="27.0" prefWidth="341.0" style="-fx-background-color: #fff0e6; -fx-font-size: 25; -fx-border-width: 2; -fx-border-color: #ffd1b3;">
                      <HBox.margin>
-                        <Insets left="10.0" top="2.0" />
+                        <Insets left="10.0" top="9.0" />
                      </HBox.margin>
                      <padding>
                         <Insets top="1.0" />
