@@ -69,6 +69,10 @@ public class User {
     public void addBookedTime(Booking time) {
         bookedTimes.add(time);
     }
+    
+    public void removeBookedTime(Booking time) {
+        bookedTimes.remove(time);
+    }
 
     public String getName() {
         return name;

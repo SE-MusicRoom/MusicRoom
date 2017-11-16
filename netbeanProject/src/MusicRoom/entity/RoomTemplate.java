@@ -5,6 +5,7 @@
  */
 package MusicRoom.entity;
 
+import MusicRoom.DatabaseManager;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -60,8 +61,17 @@ public class RoomTemplate {
         this.bookings = bookings;
     }
 
-            
+    public void removeBooking(Booking booking) {
+        this.bookings.remove(booking);
+    }
+    
     public List<Booking> getBookings() {
+        return updateBookings();
+    }
+    
+    public List<Booking> updateBookings() {
+        this.bookings = DatabaseManager.getInstance().fetchBookingByRoomID(this.id);
+        System.out.println(bookings.size());
         return bookings;
     }
     

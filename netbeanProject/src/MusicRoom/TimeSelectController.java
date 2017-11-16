@@ -117,6 +117,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         total = 0;
         totalTxt.setText("THB"+total);
         
+        
         List<Booking> allBookings = Main.getInstance().getCurrentRoom().getBookings();
         for (int i = 0; i < allBookings.size(); i++) {
             Booking booking = allBookings.get(i);
@@ -179,7 +180,6 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         }
         System.out.println("Booked: "+counter);
         
-        
     }
     
 
@@ -200,7 +200,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
                     toAdd += lastHour + ":59)";
                     System.out.println("not first");
                 }    
-                else if(i==selectedTimes.size()-1) 
+                else if(i==selectedTimes.size()-1 && i!=0) 
                     if(thisHour==lastHour+1 && thisDay==lastDay) { // if the last is continuous
                         toAdd += thisHour + ":59)";
                         System.out.println("conti");
@@ -286,12 +286,13 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         if(Main.getInstance().getCurrentRoom() instanceof CustomRoomTemplate)
             DatabaseManager.getInstance().addCustomRoom((CustomRoomTemplate) Main.getInstance().getCurrentRoom());
                     
-        Booking ssss = Main.getInstance().createBooking();
-        System.out.println(ssss);
-        DatabaseManager.getInstance().addBooking(ssss);
-        Main.getInstance().getCurrentRoom().addBooking(ssss);
+        Booking newBook = Main.getInstance().createBooking();
+        System.out.println(newBook);
+        Main.getInstance().getCurrentUser().addBookedTime(newBook);
+        DatabaseManager.getInstance().addBooking(newBook);
+        Main.getInstance().getCurrentRoom().addBooking(newBook);
         
-        mainmenu.gotoSuccess(ssss);
+        mainmenu.gotoSuccess(newBook);
     }
     
     public void onClickBack(ActionEvent event) {

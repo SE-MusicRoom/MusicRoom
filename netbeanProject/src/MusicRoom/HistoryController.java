@@ -19,6 +19,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -53,8 +54,19 @@ public class HistoryController extends AnchorPane implements Initializable {
         this.mainmenu = mainmenu;
          historyScroll.getChildren().clear();
         List<Booking> books = Main.getInstance().getCurrentUser().getBookedTimes();
+        System.out.println("booksize: "+books.size());
         for (int i = 0; i < books.size(); i++) {
-            historyScroll.getChildren().add(copyHistoryToken(books.get(i)));
+            
+            //error booking check
+            if(books.get(i).getTimeTable().isEmpty()) {
+                //System.out.println("remove: "+books.get(i).getID());
+                //Main.getInstance().getCurrentUser().removeBookedTime(books.get(i));
+                continue;
+            }
+            StackPane hist = copyHistoryToken(books.get(i));
+            hist.setId(String.valueOf(historyScroll.getChildren().size()));
+            historyScroll.getChildren().add(hist);
+            
         }
     }
     
@@ -66,8 +78,16 @@ public class HistoryController extends AnchorPane implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
+
+    public VBox getHistoryScroll() {
+        return historyScroll;
+    }
+    
+    
     
     private StackPane copyHistoryToken(Booking book) {
+        
+        
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("history.fxml"));
         
         try {   
@@ -76,10 +96,7 @@ public class HistoryController extends AnchorPane implements Initializable {
             Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
         StackPane newToken = (StackPane)loader.getNamespace().get("historyToken");
-        for (int i = 0; i < newToken.getChildren().size(); i++) {
-            System.out.println(newToken.getChildren().get(i).getId());
-        }
-        
+
         
         HistoryController cus = (HistoryController)loader.getController();
         cus.setApp(this);
@@ -109,7 +126,23 @@ public class HistoryController extends AnchorPane implements Initializable {
 
     @FXML
     void onCancel(ActionEvent event) {
+        
+        int selectedId = Integer.parseInt( ((Button)event.getSource()).getParent().getParent().getId() );
+        // Remove from db
+        DatabaseManager.getInstance().removeBooking(Main.getInstance().getCurrentUser().getBookedTimes().get(selectedId));
+        // Remove from room
+        //Main.getInstance().getCurrentUser().getBookedTimes().get(selectedId).getRoom().removeBooking(Main.getInstance().getCurrentUser().getBookedTimes().get(selectedId));
+        // Remove from user
+        Main.getInstance().getCurrentUser().getBookedTimes().remove(selectedId);
 
+        parent.getHistoryScroll().getChildren().remove(selectedId);
+        // Reassign ID
+        for (int i = 0; i < parent.getHistoryScroll().getChildren().size(); i++) {
+            System.out.println(parent.getHistoryScroll().getChildren().get(i).getId()+"->"+i);
+            parent.getHistoryScroll().getChildren().get(i).setId(String.valueOf(i));
+                
+        }
+        
     }
     
     public void onClickBack(ActionEvent event) {

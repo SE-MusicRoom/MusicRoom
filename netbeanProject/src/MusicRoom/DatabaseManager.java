@@ -200,6 +200,16 @@ public class DatabaseManager {
 
         closeEMF();
     }
+    
+    public void removeBooking(Booking booking){
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+
+        em.getTransaction().begin();
+        em.remove(em.contains(booking) ? booking : em.merge(booking));
+        em.getTransaction().commit();
+
+        closeEMF();
+    }
 
     public List<User> fetchAllUser(){
         createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
@@ -229,8 +239,17 @@ public class DatabaseManager {
         closeEMF();
         return results;
     }
+    
+    public List<Booking> fetchBookingByRoomID(int id) {
+        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
 
-    public User fetchUser(int id){
+        TypedQuery<Booking> query = em.createQuery("SELECT b FROM Booking b WHERE b.room.id = "+id, Booking.class);
+        List<Booking> results = query.getResultList();
+        closeEMF();
+        return results;
+    }
+
+    public User fetchUser(long id){
         createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
 
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.id =" + String.valueOf(id), User.class);
@@ -245,7 +264,7 @@ public class DatabaseManager {
 
         TypedQuery<Band> query = em.createQuery("SELECT b FROM Band b WHERE b.name = \"" + name + "\"", Band.class);
         Band result;
-        if(query.getResultList().size()!=0) {
+        if(!query.getResultList().isEmpty()) {
             result = query.getSingleResult();
         } else {
             result = null;
@@ -255,38 +274,44 @@ public class DatabaseManager {
         closeEMF();
         return result;
     }
-    public void updateUser (User user, int id){
-        User DbUser = fetchUser(id);
+    public void updateUser (User user){
+        User DbUser = fetchUser(user.getId());
         createEMF("objectdb://"+ip+"/MusicRoom.odb;user=admin;password=admin");
         em.getTransaction().begin();
         if(user.getName() != DbUser.getName()){
-            Query query = em.createQuery("UPDATE User u SET u.name = \"" + user.getName() + "\" WHERE u.id = " + String.valueOf(id) );
+            Query query = em.createQuery("UPDATE User u SET u.name = \"" + user.getName() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
             query.executeUpdate();
         }
         if(user.getSurname() != DbUser.getSurname()){
-            Query query = em.createQuery("UPDATE User u SET u.surname = \"" + user.getSurname() + "\" WHERE u.id = " + String.valueOf(id) );
+            Query query = em.createQuery("UPDATE User u SET u.surname = \"" + user.getSurname() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
             query.executeUpdate();
         }
         if(user.getBandName() != DbUser.getBandName()){
-            Query query = em.createQuery("UPDATE User u SET u.bandname = \"" + user.getBandName() + "\" WHERE u.id = " + String.valueOf(id) );
+            Query query = em.createQuery("UPDATE User u SET u.bandname = \"" + user.getBandName() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
             query.executeUpdate();
         }
         if(user.getEmail() != DbUser.getEmail()){
-            Query query = em.createQuery("UPDATE User u SET u.email = \"" + user.getEmail() + "\" WHERE u.id = " + String.valueOf(id) );
+            Query query = em.createQuery("UPDATE User u SET u.email = \"" + user.getEmail() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
             query.executeUpdate();
         }
         if(user.getUsername() != DbUser.getUsername()){
-            Query query = em.createQuery("UPDATE User u SET u.username = \"" + user.getUsername() + "\" WHERE u.id = " + String.valueOf(id) );
+            Query query = em.createQuery("UPDATE User u SET u.username = \"" + user.getUsername() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
             query.executeUpdate();
         }
         if(user.getPassword() != DbUser.getPassword()){
-            Query query = em.createQuery("UPDATE User u SET u.password = \"" + user.getPassword() + "\" WHERE u.id = " + String.valueOf(id) );
+            Query query = em.createQuery("UPDATE User u SET u.password = \"" + user.getPassword() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
+            query.executeUpdate();
+        }
+        if(user.getBookedTimes().size() != DbUser.getBookedTimes().size()) {
+            Query query = em.createQuery("UPDATE User u SET u.bookedTimes = \"" + user.getBookedTimes() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
             query.executeUpdate();
         }
         
         em.getTransaction().commit();
         closeEMF();
     }
+
+
 
 
 

@@ -48,7 +48,9 @@ abstract public class Instrument implements Serializable{
         return id;
     }
     
-    
+    public String toString() {
+        return name + " " + model + " (" + getClassPath() + ")";
+    }
     
     public String getName() {
         return name;

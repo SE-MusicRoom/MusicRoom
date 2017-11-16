@@ -184,6 +184,10 @@ public class Main extends Application {
     public void updateUserDB() {
         this.users = (List<User>) DatabaseManager.getInstance().fetchAllUser();
     }
+    
+    public void updateBookingDB() {
+        this.bookedTimes = (List<Booking>) DatabaseManager.getInstance().fetchAllBooking();
+    }
         
     public boolean userLogging(String userId, String password){
 //        gotoMainMenu();
@@ -289,6 +293,8 @@ public class Main extends Application {
         stage.sizeToScene();
         return (Initializable) loader.getController();
     }
+
+
     
     
 }

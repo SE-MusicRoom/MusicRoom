@@ -103,6 +103,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
             timeselectorController = (TimeSelectController) loader.getController();
             
         }
+        Main.getInstance().updateBookingDB();
         timeselectorController.setApp(this);
         swapIncludePane(timeselectorPane);
     }
@@ -167,5 +168,13 @@ public class MainMenuController extends AnchorPane implements Initializable {
         Main.getInstance().gotoLogin();
     }
 
+    public void clearAllState() {
+        customizePane = null;
+        timeselectorPane = null;
+        templateselectPane = null;
+        historyPane = null;
+        successReservationPane = null;
+        
+    }
 
 }
