@@ -69,7 +69,6 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     private List<Calendar> notAvailableTimes;
     private List<Calendar> selectedTimes;
     private LocalDate currentDate;
-    private List<Integer> selectedHours;
     private Button[] TimeBtn;
     private float total;
     
@@ -113,7 +112,6 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         this.mainmenu = mainmenu;
         this.selectedTimes = new ArrayList<Calendar>();
         this.notAvailableTimes = new ArrayList<Calendar>();
-        this.selectedHours = new ArrayList<Integer>();
         TimeBtn = new Button[]{null,null,null,null,null,null,null,null,null,null,T_10_Btn,T_11_Btn,T_12_Btn,T_13_Btn,T_14_Btn,T_15_Btn,T_16_Btn,T_17_Btn,T_18_Btn,T_19_Btn,T_20_Btn,T_21_Btn,T_22_Btn,T_23_Btn}; 
         SummaryImgView.setImage(new Image("MusicRoom/img/RoomTemplate/"+Main.getInstance().getCurrentRoom().getName()+".jpg"));
         total = 0;
@@ -182,15 +180,6 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         System.out.println("Booked: "+counter);
         
         
-    }
-    
-    private int findDuplicateHour(int hour) {
-        for (int j = 0; j < selectedTimes.size(); j++) { // check if already in selectedTimes
-            LocalDate d = selectedTimes.get(j).getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            if(d.isEqual(currentDate) && selectedTimes.get(j).get(Calendar.HOUR_OF_DAY) == hour)
-                return j;
-        }
-        return -1;
     }
     
 
