@@ -7,118 +7,65 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1201.0" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.CustomizeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.CustomizeController">
    <children>
-      <AnchorPane layoutX="14.0" layoutY="113.0" prefHeight="5.0" prefWidth="28.0">
+      <AnchorPane layoutX="143.0" layoutY="94.0" prefHeight="1008.0" prefWidth="1355.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="80.0" stroke="BLACK" strokeType="INSIDE" width="73.0" />
-            <Text layoutX="25.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
-               <font>
-                  <Font name="System Bold" size="39.0" />
-               </font>
-            </Text>
-            <Text layoutX="8.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date-Time">
-               <font>
-                  <Font name="System Italic" size="12.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="14.0" layoutY="208.0" prefHeight="5.0" prefWidth="28.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="80.0" stroke="BLACK" strokeType="INSIDE" width="73.0" />
-            <Text layoutX="25.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
-               <font>
-                  <Font name="System Bold" size="39.0" />
-               </font>
-            </Text>
-            <Text layoutX="15.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm" textAlignment="CENTER">
-               <font>
-                  <Font name="System Italic" size="12.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="98.0" prefWidth="491.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#110800" height="98.0" stroke="BLACK" strokeType="INSIDE" width="571.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff2b00" height="98.0" stroke="BLACK" strokeType="INSIDE" width="104.0" />
-            <Text layoutX="35.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
-               <font>
-                  <Font name="System Bold" size="60.0" />
-               </font>
-            </Text>
-            <Text fill="#ff2b00" layoutX="111.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customize Template">
-               <font>
-                  <Font name="System Bold" size="45.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="100.0" layoutY="97.0" prefHeight="736.0" prefWidth="1102.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="735.0" layoutX="1.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="1100.0" />
-            <AnchorPane layoutX="634.0" layoutY="16.0" prefHeight="40.0" prefWidth="356.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="1015.0" layoutX="1.0" layoutY="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1356.0" />
+            <AnchorPane layoutX="739.0" layoutY="52.0" prefHeight="52.0" prefWidth="446.0">
                <children>
-                  <Label layoutX="8.0" layoutY="7.0" text="Type">
+                  <Label layoutX="7.0" layoutY="9.0" text="Type">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="Cloud-Bold" size="30.0" />
                      </font>
                   </Label>
-                  <ChoiceBox fx:id="choiceBox" layoutX="73.0" layoutY="1.0" prefHeight="39.0" prefWidth="235.0" />
+                  <ChoiceBox fx:id="choiceBox" layoutX="119.0" layoutY="1.0" prefHeight="51.0" prefWidth="326.0" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="629.0" layoutY="63.0" prefHeight="40.0" prefWidth="281.0">
+            <AnchorPane layoutX="731.0" layoutY="111.0" prefHeight="80.0" prefWidth="469.0">
                <children>
-                  <TextField fx:id="searchTxtField" layoutX="78.0" layoutY="2.0" prefHeight="39.0" prefWidth="235.0" />
-                  <Label layoutX="14.0" layoutY="7.0" text="Search">
+                  <TextField fx:id="searchTxtField" layoutX="128.0" layoutY="15.0" prefHeight="51.0" prefWidth="326.0">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font size="24.0" />
+                     </font></TextField>
+                  <Label layoutX="14.0" layoutY="23.0" text="Search">
+                     <font>
+                        <Font name="Cloud-Bold" size="30.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <Button fx:id="GoBtn" layoutX="951.0" layoutY="16.0" mnemonicParsing="false" onAction="#onClickGo" prefHeight="86.0" prefWidth="123.0" text="Go!" textFill="WHITE">
+            <Button fx:id="GoBtn" layoutX="1196.0" layoutY="75.0" mnemonicParsing="false" onAction="#onClickGo" prefHeight="99.0" prefWidth="139.0" style="-fx-background-color: rgb(255,30,0);" text="Go!" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
-                  <Font name="Arial Bold" size="39.0" />
+                  <Font name="Cloud-Bold" size="39.0" />
                </font>
             </Button>
-            <ScrollPane layoutX="634.0" layoutY="110.0" prefHeight="598.0" prefWidth="440.0">
+            <ScrollPane layoutX="741.0" layoutY="206.0" prefHeight="773.0" prefWidth="597.0">
                <content>
-                  <VBox fx:id="listScroll" prefHeight="615.0" prefWidth="433.0">
+                  <VBox fx:id="listScroll" prefHeight="803.0" prefWidth="577.0">
                      <children>
-                        <AnchorPane fx:id="listToken" onMouseClicked="#onAddInstrument" prefHeight="55.0" prefWidth="399.0">
+                        <AnchorPane fx:id="listToken" onMouseClicked="#onAddInstrument" prefHeight="153.0" prefWidth="577.0">
                            <children>
-                              <Text layoutX="4.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gibson V Flyer">
+                              <AnchorPane layoutX="11.0" layoutY="31.0" prefHeight="107.0" prefWidth="110.0">
+                                 <children>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="111.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="111.0" />
+                                 </children>
+                              </AnchorPane>
+                              <Text layoutX="138.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gibson V Flyer">
                                  <font>
-                                    <Font size="24.0" />
+                                    <Font size="36.0" />
                                  </font>
                               </Text>
-                              <Text fill="#f21010" layoutX="5.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Electric Guitar" />
-                              <Text fill="#f21010" layoutX="322.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT" />
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </VBox>
-               </content>
-            </ScrollPane>
-            <ScrollPane layoutX="13.0" layoutY="380.0" prefHeight="246.0" prefWidth="604.0">
-               <content>
-                  <VBox fx:id="addedScroll" prefHeight="391.0" prefWidth="590.0">
-                     <children>
-                        <AnchorPane fx:id="addedToken" onMouseClicked="#onRemoveInstrument" prefHeight="40.0" prefWidth="420.0">
-                           <children>
-                              <Text layoutX="2.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gibson V Flyer">
+                              <Text fill="#f21010" layoutX="136.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Electric Guitar">
                                  <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Text>
-                              <Text fill="#f21010" layoutX="462.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT">
+                                    <Font size="32.0" />
+                                 </font></Text>
+                              <Text fill="#f21010" layoutX="410.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT">
                                  <font>
-                                    <Font size="24.0" />
+                                    <Font size="31.0" />
                                  </font></Text>
                            </children>
                         </AnchorPane>
@@ -126,37 +73,109 @@
                   </VBox>
                </content>
             </ScrollPane>
-            <Text layoutX="14.0" layoutY="696.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL">
+            <ScrollPane layoutX="13.0" layoutY="448.0" prefHeight="391.0" prefWidth="717.0">
+               <content>
+                  <VBox fx:id="addedScroll" prefHeight="506.0" prefWidth="702.0">
+                     <children>
+                        <AnchorPane fx:id="addedToken" onMouseClicked="#onRemoveInstrument" prefHeight="94.0" prefWidth="702.0">
+                           <children>
+                              <Text layoutX="14.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gibson V Flyer">
+                                 <font>
+                                    <Font name="System Bold" size="36.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#f21010" layoutX="510.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font></Text>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8200" height="101.0" layoutX="10.0" layoutY="882.0" stroke="TRANSPARENT" strokeType="INSIDE" width="633.0" />
+            <Text fill="WHITE" layoutX="21.0" layoutY="959.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL">
                <font>
-                  <Font name="Arial" size="20.0" />
+                  <Font name="Cloud-Bold" size="34.0" />
                </font>
             </Text>
-            <Text fx:id="total" fontSmoothingType="LCD" layoutX="280.0" layoutY="698.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB1200/hr" textAlignment="RIGHT">
+            <Text fx:id="total" fill="WHITE" fontSmoothingType="LCD" layoutX="135.0" layoutY="958.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB1200/hr" wrappingWidth="481.56005859375">
                <font>
-                  <Font name="System Bold Italic" size="60.0" />
+                  <Font name="Cloud-Bold" size="73.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
-      <HBox layoutX="100.0" layoutY="833.0" prefHeight="66.0" prefWidth="614.0">
+      <HBox layoutX="144.0" layoutY="1106.0" prefHeight="66.0" prefWidth="614.0">
          <children>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="67.0" prefWidth="191.0" text="CONFIRM!" textFill="WHITE">
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="93.0" prefWidth="402.0" style="-fx-background-color: rgb(255,30,0);" text="CONFIRM!" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
-                  <Font name="Arial Bold" size="51.0" />
+                  <Font name="Cloud-Bold" size="42.0" />
                </font>
             </Button>
-            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="67.0" prefWidth="158.0" text="Back" textFill="WHITE">
+            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="67.0" prefWidth="158.0" style="-fx-background-color: rgba(255,130,0,1);" text="Back" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
-                  <Font name="Arial Bold" size="30.0" />
+                  <Font name="Cloud-Bold" size="30.0" />
                </font>
             </Button>
          </children>
       </HBox>
+      <AnchorPane layoutX="9.0" layoutY="296.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutX="2.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+            <Text fill="#ff2b00" layoutX="39.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font name="Cloud-Bold" size="78.0" />
+               </font>
+            </Text>
+            <Text fill="#ff2b00" layoutX="23.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm">
+               <font>
+                  <Font name="Cloud-Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="8.0" layoutY="155.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutX="2.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+            <Text fill="#ff2b00" layoutX="39.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font name="Cloud-Bold" size="78.0" />
+               </font>
+            </Text>
+            <Text fill="#ff2b00" layoutX="1.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Select">
+               <font>
+                  <Font name="Cloud-Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="8.0" layoutY="12.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1e00" height="132.0" layoutX="2.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+            <Text fill="WHITE" layoutX="34.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font name="Cloud-Bold" size="96.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="145.0" prefHeight="98.0" prefWidth="461.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#110800" height="98.0" stroke="BLACK" strokeType="INSIDE" width="608.0" />
+            <Text fill="#ff2b00" layoutX="17.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Custom your room.">
+               <font>
+                  <Font name="Cloud-Bold" size="60.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
