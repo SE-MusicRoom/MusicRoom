@@ -12,8 +12,8 @@
    <children>
       <AnchorPane layoutX="149.0" layoutY="98.0" prefHeight="968.0" prefWidth="1348.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="1004.0" layoutY="-1.0" stroke="#ffffff00" strokeType="INSIDE" width="1352.0" />
-            <ScrollPane layoutX="-12.0" layoutY="3.0" prefHeight="1002.0" prefWidth="1355.0" AnchorPane.bottomAnchor="45.0" AnchorPane.rightAnchor="129.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="986.0" layoutX="-3.0" layoutY="-1.0" stroke="#ffffff00" strokeType="INSIDE" width="1355.0" />
+            <ScrollPane layoutX="-12.0" layoutY="3.0" prefHeight="986.0" prefWidth="1346.0" AnchorPane.bottomAnchor="61.0" AnchorPane.rightAnchor="129.0">
                <content>
                   <GridPane fx:id="templateGrid" maxHeight="1.7976931348623157E308" minHeight="200.0" minWidth="200.0" prefHeight="1093.0" prefWidth="1353.0">
                     <columnConstraints>
@@ -54,14 +54,14 @@
             </ScrollPane>
          </children>
       </AnchorPane>
-      <HBox layoutX="147.0" layoutY="1097.0" prefHeight="105.0" prefWidth="861.0">
+      <HBox layoutX="147.0" layoutY="1085.0" prefHeight="123.0" prefWidth="861.0">
          <children>
             <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickCustomize" prefHeight="101.0" prefWidth="680.0" style="-fx-background-color: rgb(255,30,0);" text="or CUSTOMIZE IT!!" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
-                  <Font name="Cloud-Bold" size="42.0" />
+                  <Font name="Cloud-Bold" size="50.0" />
                </font>
             </Button>
             <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="75.0" prefWidth="177.0" style="-fx-background-color: rgb(255,130,0);" text="Back" textFill="WHITE">
@@ -69,7 +69,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
-                  <Font name="Cloud-Bold" size="33.0" />
+                  <Font name="Cloud-Bold" size="35.0" />
                </font>
             </Button>
          </children>

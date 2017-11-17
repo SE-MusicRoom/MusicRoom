@@ -9,9 +9,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.CustomizeController">
    <children>
-      <AnchorPane layoutX="143.0" layoutY="94.0" prefHeight="1008.0" prefWidth="1355.0">
+      <AnchorPane layoutX="143.0" layoutY="94.0" prefHeight="992.0" prefWidth="1357.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="1015.0" layoutX="1.0" layoutY="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1356.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="995.0" layoutX="1.0" layoutY="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1356.0" />
             <AnchorPane layoutX="739.0" layoutY="52.0" prefHeight="52.0" prefWidth="446.0">
                <children>
                   <Label layoutX="7.0" layoutY="9.0" text="Type">
@@ -107,14 +107,14 @@
             </Text>
          </children>
       </AnchorPane>
-      <HBox layoutX="144.0" layoutY="1106.0" prefHeight="66.0" prefWidth="614.0">
+      <HBox layoutX="142.0" layoutY="1090.0" prefHeight="66.0" prefWidth="614.0">
          <children>
             <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="93.0" prefWidth="402.0" style="-fx-background-color: rgb(255,30,0);" text="CONFIRM!" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
-                  <Font name="Cloud-Bold" size="42.0" />
+                  <Font name="Cloud-Bold" size="50.0" />
                </font>
             </Button>
             <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="67.0" prefWidth="158.0" style="-fx-background-color: rgba(255,130,0,1);" text="Back" textFill="WHITE">
@@ -122,14 +122,24 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
-                  <Font name="Cloud-Bold" size="30.0" />
+                  <Font name="Cloud-Bold" size="35.0" />
                </font>
             </Button>
          </children>
       </HBox>
-      <AnchorPane layoutX="9.0" layoutY="296.0" prefHeight="133.0" prefWidth="126.0">
+      <AnchorPane layoutX="145.0" prefHeight="98.0" prefWidth="461.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutX="2.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#110800" height="98.0" stroke="BLACK" strokeType="INSIDE" width="608.0" />
+            <Text fill="#ff2b00" layoutX="17.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Custom your room.">
+               <font>
+                  <Font name="Cloud-Bold" size="60.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="8.0" layoutY="295.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutY="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="124.0" />
             <Text fill="#ff2b00" layoutX="39.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
                <font>
                   <Font name="Cloud-Bold" size="78.0" />
@@ -142,9 +152,9 @@
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="8.0" layoutY="155.0" prefHeight="133.0" prefWidth="126.0">
+      <AnchorPane layoutX="7.0" layoutY="154.0" prefHeight="133.0" prefWidth="126.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutX="2.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutX="2.0" layoutY="2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="124.0" />
             <Text fill="#ff2b00" layoutX="39.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
                <font>
                   <Font name="Cloud-Bold" size="78.0" />
@@ -157,22 +167,17 @@
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="8.0" layoutY="12.0" prefHeight="133.0" prefWidth="126.0">
+      <AnchorPane layoutX="7.0" layoutY="11.0" prefHeight="133.0" prefWidth="126.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1e00" height="132.0" layoutX="2.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
-            <Text fill="WHITE" layoutX="34.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8200" height="132.0" layoutX="2.0" layoutY="2.0" stroke="#ff800000" strokeType="INSIDE" width="124.0" />
+            <Text fill="WHITE" layoutX="41.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
                <font>
-                  <Font name="Cloud-Bold" size="96.0" />
+                  <Font name="Cloud-Bold" size="78.0" />
                </font>
             </Text>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="145.0" prefHeight="98.0" prefWidth="461.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#110800" height="98.0" stroke="BLACK" strokeType="INSIDE" width="608.0" />
-            <Text fill="#ff2b00" layoutX="17.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Custom your room.">
+            <Text fill="WHITE" layoutX="3.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Detail">
                <font>
-                  <Font name="Cloud-Bold" size="60.0" />
+                  <Font name="Cloud-Bold" size="22.0" />
                </font>
             </Text>
          </children>

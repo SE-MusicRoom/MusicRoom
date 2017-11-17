@@ -30,7 +30,7 @@
                <children>
                   <AnchorPane prefHeight="854.0" prefWidth="559.0">
                      <children>
-                        <VBox fx:id="selectedBox" layoutX="27.0" layoutY="445.0" prefHeight="175.0" prefWidth="240.0">
+                        <VBox fx:id="selectedBox" layoutX="25.0" layoutY="413.0" prefHeight="175.0" prefWidth="240.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13/02/60 (13:00 - 16:59)">
                                  <font>
@@ -75,8 +75,8 @@
                      <children>
                         <AnchorPane prefHeight="465.0" prefWidth="312.0">
                            <children>
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1e00" height="78.0" layoutX="14.0" layoutY="11.0" stroke="TRANSPARENT" strokeType="INSIDE" width="299.0" />
-                              <Text fill="WHITE" layoutX="23.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Picker">
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1e00" height="78.0" layoutX="14.0" layoutY="11.0" stroke="TRANSPARENT" strokeType="INSIDE" width="380.0" />
+                              <Text fill="WHITE" layoutX="23.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Selection">
                                  <font>
                                     <Font name="Cloud-Bold" size="52.0" />
                                  </font>
@@ -86,17 +86,17 @@
                                  <children>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="White - Available/Mostly Available ">
                                        <font>
-                                          <Font name="System Bold" size="28.0" />
+                                          <Font name="Cloud-Light" size="28.0" />
                                        </font>
                                     </Text>
-                                    <Text fill="#c9b500" strokeType="OUTSIDE" strokeWidth="0.0" text="Yellow - Nearly Full">
+                                    <Text fill="#b1b100" strokeType="OUTSIDE" strokeWidth="0.0" text="Yellow - Nearly Full">
                                        <font>
-                                          <Font name="System Bold" size="28.0" />
+                                          <Font name="Cloud-Light" size="28.0" />
                                        </font>
                                     </Text>
                                     <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Red - Full/Can't Reserved">
                                        <font>
-                                          <Font name="System Bold" size="28.0" />
+                                          <Font name="Cloud-Bold" size="28.0" />
                                        </font>
                                     </Text>
                                  </children>
@@ -105,8 +105,8 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="465.0" prefWidth="312.0">
                            <children>
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1e00" height="78.0" layoutX="19.0" layoutY="-7.0" stroke="TRANSPARENT" strokeType="INSIDE" width="299.0" />
-                              <Text fill="WHITE" layoutX="23.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Picker">
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1e00" height="78.0" layoutX="19.0" layoutY="-7.0" stroke="TRANSPARENT" strokeType="INSIDE" width="380.0" />
+                              <Text fill="WHITE" layoutX="23.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Selection">
                                  <font>
                                     <Font name="Cloud-Bold" size="52.0" />
                                  </font>
@@ -198,7 +198,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
-                  <Font name="Arial Bold" size="58.0" />
+                  <Font name="Cloud-Bold" size="50.0" />
                </font>
             </Button>
             <Button mnemonicParsing="false" onAction="#onClickBack" prefHeight="67.0" prefWidth="158.0" style="-fx-background-color: rgb(255,30,0);" text="Back" textFill="WHITE">
@@ -206,40 +206,60 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
-                  <Font name="Arial Bold" size="30.0" />
+                  <Font name="Cloud-Bold" size="35.0" />
                </font>
             </Button>
          </children>
       </HBox>
       <AnchorPane layoutX="155.0" layoutY="1.0" prefHeight="98.0" prefWidth="461.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#110800" height="98.0" stroke="BLACK" strokeType="INSIDE" width="608.0" />
-            <Text fill="#ff2b00" layoutX="17.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Custom your room.">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#110800" height="98.0" stroke="BLACK" strokeType="INSIDE" width="665.0" />
+            <Text fill="#ff2b00" layoutX="17.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date &amp; Time Selection">
                <font>
                   <Font name="Cloud-Bold" size="60.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="18.0" layoutY="13.0" prefHeight="133.0" prefWidth="126.0">
+      <AnchorPane layoutX="15.0" layoutY="298.0" prefHeight="133.0" prefWidth="126.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="132.0" layoutX="2.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
-            <Text fill="#ff2b00" layoutX="34.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
-               <font>
-                  <Font name="Cloud-Bold" size="96.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="18.0" layoutY="156.0" prefHeight="133.0" prefWidth="126.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutX="2.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutY="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="124.0" />
             <Text fill="#ff2b00" layoutX="39.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
                <font>
                   <Font name="Cloud-Bold" size="78.0" />
                </font>
             </Text>
-            <Text fill="#ff2b00" layoutX="23.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm">
+            <Text fill="#ff2b00" layoutX="23.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm">
+               <font>
+                  <Font name="Cloud-Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="157.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8200" height="132.0" layoutX="2.0" layoutY="2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="124.0" />
+            <Text fill="WHITE" layoutX="39.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font name="Cloud-Bold" size="78.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="1.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Select">
+               <font>
+                  <Font name="Cloud-Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutX="2.0" layoutY="2.0" stroke="#ff800000" strokeType="INSIDE" width="124.0" />
+            <Text fill="#ff1e00" layoutX="41.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font name="Cloud-Bold" size="78.0" />
+               </font>
+            </Text>
+            <Text fill="#ff1e00" layoutX="3.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Detail">
                <font>
                   <Font name="Cloud-Bold" size="22.0" />
                </font>

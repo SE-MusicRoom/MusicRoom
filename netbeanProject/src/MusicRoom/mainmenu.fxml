@@ -35,13 +35,6 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -52,7 +45,7 @@ Contributor(s):
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.MainMenuController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1023.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.MainMenuController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4a0a00" height="700.0" stroke="#ffffff00" strokeType="INSIDE" width="89.0" />
       <StackPane layoutX="14.0" layoutY="70.0">
@@ -64,7 +57,7 @@ Contributor(s):
             </Rectangle>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40; -fx-fill: ff3900;" styleClass="root" text="MAIN MENU">
                <font>
-                  <Font name="Arial Bold" size="36.0" />
+                  <Font name="Cloud-Bold" size="36.0" />
                </font>
                <StackPane.margin>
                   <Insets top="10.0" />
@@ -74,31 +67,31 @@ Contributor(s):
       </StackPane>
       <VBox layoutX="14.0" layoutY="176.0" prefHeight="190.0" prefWidth="273.0" AnchorPane.leftAnchor="14.0">
          <children>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="44.0" prefWidth="208.0" style="-fx-font-size: 20;" styleClass="root" text="+ New Reservations" textFill="WHITE">
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="44.0" prefWidth="208.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@base.css" text="+ New Reservations" textFill="WHITE">
                <font>
-                  <Font name="Arial Bold" size="36.0" />
+                  <Font name="Cloud-Light" size="36.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Button>
-            <Button fx:id="profileBtn" mnemonicParsing="false" onAction="#onClickHistory" style="-fx-font-size: 18;" styleClass="root" text="View History" textFill="WHITE">
+            <Button fx:id="profileBtn" mnemonicParsing="false" onAction="#onClickHistory" style="-fx-font-size: 18; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@base.css" text="View History" textFill="WHITE">
                <font>
-                  <Font name="Arial" size="24.0" />
+                  <Font name="Cloud-Bold" size="36.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" style="-fx-font-size: 18;" styleClass="root" stylesheets="@base.css" text="News &amp; Promotion" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" style="-fx-font-size: 18; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@base.css" text="News &amp; Promotion" textFill="WHITE">
                <font>
-                  <Font name="Arial" size="24.0" />
+                  <Font name="Californian FB Bold" size="36.0" />
                </font>
             </Button>
          </children>
       </VBox>
-      <VBox layoutX="15.0" layoutY="572.0" prefHeight="44.0" prefWidth="83.0">
+      <VBox layoutX="15.0" layoutY="572.0" prefHeight="44.0" prefWidth="107.0">
          <children>
-            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" onAction="#onClickLogOut" prefHeight="41.0" prefWidth="82.0" style="-fx-font-size: 18;" text="Logout" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" onAction="#onClickLogOut" prefHeight="41.0" prefWidth="119.0" style="-fx-background-color: rgb(255,130,0);" text="Logout" textFill="WHITE">
                <font>
-                  <Font name="Arial" size="24.0" />
+                  <Font name="Arial" size="19.0" />
                </font>
             </Button>
          </children>
