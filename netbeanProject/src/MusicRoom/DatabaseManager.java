@@ -18,7 +18,7 @@ public class DatabaseManager {
     private EntityManagerFactory emf;
     private EntityManager em;
     
-    private String ip;
+    private final String ip;
 
     private DatabaseManager(){
         ip = "objectdb://161.246.6.16:80";
@@ -30,9 +30,19 @@ public class DatabaseManager {
         }
         return instance;
     }
-    private void createEMF(String DbName){
-        this.emf = Persistence.createEntityManagerFactory(DbName);
-        this.em = this.emf.createEntityManager();
+    private boolean createEMF(String DbName){
+        try {
+            this.emf = Persistence.createEntityManagerFactory(DbName);
+            this.em = this.emf.createEntityManager();
+        } catch (Exception ex) {
+            //System.out.println("ex");
+            //Main.getInstance().showErrorPopup("Error Connecting db", "\nClick confirm to try again");
+            return false;
+        }
+        
+        return true;
+        
+        
     }
     private void closeEMF(){
         this.em.close();
@@ -45,8 +55,9 @@ public class DatabaseManager {
         createDummyUser();
     }
     
-    public void createDummyUser() {
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+    public boolean createDummyUser() {
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return false;
 
         em.getTransaction().begin();
         User l = new User("1234", "1234", "1234", "1234", "1234", null);
@@ -59,13 +70,15 @@ public class DatabaseManager {
         em.getTransaction().commit();
         
         closeEMF();
+        return true;
     }
 
-    public void createInstrumentDB (){
+    public boolean createInstrumentDB (){
         String violinPath = new String("src\\MusicRoom\\img\\Instrument\\Violin\\");
         String AcousticGuitarPath = new String("src\\MusicRoom\\img\\Instrument\\AcousticGuitar\\");
 
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return false;
 
         em.getTransaction().begin();
         ArrayList<Instrument> l = new ArrayList<Instrument>();
@@ -87,11 +100,13 @@ public class DatabaseManager {
 
         em.getTransaction().commit();
         closeEMF();
+        return true;
     }
     
-    public void createDummyRoomTemplate (){
+    public boolean createDummyRoomTemplate (){
 
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return false;
         em.getTransaction().begin();
         
         RoomTemplate l = new RoomTemplate("Violin Madness","Full of Violin",6000);
@@ -129,11 +144,13 @@ public class DatabaseManager {
         em.getTransaction().commit();
         
         closeEMF();
+        return true;
     }
 
     public List<Instrument> fetchAllInstrument (){
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
-
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return null;
+        
         TypedQuery<Instrument> query = em.createQuery("SELECT l FROM Instrument l", Instrument.class);
         List<Instrument> results = query.getResultList();
 
@@ -142,7 +159,8 @@ public class DatabaseManager {
     }
     
     public List<RoomTemplate> fetchAllRoomTemplate (){
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return null;
 
         TypedQuery<RoomTemplate> query = em.createQuery("SELECT l FROM RoomTemplate l", RoomTemplate.class);
         List<RoomTemplate> results = query.getResultList();
@@ -151,68 +169,81 @@ public class DatabaseManager {
         return results;
     }
 
-    public void addUser(User user){
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+    public boolean addUser(User user){
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return false;
 
         em.getTransaction().begin();
         em.persist(user);
         em.getTransaction().commit();
 
         closeEMF();
+        return true;
     }
     
-    public void addBand(Band band){
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+    public boolean addBand(Band band){
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return false;
 
         em.getTransaction().begin();
         em.persist(band);
         em.getTransaction().commit();
 
         closeEMF();
+        return true;
     }
     
-    public void addRoom(RoomTemplate roomTemplate){
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+    public boolean addRoom(RoomTemplate roomTemplate){
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return false;
 
         em.getTransaction().begin();
         em.persist(roomTemplate);
         em.getTransaction().commit();
 
         closeEMF();
+        return true;
     }
     
-    public void addCustomRoom(CustomRoomTemplate roomTemplate){
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+    public boolean addCustomRoom(CustomRoomTemplate roomTemplate){
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return false;
 
         em.getTransaction().begin();
         em.persist(roomTemplate);
         em.getTransaction().commit();
 
         closeEMF();
+        return true;
     }
     
-    public void addBooking(Booking booking){
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+    public boolean addBooking(Booking booking){
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return false;
 
         em.getTransaction().begin();
         em.persist(booking);
         em.getTransaction().commit();
 
         closeEMF();
+        return true;
     }
     
-    public void removeBooking(Booking booking){
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+    public boolean removeBooking(Booking booking){
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return false;
 
         em.getTransaction().begin();
         em.remove(em.contains(booking) ? booking : em.merge(booking));
         em.getTransaction().commit();
 
         closeEMF();
+        return true;
     }
 
     public List<User> fetchAllUser(){
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return null;
 
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u ", User.class);
         List<User> results = query.getResultList();
@@ -222,7 +253,7 @@ public class DatabaseManager {
     }
     
     public List<Booking> fetchAllBooking(){
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))            return null;
 
         TypedQuery<Booking> query = em.createQuery("SELECT b FROM Booking b ", Booking.class);
         List<Booking> results = query.getResultList();
@@ -232,7 +263,7 @@ public class DatabaseManager {
     }
     
     public List<Booking> fetchAllCustomBooking(){
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))            return null;
 
         TypedQuery<Booking> query = em.createQuery("SELECT b FROM Booking b WHERE b.room.name = \"Custom\"", Booking.class);
         List<Booking> results = query.getResultList();
@@ -241,7 +272,7 @@ public class DatabaseManager {
     }
     
     public List<Booking> fetchBookingByRoomID(int id) {
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))            return null;
 
         TypedQuery<Booking> query = em.createQuery("SELECT b FROM Booking b WHERE b.room.id = "+id, Booking.class);
         List<Booking> results = query.getResultList();
@@ -250,7 +281,7 @@ public class DatabaseManager {
     }
 
     public User fetchUser(long id){
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))            return null;
 
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.id =" + String.valueOf(id), User.class);
         User result = query.getSingleResult();
@@ -260,7 +291,7 @@ public class DatabaseManager {
     }
 
     public Band fetchBand(String name){
-        createEMF(ip+"/MusicRoom.odb;user=admin;password=admin");
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))            return null;
 
         TypedQuery<Band> query = em.createQuery("SELECT b FROM Band b WHERE b.name = \"" + name + "\"", Band.class);
         Band result;

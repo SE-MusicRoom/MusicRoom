@@ -19,6 +19,8 @@ import javafx.stage.Stage;
 
 import java.util.Calendar;
 import java.util.List;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 
 /**
  * Main Application. This class handles navigation and user session.
@@ -31,7 +33,6 @@ public class Main extends Application {
     private List<User> users;
     private List<Instrument> instruments;
     private List<RoomTemplate> roomTemplete;
-    private List<RoomTemplate> customTemplete;
     private List<Booking> bookedTimes;
     
     // Reservation
@@ -46,15 +47,10 @@ public class Main extends Application {
     private final double MINIMUM_WINDOW_HEIGHT = 700;
     
     public Main() {
-        this.instruments =  DatabaseManager.getInstance().fetchAllInstrument();
-        this.roomTemplete =  DatabaseManager.getInstance().fetchAllRoomTemplate();
-        updateUserDB();
-        this.customTemplete = new ArrayList<RoomTemplate>();
-        this.users = DatabaseManager.getInstance().fetchAllUser();
-        this.bookedTimes = DatabaseManager.getInstance().fetchAllBooking();
-        
-        
         Main.instance = this;
+        
+
+        
         
     }
 
@@ -83,9 +79,15 @@ public class Main extends Application {
             gotoLogin();
             primaryStage.show();
             primaryStage.setResizable(false);
-
+        
             
+            updateUserDB();
+            updateBookingDB();
+            updateInstrumentDB();
+            updateBookingDB();
+        
         } catch (Exception ex) {
+            
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -140,10 +142,6 @@ public class Main extends Application {
 
     
 
-    public void addCustomTemplete(RoomTemplate customTemplete) {
-        this.customTemplete.add(customTemplete);
-    }
-
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
     }
@@ -183,10 +181,28 @@ public class Main extends Application {
     
     public void updateUserDB() {
         this.users = (List<User>) DatabaseManager.getInstance().fetchAllUser();
+        if(users == null) {
+            showErrorPopup("Connection Error", "User fetching error :(\nClick confirm to try again",new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                //getChildren().remove(parent.getChildren().size()-1);
+                updateUserDB();
+            }
+        });
+        }
+        
     }
     
     public void updateBookingDB() {
         this.bookedTimes = (List<Booking>) DatabaseManager.getInstance().fetchAllBooking();
+    }
+    
+    public void updateInstrumentDB() {
+        this.instruments =  DatabaseManager.getInstance().fetchAllInstrument();
+    }
+    
+    public void updateRoomTemplateDB() {
+        this.roomTemplete =  DatabaseManager.getInstance().fetchAllRoomTemplate();
     }
         
     public boolean userLogging(String userId, String password){
@@ -224,7 +240,7 @@ public class Main extends Application {
         gotoLogin();
     }
     
-    public void showPopup(String title,String detail) {
+    public PopupController showPopup(String title,String detail) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("popup.fxml"));
         AnchorPane page = null;
         AnchorPane root = (AnchorPane)stage.getScene().getRoot();
@@ -236,6 +252,12 @@ public class Main extends Application {
         root.getChildren().add(page);
         PopupController pop = (PopupController)loader.getController();
         pop.setApp(title, detail, (AnchorPane)stage.getScene().getRoot());
+        return pop;
+    }
+    
+    public void showErrorPopup(String title,String detail,EventHandler<ActionEvent> eh) {
+        PopupController pop = showPopup(title,detail);
+        pop.addEventToButton(eh);
     }
 
     public void gotoLogin() {

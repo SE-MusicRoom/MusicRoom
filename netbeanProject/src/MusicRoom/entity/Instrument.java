@@ -34,15 +34,21 @@ abstract public class Instrument implements Serializable{
         this.img = img;
     }
     
+
+    
     public String getClassPath() {
         String str = "";
         Class C = getClass();
-        while (C != Instrument.class) {
+        int round = 2;
+        while (C != Instrument.class && round>0) {
             str = C.getSimpleName() + "/" + str;
             C = C.getSuperclass();
+            round--;
         }
         return str.substring(0, str.length() - 1);
     }
+    
+    
 
     public long getId() {
         return id;

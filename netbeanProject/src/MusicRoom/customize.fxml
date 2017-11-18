@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.shape.*?>
@@ -51,19 +52,20 @@
                            <children>
                               <AnchorPane layoutX="11.0" layoutY="31.0" prefHeight="107.0" prefWidth="110.0">
                                  <children>
+                                    <ImageView fx:id="listToken_pic" fitHeight="111.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true" />
                                     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="111.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="111.0" />
                                  </children>
                               </AnchorPane>
-                              <Text layoutX="138.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gibson V Flyer">
+                              <Text fx:id="listToken_name" layoutX="138.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gibson V Flyer">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
                               </Text>
-                              <Text fill="#f21010" layoutX="136.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Electric Guitar">
+                              <Text fx:id="listToken_path" fill="#f21010" layoutX="136.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Electric Guitar">
                                  <font>
                                     <Font size="32.0" />
                                  </font></Text>
-                              <Text fill="#f21010" layoutX="410.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT">
+                              <Text fx:id="listToken_price" fill="#f21010" layoutX="410.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT">
                                  <font>
                                     <Font size="31.0" />
                                  </font></Text>
@@ -79,12 +81,12 @@
                      <children>
                         <AnchorPane fx:id="addedToken" onMouseClicked="#onRemoveInstrument" prefHeight="94.0" prefWidth="702.0">
                            <children>
-                              <Text layoutX="14.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gibson V Flyer">
+                              <Text fx:id="addedToken_name" layoutX="14.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gibson V Flyer">
                                  <font>
                                     <Font name="System Bold" size="36.0" />
                                  </font>
                               </Text>
-                              <Text fill="#f21010" layoutX="510.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT">
+                              <Text fx:id="addedToken_price" fill="#f21010" layoutX="510.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT">
                                  <font>
                                     <Font size="36.0" />
                                  </font></Text>

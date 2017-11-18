@@ -49,6 +49,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -60,13 +61,7 @@ import javafx.scene.text.Text;
 public class CustomizeController extends AnchorPane implements Initializable {
 
     @FXML
-    private Text total;
-    
-    @FXML
-    private AnchorPane listToken;
-
-    @FXML
-    private Button backBtn;
+    private Text listToken_price;
 
     @FXML
     private TextField searchTxtField;
@@ -75,19 +70,43 @@ public class CustomizeController extends AnchorPane implements Initializable {
     private Button GoBtn;
 
     @FXML
-    private Button confirmBtn;
-
-    @FXML
-    private VBox listScroll;
+    private ImageView listToken_pic;
 
     @FXML
     private AnchorPane addedToken;
-    
+
+    @FXML
+    private Text addedToken_name;
+
+    @FXML
+    private Button reservationBtn;
+
+    @FXML
+    private VBox addedScroll;
+
+    @FXML
+    private Text listToken_path;
+
+    @FXML
+    private Text total;
+
+    @FXML
+    private Text addedToken_price;
+
+    @FXML
+    private AnchorPane listToken;
+
+    @FXML
+    private Text listToken_name;
+
+    @FXML
+    private Button reservationBtn1;
+
     @FXML
     private ChoiceBox<String> choiceBox;
 
     @FXML
-    private VBox addedScroll;
+    private VBox listScroll;
     
     private MainMenuController mainmenu;
     private CustomizeController parent;
@@ -242,16 +261,12 @@ public class CustomizeController extends AnchorPane implements Initializable {
             Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
         AnchorPane newToken = (AnchorPane)loader.getNamespace().get("listToken");
-        Text t0 = (Text) newToken.getChildren().get(0);
-        Text t1 = (Text) newToken.getChildren().get(1);
-        Text t2 = (Text) newToken.getChildren().get(2);
-        t0.setText(name);
-        t1.setText(path);
-        t2.setText("THB"+price+"/hr");
         
          // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
         CustomizeController cus = (CustomizeController)loader.getController();
         cus.setApp(this);
+        cus.setListToken(name, path, price);
+        
         
         return newToken;
     }
@@ -264,15 +279,23 @@ public class CustomizeController extends AnchorPane implements Initializable {
             Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
         AnchorPane newToken = (AnchorPane)loader.getNamespace().get("addedToken");
-        Text t0 = (Text) newToken.getChildren().get(0);
-        Text t1 = (Text) newToken.getChildren().get(1);
-        t0.setText(name);
-        t1.setText("THB"+price+"/hr");
         
         // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
         CustomizeController cus = (CustomizeController)loader.getController();
         cus.setApp(this.parent);
+        cus.setAddedToken(name, price);
         
         return newToken;
+    }
+    
+    protected void setListToken(String name,String path,String price) {
+        listToken_name.setText(name);
+        listToken_path.setText(path);
+        listToken_price.setText("THB"+price+"/hr");
+    }
+    
+    protected void setAddedToken(String name,String price) {
+        addedToken_name.setText(name);
+        addedToken_price.setText("THB"+price+"/hr");
     }
 }

@@ -10,10 +10,12 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -24,6 +26,8 @@ import javafx.scene.text.Text;
  */
 public class PopupController extends AnchorPane implements Initializable {
     
+    @FXML
+    private Button button;
     
     @FXML
     private Text titleTxt;
@@ -32,6 +36,8 @@ public class PopupController extends AnchorPane implements Initializable {
     private Text detailTxt;
         
     private AnchorPane parent;
+    
+    
     
     
     public void setApp(String title,String detail,AnchorPane parent){
@@ -48,5 +54,11 @@ public class PopupController extends AnchorPane implements Initializable {
     public void onClickOK(ActionEvent event) {
         parent.getChildren().remove(parent.getChildren().size()-1);
     }
+
+    public void addEventToButton(EventHandler<ActionEvent> eh) {
+        button.setOnAction(eh);
+    }
+    
+
     
 }

@@ -61,8 +61,8 @@ public class RegisterConfirmController extends AnchorPane implements Initializab
     
     private void sendEmail() {
         
-        final String username = "58010886@kmitl.ac.th";
-	final String password = "CppxghUz";
+        final String username = "xxxxxx";
+	final String password = "xxxxx";
 
 	Properties props = new Properties();
 	props.put("mail.smtp.auth", "true");
