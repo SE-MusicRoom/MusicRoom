@@ -30,8 +30,6 @@ import javax.mail.internet.MimeMessage;
  */
 public class RegisterConfirmController extends AnchorPane implements Initializable{
 
-    @FXML
-    private Text RefTxt;
 
     @FXML
     private PasswordField activateCode;
@@ -41,7 +39,6 @@ public class RegisterConfirmController extends AnchorPane implements Initializab
     
     private User user;
     
-    private String ref;
     private String activition;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -50,19 +47,17 @@ public class RegisterConfirmController extends AnchorPane implements Initializab
     
     public void setApp(User user){
         this.user = user;
-        ref = String.valueOf(Calendar.getInstance().get(Calendar.SECOND));
         activition = encrypt(String.valueOf(Calendar.getInstance().get(Calendar.MILLISECOND)));
         
         emailTxt.setText(user.getEmail());
-        RefTxt.setText(ref);
         sendEmail();
     }
     
     
     private void sendEmail() {
         
-        final String username = "xxxxxx";
-	final String password = "xxxxx";
+        final String username = "kmitlmusicroom@gmail.com";
+	final String password = "kmitlmusicr00m";
 
 	Properties props = new Properties();
 	props.put("mail.smtp.auth", "true");
