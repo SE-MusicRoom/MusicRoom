@@ -32,6 +32,8 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -49,8 +51,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.RegisterConfirmController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.RegisterConfirmController">
   <children>
+      <ImageView fitHeight="700.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/background_1024_700.jpg" />
+         </image>
+      </ImageView>
       <StackPane layoutX="60.0" layoutY="35.0" prefHeight="497.0" prefWidth="668.0">
          <children>
             <VBox prefHeight="655.0" prefWidth="668.0">
@@ -69,7 +76,7 @@
                         <Insets left="8.0" />
                      </VBox.margin>
                   </Text>
-                  <HBox>
+                  <HBox styleClass="hbox">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 22;" text="We send activation code to" />
                         <Text fx:id="emailTxt" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 22;" text="example@gmail.com">
@@ -81,14 +88,14 @@
                         <Insets left="30.0" top="50.0" />
                      </VBox.margin>
                   </HBox>
-                  <Text layoutX="10.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Please confirm your activation code and enjoy our service">
+                  <Text layoutX="10.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" styleClass="hbox" text="Please confirm your activation code and enjoy our service">
                      <VBox.margin>
                         <Insets left="30.0" top="120.0" />
                      </VBox.margin>
                   </Text>
                   <HBox>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Activation Code">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" styleClass="hbox" text="Activation Code" wrappingWidth="149.4600067138672">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -128,7 +135,7 @@
                   <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                </padding>
             </Button>
-        <Button fx:id="comfirm" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickConfirm" prefHeight="47.0" prefWidth="177.0" style="-fx-font-size: 28; -fx-padding: 2; -fx-text-fill: ffffff;" text="CONFIRM" textFill="#ff6000">
+        <Button fx:id="comfirm" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickConfirm" prefHeight="47.0" prefWidth="177.0" style="-fx-font-size: 28; -fx-padding: 2; -fx-text-fill: ffffff; -fx-background-color: rgb(255,130,0);" text="CONFIRM" textFill="#ff6000">
                <font>
                   <Font name="Cloud-Bold" size="34.0" fx:id="x4" />
                </font>
@@ -144,4 +151,8 @@
          </font>
       </Text>
   </children>
+   <stylesheets>
+      <URL value="@font.css" />
+      <URL value="@button.css" />
+   </stylesheets>
 </AnchorPane>

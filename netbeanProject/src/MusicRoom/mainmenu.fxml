@@ -35,6 +35,7 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 
+<?import java.net.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
@@ -55,20 +56,20 @@ Contributor(s):
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1023.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.MainMenuController">
    <children>
-      <ImageView fitHeight="700.0" fitWidth="1332.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="700.0" fitWidth="1289.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/background.jpg" />
+            <Image url="@img/background_1024_700.jpg" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4a0a00" height="700.0" stroke="#ffffff00" strokeType="INSIDE" width="89.0" />
-      <StackPane layoutX="14.0" layoutY="70.0">
+      <StackPane layoutX="14.0" layoutY="70.0" styleClass="pane">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="58.0" stroke="TRANSPARENT" strokeType="INSIDE" width="241.0">
                <StackPane.margin>
                   <Insets />
                </StackPane.margin>
             </Rectangle>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40; -fx-fill: ff3900;" styleClass="root" text="MAIN MENU">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40; -fx-fill: ff3900;" text="MAIN MENU">
                <font>
                   <Font name="Cloud-Bold" size="36.0" />
                </font>
@@ -78,22 +79,22 @@ Contributor(s):
             </Text>
          </children>
       </StackPane>
-      <VBox layoutX="14.0" layoutY="176.0" prefHeight="190.0" prefWidth="273.0" AnchorPane.leftAnchor="14.0">
+      <VBox layoutX="14.0" layoutY="176.0" prefHeight="190.0" prefWidth="371.0" AnchorPane.leftAnchor="14.0">
          <children>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="44.0" prefWidth="208.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@base.css" text="+ New Reservations" textFill="WHITE">
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="58.0" prefWidth="290.0" style="-fx-background-color: rgb(255,30,0);" styleClass="pane" text="+ New Reservations" textFill="WHITE">
                <font>
-                  <Font name="Cloud-Bold" size="36.0" />
+                  <Font name="Cloud-Bold" size="26.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Button>
-            <Button fx:id="profileBtn" mnemonicParsing="false" onAction="#onClickHistory" style="-fx-font-size: 18; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@base.css" text="View History" textFill="WHITE">
+            <Button fx:id="profileBtn" mnemonicParsing="false" onAction="#onClickHistory" style="-fx-font-size: 18; -fx-background-color: rgb(255,30,0);" styleClass="root" text="View History" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="20.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" style="-fx-font-size: 18; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@base.css" text="News &amp; Promotion" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="53.0" mnemonicParsing="false" style="-fx-font-size: 18; -fx-background-color: rgb(255,30,0);" styleClass="root" text="News &amp; Promotion" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="20.0" />
                </font>
@@ -111,4 +112,8 @@ Contributor(s):
       </VBox>
       <AnchorPane fx:id="includePane" layoutX="-108.0" layoutY="-251.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1201.0" prefWidth="1510.0" scaleX="0.5" scaleY="0.5" />
    </children>
+   <stylesheets>
+      <URL value="@button.css" />
+      <URL value="@font.css" />
+   </stylesheets>
 </AnchorPane>

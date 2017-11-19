@@ -32,6 +32,8 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.*?>
 <?import java.lang.*?>
@@ -56,8 +58,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.RegisterController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.RegisterController">
   <children>
+      <ImageView fitHeight="700.0" fitWidth="1134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/background_1024_700.jpg" />
+         </image>
+      </ImageView>
       <HBox layoutX="59.900001525878906" layoutY="594.9000244140625">
          <children>
         <Button fx:id="back" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickBack" prefHeight="47.0" prefWidth="129.0" style="-fx-background-color: #000000; -fx-font-size: 28; -fx-padding: 2; -fx-text-fill: ff6000;" text="BACK">
@@ -92,7 +99,7 @@
                   <Font name="Cloud-Bold" size="64.0" />
                </font>
             </Text>
-            <GridPane layoutX="17.0" layoutY="110.0" prefHeight="428.0" prefWidth="622.0">
+            <GridPane layoutX="17.0" layoutY="110.0" prefHeight="428.0" prefWidth="622.0" styleClass="pane" stylesheets="@font.css">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="180.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="355.0" minWidth="10.0" prefWidth="288.0" />
@@ -191,4 +198,8 @@
          </children>
       </Group>
   </children>
+   <stylesheets>
+      <URL value="@font.css" />
+      <URL value="@button.css" />
+   </stylesheets>
 </AnchorPane>

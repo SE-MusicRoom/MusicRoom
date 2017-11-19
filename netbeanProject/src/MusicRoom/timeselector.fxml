@@ -201,7 +201,7 @@
                   <Font name="Cloud-Bold" size="50.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onClickBack" prefHeight="67.0" prefWidth="158.0" style="-fx-background-color: rgb(255,30,0);" text="Back" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#onClickBack" prefHeight="67.0" prefWidth="158.0" style="-fx-background-color: rgb(255,130,0);" text="Back" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
