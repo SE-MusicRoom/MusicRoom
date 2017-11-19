@@ -147,27 +147,7 @@ public class DatabaseManager {
         return true;
     }
 
-    public List<Instrument> fetchAllInstrument (){
-        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
-            return null;
-        
-        TypedQuery<Instrument> query = em.createQuery("SELECT l FROM Instrument l", Instrument.class);
-        List<Instrument> results = query.getResultList();
 
-        closeEMF();
-        return results;
-    }
-    
-    public List<RoomTemplate> fetchAllRoomTemplate (){
-        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
-            return null;
-
-        TypedQuery<RoomTemplate> query = em.createQuery("SELECT l FROM RoomTemplate l", RoomTemplate.class);
-        List<RoomTemplate> results = query.getResultList();
-
-        closeEMF();
-        return results;
-    }
 
     public boolean addUser(User user){
         if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
@@ -240,7 +220,24 @@ public class DatabaseManager {
         closeEMF();
         return true;
     }
+    
+    public boolean fetchAllToMain() {
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return false;
 
+        TypedQuery<User> query1 = em.createQuery("SELECT u FROM User u ", User.class);
+        Main.getInstance().setListUsers(query1.getResultList());
+        TypedQuery<Booking> query2 = em.createQuery("SELECT u FROM Booking u ", Booking.class);
+        Main.getInstance().setListBookings(query2.getResultList());
+        TypedQuery<Instrument> query3 = em.createQuery("SELECT u FROM Instrument u ", Instrument.class);
+        Main.getInstance().setListInstruments(query3.getResultList());
+        TypedQuery<RoomTemplate> query4 = em.createQuery("SELECT u FROM RoomTemplate u ", RoomTemplate.class);
+        Main.getInstance().setListRoomTemplates(query4.getResultList());
+
+        closeEMF();
+        return true;
+    }
+    
     public List<User> fetchAllUser(){
         if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
             return null;
@@ -261,6 +258,30 @@ public class DatabaseManager {
         closeEMF();
         return results;
     }
+    
+    public List<Instrument> fetchAllInstrument (){
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return null;
+        
+        TypedQuery<Instrument> query = em.createQuery("SELECT l FROM Instrument l", Instrument.class);
+        List<Instrument> results = query.getResultList();
+
+        closeEMF();
+        return results;
+    }
+    
+    public List<RoomTemplate> fetchAllRoomTemplate (){
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+            return null;
+
+        TypedQuery<RoomTemplate> query = em.createQuery("SELECT l FROM RoomTemplate l", RoomTemplate.class);
+        List<RoomTemplate> results = query.getResultList();
+
+        closeEMF();
+        return results;
+    }
+
+
     
     public List<Booking> fetchAllCustomBooking(){
         if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))            return null;

@@ -7,7 +7,6 @@ package MusicRoom;
 
 import MusicRoom.entity.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -80,11 +79,11 @@ public class Main extends Application {
             primaryStage.show();
             primaryStage.setResizable(false);
         
-            
-            updateUserDB();
-            updateBookingDB();
-            updateInstrumentDB();
-            updateBookingDB();
+            DatabaseManager.getInstance().fetchAllToMain();
+//            updateUserDB();
+//            updateBookingDB();
+//            updateInstrumentDB();
+//            updateRoomTemplateDB();
         
         } catch (Exception ex) {
             
@@ -204,17 +203,25 @@ public class Main extends Application {
     public void updateRoomTemplateDB() {
         this.roomTemplete =  DatabaseManager.getInstance().fetchAllRoomTemplate();
     }
+    
+    public void setListUsers(List<User> resultList) {
+        users = resultList;
+    }
+
+    public void setListBookings(List<Booking> resultList) {
+        bookedTimes = resultList;
+    }
+
+    public void setListRoomTemplates(List<RoomTemplate> resultList) {
+        roomTemplete = resultList;
+    }
+
+    public void setListInstruments(List<Instrument> resultList) {
+        instruments = resultList;
+    }
         
     public boolean userLogging(String userId, String password){
-//        gotoMainMenu();
-//          return true;
-
-        //gotoMainMenu();
-        //  return true;
-
         for(int i=0;i<users.size();i++) {
-            //System.out.println(users.get(i).getUsername()+" "+userId);
-            //System.out.println(users.get(i).getPassword()+" "+password);
             if(users.get(i).getUsername().equals(userId)) {
                 if(users.get(i).getPassword().equals(password)) {
                     currentUser = users.get(i);
@@ -315,6 +322,8 @@ public class Main extends Application {
         stage.sizeToScene();
         return (Initializable) loader.getController();
     }
+
+
 
 
     
