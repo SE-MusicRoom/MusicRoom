@@ -21,7 +21,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1501.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TimeSelectController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1501.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TimeSelectController">
    <children>
       <AnchorPane layoutX="155.0" layoutY="94.0" prefHeight="989.0" prefWidth="1344.0">
          <children>
@@ -113,59 +113,59 @@
                               </Text>
                               <GridPane layoutX="23.0" layoutY="93.0" prefHeight="401.0" prefWidth="680.0" style="-fx-background-color: rgb(2;">
                                  <children>
-                                    <Button fx:id="T_11_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="265.0"  styleClass="available" text="11:00" GridPane.columnIndex="1">
+                                    <Button fx:id="T_11_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="265.0" styleClass="available" text="11:00" GridPane.columnIndex="1">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_12_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="274.0"  styleClass="available" text="12:00" GridPane.columnIndex="2">
+                                    <Button fx:id="T_12_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="274.0" styleClass="available" text="12:00" GridPane.columnIndex="2">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_13_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="271.0"  styleClass="available" text="13:00" GridPane.rowIndex="1">
+                                    <Button fx:id="T_13_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="271.0" styleClass="available" text="13:00" GridPane.rowIndex="1">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_14_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="245.0"  styleClass="available" text="14:00" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <Button fx:id="T_14_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="245.0" styleClass="available" text="14:00" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_15_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="247.0"  styleClass="available" text="15:00" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <Button fx:id="T_15_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="247.0" styleClass="available" text="15:00" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_16_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="267.0"  styleClass="available" text="16:00" GridPane.rowIndex="2">
+                                    <Button fx:id="T_16_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="267.0" styleClass="available" text="16:00" GridPane.rowIndex="2">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_17_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="278.0"  styleClass="available" text="17:00" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <Button fx:id="T_17_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="278.0" styleClass="available" text="17:00" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_18_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="260.0"  styleClass="available" text="18:00" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                    <Button fx:id="T_18_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="260.0" styleClass="available" text="18:00" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_19_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="112.0" prefWidth="253.0"  styleClass="available" text="19:00" GridPane.rowIndex="3">
+                                    <Button fx:id="T_19_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="112.0" prefWidth="253.0" styleClass="available" text="19:00" GridPane.rowIndex="3">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_10_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="83.0" prefWidth="230.0"  styleClass="available" text="10:00">
+                                    <Button fx:id="T_10_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="83.0" prefWidth="230.0" styleClass="available" text="10:00">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_20_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="283.0"  styleClass="available" text="20:00" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <Button fx:id="T_20_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="283.0" styleClass="available" text="20:00" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_21_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="256.0"  styleClass="available" text="21:00" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                    <Button fx:id="T_21_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="256.0" styleClass="available" text="21:00" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_22_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="295.0"  styleClass="available" text="22:00" GridPane.rowIndex="4">
+                                    <Button fx:id="T_22_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="295.0" styleClass="available" text="22:00" GridPane.rowIndex="4">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_23_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="280.0"  styleClass="available" text="23:00" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                    <Button fx:id="T_23_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="280.0" styleClass="available" text="23:00" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
