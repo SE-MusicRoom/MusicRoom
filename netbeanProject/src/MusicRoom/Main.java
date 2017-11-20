@@ -28,7 +28,15 @@ public class Main extends Application {
 
     private static Main instance;
     
+    // Element
     private Stage stage;
+    private boolean popupOpen;
+    
+    // Properties
+    private final double MINIMUM_WINDOW_WIDTH = 1024;
+    private final double MINIMUM_WINDOW_HEIGHT = 700;
+    
+    // DB
     private List<User> users;
     private List<Instrument> instruments;
     private List<RoomTemplate> roomTemplete;
@@ -42,15 +50,11 @@ public class Main extends Application {
     private float currentPrice;
    
     
-    private final double MINIMUM_WINDOW_WIDTH = 1024;
-    private final double MINIMUM_WINDOW_HEIGHT = 700;
+
     
     public Main() {
         Main.instance = this;
-        
-
-        
-        
+        popupOpen = false;
     }
 
     /**
@@ -90,29 +94,24 @@ public class Main extends Application {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     
+    // Getters Setters    
     public static Main getInstance() {
         return instance;
     }
-
     public User getLoggedUser() {
         return currentUser;
     }
-
     public void setCurrentPrice(float currentPrice) {
         this.currentPrice = currentPrice;
     }
-
     public RoomTemplate getCurrentRoom() {
         return currentRoom;
     }
-    
-    
-    
     public List<Instrument> getInstruments() {
         return instruments;
     }
-    
     public Instrument getInstrument(long id) {
         for (int i = 0; i < instruments.size(); i++) {
             Instrument o = instruments.get(i);
@@ -121,7 +120,6 @@ public class Main extends Application {
         }
         return null;
     }
-    
     public Instrument getInstrument(String name,String model) {
         for (int i = 0; i < instruments.size(); i++) {
             Instrument o = instruments.get(i);
@@ -130,29 +128,21 @@ public class Main extends Application {
         }
         return null;
     }
-
     public List<RoomTemplate> getRoomTemplete() {
         return roomTemplete;
     }
-
     public User getCurrentUser() {
         return currentUser;
     }
-
-    
-
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
     }
-
     public void setCurrentBooking(Booking currentBooking) {
         this.currentBooking = currentBooking;
     }
-
     public void setCurrentRoom(RoomTemplate currentRoom) {
         this.currentRoom = currentRoom;
     }
-
     public void setCurrentTimeTable(List<Calendar> currentTimeTable) {
         this.currentTimeTable = currentTimeTable;
     }
@@ -160,11 +150,66 @@ public class Main extends Application {
     public List<Booking> getBookedTimes() {
         return bookedTimes;
     }
+    public void updateBookingDB() {
+        this.bookedTimes = (List<Booking>) DatabaseManager.getInstance().fetchAllBooking();
+    }
+    public void updateInstrumentDB() {
+        this.instruments =  DatabaseManager.getInstance().fetchAllInstrument();
+    }
+    public void updateRoomTemplateDB() {
+        this.roomTemplete =  DatabaseManager.getInstance().fetchAllRoomTemplate();
+    }
+    public void setListUsers(List<User> resultList) {
+        users = resultList;
+    }
+    public void setListBookings(List<Booking> resultList) {
+        bookedTimes = resultList;
+    }
+    public void setListRoomTemplates(List<RoomTemplate> resultList) {
+        roomTemplete = resultList;
+    }
+    public void setListInstruments(List<Instrument> resultList) {
+        instruments = resultList;
+    }
+    public boolean isPopupOpen() {
+        return popupOpen;
+    }
+    public void setPopupOpen(boolean isPopup) {
+        this.popupOpen = isPopup;
+    }
+
+
+
+
+
+    public boolean userLogging(String userId, String password){
+        for(int i=0;i<users.size();i++) {
+            if(users.get(i).getUsername().equals(userId)) {
+                if(users.get(i).getPassword().equals(password)) {
+                    currentUser = users.get(i);
+
+                    if(i!=0) // normal user
+                        gotoMainMenu();
+                    else    // admin
+                        gotoAdmin();
+                    
+                    showPopup("Welcome "+currentUser.getName(),"Let's play some music !");
+                    
+                    return true;
+                } else
+                    return false;
+            }
+        }
+        return false;
+
+    }
     
-    
+    public void userLogout(){
+        currentUser = null;
+        gotoLogin();
+    }
     
 
-     
     public Booking createBooking() {
         Booking newBooking = new Booking(currentRoom, currentTimeTable, currentUser,currentPrice);
         return newBooking;
@@ -190,63 +235,9 @@ public class Main extends Application {
         });
         }
         
-    }
-    
-    public void updateBookingDB() {
-        this.bookedTimes = (List<Booking>) DatabaseManager.getInstance().fetchAllBooking();
-    }
-    
-    public void updateInstrumentDB() {
-        this.instruments =  DatabaseManager.getInstance().fetchAllInstrument();
-    }
-    
-    public void updateRoomTemplateDB() {
-        this.roomTemplete =  DatabaseManager.getInstance().fetchAllRoomTemplate();
-    }
-    
-    public void setListUsers(List<User> resultList) {
-        users = resultList;
-    }
+    }   
 
-    public void setListBookings(List<Booking> resultList) {
-        bookedTimes = resultList;
-    }
-
-    public void setListRoomTemplates(List<RoomTemplate> resultList) {
-        roomTemplete = resultList;
-    }
-
-    public void setListInstruments(List<Instrument> resultList) {
-        instruments = resultList;
-    }
-        
-    public boolean userLogging(String userId, String password){
-        for(int i=0;i<users.size();i++) {
-            if(users.get(i).getUsername().equals(userId)) {
-                if(users.get(i).getPassword().equals(password)) {
-                    currentUser = users.get(i);
-
-                    if(i!=0) // normal user
-                        gotoMainMenu();
-                    else    // admin
-                        gotoAdmin();
-                    
-                    showPopup("Welcome "+currentUser.getName(),"Let's play some music !");
-                    
-                    return true;
-                } else
-                    return false;
-            }
-        }
-        return false;
-
-    }
-    
-    void userLogout(){
-        currentUser = null;
-        gotoLogin();
-    }
-    
+    // Popups
     public PopupController showPopup(String title,String detail) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("popup.fxml"));
         AnchorPane page = null;
@@ -258,15 +249,16 @@ public class Main extends Application {
         }
         root.getChildren().add(page);
         PopupController pop = (PopupController)loader.getController();
-        pop.setApp(title, detail, (AnchorPane)stage.getScene().getRoot());
+        pop.setApp(title, detail, (AnchorPane)stage.getScene().getRoot(),page);
+        popupOpen = true;
         return pop;
     }
-    
     public void showErrorPopup(String title,String detail,EventHandler<ActionEvent> eh) {
         PopupController pop = showPopup(title,detail);
         pop.addEventToButton(eh);
     }
 
+    // Scene Control
     public void gotoLogin() {
         try {
             LoginController login = (LoginController) replaceSceneContent("login.fxml");
@@ -274,7 +266,6 @@ public class Main extends Application {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
     public void gotoMainMenu() {
         try {
             MainMenuController reg = (MainMenuController) replaceSceneContent("mainmenu.fxml");
@@ -282,7 +273,6 @@ public class Main extends Application {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
     public void gotoAdmin() {
         try {
             AdminMenuController reg = (AdminMenuController) replaceSceneContent("controlPanel.fxml");
@@ -290,7 +280,6 @@ public class Main extends Application {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
     public void gotoRegister() {
         try {
             RegisterController reg = (RegisterController) replaceSceneContent("register.fxml");
@@ -298,7 +287,6 @@ public class Main extends Application {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
     public void gotoRegisterConfirm() {
         try {
             RegisterConfirmController reg = (RegisterConfirmController) replaceSceneContent("confirm_register.fxml");
@@ -307,7 +295,6 @@ public class Main extends Application {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
     private Initializable replaceSceneContent(String fxml) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
         AnchorPane page = null;

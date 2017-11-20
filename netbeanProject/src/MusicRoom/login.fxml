@@ -126,7 +126,7 @@ Contributor(s):
                         <Insets top="6.0" />
                      </HBox.margin>
                   </Text>
-                  <TextField fx:id="userId" prefHeight="41.0" prefWidth="282.0" style="-fx-background-color: fff0e6; -fx-font-size: 18; -fx-border-color: #ffd1b3; -fx-border-width: 2;" />
+                  <TextField fx:id="userId" onAction="#onClickLogin" prefHeight="41.0" prefWidth="282.0" style="-fx-background-color: fff0e6; -fx-font-size: 18; -fx-border-color: #ffd1b3; -fx-border-width: 2;" />
                </children>
                <VBox.margin>
                   <Insets top="10.0" />
@@ -142,7 +142,7 @@ Contributor(s):
                         <Insets top="7.0" />
                      </HBox.margin>
                   </Text>
-                  <PasswordField fx:id="password" prefHeight="41.0" prefWidth="282.0" style="-fx-background-color: fff0e6; -fx-font-size: 18; -fx-border-color: #ffd1b3; -fx-border-width: 2;" />
+                  <PasswordField fx:id="password" onAction="#onClickLogin" prefHeight="41.0" prefWidth="282.0" style="-fx-background-color: fff0e6; -fx-font-size: 18; -fx-border-color: #ffd1b3; -fx-border-width: 2;" />
                </children>
                <VBox.margin>
                   <Insets top="12.0" />

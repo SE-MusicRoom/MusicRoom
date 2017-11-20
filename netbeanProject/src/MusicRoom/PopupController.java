@@ -36,14 +36,16 @@ public class PopupController extends AnchorPane implements Initializable {
     private Text detailTxt;
         
     private AnchorPane parent;
+    private AnchorPane me;
     
     
     
     
-    public void setApp(String title,String detail,AnchorPane parent){
+    public void setApp(String title,String detail,AnchorPane parent,AnchorPane me){
         titleTxt.setText(title);
         detailTxt.setText(detail);
         this.parent = parent;
+        this.me = me;
     }
 
     @Override
@@ -52,13 +54,14 @@ public class PopupController extends AnchorPane implements Initializable {
     }
     
     public void onClickOK(ActionEvent event) {
-        parent.getChildren().remove(parent.getChildren().size()-1);
+        parent.getChildren().remove(me);
+        Main.getInstance().setPopupOpen(false);
     }
 
     public void addEventToButton(EventHandler<ActionEvent> eh) {
         button.setOnAction(eh);
     }
     
-
+    
     
 }

@@ -6,7 +6,6 @@
 package MusicRoom;
 
 import MusicRoom.entity.Booking;
-import MusicRoom.entity.RoomTemplate;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;

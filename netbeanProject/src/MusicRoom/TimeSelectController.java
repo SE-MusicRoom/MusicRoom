@@ -113,7 +113,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         this.selectedTimes = new ArrayList<Calendar>();
         this.notAvailableTimes = new ArrayList<Calendar>();
         TimeBtn = new Button[]{null,null,null,null,null,null,null,null,null,null,T_10_Btn,T_11_Btn,T_12_Btn,T_13_Btn,T_14_Btn,T_15_Btn,T_16_Btn,T_17_Btn,T_18_Btn,T_19_Btn,T_20_Btn,T_21_Btn,T_22_Btn,T_23_Btn}; 
-        SummaryImgView.setImage(new Image("MusicRoom/img/RoomTemplate/"+Main.getInstance().getCurrentRoom().getName()+".jpg"));
+        SummaryImgView.setImage(new Image("MusicRoom/img/RoomTemplate/"+Main.getInstance().getCurrentRoom().getName()+".jpg",SummaryImgView.getFitWidth(), SummaryImgView.getFitHeight(), false,true));
         total = 0;
         totalTxt.setText("THB"+total);
         

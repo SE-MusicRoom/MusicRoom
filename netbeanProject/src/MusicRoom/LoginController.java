@@ -64,7 +64,7 @@ public class LoginController extends AnchorPane implements Initializable {
         //errorMessage.setText("");
         userId.setPromptText("username");
         password.setPromptText("password");
-        
+        userId.requestFocus();
     }
     
     
@@ -73,10 +73,12 @@ public class LoginController extends AnchorPane implements Initializable {
             // We are running in isolated FXML, possibly in Scene Builder.
             // NO-OP.
             //errorMessage.setText("Hello " + userId.getText());
-        } else {
-            if (!Main.getInstance().userLogging(userId.getText(), password.getText())){
+        } else if (!Main.getInstance().isPopupOpen()){
+            if ((userId.getText().equals("") || password.getText().equals("")))
+                Main.getInstance().showPopup("Calm down!", "Please enter both username and password so that we can know who are you :O");
+            else if (!Main.getInstance().userLogging(userId.getText(), password.getText())){
                 //errorMessage.setText("Username/Password is incorrect");
-                
+                Main.getInstance().showPopup("Error", "Username or Password is wrong :(");
             }
         }
     }
