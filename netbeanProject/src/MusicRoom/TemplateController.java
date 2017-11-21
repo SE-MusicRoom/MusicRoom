@@ -78,8 +78,10 @@ public class TemplateController extends AnchorPane implements Initializable {
         t0.setText(r.getName());
         
         ImageView imgV = (ImageView)newToken.getChildren().get(1);
-        imgV.setImage(new Image("MusicRoom/img/RoomTemplate/"+r.getName()+".jpg",imgV.getFitWidth(), imgV.getFitHeight(), false,true));
-        
+        imgV.setImage(r.getImg()); //new Image("MusicRoom/img/RoomTemplate/"+r.getName()+".jpg",imgV.getFitWidth(), imgV.getFitHeight(), false,true)
+        imgV.setFitHeight(imgV.getFitHeight());
+        imgV.setFitWidth(imgV.getFitWidth());
+        imgV.setPreserveRatio(false);
          // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
         TemplateController cus = (TemplateController)loader.getController();
         cus.setApp(this,mainmenu);

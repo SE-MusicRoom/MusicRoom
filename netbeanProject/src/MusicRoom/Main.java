@@ -84,6 +84,10 @@ public class Main extends Application {
             primaryStage.setResizable(false);
         
             DatabaseManager.getInstance().fetchAllToMain();
+            System.out.println("User:" + users.size());
+            System.out.println("Booking:" + bookedTimes.size());
+            System.out.println("Instrument:" + instruments.size());
+            System.out.println("Template:" + roomTemplete.size());
 //            updateUserDB();
 //            updateBookingDB();
 //            updateInstrumentDB();

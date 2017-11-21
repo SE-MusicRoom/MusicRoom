@@ -9,6 +9,8 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import java.io.Serializable;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javax.persistence.GenerationType;
 
 /**
@@ -25,7 +27,7 @@ abstract public class Instrument implements Serializable{
     private float price;
     private String img;
     
-    
+    transient private Image imgView;
 
     public Instrument(String name, String model, float price, String img) {
         this.name = name;
@@ -77,5 +79,12 @@ abstract public class Instrument implements Serializable{
     public String getImage() {
         return img;
     }
+
+    public Image getImgView() {
+        if(imgView==null)
+            imgView = new Image(img);
+        return imgView;
+    }
+    
     
 }

@@ -8,6 +8,7 @@ package MusicRoom.entity;
 import MusicRoom.DatabaseManager;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.image.Image;
 import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -40,6 +41,8 @@ public class RoomTemplate {
     
     @OneToMany(mappedBy = "room",fetch=FetchType.EAGER)
     private List<Booking> bookings;
+    
+    transient private Image img;
 
     public RoomTemplate(String name, String detail, float price) {
         this.name = name;
@@ -94,6 +97,13 @@ public class RoomTemplate {
 
     public List<Instrument> getInstruments() {
         return instruments;
+    }
+    
+    
+    public Image getImg() {
+        if(img==null)
+            img = new Image("MusicRoom/img/RoomTemplate/"+name+".jpg");
+        return img;
     }
     
     @Override
