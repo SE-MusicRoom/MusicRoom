@@ -40,7 +40,7 @@ public class Main extends Application {
     private List<User> users;
     private List<Instrument> instruments;
     private List<RoomTemplate> roomTemplete;
-    private List<Booking> bookedTimes;
+    private List<Booking> bookings;
     
     // Reservation
     private User currentUser;
@@ -83,12 +83,8 @@ public class Main extends Application {
             primaryStage.show();
             primaryStage.setResizable(false);
         
-            DatabaseManager.getInstance().fetchAllToMain();
-            System.out.println("User:" + users.size());
-            System.out.println("Booking:" + bookedTimes.size());
-            System.out.println("Instrument:" + instruments.size());
-            System.out.println("Template:" + roomTemplete.size());
-//            updateUserDB();
+
+            updateUserDB();
 //            updateBookingDB();
 //            updateInstrumentDB();
 //            updateRoomTemplateDB();
@@ -113,10 +109,10 @@ public class Main extends Application {
     public RoomTemplate getCurrentRoom() {
         return currentRoom;
     }
-    public List<Instrument> getInstruments() {
-        return instruments;
-    }
+
     public Instrument getInstrument(long id) {
+        if(this.instruments == null)
+            updateInstrumentDB();
         for (int i = 0; i < instruments.size(); i++) {
             Instrument o = instruments.get(i);
             if(o.getId() == id)
@@ -125,6 +121,8 @@ public class Main extends Application {
         return null;
     }
     public Instrument getInstrument(String name,String model) {
+        if(this.instruments == null)
+            updateInstrumentDB();
         for (int i = 0; i < instruments.size(); i++) {
             Instrument o = instruments.get(i);
             if(o.getName().equals(name) && o.getModel().equals(model))
@@ -132,8 +130,26 @@ public class Main extends Application {
         }
         return null;
     }
+    
+    public List<Instrument> getInstruments() {
+        if(this.instruments == null)
+            updateInstrumentDB();
+        return instruments;
+    }
+    public List<User> getUsers() {
+        if(this.users == null)
+            updateUserDB();
+        return users;
+    }
     public List<RoomTemplate> getRoomTemplete() {
+        if(this.roomTemplete == null)
+            updateRoomTemplateDB();
         return roomTemplete;
+    }
+    public List<Booking> getBookings() {
+        if(this.bookings == null)
+            updateBookingDB();
+        return bookings;
     }
     public User getCurrentUser() {
         return currentUser;
@@ -151,29 +167,35 @@ public class Main extends Application {
         this.currentTimeTable = currentTimeTable;
     }
 
-    public List<Booking> getBookedTimes() {
-        return bookedTimes;
-    }
+
+    public void updateUserDB() {
+        this.users = (List<User>) DatabaseManager.getInstance().fetchAllUser();
+        if(this.users == null) {
+            showErrorPopup("Connection Error", "User fetching error :(\nClick confirm to try again","REFETCH_USER");
+        }
+        System.out.println("Fetch Main User:" + users.size());
+        
+    }   
     public void updateBookingDB() {
-        this.bookedTimes = (List<Booking>) DatabaseManager.getInstance().fetchAllBooking();
+        this.bookings = (List<Booking>) DatabaseManager.getInstance().fetchAllBooking();
+        if(this.bookings == null) {
+            showErrorPopup("Connection Error", "Bookings fetching error :(\nClick confirm to try again","REFETCH_BOOKING");
+        }
+        System.out.println("Fetch Main Booking:" + bookings.size());
     }
     public void updateInstrumentDB() {
         this.instruments =  DatabaseManager.getInstance().fetchAllInstrument();
+        if(this.instruments == null) {
+            showErrorPopup("Connection Error", "Bookings fetching error :(\nClick confirm to try again","REFETCH_INSTRUMENT");
+        }
+        System.out.println("Fetch Main Instrument:" + instruments.size());
     }
     public void updateRoomTemplateDB() {
         this.roomTemplete =  DatabaseManager.getInstance().fetchAllRoomTemplate();
-    }
-    public void setListUsers(List<User> resultList) {
-        users = resultList;
-    }
-    public void setListBookings(List<Booking> resultList) {
-        bookedTimes = resultList;
-    }
-    public void setListRoomTemplates(List<RoomTemplate> resultList) {
-        roomTemplete = resultList;
-    }
-    public void setListInstruments(List<Instrument> resultList) {
-        instruments = resultList;
+        if(this.roomTemplete == null) {
+            showErrorPopup("Connection Error", "Bookings fetching error :(\nClick confirm to try again","REFETCH_ROOMTEMPLATE");
+        }
+        System.out.println("Fetch Main Template:" + roomTemplete.size());
     }
     public boolean isPopupOpen() {
         return popupOpen;
@@ -182,7 +204,11 @@ public class Main extends Application {
         this.popupOpen = isPopup;
     }
 
+                
+            
+            
 
+    
 
 
 
@@ -227,19 +253,7 @@ public class Main extends Application {
         return newUser;
     }
     
-    public void updateUserDB() {
-        this.users = (List<User>) DatabaseManager.getInstance().fetchAllUser();
-        if(users == null) {
-            showErrorPopup("Connection Error", "User fetching error :(\nClick confirm to try again",new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                //getChildren().remove(parent.getChildren().size()-1);
-                updateUserDB();
-            }
-        });
-        }
-        
-    }   
+
 
     // Popups
     public PopupController showPopup(String title,String detail) {
@@ -257,9 +271,9 @@ public class Main extends Application {
         popupOpen = true;
         return pop;
     }
-    public void showErrorPopup(String title,String detail,EventHandler<ActionEvent> eh) {
+    public void showErrorPopup(String title,String detail,String event) {
         PopupController pop = showPopup(title,detail);
-        pop.addEventToButton(eh);
+        pop.addEventToButton(event);
     }
 
     // Scene Control

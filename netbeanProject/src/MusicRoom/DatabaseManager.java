@@ -221,23 +221,6 @@ public class DatabaseManager {
         return true;
     }
     
-    public boolean fetchAllToMain() {
-        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
-            return false;
-
-        TypedQuery<User> query1 = em.createQuery("SELECT u FROM User u ", User.class);
-        Main.getInstance().setListUsers(query1.getResultList());
-        TypedQuery<Booking> query2 = em.createQuery("SELECT u FROM Booking u ", Booking.class);
-        Main.getInstance().setListBookings(query2.getResultList());
-        TypedQuery<Instrument> query3 = em.createQuery("SELECT u FROM Instrument u ", Instrument.class);
-        Main.getInstance().setListInstruments(query3.getResultList());
-        TypedQuery<RoomTemplate> query4 = em.createQuery("SELECT u FROM RoomTemplate u ", RoomTemplate.class);
-        Main.getInstance().setListRoomTemplates(query4.getResultList());
-
-        closeEMF();
-        return true;
-    }
-    
     public List<User> fetchAllUser(){
         if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
             return null;
@@ -354,8 +337,8 @@ public class DatabaseManager {
             Query query = em.createQuery("UPDATE User u SET u.password = \"" + user.getPassword() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
             query.executeUpdate();
         }
-        if(user.getBookedTimes().size() != DbUser.getBookedTimes().size()) {
-            Query query = em.createQuery("UPDATE User u SET u.bookedTimes = \"" + user.getBookedTimes() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
+        if(user.getBookings().size() != DbUser.getBookings().size()) {
+            Query query = em.createQuery("UPDATE User u SET u.bookedTimes = \"" + user.getBookings() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
             query.executeUpdate();
         }
         

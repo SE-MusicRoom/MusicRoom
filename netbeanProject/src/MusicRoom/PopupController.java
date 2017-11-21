@@ -38,8 +38,39 @@ public class PopupController extends AnchorPane implements Initializable {
     private AnchorPane parent;
     private AnchorPane me;
     
-    
-    
+    // Handlers
+    private final EventHandler<ActionEvent> REFETCH_USER = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            parent.getChildren().remove(me);
+            Main.getInstance().setPopupOpen(false);
+            Main.getInstance().updateUserDB();
+        }
+    };
+    private final EventHandler<ActionEvent> REFETCH_BOOKING = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            parent.getChildren().remove(me);
+            Main.getInstance().setPopupOpen(false);
+            Main.getInstance().updateBookingDB();
+        }
+    };
+    private final EventHandler<ActionEvent> REFETCH_INSTRUMENT = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            parent.getChildren().remove(me);
+            Main.getInstance().setPopupOpen(false);
+            Main.getInstance().updateInstrumentDB();
+        }
+    };
+    private final EventHandler<ActionEvent> REFETCH_ROOMTEMPLATE = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            parent.getChildren().remove(me);
+            Main.getInstance().setPopupOpen(false);
+            Main.getInstance().updateRoomTemplateDB();
+        }
+    };    
     
     public void setApp(String title,String detail,AnchorPane parent,AnchorPane me){
         titleTxt.setText(title);
@@ -58,9 +89,18 @@ public class PopupController extends AnchorPane implements Initializable {
         Main.getInstance().setPopupOpen(false);
     }
 
-    public void addEventToButton(EventHandler<ActionEvent> eh) {
-        button.setOnAction(eh);
+    public void addEventToButton(String event) {
+        if(event.equals("REFETCH_USER"))
+            button.setOnAction(REFETCH_USER);
+        else if(event.equals("REFETCH_BOOKING"))
+            button.setOnAction(REFETCH_BOOKING);
+        else if(event.equals("REFETCH_INSTRUMENT"))
+            button.setOnAction(REFETCH_INSTRUMENT);
+        else if(event.equals("REFETCH_ROOMTEMPLATE"))
+            button.setOnAction(REFETCH_ROOMTEMPLATE);
     }
+    
+    
     
     
     

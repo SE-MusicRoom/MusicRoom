@@ -27,7 +27,7 @@ abstract public class Instrument implements Serializable{
     private float price;
     private String img;
     
-    transient private Image imgView;
+    transient private Image imgLoaded;
 
     public Instrument(String name, String model, float price, String img) {
         this.name = name;
@@ -76,14 +76,12 @@ abstract public class Instrument implements Serializable{
         return price/100;
     }
     
-    public String getImage() {
-        return img;
-    }
 
-    public Image getImgView() {
-        if(imgView==null)
-            imgView = new Image(img);
-        return imgView;
+    public Image getImg() {
+        if(imgLoaded==null)
+            imgLoaded = new Image(img);
+        System.out.println(name+"::"+imgLoaded.isError()+"::"+img);
+        return imgLoaded;
     }
     
     

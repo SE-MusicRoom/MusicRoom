@@ -62,7 +62,7 @@ public class User {
         return password;
     }
 
-    public List<Booking> getBookedTimes() {
+    public List<Booking> getBookings() {
         return bookedTimes;
     }
 

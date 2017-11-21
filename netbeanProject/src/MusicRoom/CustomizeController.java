@@ -1,34 +1,3 @@
-/*
- * Copyright (c) 2008, 2012 Oracle and/or its affiliates.
- * All rights reserved. Use is subject to license terms.
- *
- * This file is available and licensed under the following license:
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *  - Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
- *  - Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in
- *    the documentation and/or other materials provided with the distribution.
- *  - Neither the name of Oracle Corporation nor the names of its
- *    contributors may be used to endorse or promote products derived
- *    from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
 package MusicRoom;
 
 import MusicRoom.entity.CustomRoomTemplate;
@@ -49,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -118,6 +88,9 @@ public class CustomizeController extends AnchorPane implements Initializable {
         this.addedInstruments = new ArrayList<Instrument>();
         this.mainmenu = mainmenu;
         
+        choiceBox.getItems().add("All");
+        choiceBox.getSelectionModel().selectFirst();
+        
         List<Instrument> listedInstruments = Main.getInstance().getInstruments();
         for (int i = 0; i < listedInstruments.size(); i++) {
             if(!choiceBox.getItems().contains(listedInstruments.get(i).getClass().getSimpleName()))
@@ -172,11 +145,11 @@ public class CustomizeController extends AnchorPane implements Initializable {
         listScroll.getChildren().clear();
         List<Instrument> listedInstruments = Main.getInstance().getInstruments();
         for (int i = 0; i < listedInstruments.size(); i++) {
-            if(!listedInstruments.get(i).getClass().getSimpleName().equals(choiceBox.getSelectionModel().getSelectedItem()) && choiceBox.getSelectionModel().getSelectedItem() != null)
+            if(!listedInstruments.get(i).getClass().getSimpleName().equals(choiceBox.getSelectionModel().getSelectedItem()) && !choiceBox.getSelectionModel().getSelectedItem().equals("All"))
                 continue;
-            if(!listedInstruments.get(i).getName().toLowerCase().contains(searchTxtField.getText().toLowerCase()) && !listedInstruments.get(i).getModel().toLowerCase().contains(searchTxtField.getText().toLowerCase() ) && !searchTxtField.getText().equals(""))
+            if(!(listedInstruments.get(i).getName()+listedInstruments.get(i).getModel()).replaceAll("[\\s|\\u00A0]+", "").toLowerCase().contains(searchTxtField.getText().replaceAll("[\\s|\\u00A0]+", "").toLowerCase()) && !searchTxtField.getText().replaceAll("[\\s|\\u00A0]+", "").equals(""))
                 continue;
-            AnchorPane newToken = copyListToken(listedInstruments.get(i).getName()+" "+listedInstruments.get(i).getModel(),listedInstruments.get(i).getClassPath(),Float.toString(listedInstruments.get(i).getRentPrice()));
+            AnchorPane newToken = copyListToken(listedInstruments.get(i));
             newToken.setId(String.valueOf(listedInstruments.get(i).getId()));
             listScroll.getChildren().add(newToken);
         }
@@ -191,7 +164,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         System.out.println("Added " +  selectedInstrument.getName() +  selectedInstrument.getModel());
         
         
-        AnchorPane newToken = copyAddedToken(selectedInstrument.getClass().getSimpleName()+": "+selectedInstrument.getName()+" "+selectedInstrument.getModel(),Float.toString(selectedInstrument.getRentPrice()));
+        AnchorPane newToken = copyAddedToken(selectedInstrument);
         newToken.setId(String.valueOf(parent.getAddedScroll().getChildren().size()));
         parent.getAddedScroll().getChildren().add(newToken);
 
@@ -252,7 +225,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         return price;
     }
     
-    private AnchorPane copyListToken(String name,String path,String price) {
+    private AnchorPane copyListToken(Instrument instrument) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("customize.fxml"));
         
         try {   
@@ -265,13 +238,16 @@ public class CustomizeController extends AnchorPane implements Initializable {
          // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
         CustomizeController cus = (CustomizeController)loader.getController();
         cus.setApp(this);
-        cus.setListToken(name, path, price);
+        cus.setListToken(instrument.getName()+" "+instrument.getModel(),
+                        instrument.getClassPath(),
+                        Float.toString(instrument.getRentPrice()),
+                        instrument.getImg());
         
         
         return newToken;
     }
     
-    private AnchorPane copyAddedToken(String name,String price) {
+    private AnchorPane copyAddedToken(Instrument selectedInstrument) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("customize.fxml"));
         try {
             loader.load();
@@ -283,15 +259,18 @@ public class CustomizeController extends AnchorPane implements Initializable {
         // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
         CustomizeController cus = (CustomizeController)loader.getController();
         cus.setApp(this.parent);
-        cus.setAddedToken(name, price);
+        cus.setAddedToken(selectedInstrument.getClass().getSimpleName()+": "+selectedInstrument.getName()+" "+selectedInstrument.getModel(),
+                            Float.toString(selectedInstrument.getRentPrice()));
         
         return newToken;
     }
     
-    protected void setListToken(String name,String path,String price) {
+    protected void setListToken(String name,String path,String price,Image img) {
         listToken_name.setText(name);
         listToken_path.setText(path);
         listToken_price.setText("THB"+price+"/hr");
+        listToken_pic.setImage(img);
+        
     }
     
     protected void setAddedToken(String name,String price) {

@@ -181,7 +181,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
                 
                 //selectedTimes.add(selectedTimes.get(j).get(Calendar.HOUR_OF_DAY));
         }
-        System.out.println("Booked: "+counter);
+
         
     }
     

@@ -52,7 +52,7 @@ public class HistoryController extends AnchorPane implements Initializable {
     public void setApp(MainMenuController mainmenu){
         this.mainmenu = mainmenu;
          historyScroll.getChildren().clear();
-        List<Booking> books = Main.getInstance().getCurrentUser().getBookedTimes();
+        List<Booking> books = Main.getInstance().getCurrentUser().getBookings();
         System.out.println("booksize: "+books.size());
         for (int i = 0; i < books.size(); i++) {
             
@@ -128,11 +128,11 @@ public class HistoryController extends AnchorPane implements Initializable {
         
         int selectedId = Integer.parseInt( ((Button)event.getSource()).getParent().getParent().getId() );
         // Remove from db
-        DatabaseManager.getInstance().removeBooking(Main.getInstance().getCurrentUser().getBookedTimes().get(selectedId));
+        DatabaseManager.getInstance().removeBooking(Main.getInstance().getCurrentUser().getBookings().get(selectedId));
         // Remove from room
-        //Main.getInstance().getCurrentUser().getBookedTimes().get(selectedId).getRoom().removeBooking(Main.getInstance().getCurrentUser().getBookedTimes().get(selectedId));
+        //Main.getInstance().getCurrentUser().getBookings().get(selectedId).getRoom().removeBooking(Main.getInstance().getCurrentUser().getBookings().get(selectedId));
         // Remove from user
-        Main.getInstance().getCurrentUser().getBookedTimes().remove(selectedId);
+        Main.getInstance().getCurrentUser().getBookings().remove(selectedId);
 
         parent.getHistoryScroll().getChildren().remove(selectedId);
         // Reassign ID
