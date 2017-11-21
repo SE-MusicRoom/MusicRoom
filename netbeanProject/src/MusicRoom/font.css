@@ -3,6 +3,10 @@
     src: url('Cloud-Bold.otf');
 }
 
+.root{
+    -fx-font-family: 'Cloud';
+}
+
 .vbox {
     -fx-font-family: 'Cloud';
 }
