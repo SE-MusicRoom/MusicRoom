@@ -45,7 +45,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.HistoryController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.HistoryController">
    <children>
       <StackPane layoutX="-1.0">
          <children>
@@ -87,13 +87,13 @@
             </HBox>
          </children>
       </StackPane>
-      <ScrollPane layoutX="-1.0" layoutY="89.0" prefHeight="844.0" prefWidth="1302.0">
+      <ScrollPane layoutX="-1.0" layoutY="89.0" prefHeight="1046.0" prefWidth="1500.0">
          <content>
-            <VBox fx:id="historyScroll" prefHeight="837.0" prefWidth="1281.0">
+            <VBox fx:id="historyScroll" prefHeight="1035.0" prefWidth="1490.0">
                <children>
-                  <StackPane fx:id="historyToken" prefHeight="175.0" prefWidth="1253.0">
+                  <StackPane fx:id="historyToken" prefHeight="175.0" prefWidth="1421.0">
                      <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffccb3" height="165.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1246.0">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffccb3" height="165.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1476.0">
                            <StackPane.margin>
                               <Insets top="10.0" />
                            </StackPane.margin></Rectangle>
@@ -167,7 +167,7 @@
                                     <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                                  </padding>
                                  <HBox.margin>
-                                    <Insets left="-40.0" top="21.0" />
+                                    <Insets left="42.0" top="21.0" />
                                  </HBox.margin>
                               </Button>
                            </children>
@@ -187,7 +187,7 @@
             </VBox>
          </content>
       </ScrollPane>
-      <Button layoutY="933.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="66.0" prefWidth="160.0" style="-fx-font-size: 45; -fx-background-color: #000000;" text="Back" textFill="#ff3900">
+      <Button layoutY="1134.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="66.0" prefWidth="160.0" style="-fx-font-size: 45; -fx-background-color: rgba(255,130,0);" text="Back" textFill="WHITE">
          <padding>
             <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
          </padding>
