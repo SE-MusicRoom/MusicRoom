@@ -91,7 +91,7 @@
                                  <children>
                                     <Text fill="#fffbfb" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Template : My Custom" />
                                     <Text fill="#fffbfb" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="Time : 6:00-7:59 P.M. " />
-                                    <Text fill="WHITE" layoutX="10.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="Price : THB 1400" />
+                                    <Text fill="WHITE" layoutX="10.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="Price : ฿ 1400" />
                                  </children>
                                  <HBox.margin>
                                     <Insets left="240.0" top="-8.0" />

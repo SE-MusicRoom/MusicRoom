@@ -86,7 +86,11 @@ public class Main extends Application {
             primaryStage.show();
             primaryStage.setResizable(false);
         
-
+            Instrument i = getInstrument("Dario II Vettori","2006");
+            System.out.println(i.getImgPath());
+            i.setImgPath("SHIT");
+            System.out.println(i.getImgPath());
+            DatabaseManager.getInstance().updateInstrument(i);
             
 //            updateBookingDB();
 //            updateInstrumentDB();
