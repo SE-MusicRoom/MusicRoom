@@ -81,14 +81,14 @@ public class DatabaseManager {
         em.getTransaction().begin();
         ArrayList<Instrument> l = new ArrayList<Instrument>();
         // Violin
-        l.add(new Violin("Andrea Schudtz","2800",50000,"MusicRoom/img/instruments/violin/Violin.png"));
-        l.add(new Violin("Dario II Vettori","2006",600000,"MusicRoom/img/instruments/violin/Violin.png"));
-        l.add(new Violin("Robert Lee","804",45000,"MusicRoom/img/instruments/violin/Violin.png"));
+        l.add(new Violin("Andrea Schudtz","2800",50000,"MusicRoom/img/Instruments/Violin/Violin.png"));
+        l.add(new Violin("Dario II Vettori","2006",600000,"MusicRoom/img/Instruments/Violin/Violin.png"));
+        l.add(new Violin("Robert Lee","804",45000,"MusicRoom/img/Instruments/Violin/Violin.png"));
 
         //AcousticGuitar
-        l.add(new AcousticGuitar("Takamine","CP3DC",47500,"MusicRoom/img/instruments/guitar/AcousticGuitar.png"));
-        l.add(new AcousticGuitar("Taylor","310CE",67900,"MusicRoom/img/instruments/guitar/AcousticGuitar.png"));
-        l.add(new AcousticGuitar("Guild","M-240E",15750,"MusicRoom/img/instruments/guitar/AcousticGuitar.png"));
+        l.add(new AcousticGuitar("Takamine","CP3DC",47500,"MusicRoom/img/Instruments/Guitar/AcousticGuitar/AcousticGuitar.png"));
+        l.add(new AcousticGuitar("Taylor","310CE",67900,"MusicRoom/img/Instruments/Guitar/AcousticGuitar/AcousticGuitar.png"));
+        l.add(new AcousticGuitar("Guild","M-240E",15750,"MusicRoom/img/Instruments/Guitar/AcousticGuitar/AcousticGuitar.png"));
 
         // 
         
@@ -146,7 +146,7 @@ public class DatabaseManager {
         em.persist(m);*/
 
         em.getTransaction().commit();
-        
+       
         closeEMF();
         return true;
     }
@@ -313,38 +313,39 @@ public class DatabaseManager {
         closeEMF();
         return result;
     }
-    public void updateUser (User user){
+    public void  updateInstrument(Instrument instrument){
+        
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))            
+            return ;
+
+        TypedQuery<Instrument> query = em.createQuery("SELECT u FROM Instrument u WHERE u.id =" + String.valueOf(instrument.getId()), Instrument.class);
+        Instrument result = query.getSingleResult();
+
+        em.getTransaction().begin();
+        result.setName(instrument.getName());
+        result.setModel(instrument.getModel());
+        result.setPrice(instrument.getPrice());
+        result.setImgPath(instrument.getImgPath());
+        em.getTransaction().commit();
+        closeEMF();
+    }
+    
+        public void updateUser (User user){
         User DbUser = fetchUser(user.getId());
         createEMF("objectdb://"+ip+"/MusicRoom.odb;user=admin;password=admin");
         em.getTransaction().begin();
-        if(user.getName() != DbUser.getName()){
-            Query query = em.createQuery("UPDATE User u SET u.name = \"" + user.getName() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
-            query.executeUpdate();
-        }
-        if(user.getSurname() != DbUser.getSurname()){
-            Query query = em.createQuery("UPDATE User u SET u.surname = \"" + user.getSurname() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
-            query.executeUpdate();
-        }
-        if(user.getBandName() != DbUser.getBandName()){
-            Query query = em.createQuery("UPDATE User u SET u.bandname = \"" + user.getBandName() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
-            query.executeUpdate();
-        }
-        if(user.getEmail() != DbUser.getEmail()){
-            Query query = em.createQuery("UPDATE User u SET u.email = \"" + user.getEmail() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
-            query.executeUpdate();
-        }
-        if(user.getUsername() != DbUser.getUsername()){
-            Query query = em.createQuery("UPDATE User u SET u.username = \"" + user.getUsername() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
-            query.executeUpdate();
-        }
-        if(user.getPassword() != DbUser.getPassword()){
-            Query query = em.createQuery("UPDATE User u SET u.password = \"" + user.getPassword() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
-            query.executeUpdate();
-        }
-        if(user.getBookings().size() != DbUser.getBookings().size()) {
-            Query query = em.createQuery("UPDATE User u SET u.bookedTimes = \"" + user.getBookings() + "\" WHERE u.id = " + String.valueOf(user.getId()) );
-            query.executeUpdate();
-        }
+        
+        Query query = em.createQuery(
+            "UPDATE User u SET name =\":name\", surname=\":surname\", bandname=\":bandname\", email=\":email\", username=\":username\", password=\":password\", bookedTimes=\":bookedTimes\" " +
+            "WHERE u.id < :id");
+        query = query.setParameter("name", user.getName());
+        query = query.setParameter("surname", user.getSurname());
+        query = query.setParameter("bandname", user.getBandName());
+        query = query.setParameter("email", user.getEmail());
+        query = query.setParameter("username", user.getUsername());
+        query = query.setParameter("password", user.getPassword());
+        query = query.setParameter("bookedTimes", user.getBookings());
+        query.executeUpdate();
         
         em.getTransaction().commit();
         closeEMF();

@@ -108,6 +108,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     };
     
     
+    
     public void setApp(MainMenuController mainmenu){
         this.mainmenu = mainmenu;
         this.selectedTimes = new ArrayList<Calendar>();
@@ -118,7 +119,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         SummaryImgView.setFitWidth(SummaryImgView.getFitWidth());
         SummaryImgView.setPreserveRatio(false);
         total = 0;
-        totalTxt.setText("THB"+total);
+        totalTxt.setText(total+"฿");
         
         
         List<Booking> allBookings = Main.getInstance().getCurrentRoom().getBookings();
@@ -273,7 +274,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         System.out.println(selectedTimes);
         
         total = selectedTimes.size()*Main.getInstance().getCurrentRoom().getPrice();
-        totalTxt.setText("THB"+total);
+        totalTxt.setText(total+"฿");
     }
     
     public void onClickConfirm(ActionEvent event) {

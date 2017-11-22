@@ -49,11 +49,12 @@ abstract public class Instrument implements Serializable{
         }
         return str.substring(0, str.length() - 1);
     }
-    
-    
 
     public long getId() {
         return id;
+    }
+    public String getImgPath() {
+        return img;
     }
     
     public String toString() {
@@ -76,12 +77,22 @@ abstract public class Instrument implements Serializable{
         return price/100;
     }
 
-    public void setImg(String img) {
+    public void setImgPath(String img) {
         this.img = img;
     }
-    
-    
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+    
     public Image getImg() {
         if(imgLoaded==null)
             imgLoaded = new Image(img);

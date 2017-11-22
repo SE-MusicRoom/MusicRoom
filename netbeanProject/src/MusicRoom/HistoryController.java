@@ -104,7 +104,7 @@ public class HistoryController extends AnchorPane implements Initializable {
         cus.setTokenData(format1.format(book.getCreateTime().getTime()),
                          book.getRoom().getName(),
                          format2.format(book.getTimeTable().get(0).getTime())+"-"+book.getTimeTable().get(0).get(Calendar.HOUR_OF_DAY)+":59",
-                         "THB "+String.valueOf(book.getPrice()),
+                         "฿ "+String.valueOf(book.getPrice()),
                          "OK");
         
         return newToken;

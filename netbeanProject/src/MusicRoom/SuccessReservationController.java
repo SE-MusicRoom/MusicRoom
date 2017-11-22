@@ -41,6 +41,7 @@ public class SuccessReservationController extends AnchorPane implements Initiali
     
     public void onClickBack(ActionEvent event) {
         mainmenu.hideIncludePane();
+        mainmenu.clearAllState();
     }
     
 }

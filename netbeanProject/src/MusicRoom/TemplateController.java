@@ -108,7 +108,7 @@ public class TemplateController extends AnchorPane implements Initializable {
     public void onSelectDetail(ActionEvent event) {
         int selectedId = Integer.parseInt( ((Button)event.getSource()).getParent().getId() );
         RoomTemplate room = Main.getInstance().getRoomTemplete().get(selectedId);
-        String detail = room.getDetail() + "\nPrice: THB" + room.getPrice();
+        String detail = room.getDetail() + "\nPrice: ฿" + room.getPrice();
         for (int i = 0; i < room.getInstruments().size(); i++) {
             detail += "\n" + room.getInstruments().get(i).toString();
         }

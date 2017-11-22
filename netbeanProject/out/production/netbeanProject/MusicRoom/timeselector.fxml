@@ -54,7 +54,7 @@
                               <Font size="28.0" />
                            </font>
                         </Text>
-                        <Text layoutX="117.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB10000" textAlignment="RIGHT">
+                        <Text layoutX="117.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="฿10000" textAlignment="RIGHT">
                            <font>
                               <Font name="System Bold Italic" size="28.0" />
                            </font>
