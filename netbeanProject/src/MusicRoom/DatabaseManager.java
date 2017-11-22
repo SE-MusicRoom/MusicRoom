@@ -90,9 +90,9 @@ public class DatabaseManager {
         list.add(new BrassWoodwind("Brass","Trumpet","Yamaha","YTR-2330S",28000,"MusicRoom/img/Instruments/BrassWoodwind/Trumpet/trumpet3.png"));
         
         //Piano
-        list.add(new Percussion("Piano","Korg","SP-250",33000,"MusicRoom/img/Instruments/Keyboard/Piano/piano1.png"));
-        list.add(new Percussion("Piano","Roland","V-Piano",250000,"MusicRoom/img/Instruments/Keyboard/Piano/piano2.png"));
-        list.add(new Percussion("Piano","Pastel Piano","P-9",19900,"MusicRoom/img/Instruments/Keyboard/Piano/piano3.png"));
+        list.add(new Percussion("Piano","Korg","SP-250",33000,"MusicRoom/img/Instruments/Percussion/Keyboard/Piano/piano1.png"));
+        list.add(new Percussion("Piano","Roland","V-Piano",250000,"MusicRoom/img/Instruments/Percussion/Keyboard/Piano/piano2.png"));
+        list.add(new Percussion("Piano","Pastel Piano","P-9",19900,"MusicRoom/img/Instruments/Percussion/Keyboard/Piano/piano3.png"));
         
         //BassDrum
         list.add(new Percussion("BassDrum","Pearl","Pearl Roadshow",6500,"MusicRoom/img/Instruments/Percussion/Drums/BassDrum/bassdrum1.png"));
