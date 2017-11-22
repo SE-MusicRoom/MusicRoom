@@ -40,6 +40,7 @@ public class HistoryController extends AnchorPane implements Initializable {
     private VBox historyScroll;
 
     //For token
+    @FXML    private Text showid;
     @FXML    private Text date;
     @FXML    private Text template;
     @FXML    private Text time;
@@ -101,7 +102,8 @@ public class HistoryController extends AnchorPane implements Initializable {
         cus.setApp(this);
         SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yy");
         SimpleDateFormat format2 = new SimpleDateFormat("HH:mm");
-        cus.setTokenData(format1.format(book.getCreateTime().getTime()),
+        cus.setTokenData(String.valueOf(book.getID()),
+                        format1.format(book.getCreateTime().getTime()),
                          book.getRoom().getName(),
                          format2.format(book.getTimeTable().get(0).getTime())+"-"+book.getTimeTable().get(0).get(Calendar.HOUR_OF_DAY)+":59",
                          "฿ "+String.valueOf(book.getPrice()),
@@ -110,7 +112,8 @@ public class HistoryController extends AnchorPane implements Initializable {
         return newToken;
     }
     
-    protected void setTokenData(String date,String template,String time,String price,String status) {
+    protected void setTokenData(String id,String date,String template,String time,String price,String status) {
+        this.showid.setText(id);
         this.date.setText(date);
         this.template.setText(template);
         this.time.setText(time);
@@ -120,27 +123,29 @@ public class HistoryController extends AnchorPane implements Initializable {
     
     @FXML
     void onFind(ActionEvent event) {
-
+        historyScroll.getChildren().clear();
+        List<Booking> books = Main.getInstance().getCurrentUser().getBookings();
+        for (int i = 0; i < books.size(); i++) {
+            if(!(books.get(i).toString()).replaceAll("[\\s|\\u00A0]+", "").toLowerCase().contains(searchBox.getText().replaceAll("[\\s|\\u00A0]+", "").toLowerCase()) && !searchBox.getText().replaceAll("[\\s|\\u00A0]+", "").equals(""))
+                continue;
+            StackPane newToken = copyHistoryToken(books.get(i));
+            historyScroll.getChildren().add(newToken);
+        }
     }
 
     @FXML
     void onCancel(ActionEvent event) {
         
-        int selectedId = Integer.parseInt( ((Button)event.getSource()).getParent().getParent().getId() );
+        int selectedId = Integer.parseInt( showid.getText() );
+        Booking selectedB = Main.getInstance().getBookings().stream().filter(item -> item.getID() == selectedId).findFirst().get();
         // Remove from db
-        DatabaseManager.getInstance().removeBooking(Main.getInstance().getCurrentUser().getBookings().get(selectedId));
+        DatabaseManager.getInstance().removeBooking(selectedB);
         // Remove from room
         //Main.getInstance().getCurrentUser().getBookings().get(selectedId).getRoom().removeBooking(Main.getInstance().getCurrentUser().getBookings().get(selectedId));
         // Remove from user
-        Main.getInstance().getCurrentUser().getBookings().remove(selectedId);
+        Main.getInstance().getCurrentUser().removeBookedTime(selectedB);
 
-        parent.getHistoryScroll().getChildren().remove(selectedId);
-        // Reassign ID
-        for (int i = 0; i < parent.getHistoryScroll().getChildren().size(); i++) {
-            System.out.println(parent.getHistoryScroll().getChildren().get(i).getId()+"->"+i);
-            parent.getHistoryScroll().getChildren().get(i).setId(String.valueOf(i));
-                
-        }
+        parent.getHistoryScroll().getChildren().remove(((Button)event.getSource()).getParent().getParent());
         
     }
     

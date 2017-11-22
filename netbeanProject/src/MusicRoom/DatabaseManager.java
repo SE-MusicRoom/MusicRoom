@@ -378,6 +378,17 @@ public class DatabaseManager {
         closeEMF();
         return result;
     }
+    
+    public boolean isExistUser(String username){
+        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))            
+            return false;
+
+        TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.username =\"" + username + "\"", User.class);
+        int count = query.getResultList().size();
+
+        closeEMF();
+        return count > 0;
+    }
 
     public Band fetchBand(String name){
         if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))            return null;

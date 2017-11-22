@@ -5,6 +5,7 @@
  */
 package MusicRoom.entity;
 
+import MusicRoom.Main;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
@@ -95,7 +96,12 @@ abstract public class Instrument implements Serializable{
     
     public Image getImg() {
         if(imgLoaded==null)
-            imgLoaded = new Image(img);
+            try {
+                imgLoaded = new Image(img);
+            } catch (Exception e) {
+                Main.getInstance().showPopup("Error", "Image not found: "+e.getMessage()+"\n"+img);
+            }
+            
         System.out.println(name+"::"+imgLoaded.isError()+"::"+img);
         return imgLoaded;
     }

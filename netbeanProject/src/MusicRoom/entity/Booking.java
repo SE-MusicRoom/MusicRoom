@@ -112,7 +112,8 @@ public class Booking {
     
     @Override
     public String toString() {
-        return "\nUser: " + this.user.getUsername() + "\n" +
+        return "Booking ID:" + this.id + 
+                "\nUser: " + this.user.getUsername() + "\n" +
                this.room.toString() +
                "\nTime Table("+timeTable.size()+"): \n" + getTimeTableString();
     }

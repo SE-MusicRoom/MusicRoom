@@ -138,6 +138,10 @@ public class RegisterController extends AnchorPane implements Initializable {
                 usernameWarningText.setStyle("-fx-fill: #ff0000;");
             }
 
+            if(DatabaseManager.getInstance().isExistUser(username.getText())) {
+                Main.getInstance().showPopup("Too bad", "This username is already exist");
+            }
+            
             if (password.getText().equals("")) {
                 message.setText("Please fill in the blanks");
                 passwordWarningText.setStyle("-fx-fill: #ff0000;");
