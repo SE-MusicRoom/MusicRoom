@@ -222,7 +222,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
             price += addedInstruments.get(i).getRentPrice();
             
         }
-        return price;
+        return (float) Math.ceil(price);
     }
     
     private AnchorPane copyListToken(Instrument instrument) {

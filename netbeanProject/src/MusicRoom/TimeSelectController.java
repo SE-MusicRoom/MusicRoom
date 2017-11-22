@@ -274,6 +274,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         System.out.println(selectedTimes);
         
         total = selectedTimes.size()*Main.getInstance().getCurrentRoom().getPrice();
+        Main.getInstance().setCurrentPrice(total);
         totalTxt.setText(total+"฿");
     }
     
