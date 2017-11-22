@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import java.net.URL?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -21,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.CustomizeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1500.0" styleClass="pane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.CustomizeController">
    <children>
       <AnchorPane layoutX="143.0" layoutY="94.0" prefHeight="992.0" prefWidth="1357.0">
          <children>
@@ -33,12 +27,12 @@
                         <Font name="Cloud-Bold" size="30.0" />
                      </font>
                   </Label>
-                  <ChoiceBox fx:id="choiceBox" layoutX="119.0" layoutY="1.0" prefHeight="51.0" prefWidth="326.0" />
+                  <ChoiceBox fx:id="choiceBox" layoutX="119.0" layoutY="1.0" prefHeight="51.0" prefWidth="326.0" style="-fx-font-size: 24px;" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="731.0" layoutY="111.0" prefHeight="80.0" prefWidth="469.0">
                <children>
-                  <TextField fx:id="searchTxtField" layoutX="128.0" layoutY="15.0" onAction="#onClickGo" prefHeight="51.0" prefWidth="326.0">
+                  <TextField fx:id="searchTxtField" layoutX="128.0" layoutY="15.0" onAction="#onClickGo" prefHeight="51.0" prefWidth="326.0" style="-fx-font-size: 24px;">
                      <font>
                         <Font size="24.0" />
                      </font></TextField>
@@ -65,7 +59,7 @@
                            <children>
                               <AnchorPane layoutX="11.0" layoutY="31.0" prefHeight="107.0" prefWidth="110.0">
                                  <children>
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="111.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="111.0" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe9e7" height="111.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" width="111.0" />
                                     <ImageView id="listToken_pic" fx:id="listToken_pic" fitHeight="111.0" fitWidth="112.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
                                  </children>
                               </AnchorPane>
@@ -96,7 +90,7 @@
                            <children>
                               <Text fx:id="addedToken_name" layoutX="14.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gibson V Flyer">
                                  <font>
-                                    <Font name="System Bold" size="36.0" />
+                                    <Font name="System Bold" size="30.0" />
                                  </font>
                               </Text>
                               <Text fx:id="addedToken_price" fill="#f21010" layoutX="510.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="฿120/hr" textAlignment="RIGHT">
@@ -124,7 +118,7 @@
       </AnchorPane>
       <HBox layoutX="142.0" layoutY="1090.0" prefHeight="66.0" prefWidth="614.0">
          <children>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="93.0" prefWidth="402.0" style="-fx-background-color: rgb(255,30,0);" text="CONFIRM!" textFill="WHITE">
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="93.0" prefWidth="402.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 50px; -fx-font-family: cloud;" text="CONFIRM!" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -132,7 +126,7 @@
                   <Font name="Cloud-Bold" size="50.0" />
                </font>
             </Button>
-            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="67.0" prefWidth="158.0" style="-fx-background-color: rgba(255,130,0,1);" text="Back" textFill="WHITE">
+            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="67.0" prefWidth="158.0" style="-fx-background-color: rgba(255,130,0,1); -fx-font-size: 40; -fx-font-family: Cloud;" text="Back" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -198,4 +192,8 @@
          </children>
       </AnchorPane>
    </children>
+   <stylesheets>
+      <URL value="@button.css" />
+      <URL value="@font.css" />
+   </stylesheets>
 </AnchorPane>

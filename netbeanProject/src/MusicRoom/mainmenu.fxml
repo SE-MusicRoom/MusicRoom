@@ -55,7 +55,7 @@ Contributor(s):
             <Image url="@img/background_1024_700.jpg" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#801e00" height="700.0" stroke="#ffffff00" strokeType="INSIDE" width="51.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="700.0" stroke="#ffffff00" strokeType="INSIDE" width="51.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4a0a00" height="700.0" stroke="#ffffff00" strokeType="INSIDE" width="1.0" />
       <StackPane layoutX="14.0" layoutY="70.0" styleClass="pane" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="25.0">
          <children>

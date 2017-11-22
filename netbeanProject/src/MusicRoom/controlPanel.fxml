@@ -44,13 +44,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminMenuController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminMenuController">
   <children>
       <ImageView fitHeight="700.0" fitWidth="1024.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/background_1024_700.jpg" />
          </image>
       </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="698.0" stroke="BLACK" strokeType="INSIDE" width="53.0" />
       <StackPane layoutX="90.0" layoutY="41.0" AnchorPane.leftAnchor="39.0" AnchorPane.topAnchor="41.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="59.0" stroke="TRANSPARENT" strokeType="INSIDE" width="274.0">
