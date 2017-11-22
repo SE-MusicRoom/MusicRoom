@@ -97,7 +97,7 @@ abstract public class Instrument implements Serializable{
         if(imgLoaded==null)
             try {
                 imgLoaded = new Image(getClass().getClassLoader().getResource(img).toString());
-                System.out.println(name+"::"+imgLoaded.isError()+"::"+img);
+                //System.out.println(name+"::"+imgLoaded.isError()+"::"+img);
             } catch (Exception e) {
                 System.out.println("Image not found: "+e.toString()+"\n"+img);
             }

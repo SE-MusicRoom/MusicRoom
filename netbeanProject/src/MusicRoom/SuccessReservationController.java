@@ -38,7 +38,8 @@ public class SuccessReservationController extends AnchorPane implements Initiali
         idtxt.setText(String.valueOf(newBooking.getID()));
         emailtxt.setText(Main.getInstance().getCurrentUser().getEmail());
         Main.getInstance().sendEmail("Music Room Reservation Detail",
-                                "<b>รหัสจอง:</b> " + newBooking.getID()
+                                "<h1><span style=\"color: #005500;\"> เพิ่มการจองสำเร็จ ! </span></h1>"
+                                + "<br> <b>รหัสจอง:</b> " + newBooking.getID()
                                 + "<br> <b>ผู้จอง:</b> คุณ " + newBooking.getUser().toString()
                                 + "<br> <b>รายละเอียดห้อง:</b> <pre>" + newBooking.getRoom().toString()+ "</pre>"
                                 + "<br> <b>เวลา:</b> " + newBooking.getTimeTableString()

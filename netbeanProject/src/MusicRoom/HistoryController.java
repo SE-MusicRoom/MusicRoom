@@ -149,6 +149,18 @@ public class HistoryController extends AnchorPane implements Initializable {
 
         parent.getHistoryScroll().getChildren().remove(((Button)event.getSource()).getParent().getParent());
         
+                Main.getInstance().sendEmail("Music Room Cancel Reservation",
+                                "<h1><span style=\"color: #FF0000;\"> ยกเลิกการจองสำเร็จ </span> </h1>"
+                                + "<br> <b>รหัสจอง:</b> " + selectedB.getID()
+                                + "<br> <b>ผู้จอง:</b> คุณ " + selectedB.getUser().toString()
+                                + "<br> <b>รายละเอียดห้อง:</b> <pre>" + selectedB.getRoom().toString()+ "</pre>"
+                                + "<br> <b>เวลา:</b> " + selectedB.getTimeTableString()
+                                + "<br> ราคารวมทั้งหมด: <i>" + selectedB.getPrice() + "(ยกเลิกแล้ว ไม่จำเป็นต้องจ่ายเงินอีก) <i>"
+                                + "<br><br> <b> ขออภัยหากทำให้ท่านไม่พอใจในการใช้บริการ หวังว่าพวกเราจะได้บริการท่านอีกในอนาคต"
+                                + "<br> ขอบคุณที่ใช้บริการกับเรา, หากมีปัญหาสามารถตอบกลับอีเมลฉบับนี้ได้"
+				+ "<br> Be yourself"
+                                + "<br> SE-MusicRoom</b>");
+        
     }
     
     public void onClickBack(ActionEvent event) {
