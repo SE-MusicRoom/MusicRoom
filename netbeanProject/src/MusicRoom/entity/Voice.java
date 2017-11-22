@@ -5,13 +5,18 @@
  */
 package MusicRoom.entity;
 
+import javax.persistence.Entity;
+
 /**
  *
  * @author kyttpwned
  */
+@Entity
 public class Voice extends Instrument{
     
+    //condenser or dynamic
     private String frequencyResponse;
+    
     public Voice(String type, String name ,String model ,float price ,String img) {
         super(name ,model ,price ,img);
         frequencyResponse = type;

@@ -5,18 +5,24 @@
  */
 package MusicRoom.entity;
 
+import javax.persistence.Entity;
+
 /**
  *
  * @author kyttpwned
  */
+
+@Entity
 public class BrassWoodwind extends Instrument{
     
     //brass or woodwind
     private String type;
+    private String subtype;
     
-    public BrassWoodwind(String type, String name ,String model ,float price ,String img) {
+    public BrassWoodwind(String type,String suptype, String name ,String model ,float price ,String img) {
         super(name ,model ,price ,img);
         this.type = type;
+        this.subtype = suptype;
     }
 
     public String getType() {

@@ -6,11 +6,13 @@
 package MusicRoom.entity;
 
 import java.util.ArrayList;
+import javax.persistence.Entity;
 
 /**
  *
  * @author kyttpwned
  */
+@Entity
 public class Percussion extends Instrument{
 
     private String partName;

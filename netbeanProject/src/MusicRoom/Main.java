@@ -94,7 +94,7 @@ public class Main extends Application {
 
 
 //************create Database**********************************
-              DatabaseManager.getInstance().createInstrumentDB();
+//              DatabaseManager.getInstance().createInstrumentDB();
 //*************************************************************
 
         } catch (Exception ex) {
