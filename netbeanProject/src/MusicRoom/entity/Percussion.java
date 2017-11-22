@@ -5,15 +5,25 @@
  */
 package MusicRoom.entity;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author kyttpwned
  */
 public class Percussion extends Instrument{
 
-    public Percussion(String name, String model, float price, String img) {
+    private String partName;
+    
+    public Percussion(String partName, String name, String model, float price, String img) {
         super(name ,model ,price ,img);
+        this.partName = partName;
     }
+
+    public String getPartName() {
+        return partName;
+    }
+    
     
 }
 

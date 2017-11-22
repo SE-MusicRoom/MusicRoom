@@ -10,9 +10,15 @@ package MusicRoom.entity;
  * @author kyttpwned
  */
 public class Voice extends Instrument{
-
-    public Voice(String name ,String model ,float price ,String img) {
+    
+    private String frequencyResponse;
+    public Voice(String type, String name ,String model ,float price ,String img) {
         super(name ,model ,price ,img);
+        frequencyResponse = type;
+    }
+
+    public String getFrequencyResponse() {
+        return frequencyResponse;
     }
     
 }

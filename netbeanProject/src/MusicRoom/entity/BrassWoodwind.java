@@ -9,10 +9,20 @@ package MusicRoom.entity;
  *
  * @author kyttpwned
  */
-public class BassGuitar extends Strings{
-
-    public BassGuitar(String name ,String model ,float price ,String img) {
+public class BrassWoodwind extends Instrument{
+    
+    //brass or woodwind
+    private String type;
+    
+    public BrassWoodwind(String type, String name ,String model ,float price ,String img) {
         super(name ,model ,price ,img);
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
     
 }
+
+

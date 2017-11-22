@@ -10,9 +10,16 @@ package MusicRoom.entity;
  * @author kyttpwned
  */
 public class Strings extends Instrument{
-
-    public Strings(String name ,String model ,float price ,String img) {
+    
+    private String number_of_strings;
+    
+    public Strings(String number_of_strings, String name ,String model ,float price ,String img) {
         super(name ,model ,price ,img);
+        this.number_of_strings = number_of_strings;
+    }
+
+    public String getNumber_of_strings() {
+        return number_of_strings;
     }
     
 }
