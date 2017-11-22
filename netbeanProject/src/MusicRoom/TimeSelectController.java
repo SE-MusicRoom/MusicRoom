@@ -300,7 +300,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         Main.getInstance().getCurrentUser().addBookedTime(newBook);
         DatabaseManager.getInstance().addBooking(newBook);
         Main.getInstance().getCurrentRoom().addBooking(newBook);
-        
+        Main.getInstance().updateBookingDB();
         mainmenu.gotoSuccess(newBook);
     }
     

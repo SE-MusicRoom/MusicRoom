@@ -235,6 +235,10 @@ public class Main extends Application {
     
     public void userLogout(){
         currentUser = null;
+        users = null;
+        instruments = null;
+        bookings = null;
+        roomTemplete = null;
         gotoLogin();
     }
     
