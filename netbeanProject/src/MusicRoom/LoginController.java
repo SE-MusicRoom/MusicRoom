@@ -33,6 +33,8 @@ package MusicRoom;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.animation.SequentialTransition;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -41,33 +43,137 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 /**
  * Login Controller.
  */
 public class LoginController extends AnchorPane implements Initializable {
 
+   @FXML
+    private Rectangle rect_1;
+
     @FXML
-    private TextField userId;
+    private Rectangle rect_2;
+
+    @FXML
+    private Text txt_BEYOURSELF;
+
     @FXML
     private PasswordField password;
+
     @FXML
-    private Button login;
-    //@FXML
-    //Label errorMessage;
+    private Button btn_reg;
+
+    @FXML
+    private Text txt_MUSIC;
+
+    @FXML
+    private Button btn_login;
+
+    @FXML
+    private Text txt_ROOM;
+    
+    @FXML
+    private Text txt_USERNAME;
+    
+    @FXML
+    private Text txt_PASSWORD;
+
+    @FXML
+    private TextField userId;
+
+    @FXML
+    private Rectangle rect_3;
+
+    @FXML
+    private Rectangle rect_4;
 
     
    
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //errorMessage.setText("");
-        userId.setPromptText("username");
-        password.setPromptText("password");
-        userId.requestFocus();
+
+
     }
     
     
+    public void setApp() {
+        TranslateTransition[] tt = new TranslateTransition[13];
+        
+        tt[0] = new TranslateTransition(Duration.millis(100), rect_1);
+        tt[0].setFromY( -1000 );
+        tt[0].setToY( 0 );
+        
+        tt[1] = new TranslateTransition(Duration.millis(100), rect_2);
+        tt[1].setFromX( -1000 );
+        tt[1].setToX( 0 );     
+        
+        tt[2] = new TranslateTransition(Duration.millis(100), rect_3);
+        tt[2].setFromX( 1000 );
+        tt[2].setToX( 0 );
+        
+        tt[3] = new TranslateTransition(Duration.millis(100), rect_4);
+        tt[3].setFromY( 1000 );
+        tt[3].setToY( 0 );
+        
+        tt[4] = new TranslateTransition(Duration.millis(100), txt_MUSIC);
+        tt[4].setFromY( -1000 );
+        tt[4].setToY( 0 );
+        
+        tt[5] = new TranslateTransition(Duration.millis(100), txt_ROOM);
+        tt[5].setFromX( 1000 );
+        tt[5].setToX( 0 );
+        
+        tt[6] = new TranslateTransition(Duration.millis(50), txt_BEYOURSELF);
+        tt[6].setFromX( -1000 );
+        tt[6].setToX( 0 );
+        
+        tt[7] = new TranslateTransition(Duration.millis(50), userId);
+        tt[7].setFromX( -1000 );
+        tt[7].setToX( 0 );
+        
+        tt[8] = new TranslateTransition(Duration.millis(50), password);
+        tt[8].setFromX( 1000 );
+        tt[8].setToX( 0 );
+        
+        tt[9] = new TranslateTransition(Duration.millis(50), txt_USERNAME);
+        tt[9].setFromX( -1000 );
+        tt[9].setToX( 0 );
+        
+        tt[10] = new TranslateTransition(Duration.millis(50), txt_PASSWORD);
+        tt[10].setFromX( -1000 );
+        tt[10].setToX( 0 );
+        
+        tt[11] = new TranslateTransition(Duration.millis(100), btn_login);
+        tt[11].setFromX( 1000 );
+        tt[11].setToX( 0 );
+        
+        tt[12] = new TranslateTransition(Duration.millis(100), btn_reg);
+        tt[12].setFromX( 1000 );
+        tt[12].setToX( 0 );
+        
+        SequentialTransition sequentialTransition = new SequentialTransition();
+        for (int i = 0; i < tt.length; i++) {
+           // tt[i].play();
+            sequentialTransition.getChildren().add(tt[i]);
+        }
+        sequentialTransition.setDelay(Duration.millis(1));
+        
+        sequentialTransition.setOnFinished((ActionEvent event) -> {
+
+            userId.setPromptText("username");
+            password.setPromptText("password");
+            userId.requestFocus();
+        });
+        
+        sequentialTransition.play();
+    }
+    
+    @FXML
     public void onClickLogin(ActionEvent event) {
         if (Main.getInstance() == null){
             // We are running in isolated FXML, possibly in Scene Builder.
@@ -77,12 +183,12 @@ public class LoginController extends AnchorPane implements Initializable {
             if ((userId.getText().equals("") || password.getText().equals("")))
                 Main.getInstance().showPopup("Calm down!", "Please enter both username and password so that we can know who are you :O");
             else if (!Main.getInstance().userLogging(userId.getText(), password.getText())){
-                //errorMessage.setText("Username/Password is incorrect");
+                
                 Main.getInstance().showPopup("Error", "Username or Password is wrong :(");
             }
         }
     }
-    
+    @FXML
     public void onClickGoRegister(ActionEvent event) {
         Main.getInstance().gotoRegister();
     }

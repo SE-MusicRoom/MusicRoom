@@ -9,6 +9,8 @@ import MusicRoom.entity.Booking;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.animation.FadeTransition;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -16,9 +18,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 /**
  *
@@ -28,12 +33,21 @@ public class PopupController extends AnchorPane implements Initializable {
     
     @FXML
     private Button button;
-    
+
     @FXML
     private Text titleTxt;
 
     @FXML
+    private ScrollPane detailScroll;
+    
+    @FXML
+    private Rectangle bgrect;
+
+    @FXML
     private Text detailTxt;
+
+    @FXML
+    private AnchorPane titleBox;
         
     private AnchorPane parent;
     private AnchorPane me;
@@ -82,7 +96,26 @@ public class PopupController extends AnchorPane implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
+        
+        FadeTransition ft1 = new FadeTransition(Duration.seconds(0.5), bgrect);
+        ft1.setFromValue(0.1);
+        ft1.setToValue(1.0);
+        ft1.play();
+        
+        TranslateTransition tt1 = new TranslateTransition(Duration.millis(200), titleBox);
+        tt1.setFromX( -1000 );
+        tt1.setToX( 0 );
+        tt1.play();
+        
+        TranslateTransition tt2 = new TranslateTransition(Duration.millis(200), detailScroll);
+        tt2.setFromX( 1000 );
+        tt2.setToX( 0 );
+        tt2.play();
+        
+        button.requestFocus();
     }
+    
+
     
     public void onClickOK(ActionEvent event) {
         parent.getChildren().remove(me);

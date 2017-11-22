@@ -74,8 +74,8 @@ public class DatabaseManager {
     }
 
     public boolean createInstrumentDB (){
-        String violinPath = new String("src\\MusicRoom\\img\\Instrument\\Violin\\");
-        String AcousticGuitarPath = new String("src\\MusicRoom\\img\\Instrument\\AcousticGuitar\\");
+        String violinPath = new String("MusicRoom/img/instruments/violin/Violin.png");
+        String AcousticGuitarPath = new String("MusicRoom/img/instruments/guitar/AcousticGuitar.png");
 
         if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
             return false;

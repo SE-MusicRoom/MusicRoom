@@ -2,18 +2,18 @@ package MusicRoom;
 
 import MusicRoom.entity.Booking;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 
 /**
  * Login Controller.
@@ -44,7 +44,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+
     }
     
     
@@ -61,18 +61,50 @@ public class MainMenuController extends AnchorPane implements Initializable {
         includePane.getChildren().clear();
         includePane.getChildren().add(page);
         
+
+        
         return (Initializable) loader.getController();
     }
     
     public void swapIncludePane(AnchorPane pane) {
-        hideIncludePane();
-        pane.setVisible(true);
+        
+        
+        TranslateTransition tt = new TranslateTransition(Duration.ZERO, includePane);
+        tt.setFromX( 0 );
+        tt.setToX( 1000 );
+        
+        // If there is any pane open , play tt. if not, duration = 0 (not play)
+        for(int i=0;i<includePane.getChildren().size();i++) {
+            if(includePane.getChildren().get(i).isVisible()) {
+                tt.setDuration(Duration.seconds(0.1));
+                break;
+            }
+        }
+        
+        tt.setOnFinished((ActionEvent event) -> { 
+            hideIncludePane();
+            pane.setVisible(true);
+            TranslateTransition tt2 = new TranslateTransition(Duration.seconds(0.1), includePane);
+            tt2.setFromX( 1000 );
+            tt2.setToX( 0 );
+            tt2.play();
+        });
+        
+
+            
+        tt.play();
+            
+        
     }
     
     public void hideIncludePane() {
-        for(int i=0;i<includePane.getChildren().size();i++) {
-            includePane.getChildren().get(i).setVisible(false);
-        }
+
+            for(int i=0;i<includePane.getChildren().size();i++) {
+                includePane.getChildren().get(i).setVisible(false);
+            }
+
+        
+        
     }
     
     public void gotoCustomize() {
@@ -83,6 +115,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
+            customizePane.setVisible(false);
             includePane.getChildren().add(customizePane);
             customizeController = (CustomizeController) loader.getController();
             customizeController.setApp(this);
@@ -99,6 +132,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
+            timeselectorPane.setVisible(false);
             includePane.getChildren().add(timeselectorPane);
             timeselectorController = (TimeSelectController) loader.getController();
             
@@ -116,6 +150,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
+            templateselectPane.setVisible(false);
             includePane.getChildren().add(templateselectPane);
             templateselectController = (TemplateController) loader.getController();
             
@@ -132,6 +167,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
+            historyPane.setVisible(false);
             includePane.getChildren().add(historyPane);
             historyController = (HistoryController) loader.getController();
             
@@ -148,6 +184,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
+            successReservationPane.setVisible(false);
             includePane.getChildren().add(successReservationPane);
             successReservationController = (SuccessReservationController) loader.getController();
             

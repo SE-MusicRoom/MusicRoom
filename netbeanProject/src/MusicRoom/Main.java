@@ -79,12 +79,15 @@ public class Main extends Application {
             stage.setTitle("MusicRoom");
             stage.setMinWidth(MINIMUM_WINDOW_WIDTH);
             stage.setMinHeight(MINIMUM_WINDOW_HEIGHT);
+            
+            updateUserDB();
+            
             gotoLogin();
             primaryStage.show();
             primaryStage.setResizable(false);
         
 
-            updateUserDB();
+            
 //            updateBookingDB();
 //            updateInstrumentDB();
 //            updateRoomTemplateDB();
@@ -280,6 +283,7 @@ public class Main extends Application {
     public void gotoLogin() {
         try {
             LoginController login = (LoginController) replaceSceneContent("login.fxml");
+            login.setApp();
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
