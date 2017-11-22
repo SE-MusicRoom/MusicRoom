@@ -47,7 +47,7 @@ public class RoomTemplate {
     public RoomTemplate(String name, String detail, float price) {
         this.name = name;
         this.detail = detail;
-        this.price = price;
+        this.price = (float) Math.ceil(price);
         this.instruments = new ArrayList<Instrument>();
         this.bookings = new ArrayList<Booking>();
     }
@@ -109,7 +109,7 @@ public class RoomTemplate {
     @Override
     public String toString() {
         return "Name:" + this.name +
-               "\nTHB" + this.price +
+               "\n฿" + this.price +
                "\nInstruments:" + this.instruments.size() /*+
                "\nTimeTable: " + this.timeTable.toString() */;
     }

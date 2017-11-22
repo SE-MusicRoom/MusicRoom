@@ -122,7 +122,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
     }
 
     public void setTotal(float total) {
-        this.total.setText("THB"+total+"/hr");
+        this.total.setText("฿"+total+"/hr");
     }
     
     public List<Instrument> getAddedInstruments() {
@@ -268,13 +268,13 @@ public class CustomizeController extends AnchorPane implements Initializable {
     protected void setListToken(String name,String path,String price,Image img) {
         listToken_name.setText(name);
         listToken_path.setText(path);
-        listToken_price.setText("THB"+price+"/hr");
+        listToken_price.setText(price+"฿/hr");
         listToken_pic.setImage(img);
         
     }
     
     protected void setAddedToken(String name,String price) {
         addedToken_name.setText(name);
-        addedToken_price.setText("THB"+price+"/hr");
+        addedToken_price.setText(price+"฿/hr");
     }
 }

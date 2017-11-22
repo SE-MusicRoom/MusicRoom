@@ -154,7 +154,7 @@
                                     <HBox>
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Price :  " />
-                                          <Text fx:id="price" fill="#a49d9d" layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="THB 1400" />
+                                          <Text fx:id="price" fill="#a49d9d" layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="฿ 1400" />
                                        </children>
                                     </HBox>
                                  </children>

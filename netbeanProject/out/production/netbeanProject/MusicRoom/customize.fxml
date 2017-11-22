@@ -68,7 +68,7 @@
                                  </font>
                               </Text>
                               <Text fill="#f21010" layoutX="5.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Electric Guitar" />
-                              <Text fill="#f21010" layoutX="277.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT" />
+                              <Text fill="#f21010" layoutX="277.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="฿120/hr" textAlignment="RIGHT" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -86,7 +86,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <Text fill="#f21010" layoutX="312.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT" />
+                              <Text fill="#f21010" layoutX="312.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="฿120/hr" textAlignment="RIGHT" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -98,7 +98,7 @@
                   <Font name="Arial" size="20.0" />
                </font>
             </Text>
-            <Text fx:id="total" fontSmoothingType="LCD" layoutX="266.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB1200/hr" textAlignment="RIGHT">
+            <Text fx:id="total" fontSmoothingType="LCD" layoutX="266.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="฿1200/hr" textAlignment="RIGHT">
                <font>
                   <Font name="Arial Bold" size="30.0" />
                </font>

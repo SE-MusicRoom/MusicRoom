@@ -55,6 +55,9 @@ abstract public class Instrument implements Serializable{
     public long getId() {
         return id;
     }
+    public String getImgPath() {
+        return img;
+    }
     
     public String toString() {
         return name + " " + model + " (" + getClassPath() + ")";
@@ -76,8 +79,20 @@ abstract public class Instrument implements Serializable{
         return price/100;
     }
 
-    public void setImg(String img) {
+    public void setImgPath(String img) {
         this.img = img;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
     }
     
     

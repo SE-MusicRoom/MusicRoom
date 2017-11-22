@@ -64,7 +64,7 @@
                               <Font name="Cloud-Bold" size="40.0" />
                            </font>
                         </Text>
-                        <Text fx:id="totalTxt" fill="WHITE" layoutX="124.0" layoutY="805.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB10000.0" textAlignment="RIGHT">
+                        <Text fx:id="totalTxt" fill="WHITE" layoutX="124.0" layoutY="805.0" strokeType="OUTSIDE" strokeWidth="0.0" text="฿10000.0" textAlignment="RIGHT">
                            <font>
                               <Font name="Cloud-Bold" size="61.0" />
                            </font>

@@ -78,7 +78,7 @@
                                  <font>
                                     <Font size="22.0" />
                                  </font></Text>
-                              <Text fx:id="listToken_price" fill="#f21010" layoutX="458.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT">
+                              <Text fx:id="listToken_price" fill="#f21010" layoutX="458.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="฿120/hr" textAlignment="RIGHT">
                                  <font>
                                     <Font size="22.0" />
                                  </font></Text>
@@ -99,7 +99,7 @@
                                     <Font name="System Bold" size="36.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="addedToken_price" fill="#f21010" layoutX="510.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB120/hr" textAlignment="RIGHT">
+                              <Text fx:id="addedToken_price" fill="#f21010" layoutX="510.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="฿120/hr" textAlignment="RIGHT">
                                  <font>
                                     <Font size="36.0" />
                                  </font></Text>
@@ -115,7 +115,7 @@
                   <Font name="Cloud-Bold" size="34.0" />
                </font>
             </Text>
-            <Text fx:id="total" fill="WHITE" fontSmoothingType="LCD" layoutX="135.0" layoutY="958.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THB1200/hr" wrappingWidth="481.56005859375">
+            <Text fx:id="total" fill="WHITE" fontSmoothingType="LCD" layoutX="135.0" layoutY="958.0" strokeType="OUTSIDE" strokeWidth="0.0" text="฿1200/hr" wrappingWidth="481.56005859375">
                <font>
                   <Font name="Cloud-Bold" size="73.0" />
                </font>
