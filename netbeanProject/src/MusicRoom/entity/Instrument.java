@@ -75,6 +75,11 @@ abstract public class Instrument implements Serializable{
     public float getRentPrice() {
         return price/100;
     }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+    
     
 
     public Image getImg() {

@@ -74,8 +74,6 @@ public class DatabaseManager {
     }
 
     public boolean createInstrumentDB (){
-        String violinPath = new String("MusicRoom/img/instruments/violin/Violin.png");
-        String AcousticGuitarPath = new String("MusicRoom/img/instruments/guitar/AcousticGuitar.png");
 
         if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
             return false;
@@ -83,16 +81,22 @@ public class DatabaseManager {
         em.getTransaction().begin();
         ArrayList<Instrument> l = new ArrayList<Instrument>();
         // Violin
-        l.add(new Violin("Andrea Schudtz","2800",50000,(violinPath + "Andrea Schudtz.jpg")));
-        l.add(new Violin("Dario II Vettori","2006",600000,(violinPath + "Dario II Vettori.jpg")));
-        l.add(new Violin("Robert Lee","804",45000,(violinPath + "Robert Lee.jpg")));
+        l.add(new Violin("Andrea Schudtz","2800",50000,"MusicRoom/img/instruments/violin/Violin.png"));
+        l.add(new Violin("Dario II Vettori","2006",600000,"MusicRoom/img/instruments/violin/Violin.png"));
+        l.add(new Violin("Robert Lee","804",45000,"MusicRoom/img/instruments/violin/Violin.png"));
 
         //AcousticGuitar
-        l.add(new AcousticGuitar("Takamine","CP3DC",47500,(AcousticGuitarPath + "Takamine.jpg")));
-        l.add(new AcousticGuitar("Taylor","310CE",67900,AcousticGuitarPath + "Taylor.jpg"));
-        l.add(new AcousticGuitar("Guild","M-240E",15750,(AcousticGuitarPath + "Guild.jpg")));
+        l.add(new AcousticGuitar("Takamine","CP3DC",47500,"MusicRoom/img/instruments/guitar/AcousticGuitar.png"));
+        l.add(new AcousticGuitar("Taylor","310CE",67900,"MusicRoom/img/instruments/guitar/AcousticGuitar.png"));
+        l.add(new AcousticGuitar("Guild","M-240E",15750,"MusicRoom/img/instruments/guitar/AcousticGuitar.png"));
 
-
+        // 
+        
+        
+        //
+        
+        
+        //
 
         for(Instrument i: l){
             em.persist(i);
