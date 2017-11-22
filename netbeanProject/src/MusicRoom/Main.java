@@ -56,9 +56,6 @@ public class Main extends Application {
     private List<Calendar> currentTimeTable;
     private float currentPrice;
    
-    
-
-    
     public Main() {
         Main.instance = this;
         popupOpen = false;
@@ -77,8 +74,6 @@ public class Main extends Application {
         
     }
     
- 
-
     @Override
     public void start(Stage primaryStage) {
         try {
@@ -96,7 +91,12 @@ public class Main extends Application {
 //            updateBookingDB();
 //            updateInstrumentDB();
 //            updateRoomTemplateDB();
-        
+
+
+//************create Database**********************************
+              DatabaseManager.getInstance().createInstrumentDB();
+//*************************************************************
+
         } catch (Exception ex) {
             
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -210,14 +210,6 @@ public class Main extends Application {
         this.popupOpen = isPopup;
     }
 
-                
-            
-            
-
-    
-
-
-
     public boolean userLogging(String userId, String password){
         for(int i=0;i<users.size();i++) {
             if(users.get(i).getUsername().equals(userId)) {
@@ -245,7 +237,6 @@ public class Main extends Application {
         gotoLogin();
     }
     
-
     public Booking createBooking() {
         Booking newBooking = new Booking(currentRoom, currentTimeTable, currentUser,currentPrice);
         return newBooking;
@@ -259,8 +250,6 @@ public class Main extends Application {
         return newUser;
     }
     
-
-
     // Popups
     public PopupController showPopup(String title,String detail) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("popup.fxml"));

@@ -2,6 +2,7 @@ package MusicRoom;
 
 import MusicRoom.entity.Band;
 import MusicRoom.entity.Booking;
+import MusicRoom.entity.BrassWoodwind;
 import MusicRoom.entity.CustomRoomTemplate;
 import MusicRoom.entity.Instrument;
 import MusicRoom.entity.RoomTemplate;
@@ -80,12 +81,12 @@ public class DatabaseManager {
        
         ArrayList<Instrument> list = new ArrayList<Instrument>();
         
-        /*
         //Trumpet
-        list.add(new Trumpet("Midway","Bb MTR-H3",9800,"MusicRoom/img/Instruments/Brass/Trumpet/trumpet1.png"));
-        list.add(new Trumpet("Jinboa","YBTR-450N",14000,"MusicRoom/img/Instruments/Brass/Trumpet/trumpet2.png"));
-        list.add(new Trumpet("Yamaha","YTR-2330S",28000,"MusicRoom/img/Instruments/Brass/Trumpet/trumpet3.png"));
+        list.add(new BrassWoodwind("Brass","Midway","Bb MTR-H3",9800,"MusicRoom/img/Instruments/BrassWoodwind/Trumpet/trumpet1.png"));
+        list.add(new BrassWoodwind("Brass","Jinboa","YBTR-450N",14000,"MusicRoom/img/Instruments/BrassWoodwind/Trumpet/trumpet2.png"));
+        list.add(new BrassWoodwind("Brass","Yamaha","YTR-2330S",28000,"MusicRoom/img/Instruments/BrassWoodwind/Trumpet/trumpet3.png"));
         
+        /*
         //Paino
         list.add(new Piano("Korg","SP-250",33000,"MusicRoom/img/Instruments/Keyboard/Piano/piano1.png"));
         list.add(new Piano("Roland","V-Piano",250000,"MusicRoom/img/Instruments/Keyboard/Piano/piano2.png"));
