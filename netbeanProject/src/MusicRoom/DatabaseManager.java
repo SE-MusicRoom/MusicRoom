@@ -81,14 +81,14 @@ public class DatabaseManager {
         em.getTransaction().begin();
         ArrayList<Instrument> l = new ArrayList<Instrument>();
         // Violin
-        l.add(new Violin("Andrea Schudtz","2800",50000,"MusicRoom/img/instruments/violin/Violin.png"));
-        l.add(new Violin("Dario II Vettori","2006",600000,"MusicRoom/img/instruments/violin/Violin.png"));
-        l.add(new Violin("Robert Lee","804",45000,"MusicRoom/img/instruments/violin/Violin.png"));
+        l.add(new Violin("Andrea Schudtz","2800",50000,"MusicRoom/img/Instruments/Violin/Violin.png"));
+        l.add(new Violin("Dario II Vettori","2006",600000,"MusicRoom/img/Instruments/Violin/Violin.png"));
+        l.add(new Violin("Robert Lee","804",45000,"MusicRoom/img/Instruments/Violin/Violin.png"));
 
         //AcousticGuitar
-        l.add(new AcousticGuitar("Takamine","CP3DC",47500,"MusicRoom/img/instruments/guitar/AcousticGuitar.png"));
-        l.add(new AcousticGuitar("Taylor","310CE",67900,"MusicRoom/img/instruments/guitar/AcousticGuitar.png"));
-        l.add(new AcousticGuitar("Guild","M-240E",15750,"MusicRoom/img/instruments/guitar/AcousticGuitar.png"));
+        l.add(new AcousticGuitar("Takamine","CP3DC",47500,"MusicRoom/img/Instruments/Guitar/AcousticGuitar/AcousticGuitar.png"));
+        l.add(new AcousticGuitar("Taylor","310CE",67900,"MusicRoom/img/Instruments/Guitar/AcousticGuitar/AcousticGuitar.png"));
+        l.add(new AcousticGuitar("Guild","M-240E",15750,"MusicRoom/img/Instruments/Guitar/AcousticGuitar/AcousticGuitar.png"));
 
         // 
         

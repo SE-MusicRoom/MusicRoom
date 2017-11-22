@@ -49,8 +49,6 @@ abstract public class Instrument implements Serializable{
         }
         return str.substring(0, str.length() - 1);
     }
-    
-    
 
     public long getId() {
         return id;
@@ -95,8 +93,6 @@ abstract public class Instrument implements Serializable{
         this.price = price;
     }
     
-    
-
     public Image getImg() {
         if(imgLoaded==null)
             imgLoaded = new Image(img);

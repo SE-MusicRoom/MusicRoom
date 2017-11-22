@@ -26,6 +26,11 @@ public class AdminMenuController  extends AnchorPane implements Initializable {
     
     @FXML
     private AnchorPane includePane;
+    @FXML
+    private AnchorPane adminUserPane;
+
+
+    private AdminUserController adminUserController;
     
     public void setApp(){
         
@@ -66,10 +71,24 @@ public class AdminMenuController  extends AnchorPane implements Initializable {
     public void gotoLogOut() {
         Main.getInstance().gotoMainMenu();
     }
-    
-    
+
+    public void gotoUser(){
+        if(adminUserPane == null){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("admin-user.fxml"));
+            try {
+                adminUserPane = (AnchorPane)loader.load();
+            } catch(IOException ex){
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            includePane.getChildren().add(adminUserPane);
+            adminUserController = (AdminUserController) loader.getController();
+        }
+        adminUserController.setApp(this);
+
+    }
+
     public void onClickUsers(ActionEvent event) {
-        
+        gotoUser();
     }
     public void onClickBands(ActionEvent event) {
         
