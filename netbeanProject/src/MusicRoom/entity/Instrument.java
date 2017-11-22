@@ -80,8 +80,6 @@ abstract public class Instrument implements Serializable{
         this.img = img;
     }
     
-    
-
     public Image getImg() {
         if(imgLoaded==null)
             imgLoaded = new Image(img);
