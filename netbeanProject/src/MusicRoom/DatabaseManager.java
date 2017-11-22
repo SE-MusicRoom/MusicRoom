@@ -96,8 +96,8 @@ public class DatabaseManager {
         
         //BassDrum
         list.add(new Percussion("BassDrum","Pearl","Pearl Roadshow",6500,"MusicRoom/img/Instruments/Percussion/Drums/BassDrum/bassdrum1.png"));
-        list.add(new Percussion("BassDrum","Tama","Starclassic",5000,"MusicRoom/img/Instruments/Percussion/Drums/BassDrum/bassdrum1.png"));
-        list.add(new Percussion("BassDrum","Ludwig","Classic Maple",7000,"MusicRoom/img/Instruments/Percussion/Drums/BassDrum/bassdrum1.png"));
+        list.add(new Percussion("BassDrum","Tama","Starclassic",5000,"MusicRoom/img/Instruments/Percussion/Drums/BassDrum/bassdrum2.png"));
+        list.add(new Percussion("BassDrum","Ludwig","Classic Maple",7000,"MusicRoom/img/Instruments/Percussion/Drums/BassDrum/bassdrum3.png"));
         
         //ChinaCymbal
         list.add(new Percussion("ChinaCymbal","Zildjian","18″ Z3 CHINA",9500,"MusicRoom/img/Instruments/Percussion/Drums/ChinaCymbal/chinacymbal1.png")); 
