@@ -96,8 +96,8 @@ public class DatabaseManager {
         
         //BassDrum
         list.add(new Percussion("BassDrum","Pearl","Pearl Roadshow",6500,"MusicRoom/img/Instruments/Percussion/Drums/BassDrum/bassdrum1.png"));
-        list.add(new Percussion("BassDrum","Tama","Starclassic",5000,"MusicRoom/img/Instruments/Percussion/Drums/BassDrum/bassdrum1.png"));
-        list.add(new Percussion("BassDrum","Ludwig","Classic Maple",7000,"MusicRoom/img/Instruments/Percussion/Drums/BassDrum/bassdrum1.png"));
+        list.add(new Percussion("BassDrum","Tama","Starclassic",5000,"MusicRoom/img/Instruments/Percussion/Drums/BassDrum/bassdrum2.png"));
+        list.add(new Percussion("BassDrum","Ludwig","Classic Maple",7000,"MusicRoom/img/Instruments/Percussion/Drums/BassDrum/bassdrum3.png"));
         
         //ChinaCymbal
         list.add(new Percussion("ChinaCymbal","Zildjian","18″ Z3 CHINA",9500,"MusicRoom/img/Instruments/Percussion/Drums/ChinaCymbal/chinacymbal1.png")); 
@@ -108,9 +108,9 @@ public class DatabaseManager {
         list.add(new Percussion("Cowbell","Rock Cowbell","CB-L",360,"MusicRoom/img/Instruments/Percussion/Drums/Cowbell/cowbell1.png")); 
         
         //CrashCymbal
-        list.add(new Percussion("CrashCymbal","Zildjian ","20″ Z3 MEDIUM CRASH",10200,"MusicRoom/img/Instruments/Percussion/Drums/ChinaCymbal/crashcymbal1.png"));
-        list.add(new Percussion("CrashCymbal","Sabian  ","XSR 14 Fast Crash",4000,"MusicRoom/img/Instruments/Percussion/Drums/ChinaCymbal/crashcymbal2.png"));
-        list.add(new Percussion("CrashCymbal","Istanbul ","Cymbals Agop 16\" MEDIUM CRASH",10200,"MusicRoom/img/Instruments/Percussion/Drums/ChinaCymbal/crashcymbal3.png"));
+        list.add(new Percussion("CrashCymbal","Zildjian ","20″ Z3 MEDIUM CRASH",10200,"MusicRoom/img/Instruments/Percussion/Drums/crashcymbal/crashcymbal1.png"));
+        list.add(new Percussion("CrashCymbal","Sabian  ","XSR 14 Fast Crash",4000,"MusicRoom/img/Instruments/Percussion/Drums/crashcymbal/crashcymbal2.png"));
+        list.add(new Percussion("CrashCymbal","Istanbul ","Cymbals Agop 16\" MEDIUM CRASH",10200,"MusicRoom/img/Instruments/Percussion/Drums/crashcymbal/crashcymbal3.png"));
         
         //FloorTom
         list.add(new Percussion("FloorTom","Pearl","Vision",3500,"MusicRoom/img/Instruments/Percussion/Drums/FloorTom/floortom1.png")); 
@@ -163,19 +163,19 @@ public class DatabaseManager {
         list.add(new Strings("Violin","4","Robert Lee","804",45000,"MusicRoom/img/Instruments/Violin/Strings/vilon3.png"));
 
         //Microphone
-        list.add(new Voice("Dynamic","Shure","PG58-LCV",2520,"MusicRoom/img/Instruments/Voice/mic1.png"));
-        list.add(new Voice("Condenser","Rode","M1-S",5300,"MusicRoom/img/Instruments/Voice/mic2.png"));
-        list.add(new Voice("Dynamic","EV","7000",2520,"MusicRoom/img/Instruments/Voice/mic3.png"));
+        list.add(new Voice("Dynamic","Shure","PG58-LCV",2520,"MusicRoom/img/Instruments/Voice/Microphone/mic1.png"));
+        list.add(new Voice("Condenser","Rode","M1-S",5300,"MusicRoom/img/Instruments/Voice/Microphone/mic2.png"));
+        list.add(new Voice("Dynamic","EV","7000",2520,"MusicRoom/img/Instruments/Voice/Microphone/mic3.png"));
         
         //AltoSaxophone
-        list.add(new BrassWoodwind("Woodwind","AltoSaxophone","Selmer","Super Action 80 Series II E-flat",198500,"MusicRoom/img/Instruments/Woodwind/Saxophone/AltoSaxophone/altosax1.png"));
-        list.add(new BrassWoodwind("Woodwind","AltoSaxophone","Buffet","100 Series Gold Lacquer",48000,"MusicRoom/img/Instruments/Woodwind/Saxophone/AltoSaxophone/altosax2.png"));
-        list.add(new BrassWoodwind("Woodwind","AltoSaxophone","Yanagisawa","A9937",550000,"MusicRoom/img/Instruments/Woodwind/Saxophone/AltoSaxophone/altosax3.png"));
+        list.add(new BrassWoodwind("Woodwind","AltoSaxophone","Selmer","Super Action 80 Series II E-flat",198500,"MusicRoom/img/Instruments/BrassWoodwind/Woodwind/Saxophone/AltoSaxophone/altosax1.png"));
+        list.add(new BrassWoodwind("Woodwind","AltoSaxophone","Buffet","100 Series Gold Lacquer",48000,"MusicRoom/img/Instruments/BrassWoodwind/Woodwind/Saxophone/AltoSaxophone/altosax2.png"));
+        list.add(new BrassWoodwind("Woodwind","AltoSaxophone","Yanagisawa","A9937",550000,"MusicRoom/img/Instruments/BrassWoodwind/Woodwind/Saxophone/AltoSaxophone/altosax3.png"));
         
         //TenorSaxophone
-        list.add(new BrassWoodwind("Woodwind","TenorSaxophone","Selmer","Super Action 80 Series II B-flat",217000,"MusicRoom/img/Instruments/Woodwind/Saxophone/TenorSaxophone/tenorsax1.png"));
-        list.add(new BrassWoodwind("Woodwind","TenorSaxophone","Yanagisawa","T901S",165000,"MusicRoom/img/Instruments/Woodwind/Saxophone/TenorSaxophone/tenorsax1.png"));
-        list.add(new BrassWoodwind("Woodwind","TenorSaxophone","Julius Keilwerth","ST90",45000,"MusicRoom/img/Instruments/Woodwind/Saxophone/TenorSaxophone/tenorsax1.png"));
+        list.add(new BrassWoodwind("Woodwind","TenorSaxophone","Selmer","Super Action 80 Series II B-flat",217000,"MusicRoom/img/Instruments/BrassWoodwind/Woodwind/Saxophone/TenorSaxophone/tenorsax1.png"));
+        list.add(new BrassWoodwind("Woodwind","TenorSaxophone","Yanagisawa","T901S",165000,"MusicRoom/img/Instruments/BrassWoodwind/Woodwind/Saxophone/TenorSaxophone/tenorsax2.png"));
+        list.add(new BrassWoodwind("Woodwind","TenorSaxophone","Julius Keilwerth","ST90",45000,"MusicRoom/img/Instruments/BrassWoodwind/Woodwind/Saxophone/TenorSaxophone/tenorsax3.png"));
         
         
         for(Instrument i: list){
