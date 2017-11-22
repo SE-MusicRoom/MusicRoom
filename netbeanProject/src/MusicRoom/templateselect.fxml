@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
@@ -29,23 +30,22 @@
                      <children>
                         <AnchorPane fx:id="templateToken" prefHeight="201.0" prefWidth="334.0">
                            <children>
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="276.0" stroke="BLACK" strokeType="INSIDE" width="456.0" />
-                              <ImageView fitHeight="277.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true" />
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="-5.0" layoutY="275.0" opacity="0.63" stroke="BLACK" strokeType="INSIDE" width="461.0" />
-                              <Button fx:id="selectBtn" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#onSelectTemplate" opacity="0.0" prefHeight="324.0" prefWidth="456.0" text="Select">
+                              <ImageView fitHeight="324.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="63.0" layoutX="-5.0" layoutY="323.0" opacity="0.63" stroke="BLACK" strokeType="INSIDE" width="461.0" />
+                              <Text fx:id="templateName" layoutX="14.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TemplateNames">
+                                 <font>
+                                    <Font name="Cloud-Bold" size="35.0" />
+                                 </font></Text>
+                              <Button fx:id="selectBtn" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#onSelectTemplate" opacity="0.0" prefHeight="383.0" prefWidth="456.0" text="Select">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="detailBtn" layoutX="-2.0" layoutY="326.0" mnemonicParsing="false" onAction="#onSelectDetail" prefHeight="60.0" prefWidth="456.0" style="-fx-background-color: rgb(255,130,0); -fx-alignment: left;" text="View Details &gt;&gt;&gt;" textFill="WHITE">
+                              <Button fx:id="detailBtn" layoutX="344.0" layoutY="324.0" mnemonicParsing="false" onAction="#onSelectDetail" prefHeight="60.0" prefWidth="112.0" style="-fx-background-color: rgb(255,130,0); -fx-font-size: 26;" text="INFO" textFill="WHITE">
                                  <font>
                                     <Font name="Cloud-Bold" size="27.0" />
                                  </font>
                               </Button>
-                              <Text fx:id="templateName" layoutX="10.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TemplateNames">
-                                 <font>
-                                    <Font name="Cloud-Bold" size="35.0" />
-                                 </font></Text>
                            </children>
                         </AnchorPane>
                      </children>
@@ -56,7 +56,7 @@
       </AnchorPane>
       <HBox layoutX="147.0" layoutY="1085.0" prefHeight="123.0" prefWidth="861.0">
          <children>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickCustomize" prefHeight="101.0" prefWidth="680.0" style="-fx-background-color: rgb(255,30,0);" text="or CUSTOMIZE IT!!" textFill="WHITE">
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickCustomize" prefHeight="101.0" prefWidth="680.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 50;" text="or CUSTOMIZE IT!!" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -64,7 +64,7 @@
                   <Font name="Cloud-Bold" size="50.0" />
                </font>
             </Button>
-            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="75.0" prefWidth="177.0" style="-fx-background-color: rgb(255,130,0);" text="Back" textFill="WHITE">
+            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="75.0" prefWidth="177.0" style="-fx-background-color: rgb(255,130,0); -fx-font-size: 40;" text="Back" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -130,4 +130,8 @@
          </children>
       </AnchorPane>
    </children>
+   <stylesheets>
+      <URL value="@button.css" />
+      <URL value="@font.css" />
+   </stylesheets>
 </AnchorPane>

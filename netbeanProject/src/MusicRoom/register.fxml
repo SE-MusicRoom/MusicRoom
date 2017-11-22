@@ -67,7 +67,7 @@
       </ImageView>
       <HBox layoutX="59.900001525878906" layoutY="594.9000244140625">
          <children>
-        <Button fx:id="back" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickBack" prefHeight="47.0" prefWidth="129.0" style="-fx-background-color: #000000; -fx-font-size: 28; -fx-padding: 2; -fx-text-fill: ff6000;" text="BACK">
+        <Button fx:id="back" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickBack" prefHeight="47.0" prefWidth="129.0" style="-fx-background-color: rgb(255,130,0); -fx-font-size: 28; -fx-padding: 2; -fx-text-fill: rgb(255,255,255);" text="BACK">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x5" />
                </font>
@@ -75,7 +75,7 @@
                   <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                </padding>
             </Button>
-        <Button fx:id="comfirm" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickConfirm" prefHeight="47.0" prefWidth="175.0" style="-fx-background-color: ff6000; -fx-font-size: 28; -fx-padding: 2; -fx-text-fill: ffffff;" text="CONFIRM" textFill="#ff6000">
+        <Button fx:id="comfirm" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickConfirm" prefHeight="47.0" prefWidth="175.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 28; -fx-padding: 2; -fx-text-fill: ffffff;" text="CONFIRM" textFill="#ff6000">
                <font>
                   <Font name="Cloud-Bold" size="34.0" fx:id="x4" />
                </font>
@@ -92,9 +92,9 @@
       </Text>
       <Group layoutX="74.0" layoutY="35.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff6000" height="77.0" layoutX="-14.0" stroke="TRANSPARENT" strokeType="INSIDE" width="316.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="77.0" layoutX="-14.0" stroke="TRANSPARENT" strokeType="INSIDE" width="316.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="483.0" layoutX="-14.0" layoutY="77.0" stroke="#00000001" strokeType="INSIDE" width="668.0" />
-            <Text fill="#fcf9f9" layoutX="-14.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTER" wrappingWidth="331.8040008544922">
+            <Text fill="#ff8200" layoutX="-14.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTER" wrappingWidth="331.8040008544922">
                <font>
                   <Font name="Cloud-Bold" size="64.0" />
                </font>
