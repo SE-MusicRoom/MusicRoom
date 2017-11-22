@@ -66,6 +66,7 @@ public class Main extends Application {
      */
     public static void main(String[] args) {
         if(instance == null) {
+            System.out.println("[[[PROPERTIES DATA]]]]\n"+System.getProperties());
             Application.launch(Main.class, (java.lang.String[])null);
             
         } else {

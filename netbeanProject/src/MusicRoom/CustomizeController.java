@@ -102,7 +102,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
                 System.out.println(newValue);
             }
-            });
+        });
     }
     
     public void setApp(CustomizeController parent){
@@ -269,6 +269,8 @@ public class CustomizeController extends AnchorPane implements Initializable {
         listToken_name.setText(name);
         listToken_path.setText(path);
         listToken_price.setText(price+"฿/hr");
+        if(img == null)
+            return;
         listToken_pic.setImage(img);
         
     }

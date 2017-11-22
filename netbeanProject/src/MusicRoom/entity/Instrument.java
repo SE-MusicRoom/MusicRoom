@@ -5,13 +5,12 @@
  */
 package MusicRoom.entity;
 
-import MusicRoom.Main;
+import MusicRoom.*;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import java.io.Serializable;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javax.persistence.GenerationType;
 
 /**
@@ -97,12 +96,13 @@ abstract public class Instrument implements Serializable{
     public Image getImg() {
         if(imgLoaded==null)
             try {
-                imgLoaded = new Image(img);
+                imgLoaded = new Image(getClass().getClassLoader().getResource(img).toString());
+                System.out.println(name+"::"+imgLoaded.isError()+"::"+img);
             } catch (Exception e) {
-                Main.getInstance().showPopup("Error", "Image not found: "+e.getMessage()+"\n"+img);
+                System.out.println("Image not found: "+e.toString()+"\n"+img);
             }
             
-        System.out.println(name+"::"+imgLoaded.isError()+"::"+img);
+        
         return imgLoaded;
     }
     

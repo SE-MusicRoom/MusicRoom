@@ -72,6 +72,10 @@ public class User {
     
     public void removeBookedTime(Booking time) {
         bookedTimes.remove(time);
+        for (int i = 0; i < bookedTimes.size(); i++) {
+            if(bookedTimes.get(i).getID() == time.getID()) 
+                bookedTimes.remove(i);
+        }
     }
 
     public String getName() {

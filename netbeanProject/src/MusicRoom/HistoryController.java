@@ -15,6 +15,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -64,7 +65,6 @@ public class HistoryController extends AnchorPane implements Initializable {
                 continue;
             }
             StackPane hist = copyHistoryToken(books.get(i));
-            hist.setId(String.valueOf(historyScroll.getChildren().size()));
             historyScroll.getChildren().add(hist);
             
         }
@@ -122,12 +122,14 @@ public class HistoryController extends AnchorPane implements Initializable {
     }
     
     @FXML
-    void onFind(ActionEvent event) {
+    void onFind(Event event) {
         historyScroll.getChildren().clear();
         List<Booking> books = Main.getInstance().getCurrentUser().getBookings();
         for (int i = 0; i < books.size(); i++) {
+            
             if(!(books.get(i).toString()).replaceAll("[\\s|\\u00A0]+", "").toLowerCase().contains(searchBox.getText().replaceAll("[\\s|\\u00A0]+", "").toLowerCase()) && !searchBox.getText().replaceAll("[\\s|\\u00A0]+", "").equals(""))
                 continue;
+            System.out.println(books.get(i).getID());
             StackPane newToken = copyHistoryToken(books.get(i));
             historyScroll.getChildren().add(newToken);
         }
