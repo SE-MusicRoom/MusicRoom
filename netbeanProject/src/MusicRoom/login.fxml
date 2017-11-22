@@ -40,6 +40,7 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 
+<?import java.net.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
@@ -58,7 +59,7 @@ Contributor(s):
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1024.0" stylesheets="@font.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.LoginController">
    <children>
       <ImageView fitHeight="700.0" fitWidth="1051.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -73,7 +74,7 @@ Contributor(s):
             <Rectangle fx:id="rect_4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="130.0" stroke="TRANSPARENT" strokeType="INSIDE" width="494.0" />
             <HBox prefHeight="73.0" prefWidth="431.0">
                <children>
-                  <Button fx:id="btn_login" mnemonicParsing="false" onAction="#onClickLogin" prefHeight="64.0" prefWidth="170.0" style="-fx-background-color: #000000; -fx-font-size: 48;" text="LOGIN" textAlignment="CENTER" textFill="#ff3900">
+                  <Button fx:id="btn_login" mnemonicParsing="false" onAction="#onClickLogin" prefHeight="64.0" prefWidth="170.0" style="-fx-font-size: 48; -fx-background-color: rgb(255,30,0); -fx-text-fill: rgb(0,0,0);" stylesheets="@button.css" text="LOGIN" textAlignment="CENTER" textFill="#ff3900">
                      <font>
                         <Font name="Cloud-Bold" />
                      </font>
@@ -81,7 +82,7 @@ Contributor(s):
                         <Insets bottom="-10.0" top="-10.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="btn_reg" mnemonicParsing="false" onAction="#onClickGoRegister" prefHeight="44.0" prefWidth="159.0" style="-fx-background-color: ff3900; -fx-font-size: 28;" text="REGISTER" textAlignment="CENTER" textFill="#0d0d0d">
+                  <Button fx:id="btn_reg" mnemonicParsing="false" onAction="#onClickGoRegister" prefHeight="44.0" prefWidth="159.0" style="-fx-background-color: rgb(255,130,0); -fx-font-size: 28;" text="REGISTER" textAlignment="CENTER" textFill="#0d0d0d">
                      <font>
                         <Font name="Cloud-Bold" size="28.0" />
                      </font>
@@ -151,4 +152,8 @@ Contributor(s):
          </children>
       </VBox>
    </children>
+   <stylesheets>
+      <URL value="@font.css" />
+      <URL value="@button.css" />
+   </stylesheets>
 </AnchorPane>
