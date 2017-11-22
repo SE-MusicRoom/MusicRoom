@@ -72,6 +72,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     private Button[] TimeBtn;
     private float total;
     
+    
     final Callback<DatePicker, DateCell> dayCellFactory = 
             new Callback<DatePicker, DateCell>() {
                 @Override
@@ -80,6 +81,8 @@ public class TimeSelectController extends AnchorPane implements Initializable{
                         @Override
                         public void updateItem(LocalDate item, boolean empty) {
                             super.updateItem(item, empty);
+                            this.setDisable(empty || item.isBefore(LocalDate.now()));
+                            
                             int na = 0;
                             for (int i = 0; i < selectedTimes.size(); i++) {
                                 LocalDate d = selectedTimes.get(i).getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -135,6 +138,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+       datePicker.setEditable(false);
        datePicker.setValue(LocalDate.now());
        datePicker.setDayCellFactory(dayCellFactory);
        currentDate = LocalDate.now();

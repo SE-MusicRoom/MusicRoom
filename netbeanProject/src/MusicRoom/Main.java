@@ -18,8 +18,16 @@ import javafx.stage.Stage;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.Properties;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  * Main Application. This class handles navigation and user session.
@@ -44,11 +52,13 @@ public class Main extends Application {
     
     // Reservation
     private User currentUser;
-    private Booking currentBooking;
     private RoomTemplate currentRoom;
     private List<Calendar> currentTimeTable;
     private float currentPrice;
    
+    
+
+    
     public Main() {
         Main.instance = this;
         popupOpen = false;
@@ -67,6 +77,8 @@ public class Main extends Application {
         
     }
     
+ 
+
     @Override
     public void start(Stage primaryStage) {
         try {
@@ -81,12 +93,6 @@ public class Main extends Application {
             primaryStage.show();
             primaryStage.setResizable(false);
         
-//            Instrument i = getInstrument("Dario II Vettori","2006");
-//            System.out.println(i.getImgPath());
-//            i.setImgPath("SHIT");
-//            System.out.println(i.getImgPath());
-//            DatabaseManager.getInstance().updateInstrument(i);
-            
 //            updateBookingDB();
 //            updateInstrumentDB();
 //            updateRoomTemplateDB();
@@ -97,6 +103,7 @@ public class Main extends Application {
         }
     }
 
+    
     // Getters Setters    
     public static Main getInstance() {
         return instance;
@@ -158,15 +165,14 @@ public class Main extends Application {
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
     }
-    public void setCurrentBooking(Booking currentBooking) {
-        this.currentBooking = currentBooking;
-    }
+
     public void setCurrentRoom(RoomTemplate currentRoom) {
         this.currentRoom = currentRoom;
     }
     public void setCurrentTimeTable(List<Calendar> currentTimeTable) {
         this.currentTimeTable = currentTimeTable;
     }
+
 
     public void updateUserDB() {
         this.users = (List<User>) DatabaseManager.getInstance().fetchAllUser();
@@ -204,6 +210,14 @@ public class Main extends Application {
         this.popupOpen = isPopup;
     }
 
+                
+            
+            
+
+    
+
+
+
     public boolean userLogging(String userId, String password){
         for(int i=0;i<users.size();i++) {
             if(users.get(i).getUsername().equals(userId)) {
@@ -231,6 +245,7 @@ public class Main extends Application {
         gotoLogin();
     }
     
+
     public Booking createBooking() {
         Booking newBooking = new Booking(currentRoom, currentTimeTable, currentUser,currentPrice);
         return newBooking;
@@ -244,6 +259,8 @@ public class Main extends Application {
         return newUser;
     }
     
+
+
     // Popups
     public PopupController showPopup(String title,String detail) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("popup.fxml"));
@@ -316,5 +333,51 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.sizeToScene();
         return (Initializable) loader.getController();
-    }   
+    }
+
+    public void sendEmail(String title,String msg) {
+        
+        final String username = "kmitlmusicroom@gmail.com";
+	final String password = "kmitlmusicr00m";
+
+	Properties props = new Properties();
+	props.put("mail.smtp.auth", "true");
+	props.put("mail.smtp.starttls.enable", "true");
+	props.put("mail.smtp.host", "smtp.gmail.com");
+	props.put("mail.smtp.port", "587");
+        
+        // Recipient's email ID needs to be mentioned.
+      String to = currentUser.getEmail();
+
+      // Sender's email ID needs to be mentioned
+      String from = username;
+
+      Session session = Session.getInstance(props,
+		  new javax.mail.Authenticator() {
+                        @Override
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		  });
+
+		try {
+
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress(from));
+			message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(to));
+			message.setSubject(title);
+			message.setContent(msg.replaceAll("\n", "<br>"),"text/html; charset=UTF-8");
+
+			Transport.send(message);
+
+			System.out.println("Email sent...");
+
+		} catch (MessagingException e) {
+			throw new RuntimeException(e);
+		}
+    }
+
+
+    
+    
 }

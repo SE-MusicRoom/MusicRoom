@@ -90,5 +90,10 @@ public class User {
         return band;
     }
     
+    @Override
+    public String toString() {
+        return name + " " + surname + "(" + username + ")" + " แห่งวง " + band.getName(); 
+    }
+    
     
 }

@@ -37,6 +37,15 @@ public class SuccessReservationController extends AnchorPane implements Initiali
         this.mainmenu = mainmenu;
         idtxt.setText(String.valueOf(newBooking.getID()));
         emailtxt.setText(Main.getInstance().getCurrentUser().getEmail());
+        Main.getInstance().sendEmail("Music Room Reservation Detail",
+                                "<b>รหัสจอง:</b> " + newBooking.getID()
+                                + "<br> <b>ผู้จอง:</b> คุณ " + newBooking.getUser().toString()
+                                + "<br> <b>รายละเอียดห้อง:</b> <pre>" + newBooking.getRoom().toString()+ "</pre>"
+                                + "<br> <b>เวลา:</b> " + newBooking.getTimeTableString()
+                                + "<br> <h1>ราคารวมทั้งหมด: <i>" + newBooking.getPrice() + "<i></h1>"
+                                + "<br><br> <b>ขอบคุณที่ใช้บริการกับเรา, หากมีปัญหาสามารถตอบกลับอีเมลฉบับนี้ได้"
+				+ "<br> Be yourself"
+                                + "<br> SE-MusicRoom</b>");
     }
     
     public void onClickBack(ActionEvent event) {

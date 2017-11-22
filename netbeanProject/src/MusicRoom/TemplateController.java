@@ -35,6 +35,8 @@ public class TemplateController extends AnchorPane implements Initializable {
     @FXML
     private Text templateName;
     @FXML
+    private ImageView templatePic;
+    @FXML
     private AnchorPane templateToken;
     @FXML
     private GridPane templateGrid;
@@ -74,19 +76,21 @@ public class TemplateController extends AnchorPane implements Initializable {
             Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
         AnchorPane newToken = (AnchorPane)loader.getNamespace().get("templateToken");
-        Text t0 = (Text) newToken.getChildren().get(5);
-        t0.setText(r.getName());
+        setTemplateToken(newToken,r);
         
-        ImageView imgV = (ImageView)newToken.getChildren().get(1);
-        imgV.setImage(r.getImg()); //new Image("MusicRoom/img/RoomTemplate/"+r.getName()+".jpg",imgV.getFitWidth(), imgV.getFitHeight(), false,true)
-        imgV.setFitHeight(imgV.getFitHeight());
-        imgV.setFitWidth(imgV.getFitWidth());
-        imgV.setPreserveRatio(false);
          // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
         TemplateController cus = (TemplateController)loader.getController();
         cus.setApp(this,mainmenu);
         
         return newToken;
+    }
+    
+    private void setTemplateToken(AnchorPane newToken,RoomTemplate r) {
+        templateName.setText(r.getName());
+        templatePic.setImage(r.getImg()); //new Image("MusicRoom/img/RoomTemplate/"+r.getName()+".jpg",imgV.getFitWidth(), imgV.getFitHeight(), false,true)
+       // templatePic.setFitHeight(templatePic.getFitHeight());
+        //templatePic.setFitWidth(templatePic.getFitWidth());
+        templatePic.setPreserveRatio(false);
     }
     
     public void onClickCustomize(ActionEvent event) {
@@ -108,11 +112,7 @@ public class TemplateController extends AnchorPane implements Initializable {
     public void onSelectDetail(ActionEvent event) {
         int selectedId = Integer.parseInt( ((Button)event.getSource()).getParent().getId() );
         RoomTemplate room = Main.getInstance().getRoomTemplete().get(selectedId);
-        String detail = room.getDetail() + "\nPrice: ฿" + room.getPrice();
-        for (int i = 0; i < room.getInstruments().size(); i++) {
-            detail += "\n" + room.getInstruments().get(i).toString();
-        }
-        Main.getInstance().showPopup(room.getName(), detail);
+        Main.getInstance().showPopup(room.getName(), room.toString());
         System.out.println(Main.getInstance().getRoomTemplete().get(selectedId));
         
     }

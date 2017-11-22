@@ -1,12 +1,9 @@
 package MusicRoom;
 
 import MusicRoom.entity.User;
-import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -14,12 +11,9 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 
 
 
@@ -56,6 +50,7 @@ public class AdminUserController extends AnchorPane implements Initializable {
             Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
         StackPane newtoken = (StackPane)loader.getNamespace().get("userToken");
+        return newtoken;
     }
 
 

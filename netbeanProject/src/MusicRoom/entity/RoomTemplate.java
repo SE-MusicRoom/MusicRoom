@@ -108,10 +108,15 @@ public class RoomTemplate {
     
     @Override
     public String toString() {
-        return "Name:" + this.name +
-               "\n฿" + this.price +
-               "\nInstruments:" + this.instruments.size() /*+
-               "\nTimeTable: " + this.timeTable.toString() */;
+        String detail = 
+               "Name: " + this.name +
+               "\nDetail: " + this.detail +
+               "\n฿/Hr.: " + this.price +
+               "\nInstruments:" + this.instruments.size();
+                for (int i = 0; i < this.instruments.size(); i++) {
+                    detail += "\n" + this.instruments.get(i).toString();
+                }
+        return detail;
     }
     
 }

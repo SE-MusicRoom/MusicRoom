@@ -38,6 +38,12 @@ public class Band {
     public void addMember(User m) {
         members.add(m);
     }
+
+    public String getName() {
+        return name;
+    }
+    
+    
     
     public static Band findBand(String name) {
         Band b = DatabaseManager.getInstance().fetchBand(name);

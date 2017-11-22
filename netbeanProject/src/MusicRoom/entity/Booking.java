@@ -5,8 +5,10 @@
  */
 package MusicRoom.entity;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
+import javafx.scene.text.Text;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -76,13 +78,43 @@ public class Booking {
         return id;
     }
 
-    
+    public String getTimeTableString() {
+        String str = "";
+        int lastDay = -1;
+        int lastHour = -1;
+        //   13/02/60 (13:00 - 16:59)
+        SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yy (HH:mm - ");
+        String toAdd = "";
+        for(int i=0;i<timeTable.size();i++) {
+            int thisHour = timeTable.get(i).get(Calendar.HOUR_OF_DAY);
+            int thisDay = timeTable.get(i).get(Calendar.DATE);
+            if((thisDay!=lastDay && lastDay !=-1) || (thisHour!=lastHour+1 && lastHour !=-1) || i==0 || i==timeTable.size()-1) {
+                if(i!=0 && i!=timeTable.size()-1) { // if not first one
+                    toAdd += lastHour + ":59)";
+                }    
+                else if(i==timeTable.size()-1 && i!=0) 
+                    if(thisHour==lastHour+1 && thisDay==lastDay) { // if the last is continuous
+                        toAdd += thisHour + ":59)";
+                    } else {// if the last is new
+                        toAdd += lastHour + ":59)";
+                        str += toAdd + "\n";
+                        toAdd = format1.format(timeTable.get(i).getTime()) + thisHour + ":59)";
+                    }
+                str += toAdd + "\n";
+                toAdd = format1.format(timeTable.get(i).getTime());
+            }
+            
+            lastDay = thisDay;
+            lastHour = thisHour;
+        }
+        return str;
+    }
     
     @Override
     public String toString() {
         return "\nUser: " + this.user.getUsername() + "\n" +
                this.room.toString() +
-               "\nTimeTable: " + this.timeTable;
+               "\nTime Table("+timeTable.size()+"): \n" + getTimeTableString();
     }
     
     
