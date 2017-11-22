@@ -102,9 +102,9 @@ public class LoginController extends AnchorPane implements Initializable {
     
     
     public void setApp() {
-        TranslateTransition[] tt = new TranslateTransition[13];
+        TranslateTransition[] tt = new TranslateTransition[12];
         
-        tt[0] = new TranslateTransition(Duration.millis(100), rect_1);
+        tt[0] = new TranslateTransition(Duration.millis(200), rect_1);
         tt[0].setFromY( -1000 );
         tt[0].setToY( 0 );
         
@@ -116,45 +116,45 @@ public class LoginController extends AnchorPane implements Initializable {
         tt[2].setFromX( 1000 );
         tt[2].setToX( 0 );
         
-        tt[3] = new TranslateTransition(Duration.millis(100), rect_4);
-        tt[3].setFromY( 1000 );
+//        tt[3] = new TranslateTransition(Duration.millis(100), rect_4);
+//        tt[3].setFromY( 1000 );
+//        tt[3].setToY( 0 );
+        
+        tt[3] = new TranslateTransition(Duration.millis(100), txt_MUSIC);
+        tt[3].setFromY( -1000 );
         tt[3].setToY( 0 );
         
-        tt[4] = new TranslateTransition(Duration.millis(100), txt_MUSIC);
-        tt[4].setFromY( -1000 );
-        tt[4].setToY( 0 );
+        tt[4] = new TranslateTransition(Duration.millis(100), txt_ROOM);
+        tt[4].setFromX( 1000 );
+        tt[4].setToX( 0 );
         
-        tt[5] = new TranslateTransition(Duration.millis(100), txt_ROOM);
-        tt[5].setFromX( 1000 );
+        tt[5] = new TranslateTransition(Duration.millis(100), txt_BEYOURSELF);
+        tt[5].setFromX( -1000 );
         tt[5].setToX( 0 );
         
-        tt[6] = new TranslateTransition(Duration.millis(50), txt_BEYOURSELF);
+        tt[6] = new TranslateTransition(Duration.millis(50), userId);
         tt[6].setFromX( -1000 );
         tt[6].setToX( 0 );
         
-        tt[7] = new TranslateTransition(Duration.millis(50), userId);
-        tt[7].setFromX( -1000 );
+        tt[7] = new TranslateTransition(Duration.millis(50), password);
+        tt[7].setFromX( 1000 );
         tt[7].setToX( 0 );
         
-        tt[8] = new TranslateTransition(Duration.millis(50), password);
-        tt[8].setFromX( 1000 );
+        tt[8] = new TranslateTransition(Duration.millis(50), txt_USERNAME);
+        tt[8].setFromX( -1000 );
         tt[8].setToX( 0 );
         
-        tt[9] = new TranslateTransition(Duration.millis(50), txt_USERNAME);
+        tt[9] = new TranslateTransition(Duration.millis(50), txt_PASSWORD);
         tt[9].setFromX( -1000 );
         tt[9].setToX( 0 );
         
-        tt[10] = new TranslateTransition(Duration.millis(50), txt_PASSWORD);
-        tt[10].setFromX( -1000 );
+        tt[10] = new TranslateTransition(Duration.millis(100), btn_login);
+        tt[10].setFromX( 1000 );
         tt[10].setToX( 0 );
         
-        tt[11] = new TranslateTransition(Duration.millis(100), btn_login);
+        tt[11] = new TranslateTransition(Duration.millis(100), btn_reg);
         tt[11].setFromX( 1000 );
         tt[11].setToX( 0 );
-        
-        tt[12] = new TranslateTransition(Duration.millis(100), btn_reg);
-        tt[12].setFromX( 1000 );
-        tt[12].setToX( 0 );
         
         SequentialTransition sequentialTransition = new SequentialTransition();
         for (int i = 0; i < tt.length; i++) {
