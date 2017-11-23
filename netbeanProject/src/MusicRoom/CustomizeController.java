@@ -22,6 +22,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -30,6 +31,11 @@ import javafx.scene.text.Text;
  */
 public class CustomizeController extends AnchorPane implements Initializable {
 
+    @FXML
+    private ImageView emojiToken;
+    @FXML
+    private GridPane emojiGrid;
+    
     @FXML
     private Text listToken_price;
 
@@ -113,12 +119,24 @@ public class CustomizeController extends AnchorPane implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         addedScroll.getChildren().clear();
         listScroll.getChildren().clear();
+        emojiGrid.getChildren().clear();
         setTotal(0);
         
     }
 
     public VBox getAddedScroll() {
         return addedScroll;
+    }
+    
+    public void setEmojiGrid(ImageView img) {
+        emojiGrid.add(img,emojiGrid.getChildren().size()%emojiGrid.getColumnConstraints().size(),emojiGrid.getChildren().size()/emojiGrid.getRowConstraints().size());
+    }
+    public void removeEmojiGrid(int id) {
+        GridPane.clearConstraints(emojiGrid);
+        emojiGrid.getChildren().remove(id);
+        for (int i = id; i < emojiGrid.getChildren().size(); i++) {
+            GridPane.setConstraints(emojiGrid.getChildren().get(i), i%emojiGrid.getColumnConstraints().size(), i/emojiGrid.getRowConstraints().size());
+        }
     }
 
     public void setTotal(float total) {
@@ -167,6 +185,9 @@ public class CustomizeController extends AnchorPane implements Initializable {
         AnchorPane newToken = copyAddedToken(selectedInstrument);
         newToken.setId(String.valueOf(parent.getAddedScroll().getChildren().size()));
         parent.getAddedScroll().getChildren().add(newToken);
+        
+        ImageView newEmoji = copyEmojiToken(selectedInstrument);
+        parent.setEmojiGrid(newEmoji);
 
         // Total
         parent.setTotal(parent.calculateTotal());
@@ -185,6 +206,9 @@ public class CustomizeController extends AnchorPane implements Initializable {
             parent.getAddedScroll().getChildren().get(i).setId(String.valueOf(i));
                 
         }
+        
+        parent.removeEmojiGrid(selectedId);
+
         
         // Total
         parent.setTotal(parent.calculateTotal());
@@ -265,6 +289,23 @@ public class CustomizeController extends AnchorPane implements Initializable {
         return newToken;
     }
     
+    private ImageView copyEmojiToken(Instrument selectedInstrument) {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("customize.fxml"));
+        try {
+            loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ImageView newToken = (ImageView)loader.getNamespace().get("emojiToken");
+        
+        // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
+        CustomizeController cus = (CustomizeController)loader.getController();
+        cus.setApp(this.parent);
+        cus.setEmojiToken(selectedInstrument.getImg());
+        
+        return newToken;
+    }
+    
     protected void setListToken(String name,String path,String price,Image img) {
         listToken_name.setText(name);
         listToken_path.setText(path);
@@ -272,11 +313,17 @@ public class CustomizeController extends AnchorPane implements Initializable {
         if(img == null)
             return;
         listToken_pic.setImage(img);
+        listToken_pic.setPreserveRatio(false);
         
     }
     
     protected void setAddedToken(String name,String price) {
         addedToken_name.setText(name);
         addedToken_price.setText(price+"฿/hr");
+    }
+    
+    protected void setEmojiToken(Image img) {
+        emojiToken.setImage(img);
+        emojiToken.setPreserveRatio(false);
     }
 }
