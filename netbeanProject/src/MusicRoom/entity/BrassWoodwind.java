@@ -29,6 +29,10 @@ public class BrassWoodwind extends Instrument{
         return type;
     }
     
+    @Override
+    public String getClassPath() {
+        return type+"/"+subtype;
+    }
 }
 
 

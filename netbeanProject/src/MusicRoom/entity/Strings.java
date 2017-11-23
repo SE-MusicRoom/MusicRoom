@@ -27,6 +27,10 @@ public class Strings extends Instrument{
         return number_of_strings;
     }
     
+    @Override
+    public String getClassPath() {
+        return type;
+    }
 }
 
 

@@ -26,6 +26,11 @@ public class Voice extends Instrument{
         return frequencyResponse;
     }
     
+    @Override
+    public String getClassPath() {
+        return "MicroPhone";
+    }
+    
 }
 
 
