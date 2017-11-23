@@ -1,6 +1,7 @@
 package MusicRoom;
 
 import MusicRoom.entity.User;
+import javafx.event.ActionEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -23,7 +24,7 @@ public class AdminUserController extends AnchorPane implements Initializable {
     private VBox userScroll;
 
 
-    private AdminMenuController adminmenu;
+    private AdminMenuController mainmenu;
     private AdminUserController parent;
 
     @Override
@@ -31,8 +32,8 @@ public class AdminUserController extends AnchorPane implements Initializable {
 
     }
 
-    public void setApp(AdminMenuController adminmenu){
-        this.adminmenu = adminmenu;
+    public void setApp(AdminMenuController mainmenu){
+        this.mainmenu = mainmenu;
         userScroll.getChildren().clear();
 
         List<User> users = Main.getInstance().getUsers();
@@ -51,6 +52,12 @@ public class AdminUserController extends AnchorPane implements Initializable {
         }
         StackPane newtoken = (StackPane)loader.getNamespace().get("userToken");
         return newtoken;
+    }
+
+
+
+    public void onClickBack(ActionEvent event) {
+        mainmenu.hideIncludePane();
     }
 
 

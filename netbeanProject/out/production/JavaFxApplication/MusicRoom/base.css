@@ -1,0 +1,59 @@
+.background {
+    -fx-background-image: url("img/background.jpg");
+    -fx-background-size: cover;
+}
+
+/* For Calendar Only */
+.date-cell.warning { 
+    /* Add 'warning' when nears full  */
+    -fx-background-color: rgb(255,255,0);
+    -fx-text-fill: rgb(0,0,0);
+}
+
+.date-cell.danger { 
+    /* Add 'full' when full  */
+    -fx-background-color: rgb(255,0,0);
+    -fx-text-fill: rgb(255,255,255);
+}
+
+.date-cell.selected { 
+    /* Add 'warning' when nears full  */
+    -fx-background-color: rgb(0,255,0);
+    -fx-text-fill: rgb(0,0,0);
+}
+
+.button.available { 
+    /* Add 'avalible' in button in time select if it avaliable  */
+    -fx-background-color: rgb(255,255,255);
+    -fx-text-fill: rgb(0,0,0);
+}
+
+.button.full { 
+    /* Add 'full' in button in time select if it full */
+    -fx-background-color: rgb(255,0,0);
+    -fx-text-fill: rgb(255,255,255);
+}
+
+.button.selected { 
+    /* Add 'avalible' in button in time select if it avaliable  */
+    -fx-background-color: rgb(0,255,0);
+    -fx-text-fill: rgb(0,0,0);
+}
+
+.button:hover {
+    -fx-background-color: rgba(255, 134, 100, 1);
+    -fx-text-fill: rgba(255 ,255 ,255 , 1);
+}
+
+.button:pressed {
+    -fx-background-color: rgba(128, 128, 128, 1);
+    -fx-text-fill: rgba(0 ,0 ,0 , 1);
+}
+
+.check-box.box {
+    -fx-background-color: #fff0e6;
+}
+
+.emptyRoom{
+    -fx-background-image: url("img/emptyRoom.jpg");
+}

@@ -193,14 +193,14 @@ public class Main extends Application {
     public void updateInstrumentDB() {
         this.instruments =  DatabaseManager.getInstance().fetchAllInstrument();
         if(this.instruments == null) {
-            showErrorPopup("Connection Error", "Bookings fetching error :(\nClick confirm to try again","REFETCH_INSTRUMENT");
+            showErrorPopup("Connection Error", "Instruments fetching error :(\nClick confirm to try again","REFETCH_INSTRUMENT");
         }
         System.out.println("Fetch Main Instrument:" + instruments.size());
     }
     public void updateRoomTemplateDB() {
         this.roomTemplete =  DatabaseManager.getInstance().fetchAllRoomTemplate();
         if(this.roomTemplete == null) {
-            showErrorPopup("Connection Error", "Bookings fetching error :(\nClick confirm to try again","REFETCH_ROOMTEMPLATE");
+            showErrorPopup("Connection Error", "Room Templates fetching error :(\nClick confirm to try again","REFETCH_ROOMTEMPLATE");
         }
         System.out.println("Fetch Main Template:" + roomTemplete.size());
     }
