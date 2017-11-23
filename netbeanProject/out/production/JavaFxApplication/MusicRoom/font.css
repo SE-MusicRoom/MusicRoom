@@ -1,0 +1,24 @@
+@font-face {
+    font-family: Cloud;
+    src: url('Cloud-Bold.otf');
+}
+
+.root{
+    -fx-font-family: 'Cloud';
+}
+
+.vbox {
+    -fx-font-family: 'Cloud';
+}
+
+.hbox {
+    -fx-font-family: 'Cloud';
+}
+
+.pane {
+    -fx-font-family: 'Cloud';
+}
+
+.button {
+    -fx-font-family: 'Cloud';
+}

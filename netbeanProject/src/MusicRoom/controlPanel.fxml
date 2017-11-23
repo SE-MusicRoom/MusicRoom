@@ -32,6 +32,14 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -44,7 +52,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminMenuController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminMenuController">
   <children>
       <ImageView fitHeight="700.0" fitWidth="1024.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -132,7 +140,7 @@
             </Button>
          </children>
       </VBox>
-      <AnchorPane fx:id="includePane" layoutX="320.0" layoutY="121.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="661.0" />
+      <AnchorPane fx:id="includePane" layoutX="250.0" layoutY="123.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.0" prefWidth="768.0" />
   </children>
    <stylesheets>
       <URL value="@font.css" />
