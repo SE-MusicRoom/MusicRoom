@@ -153,9 +153,9 @@ public class DatabaseManager {
         list.add(new Strings("AcousticGuitar","6","Guild","M-240E",15750,"MusicRoom/img/Instruments/Strings/Guitar/AcousticGuitar/aguitar3.png"));
         
         //ElectricGuitar
-        list.add(new Strings("ElectricBass","6","Fender","Standard Stratocaster RW FR",26100,"MusicRoom/img/Instruments/Strings/Guitar/ElecticGuitar/eguitar1.png"));
-        list.add(new Strings("ElectricBass","6","Squier","Classic Vibe Tele 50 S",155000,"MusicRoom/img/Instruments/Strings/Guitar/ElecticGuitar/eguitar2.png"));
-        list.add(new Strings("ElectricBass","6","Gibson","Les Paul Custom Alphine White",153000,"MusicRoom/img/Instruments/Strings/Guitar/ElecticGuitar/eguitar3.png"));
+        list.add(new Strings("ElectricBass","6","Fender","Standard Stratocaster RW FR",26100,"MusicRoom/img/Instruments/Strings/Guitar/ElectricGuitar/eguitar1.png"));
+        list.add(new Strings("ElectricBass","6","Squier","Classic Vibe Tele 50 S",155000,"MusicRoom/img/Instruments/Strings/Guitar/ElectricGuitar/eguitar2.png"));
+        list.add(new Strings("ElectricBass","6","Gibson","Les Paul Custom Alphine White",153000,"MusicRoom/img/Instruments/Strings/Guitar/ElectricGuitar/eguitar3.png"));
         
         // Violin
         list.add(new Strings("Violin","4","Andrea Schudtz","2800",50000,"MusicRoom/img/Instruments/Strings/Violin/violin1.png"));

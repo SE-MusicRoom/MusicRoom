@@ -301,7 +301,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
         CustomizeController cus = (CustomizeController)loader.getController();
         cus.setApp(this.parent);
-        cus.setEmojiToken(selectedInstrument.getImg());
+        cus.setEmojiToken(selectedInstrument.getIcon());
         
         return newToken;
     }
