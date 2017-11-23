@@ -265,7 +265,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         cus.setListToken(instrument.getName()+" "+instrument.getModel(),
                         instrument.getClassPath(),
                         Float.toString(instrument.getRentPrice()),
-                        instrument.getImg());
+                        instrument.getIcon());
         
         
         return newToken;

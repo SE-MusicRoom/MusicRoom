@@ -28,7 +28,7 @@ public class Voice extends Instrument{
     
     @Override
     public String getClassPath() {
-        return "MicroPhone";
+        return "Microphone";
     }
     
 }
