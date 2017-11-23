@@ -206,7 +206,7 @@ public class DatabaseManager {
         reggae.addInstrument(Main.getInstance().getInstrument("Zildjian", "13″ K Custom Dark"));
         reggae.addInstrument(Main.getInstance().getInstrument("Ludwig", "Acent CS"));
         reggae.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ K Custom Hybrid Ride"));
-        //reggae.addInstrument(Main.getInstance().getInstrument("Ludwig", "Centennial Lacquer Finish"));
+        reggae.addInstrument(Main.getInstance().getInstrument("Ludwig", "Centennial Lacquer Finish"));
         reggae.addInstrument(Main.getInstance().getInstrument("Zildjian ", "12″ Z3 Splash"));
 
         //Guitar
@@ -243,7 +243,7 @@ public class DatabaseManager {
         //Voice
         rock.addInstrument(Main.getInstance().getInstrument("EV", "7000"));
         
-        /*RoomTemplate stage = new RoomTemplate("Stage", "Stage", 4000);
+        RoomTemplate stage = new RoomTemplate("Stage", "Stage", 4000);
 
         //Drums
         stage.addInstrument(Main.getInstance().getInstrument("Pearl", "Pearl Roadshow"));
@@ -265,6 +265,7 @@ public class DatabaseManager {
 
         //Voice
         stage.addInstrument(Main.getInstance().getInstrument("EV", "7000"));
+        
         
         RoomTemplate acoustic = new RoomTemplate("Acoustic", "Acoustic", 3500);
 
@@ -362,7 +363,7 @@ public class DatabaseManager {
         pop.addInstrument(Main.getInstance().getInstrument("Fender", "American Elite Jazz Bass"));
         
         //Piano
-        jazz.addInstrument(Main.getInstance().getInstrument("Roland", "V-Piano"));
+        pop.addInstrument(Main.getInstance().getInstrument("Roland", "V-Piano"));
         
         //Voice
         pop.addInstrument(Main.getInstance().getInstrument("EV", "7000"));
@@ -388,10 +389,10 @@ public class DatabaseManager {
         rnb.addInstrument(Main.getInstance().getInstrument("Fender", "American Elite Jazz Bass"));
         
         //AltoSaxophone
-        jazz.addInstrument(Main.getInstance().getInstrument("Selmer", "80 Series II B-flat"));
+        rnb.addInstrument(Main.getInstance().getInstrument("Selmer", "80 Series II B-flat"));
         
         //Voice
-        rnb.addInstrument(Main.getInstance().getInstrument("EV", "7000"));*/
+        rnb.addInstrument(Main.getInstance().getInstrument("EV", "7000"));
         
         
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
@@ -401,12 +402,12 @@ public class DatabaseManager {
         em.getTransaction().begin();
         em.persist(reggae);
         em.persist(rock);
-        /*em.persist(stage);
+        em.persist(stage);
         em.persist(acoustic);
         em.persist(indie);
         em.persist(jazz);
         em.persist(pop);
-        em.persist(rnb);*/
+        em.persist(rnb);
         em.getTransaction().commit();
 
         closeEMF();
