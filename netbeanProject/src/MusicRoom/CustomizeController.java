@@ -134,7 +134,8 @@ public class CustomizeController extends AnchorPane implements Initializable {
     }
 
     public void setEmojiGrid(ImageView img) {
-        emojiGrid.add(img, emojiGrid.getChildren().size() % emojiGrid.getColumnConstraints().size(), emojiGrid.getChildren().size() / emojiGrid.getRowConstraints().size());
+        emojiGrid.add(img, emojiGrid.getChildren().size() % emojiGrid.getColumnConstraints().size(), emojiGrid.getChildren().size() / (emojiGrid.getRowConstraints().size()+1));
+        
     }
 
     public void removeEmojiGrid(int id) {
