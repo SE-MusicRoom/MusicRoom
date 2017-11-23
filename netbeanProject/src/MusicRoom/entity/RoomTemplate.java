@@ -9,17 +9,12 @@ import MusicRoom.DatabaseManager;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.image.Image;
-import javax.persistence.CascadeType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -102,7 +97,13 @@ public class RoomTemplate {
     
     public Image getImg() {
         if(img==null)
-            img = new Image("MusicRoom/img/RoomTemplate/"+name+".jpg");
+            try {
+                img = new Image("MusicRoom/img/RoomTemplate/"+name+".jpg");
+                //System.out.println(name+"::"+imgLoaded.isError()+"::"+img);
+            } catch (Exception e) {
+                System.out.println("Image not found: "+e.toString());
+            }
+            
         return img;
     }
     
@@ -114,7 +115,8 @@ public class RoomTemplate {
                "\n฿/Hr.: " + this.price +
                "\nInstruments:" + this.instruments.size();
                 for (int i = 0; i < this.instruments.size(); i++) {
-                    detail += "\n" + this.instruments.get(i).toString();
+                    if(this.instruments.get(i) != null)
+                        detail += "\n" + this.instruments.get(i).toString();
                 }
         return detail;
     }
