@@ -193,47 +193,67 @@ public class DatabaseManager {
     }
 
     public boolean createDummyRoomTemplate() {
-        /*
-        if(!createEMF(ip+"/MusicRoom.odb;user=admin;password=admin"))
+
+        if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return false;
+        }
         em.getTransaction().begin();
-        
-        
-        RoomTemplate l = new RoomTemplate("Violin Madness","Full of Violin",6000);
-        
-        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
-        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
-        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
-        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
-        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
-        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
-        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
-        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
-        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
-        l.addInstrument(Main.getInstance().getInstrument("Dario II Vettori","2006"));
-        em.persist(l);
-       
-        
-        RoomTemplate m = new RoomTemplate("Guitar Madness","Full of Guitar",5000);
-        
-        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        m.addInstrument(Main.getInstance().getInstrument("Takamine","CP3DC"));
-        
-        
-        
-        em.persist(m);
+
+        RoomTemplate reggae = new RoomTemplate("Reggae", "For the love of Bob", 6000);
+
+        //Drums
+        reggae.addInstrument(Main.getInstance().getInstrument("Korg", "SP-250"));
+        reggae.addInstrument(Main.getInstance().getInstrument("Ludwig", "Classic Maple"));
+        reggae.addInstrument(Main.getInstance().getInstrument("Zildjian", "18″ Z3 "));
+        reggae.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ Z3 Medium Crash"));
+        reggae.addInstrument(Main.getInstance().getInstrument("Rock Cowbell", "CB-L"));
+        reggae.addInstrument(Main.getInstance().getInstrument("Ludwig", "DW"));
+        reggae.addInstrument(Main.getInstance().getInstrument("Zildjian", "13″ K Custom Dark"));
+        reggae.addInstrument(Main.getInstance().getInstrument("Ludwig", "Acent CS"));
+        reggae.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ K Custom Hybrid Ride"));
+        reggae.addInstrument(Main.getInstance().getInstrument("Ludwig", "Centennial Lacquer Finish"));
+        reggae.addInstrument(Main.getInstance().getInstrument("Zildjian ", "AAX 8 Splash"));
+
+        //Guitar
+        reggae.addInstrument(Main.getInstance().getInstrument("Fender", "Standard Stratocaster RW FR"));
+        reggae.addInstrument(Main.getInstance().getInstrument("Gibson", "Les Paul Custom Alphine White"));
+
+        //BassGuitar
+        reggae.addInstrument(Main.getInstance().getInstrument("Fender", "American Elite Jazz Bass"));
+
+        //Voice
+        reggae.addInstrument(Main.getInstance().getInstrument("EV", "7000"));
+
+        em.persist(reggae);
+
+        RoomTemplate rock = new RoomTemplate("Rock", "For Rock band and General", 5000);
+
+        //Drums
+        rock.addInstrument(Main.getInstance().getInstrument("Pearl", "Pearl Roadshow"));
+        rock.addInstrument(Main.getInstance().getInstrument("Zildjian", "18″ Z3 "));
+        rock.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ Z3 Medium Crash"));
+        rock.addInstrument(Main.getInstance().getInstrument("Pearl", "Vision"));
+        rock.addInstrument(Main.getInstance().getInstrument("Zildjian", "13″ K Custom Dark"));
+        rock.addInstrument(Main.getInstance().getInstrument("Pearl", "EXL"));
+        rock.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ K Custom Hybrid Ride"));
+        rock.addInstrument(Main.getInstance().getInstrument("Pearl", "J-1355 Joey Jordison"));
+        rock.addInstrument(Main.getInstance().getInstrument("Zildjian ", "AAX 8 Splash"));
+
+        //Guitar
+        rock.addInstrument(Main.getInstance().getInstrument("Fender", "Standard Stratocaster RW FR"));
+        rock.addInstrument(Main.getInstance().getInstrument("Gibson", "Les Paul Custom Alphine White"));
+
+        //BassGuitar
+        rock.addInstrument(Main.getInstance().getInstrument("Fender", "American Elite Jazz Bass"));
+
+        //Voice
+        rock.addInstrument(Main.getInstance().getInstrument("EV", "7000"));
+
+        em.persist(rock);
 
         em.getTransaction().commit();
-       
-        closeEMF();*/
+
+        closeEMF();
         return true;
     }
 
@@ -445,20 +465,20 @@ public class DatabaseManager {
             ((Strings) result).setType(((Strings) instrument).getType());
             ((Strings) result).setNumber_of_strings(((Strings) instrument).getNumber_of_strings());
         }
-        
+
         if (instrument instanceof BrassWoodwind) {
-        ((BrassWoodwind) result).setType(((BrassWoodwind) instrument).getType());
-        ((BrassWoodwind) result).setSubtype(((BrassWoodwind) instrument).getSubtype());
+            ((BrassWoodwind) result).setType(((BrassWoodwind) instrument).getType());
+            ((BrassWoodwind) result).setSubtype(((BrassWoodwind) instrument).getSubtype());
         }
-        
+
         if (instrument instanceof Percussion) {
-        ((Percussion) result).setPartName(((Percussion) instrument).getPartName());
+            ((Percussion) result).setPartName(((Percussion) instrument).getPartName());
         }
-        
+
         if (instrument instanceof Voice) {
-        ((Voice) result).setFrequencyResponse(((Voice) instrument).getFrequencyResponse());
+            ((Voice) result).setFrequencyResponse(((Voice) instrument).getFrequencyResponse());
         }
-        
+
         em.getTransaction().commit();
         closeEMF();
     }
