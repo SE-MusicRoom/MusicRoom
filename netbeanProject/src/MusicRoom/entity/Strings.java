@@ -30,6 +30,14 @@ public class Strings extends Instrument{
     public String getType() {
         return type;
     }
+
+    public void setNumber_of_strings(String number_of_strings) {
+        this.number_of_strings = number_of_strings;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
     
     @Override
     public String getClassPath() {

@@ -25,6 +25,10 @@ public class Voice extends Instrument{
     public String getFrequencyResponse() {
         return frequencyResponse;
     }
+
+    public void setFrequencyResponse(String frequencyResponse) {
+        this.frequencyResponse = frequencyResponse;
+    }
     
     @Override
     public String getClassPath() {
