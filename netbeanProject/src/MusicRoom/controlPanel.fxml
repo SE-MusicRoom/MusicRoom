@@ -32,6 +32,13 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -41,16 +48,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminMenuController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminMenuController">
   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="700.0" stroke="TRANSPARENT" strokeType="INSIDE" width="50.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="698.0" stroke="BLACK" strokeType="INSIDE" />
       <StackPane layoutX="90.0" layoutY="41.0" AnchorPane.leftAnchor="39.0" AnchorPane.topAnchor="41.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8200" height="59.0" stroke="TRANSPARENT" strokeType="INSIDE" width="274.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="59.0" stroke="TRANSPARENT" strokeType="INSIDE" width="274.0">
                <StackPane.margin>
                   <Insets />
                </StackPane.margin></Rectangle>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" styleClass="root" text="Control Panel" wrappingWidth="258.8040008544922">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" text="Control Panel" wrappingWidth="258.8040008544922">
                <font>
                   <Font name="Cloud-Bold" size="64.0" />
                </font>
@@ -62,55 +70,79 @@
       </StackPane>
       <VBox layoutX="60.0" layoutY="158.0" prefHeight="334.0" prefWidth="180.0" AnchorPane.leftAnchor="39.0" AnchorPane.topAnchor="158.0">
          <children>
-        <Button fx:id="userBtn" alignment="BASELINE_LEFT" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickUsers" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 20;" styleClass="root" stylesheets="@font.css" text="Users" textFill="WHITE">
+        <Button fx:id="userBtn" alignment="BASELINE_LEFT" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickUsers" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20;" styleClass="root" text="Users" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x5" />
                </font>
                <padding>
                   <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                </padding>
+               <stylesheets>
+                  <URL value="@font.css" />
+                  <URL value="@button.css" />
+               </stylesheets>
             </Button>
-            <Button fx:id="bandBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="60.0" maxHeight="2.147483647E9" onAction="#onClickBands" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@font.css" text="Bands" textFill="WHITE">
+            <Button fx:id="bandBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="60.0" maxHeight="2.147483647E9" onAction="#onClickBands" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20;" text="Bands" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x51" />
                </font>
                <padding>
                   <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                </padding>
+               <stylesheets>
+                  <URL value="@font.css" />
+                  <URL value="@button.css" />
+               </stylesheets>
             </Button>
-            <Button fx:id="newsBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="101.0" maxHeight="2.147483647E9" onAction="#onClickNews" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@font.css" text="News" textFill="WHITE">
+            <Button fx:id="newsBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="101.0" maxHeight="2.147483647E9" onAction="#onClickNews" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" text="News" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x511" />
                </font>
                <padding>
                   <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                </padding>
+               <stylesheets>
+                  <URL value="@font.css" />
+                  <URL value="@button.css" />
+               </stylesheets>
             </Button>
-            <Button fx:id="templateBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="142.0" maxHeight="2.147483647E9" onAction="#onClickTemplates" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@font.css" text="Templates" textFill="WHITE">
+            <Button fx:id="templateBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="142.0" maxHeight="2.147483647E9" onAction="#onClickTemplates" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20;" text="Templates" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x5111" />
                </font>
                <padding>
                   <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                </padding>
+               <stylesheets>
+                  <URL value="@font.css" />
+                  <URL value="@button.css" />
+               </stylesheets>
             </Button>
-            <Button fx:id="instrumentBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="183.0" maxHeight="2.147483647E9" onAction="#onClickInstruments" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 20;" styleClass="root" stylesheets="@font.css" text="Instruments" textFill="WHITE">
+            <Button fx:id="instrumentBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="183.0" maxHeight="2.147483647E9" onAction="#onClickInstruments" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 20;" styleClass="root" text="Instruments" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x51111" />
                </font>
                <padding>
                   <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                </padding>
+               <stylesheets>
+                  <URL value="@font.css" />
+                  <URL value="@button.css" />
+               </stylesheets>
             </Button>
-            <Button fx:id="promotionCodeBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="224.0" maxHeight="2.147483647E9" onAction="#onClickPromotions" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@font.css" text="Promotion Code" textFill="WHITE">
+            <Button fx:id="promotionCodeBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="224.0" maxHeight="2.147483647E9" onAction="#onClickPromotions" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20;" styleClass="root" text="Promotion Code" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x511111" />
                </font>
                <padding>
                   <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                </padding>
+               <stylesheets>
+                  <URL value="@font.css" />
+                  <URL value="@button.css" />
+               </stylesheets>
             </Button>
-            <Button fx:id="logoutBtn" alignment="BASELINE_LEFT" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickLogOut" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: black;" styleClass="root" stylesheets="@font.css" text="Logout" textFill="WHITE">
+            <Button fx:id="logoutBtn" alignment="BASELINE_LEFT" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickLogOut" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20;" text="Logout" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x52" />
                </font>
@@ -120,6 +152,14 @@
                <VBox.margin>
                   <Insets top="1.0" />
                </VBox.margin>
+               <styleClass>
+                  <String fx:value="root" />
+                  <String fx:value="lightbutton" />
+               </styleClass>
+               <stylesheets>
+                  <URL value="@font.css" />
+                  <URL value="@button.css" />
+               </stylesheets>
             </Button>
          </children>
       </VBox>

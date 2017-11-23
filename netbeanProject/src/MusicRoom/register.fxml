@@ -85,11 +85,6 @@
             </Button>
          </children>
       </HBox>
-      <Text fx:id="message" fill="WHITE" layoutX="65.0" layoutY="664.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Hello" wrappingWidth="622.0">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Text>
       <Group layoutX="74.0" layoutY="35.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="77.0" layoutX="-14.0" stroke="TRANSPARENT" strokeType="INSIDE" width="316.0" />
@@ -195,6 +190,11 @@
                   </HBox>
                </children>
             </GridPane>
+            <Text fx:id="message" fill="#8d0000" layoutX="17.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18; -fx-font-family: cloud;" text="Hello" wrappingWidth="622.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
          </children>
       </Group>
   </children>

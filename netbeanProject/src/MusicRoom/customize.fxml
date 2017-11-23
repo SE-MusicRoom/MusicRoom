@@ -56,7 +56,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Button fx:id="GoBtn" layoutX="1200.0" layoutY="93.0" mnemonicParsing="false" onAction="#onClickGo" prefHeight="86.0" prefWidth="114.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 39;" text="Go!" textFill="WHITE">
+            <Button fx:id="GoBtn" layoutX="1200.0" layoutY="93.0" mnemonicParsing="false" onAction="#onClickGo" prefHeight="86.0" prefWidth="114.0" style="-fx-font-size: 39;" stylesheets="@button.css" text="Go!" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -169,7 +169,7 @@
                   </VBox>
                </content>
             </ScrollPane>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#70d318" height="101.0" layoutX="10.0" layoutY="882.0" stroke="TRANSPARENT" strokeType="INSIDE" width="717.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804a00" height="101.0" layoutX="10.0" layoutY="882.0" stroke="TRANSPARENT" strokeType="INSIDE" width="717.0" />
             <Text fill="WHITE" layoutX="21.0" layoutY="959.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL">
                <font>
                   <Font name="Cloud-Bold" size="34.0" />
@@ -210,7 +210,7 @@
       </AnchorPane>
       <HBox layoutX="142.0" layoutY="1090.0" prefHeight="66.0" prefWidth="614.0">
          <children>
-            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="63.0" prefWidth="158.0" style="-fx-background-color: rgba(255,30,0,1); -fx-font-size: 40; -fx-font-family: Cloud;" text="Back" textFill="WHITE">
+            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="63.0" prefWidth="158.0" style="-fx-font-size: 40; -fx-font-family: Cloud;" stylesheets="@button.css" text="Back" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -221,7 +221,7 @@
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </padding>
             </Button>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="93.0" prefWidth="402.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 50px; -fx-font-family: cloud;" text="CONFIRM!" textFill="WHITE">
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="93.0" prefWidth="402.0" style="-fx-font-size: 50px; -fx-font-family: cloud;" stylesheets="@button.css" text="CONFIRM!" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -233,7 +233,7 @@
       </HBox>
       <AnchorPane layoutX="145.0" prefHeight="98.0" prefWidth="461.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8200" height="98.0" stroke="TRANSPARENT" strokeType="INSIDE" width="608.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="98.0" stroke="TRANSPARENT" strokeType="INSIDE" width="608.0" />
             <Text fill="WHITE" layoutX="17.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Custom your room.">
                <font>
                   <Font name="Cloud-Bold" size="60.0" />
@@ -273,7 +273,7 @@
       </AnchorPane>
       <AnchorPane layoutX="7.0" layoutY="11.0" prefHeight="133.0" prefWidth="126.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8200" height="132.0" layoutX="2.0" layoutY="2.0" stroke="#ff800000" strokeType="INSIDE" width="124.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#801100" height="132.0" layoutX="2.0" layoutY="2.0" stroke="#ff800000" strokeType="INSIDE" width="124.0" />
             <Text fill="WHITE" layoutX="41.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
                <font>
                   <Font name="Cloud-Bold" size="78.0" />

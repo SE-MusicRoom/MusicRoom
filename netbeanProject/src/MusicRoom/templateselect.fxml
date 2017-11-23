@@ -54,7 +54,7 @@
                                     <Font size="13.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="detailBtn" layoutX="344.0" layoutY="324.0" mnemonicParsing="false" onAction="#onSelectDetail" prefHeight="60.0" prefWidth="112.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 26;" text="INFO" textFill="WHITE">
+                              <Button fx:id="detailBtn" layoutX="344.0" layoutY="324.0" mnemonicParsing="false" onAction="#onSelectDetail" prefHeight="60.0" prefWidth="112.0" style="-fx-font-size: 26;" stylesheets="@button.css" text="INFO" textFill="WHITE">
                                  <font>
                                     <Font name="Cloud-Bold" size="27.0" />
                                  </font>
@@ -69,7 +69,7 @@
       </AnchorPane>
       <HBox layoutX="147.0" layoutY="1085.0" prefHeight="123.0" prefWidth="861.0">
          <children>
-            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="75.0" prefWidth="177.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 40;" text="Close" textFill="WHITE">
+            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="75.0" prefWidth="177.0" style="-fx-font-size: 40;" stylesheets="@button.css" text="Close" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -77,7 +77,7 @@
                   <Font name="Cloud-Bold" size="35.0" />
                </font>
             </Button>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickCustomize" prefHeight="101.0" prefWidth="680.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 50;" text="or CUSTOMIZE IT!!" textFill="WHITE">
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickCustomize" prefHeight="101.0" prefWidth="680.0" style="-fx-font-size: 50;" stylesheets="@button.css" text="or CUSTOMIZE IT!!" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -99,7 +99,7 @@
       </AnchorPane>
       <AnchorPane layoutX="11.0" layoutY="12.0" prefHeight="133.0" prefWidth="126.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8200" height="132.0" layoutX="2.0" layoutY="2.0" stroke="#ff800000" strokeType="INSIDE" width="124.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804100" height="132.0" layoutX="2.0" layoutY="2.0" stroke="#ff800000" strokeType="INSIDE" width="124.0" />
             <Text fill="WHITE" layoutX="41.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
                <font>
                   <Font name="Cloud-Bold" size="78.0" />
