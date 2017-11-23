@@ -194,25 +194,20 @@ public class DatabaseManager {
 
     public boolean createDummyRoomTemplate() {
 
-        if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
-            return false;
-        }
-        em.getTransaction().begin();
-
         RoomTemplate reggae = new RoomTemplate("Reggae", "For the love of Bob", 6000);
 
         //Drums
         reggae.addInstrument(Main.getInstance().getInstrument("Korg", "SP-250"));
         reggae.addInstrument(Main.getInstance().getInstrument("Ludwig", "Classic Maple"));
-        reggae.addInstrument(Main.getInstance().getInstrument("Zildjian", "18″ Z3 "));
+        //reggae.addInstrument(Main.getInstance().getInstrument("Zildjian", "18″ Z3 China"));
         reggae.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ Z3 Medium Crash"));
         reggae.addInstrument(Main.getInstance().getInstrument("Rock Cowbell", "CB-L"));
         reggae.addInstrument(Main.getInstance().getInstrument("Ludwig", "DW"));
         reggae.addInstrument(Main.getInstance().getInstrument("Zildjian", "13″ K Custom Dark"));
         reggae.addInstrument(Main.getInstance().getInstrument("Ludwig", "Acent CS"));
         reggae.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ K Custom Hybrid Ride"));
-        reggae.addInstrument(Main.getInstance().getInstrument("Ludwig", "Centennial Lacquer Finish"));
-        reggae.addInstrument(Main.getInstance().getInstrument("Zildjian ", "AAX 8 Splash"));
+        //reggae.addInstrument(Main.getInstance().getInstrument("Ludwig", "Centennial Lacquer Finish"));
+        reggae.addInstrument(Main.getInstance().getInstrument("Zildjian ", "12″ Z3 Splash"));
 
         //Guitar
         reggae.addInstrument(Main.getInstance().getInstrument("Fender", "Standard Stratocaster RW FR"));
@@ -224,20 +219,19 @@ public class DatabaseManager {
         //Voice
         reggae.addInstrument(Main.getInstance().getInstrument("EV", "7000"));
 
-        em.persist(reggae);
-
+        
         RoomTemplate rock = new RoomTemplate("Rock", "For Rock band and General", 5000);
 
         //Drums
         rock.addInstrument(Main.getInstance().getInstrument("Pearl", "Pearl Roadshow"));
-        rock.addInstrument(Main.getInstance().getInstrument("Zildjian", "18″ Z3 "));
+        rock.addInstrument(Main.getInstance().getInstrument("Zildjian", "18″ Z3 China"));
         rock.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ Z3 Medium Crash"));
         rock.addInstrument(Main.getInstance().getInstrument("Pearl", "Vision"));
         rock.addInstrument(Main.getInstance().getInstrument("Zildjian", "13″ K Custom Dark"));
         rock.addInstrument(Main.getInstance().getInstrument("Pearl", "EXL"));
         rock.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ K Custom Hybrid Ride"));
         rock.addInstrument(Main.getInstance().getInstrument("Pearl", "J-1355 Joey Jordison"));
-        rock.addInstrument(Main.getInstance().getInstrument("Zildjian ", "AAX 8 Splash"));
+        rock.addInstrument(Main.getInstance().getInstrument("Zildjian ", "12″ Z3 Splash"));
 
         //Guitar
         rock.addInstrument(Main.getInstance().getInstrument("Fender", "Standard Stratocaster RW FR"));
@@ -248,9 +242,171 @@ public class DatabaseManager {
 
         //Voice
         rock.addInstrument(Main.getInstance().getInstrument("EV", "7000"));
+        
+        /*RoomTemplate stage = new RoomTemplate("Stage", "Stage", 4000);
 
+        //Drums
+        stage.addInstrument(Main.getInstance().getInstrument("Pearl", "Pearl Roadshow"));
+        stage.addInstrument(Main.getInstance().getInstrument("Zildjian", "18″ Z3 China"));
+        stage.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ Z3 Medium Crash"));
+        stage.addInstrument(Main.getInstance().getInstrument("Pearl", "Vision"));
+        stage.addInstrument(Main.getInstance().getInstrument("Zildjian", "13″ K Custom Dark"));
+        stage.addInstrument(Main.getInstance().getInstrument("Pearl", "EXL"));
+        stage.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ K Custom Hybrid Ride"));
+        stage.addInstrument(Main.getInstance().getInstrument("Pearl", "J-1355 Joey Jordison"));
+        stage.addInstrument(Main.getInstance().getInstrument("Zildjian ", "12″ Z3 Splash"));
+
+        //Guitar
+        stage.addInstrument(Main.getInstance().getInstrument("Squier", "Classic Vibe Tele 50 S"));
+        stage.addInstrument(Main.getInstance().getInstrument("Gibson", "Les Paul Custom Alphine White"));
+
+        //BassGuitar
+        stage.addInstrument(Main.getInstance().getInstrument("Squier", "Affinity Jazz Bass V"));
+
+        //Voice
+        stage.addInstrument(Main.getInstance().getInstrument("EV", "7000"));
+        
+        RoomTemplate acoustic = new RoomTemplate("Acoustic", "Acoustic", 3500);
+
+        //Drums
+        acoustic.addInstrument(Main.getInstance().getInstrument("Pearl", "Pearl Roadshow"));
+        acoustic.addInstrument(Main.getInstance().getInstrument("Zildjian", "18″ Z3 China"));
+        acoustic.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ Z3 Medium Crash"));
+        acoustic.addInstrument(Main.getInstance().getInstrument("Pearl", "Vision"));
+        acoustic.addInstrument(Main.getInstance().getInstrument("Zildjian", "13″ K Custom Dark"));
+        acoustic.addInstrument(Main.getInstance().getInstrument("Pearl", "EXL"));
+        acoustic.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ K Custom Hybrid Ride"));
+        acoustic.addInstrument(Main.getInstance().getInstrument("Pearl", "J-1355 Joey Jordison"));
+        acoustic.addInstrument(Main.getInstance().getInstrument("Zildjian ", "12″ Z3 Splash"));
+
+        //Guitar
+        acoustic.addInstrument(Main.getInstance().getInstrument("Takamine", "CP3DC"));
+        acoustic.addInstrument(Main.getInstance().getInstrument("Taylor", "310CE"));
+
+        //BassGuitar
+        acoustic.addInstrument(Main.getInstance().getInstrument("Fender", "American Elite Jazz Bass"));
+
+        //Voice
+        acoustic.addInstrument(Main.getInstance().getInstrument("Shure", "PG58-LCV"));
+        
+        RoomTemplate indie = new RoomTemplate("Indie", "Indie", 4700);
+
+        //Drums
+        indie.addInstrument(Main.getInstance().getInstrument("Pearl", "Pearl Roadshow"));
+        indie.addInstrument(Main.getInstance().getInstrument("Zildjian", "18″ Z3 China"));
+        indie.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ Z3 Medium Crash"));
+        indie.addInstrument(Main.getInstance().getInstrument("Pearl", "Vision"));
+        indie.addInstrument(Main.getInstance().getInstrument("Zildjian", "13″ K Custom Dark"));
+        indie.addInstrument(Main.getInstance().getInstrument("Pearl", "EXL"));
+        indie.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ K Custom Hybrid Ride"));
+        indie.addInstrument(Main.getInstance().getInstrument("Pearl", "J-1355 Joey Jordison"));
+        indie.addInstrument(Main.getInstance().getInstrument("Zildjian ", "12″ Z3 Splash"));
+
+        //Guitar
+        indie.addInstrument(Main.getInstance().getInstrument("Squier", "Classic Vibe Tele 50 S"));
+        indie.addInstrument(Main.getInstance().getInstrument("Squier", "Classic Vibe Tele 50 S"));
+
+        //BassGuitar
+        indie.addInstrument(Main.getInstance().getInstrument("Squier", "Affinity Jazz Bass V"));
+
+        //Voice
+        indie.addInstrument(Main.getInstance().getInstrument("EV", "7000"));
+        
+        RoomTemplate jazz = new RoomTemplate("Jazz", "Jazz", 8000);
+
+        //Drums
+        jazz.addInstrument(Main.getInstance().getInstrument("Pearl", "Pearl Roadshow"));
+        jazz.addInstrument(Main.getInstance().getInstrument("Zildjian", "18″ Z3 China"));
+        jazz.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ Z3 Medium Crash"));
+        jazz.addInstrument(Main.getInstance().getInstrument("Pearl", "Vision"));
+        jazz.addInstrument(Main.getInstance().getInstrument("Zildjian", "13″ K Custom Dark"));
+        jazz.addInstrument(Main.getInstance().getInstrument("Pearl", "EXL"));
+        jazz.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ K Custom Hybrid Ride"));
+        jazz.addInstrument(Main.getInstance().getInstrument("Pearl", "J-1355 Joey Jordison"));
+        jazz.addInstrument(Main.getInstance().getInstrument("Zildjian ", "12″ Z3 Splash"));
+
+        //Guitar
+        jazz.addInstrument(Main.getInstance().getInstrument("Fender", "Standard Stratocaster RW FR"));
+        jazz.addInstrument(Main.getInstance().getInstrument("Gibson", "Les Paul Custom Alphine White"));
+
+        //BassGuitar
+        jazz.addInstrument(Main.getInstance().getInstrument("Fender", "American Elite Jazz Bass"));
+        
+        //AltoSaxophone
+        jazz.addInstrument(Main.getInstance().getInstrument("Selmer", "80 Series II E-flat"));
+        
+        //Piano
+        jazz.addInstrument(Main.getInstance().getInstrument("Korg", "SP-250"));
+
+        //Voice
+        jazz.addInstrument(Main.getInstance().getInstrument("EV", "7000"));
+        
+        RoomTemplate pop = new RoomTemplate("Pop", "Pop", 5500);
+
+        //Drums
+        pop.addInstrument(Main.getInstance().getInstrument("Pearl", "Pearl Roadshow"));
+        pop.addInstrument(Main.getInstance().getInstrument("Zildjian", "18″ Z3 China"));
+        pop.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ Z3 Medium Crash"));
+        pop.addInstrument(Main.getInstance().getInstrument("Pearl", "Vision"));
+        pop.addInstrument(Main.getInstance().getInstrument("Zildjian", "13″ K Custom Dark"));
+        pop.addInstrument(Main.getInstance().getInstrument("Pearl", "EXL"));
+        pop.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ K Custom Hybrid Ride"));
+        pop.addInstrument(Main.getInstance().getInstrument("Pearl", "J-1355 Joey Jordison"));
+        pop.addInstrument(Main.getInstance().getInstrument("Zildjian ", "12″ Z3 Splash"));
+
+        //Guitar
+        pop.addInstrument(Main.getInstance().getInstrument("Fender", "Standard Stratocaster RW FR"));
+        pop.addInstrument(Main.getInstance().getInstrument("Gibson", "Les Paul Custom Alphine White"));
+
+        //BassGuitar
+        pop.addInstrument(Main.getInstance().getInstrument("Fender", "American Elite Jazz Bass"));
+        
+        //Piano
+        jazz.addInstrument(Main.getInstance().getInstrument("Roland", "V-Piano"));
+        
+        //Voice
+        pop.addInstrument(Main.getInstance().getInstrument("EV", "7000"));
+        
+        RoomTemplate rnb = new RoomTemplate("R&B", "R&B", 5800);
+
+        //Drums
+        rnb.addInstrument(Main.getInstance().getInstrument("Pearl", "Pearl Roadshow"));
+        rnb.addInstrument(Main.getInstance().getInstrument("Zildjian", "18″ Z3 China"));
+        rnb.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ Z3 Medium Crash"));
+        rnb.addInstrument(Main.getInstance().getInstrument("Pearl", "Vision"));
+        rnb.addInstrument(Main.getInstance().getInstrument("Zildjian", "13″ K Custom Dark"));
+        rnb.addInstrument(Main.getInstance().getInstrument("Pearl", "EXL"));
+        rnb.addInstrument(Main.getInstance().getInstrument("Zildjian", "20″ K Custom Hybrid Ride"));
+        rnb.addInstrument(Main.getInstance().getInstrument("Pearl", "J-1355 Joey Jordison"));
+        rnb.addInstrument(Main.getInstance().getInstrument("Zildjian ", "12″ Z3 Splash"));
+
+        //Guitar
+        rnb.addInstrument(Main.getInstance().getInstrument("Fender", "Standard Stratocaster RW FR"));
+        rnb.addInstrument(Main.getInstance().getInstrument("Gibson", "Les Paul Custom Alphine White"));
+
+        //BassGuitar
+        rnb.addInstrument(Main.getInstance().getInstrument("Fender", "American Elite Jazz Bass"));
+        
+        //AltoSaxophone
+        jazz.addInstrument(Main.getInstance().getInstrument("Selmer", "80 Series II B-flat"));
+        
+        //Voice
+        rnb.addInstrument(Main.getInstance().getInstrument("EV", "7000"));*/
+        
+        
+        if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
+            return false;
+        }
+
+        em.getTransaction().begin();
+        em.persist(reggae);
         em.persist(rock);
-
+        /*em.persist(stage);
+        em.persist(acoustic);
+        em.persist(indie);
+        em.persist(jazz);
+        em.persist(pop);
+        em.persist(rnb);*/
         em.getTransaction().commit();
 
         closeEMF();
