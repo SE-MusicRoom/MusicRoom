@@ -62,7 +62,7 @@
       </StackPane>
       <VBox layoutX="60.0" layoutY="158.0" prefHeight="334.0" prefWidth="180.0" AnchorPane.leftAnchor="39.0" AnchorPane.topAnchor="158.0">
          <children>
-        <Button fx:id="userBtn" alignment="BASELINE_LEFT" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickUsers" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 20;" text="Users" textFill="WHITE">
+        <Button fx:id="userBtn" alignment="BASELINE_LEFT" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickUsers" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 20;" styleClass="root" stylesheets="@font.css" text="Users" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x5" />
                </font>
@@ -70,7 +70,7 @@
                   <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                </padding>
             </Button>
-            <Button fx:id="bandBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="60.0" maxHeight="2.147483647E9" onAction="#onClickBands" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" text="Bands" textFill="WHITE">
+            <Button fx:id="bandBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="60.0" maxHeight="2.147483647E9" onAction="#onClickBands" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@font.css" text="Bands" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x51" />
                </font>
@@ -78,7 +78,7 @@
                   <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                </padding>
             </Button>
-            <Button fx:id="newsBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="101.0" maxHeight="2.147483647E9" onAction="#onClickNews" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" text="News" textFill="WHITE">
+            <Button fx:id="newsBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="101.0" maxHeight="2.147483647E9" onAction="#onClickNews" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@font.css" text="News" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x511" />
                </font>
@@ -86,7 +86,7 @@
                   <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                </padding>
             </Button>
-            <Button fx:id="templateBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="142.0" maxHeight="2.147483647E9" onAction="#onClickTemplates" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@base.css" text="Templates" textFill="WHITE">
+            <Button fx:id="templateBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="142.0" maxHeight="2.147483647E9" onAction="#onClickTemplates" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@font.css" text="Templates" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x5111" />
                </font>
@@ -94,7 +94,7 @@
                   <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                </padding>
             </Button>
-            <Button fx:id="instrumentBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="183.0" maxHeight="2.147483647E9" onAction="#onClickInstruments" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 20;" text="Instruments" textFill="WHITE">
+            <Button fx:id="instrumentBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="183.0" maxHeight="2.147483647E9" onAction="#onClickInstruments" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 20;" styleClass="root" stylesheets="@font.css" text="Instruments" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x51111" />
                </font>
@@ -102,7 +102,7 @@
                   <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                </padding>
             </Button>
-            <Button fx:id="promotionCodeBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="224.0" maxHeight="2.147483647E9" onAction="#onClickPromotions" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" text="Promotion Code" textFill="WHITE">
+            <Button fx:id="promotionCodeBtn" alignment="BASELINE_LEFT" defaultButton="true" layoutX="10.0" layoutY="224.0" maxHeight="2.147483647E9" onAction="#onClickPromotions" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@font.css" text="Promotion Code" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x511111" />
                </font>
@@ -110,7 +110,7 @@
                   <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                </padding>
             </Button>
-            <Button fx:id="logoutBtn" alignment="BASELINE_LEFT" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickLogOut" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: black;" text="Logout" textFill="WHITE">
+            <Button fx:id="logoutBtn" alignment="BASELINE_LEFT" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickLogOut" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 20; -fx-background-color: black;" styleClass="root" stylesheets="@font.css" text="Logout" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="25.0" fx:id="x52" />
                </font>
