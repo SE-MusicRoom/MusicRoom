@@ -110,7 +110,7 @@ public class Main extends Application {
             ((Strings)z).setType("ElectricGuitar");
             
             a.setName("Zildjian");
-            b.setImgPath("MusicRoom/img/Instruments/Percussion/Drums/CrashCymbal/crashcymball2.png");
+            b.setImgPath("MusicRoom/img/Instruments/Percussion/Drums/CrashCymbal/crashcymbal2.png");
             
             DatabaseManager.getInstance().updateInstrument(x);
             DatabaseManager.getInstance().updateInstrument(y);
