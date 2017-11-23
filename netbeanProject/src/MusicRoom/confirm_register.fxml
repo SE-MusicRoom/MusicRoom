@@ -32,20 +32,10 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
@@ -54,24 +44,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.RegisterConfirmController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" stylesheets="@base.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.RegisterConfirmController">
   <children>
-      <ImageView fitHeight="700.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/background_1024_700.jpg" />
-         </image>
-      </ImageView>
       <StackPane layoutX="60.0" layoutY="35.0" prefHeight="497.0" prefWidth="668.0">
          <children>
             <VBox prefHeight="655.0" prefWidth="668.0">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="77.0" stroke="TRANSPARENT" strokeType="INSIDE" width="435.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8200" height="77.0" stroke="TRANSPARENT" strokeType="INSIDE" width="435.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="420.0" stroke="#00000001" strokeType="INSIDE" width="668.0" />
                </children>
             </VBox>
             <VBox prefHeight="515.0" prefWidth="668.0">
                <children>
-                  <Text fill="#ff8b00" strokeType="OUTSIDE" strokeWidth="0.0" text="Only one step" wrappingWidth="449.8040008544922">
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Only one step" wrappingWidth="449.8040008544922">
                      <font>
                         <Font name="Cloud-Bold" size="64.0" />
                      </font>
@@ -108,7 +93,7 @@
                               <Insets left="10.0" />
                            </HBox.margin>
                         </PasswordField>
-                        <Button fx:id="resend" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickResend" prefHeight="33.0" prefWidth="86.0" style="-fx-background-color: rgb(255,30,0); -fx-text-fill: rgb(255,255,255);" text="RESEND">
+                        <Button fx:id="resend" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickResend" prefHeight="33.0" prefWidth="85.0" style="-fx-background-color: rgb(255,30,0); -fx-text-fill: rgb(255,255,255); -fx-font-size: 20;" text="RESEND">
                            <font>
                               <Font name="Cloud-Bold" size="25.0" fx:id="x51" />
                            </font>
@@ -118,6 +103,10 @@
                            <HBox.margin>
                               <Insets left="20.0" top="-3.0" />
                            </HBox.margin>
+                           <stylesheets>
+                              <URL value="@font.css" />
+                              <URL value="@button.css" />
+                           </stylesheets>
                         </Button>
                      </children>
                      <VBox.margin>
@@ -128,34 +117,34 @@
             </VBox>
          </children>
       </StackPane>
-      <HBox layoutX="60.0" layoutY="532.0" prefWidth="668.0">
-         <children>
-        <Button fx:id="back" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickBack" prefHeight="47.0" prefWidth="129.0" style="-fx-background-color: rgb(255,130,0); -fx-text-fill: rgb(255,255,255); -fx-font-size: 28;" text="BACK">
-               <font>
-                  <Font name="Cloud-Bold" size="25.0" fx:id="x5" />
-               </font>
-               <padding>
-                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
-               </padding>
-            </Button>
-        <Button fx:id="comfirm" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickConfirm" prefHeight="47.0" prefWidth="177.0" style="-fx-font-size: 28; -fx-padding: 2; -fx-text-fill: ffffff; -fx-background-color: rgb(255,30,0);" text="CONFIRM" textFill="#ff6000">
-               <font>
-                  <Font name="Cloud-Bold" size="34.0" fx:id="x4" />
-               </font>
-               <padding>
-                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
-               </padding>
-            </Button>
-         </children>
-      </HBox>
+  <Button fx:id="back" defaultButton="true" layoutX="60.0" layoutY="532.0" maxHeight="2.147483647E9" onAction="#onClickBack" prefHeight="47.0" prefWidth="83.0" style="-fx-background-color: rgb(255,30,0); -fx-text-fill: rgb(255,255,255); -fx-font-size: 24;" text="BACK">
+         <font>
+            <Font name="Cloud-Bold" size="25.0" fx:id="x5" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <stylesheets>
+            <URL value="@font.css" />
+            <URL value="@button.css" />
+         </stylesheets>
+      </Button>
+  <Button fx:id="comfirm" defaultButton="true" layoutX="143.0" layoutY="532.0" maxHeight="2.147483647E9" onAction="#onClickConfirm" prefHeight="58.0" prefWidth="206.0" style="-fx-font-size: 28; -fx-text-fill: ffffff; -fx-background-color: rgb(255,30,0);" text="CONFIRM" textFill="#ff6000">
+         <font>
+            <Font name="Cloud-Bold" size="34.0" fx:id="x4" />
+         </font>
+         <padding>
+            <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+         </padding>
+         <stylesheets>
+            <URL value="@font.css" />
+            <URL value="@button.css" />
+         </stylesheets>
+      </Button>
       <Text fx:id="message" fill="WHITE" layoutX="92.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Hello" wrappingWidth="622.0">
          <font>
             <Font size="19.0" />
          </font>
       </Text>
   </children>
-   <stylesheets>
-      <URL value="@font.css" />
-      <URL value="@button.css" />
-   </stylesheets>
 </AnchorPane>
