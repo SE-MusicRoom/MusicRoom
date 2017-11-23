@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TemplateController">
+   <children>
+      <AnchorPane layoutX="149.0" layoutY="98.0" prefHeight="968.0" prefWidth="1348.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="986.0" layoutX="-3.0" layoutY="-1.0" stroke="#ffffff00" strokeType="INSIDE" width="1355.0" />
+            <ScrollPane layoutX="-12.0" layoutY="3.0" prefHeight="986.0" prefWidth="1346.0" AnchorPane.bottomAnchor="61.0" AnchorPane.rightAnchor="129.0">
+               <content>
+                  <GridPane fx:id="templateGrid" maxHeight="1.7976931348623157E308" minHeight="200.0" minWidth="200.0" prefHeight="1093.0" prefWidth="1353.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="382.0" minHeight="200.0" prefHeight="382.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="362.66668701171875" minHeight="30.666656494140625" prefHeight="334.66668701171875" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="200.0" minHeight="37.33331298828125" prefHeight="65.33331298828125" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane fx:id="templateToken" prefHeight="201.0" prefWidth="334.0">
+                           <children>
+                              <ImageView fx:id="templatePic" fitHeight="324.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="63.0" layoutX="-5.0" layoutY="323.0" opacity="0.63" stroke="BLACK" strokeType="INSIDE" width="461.0" />
+                              <Text fx:id="templateName" layoutX="14.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TemplateNames">
+                                 <font>
+                                    <Font name="Cloud-Bold" size="35.0" />
+                                 </font></Text>
+                              <Button fx:id="selectBtn" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#onSelectTemplate" opacity="0.0" prefHeight="321.0" prefWidth="456.0" text="Select">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="detailBtn" layoutX="344.0" layoutY="324.0" mnemonicParsing="false" onAction="#onSelectDetail" prefHeight="60.0" prefWidth="112.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 26;" text="INFO" textFill="WHITE">
+                                 <font>
+                                    <Font name="Cloud-Bold" size="27.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="147.0" layoutY="1085.0" prefHeight="123.0" prefWidth="861.0">
+         <children>
+            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="75.0" prefWidth="177.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 40;" text="Close" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <font>
+                  <Font name="Cloud-Bold" size="35.0" />
+               </font>
+            </Button>
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickCustomize" prefHeight="101.0" prefWidth="680.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 50;" text="or CUSTOMIZE IT!!" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <font>
+                  <Font name="Cloud-Bold" size="50.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <AnchorPane layoutX="148.0" prefHeight="98.0" prefWidth="461.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8200" height="98.0" stroke="BLACK" strokeType="INSIDE" width="608.0" />
+            <Text fill="WHITE" layoutX="17.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Template Select">
+               <font>
+                  <Font name="Cloud-Bold" size="60.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="11.0" layoutY="12.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8200" height="132.0" layoutX="2.0" layoutY="2.0" stroke="#ff800000" strokeType="INSIDE" width="124.0" />
+            <Text fill="WHITE" layoutX="41.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font name="Cloud-Bold" size="78.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="3.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Detail">
+               <font>
+                  <Font name="Cloud-Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="11.0" layoutY="155.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutX="2.0" layoutY="2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="124.0" />
+            <Text fill="#ff8200" layoutX="39.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font name="Cloud-Bold" size="78.0" />
+               </font>
+            </Text>
+            <Text fill="#ff8200" layoutX="1.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Select">
+               <font>
+                  <Font name="Cloud-Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="12.0" layoutY="296.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutY="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="124.0" />
+            <Text fill="#ff8200" layoutX="39.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font name="Cloud-Bold" size="78.0" />
+               </font>
+            </Text>
+            <Text fill="#ff8200" layoutX="23.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm">
+               <font>
+                  <Font name="Cloud-Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@button.css" />
+      <URL value="@font.css" />
+   </stylesheets>
+</AnchorPane>

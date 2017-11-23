@@ -28,6 +28,7 @@ abstract public class Instrument implements Serializable{
     private String img;
     
     transient private Image imgLoaded;
+    transient private Image iconLoaded;
 
     public Instrument(String name, String model, float price, String img) {
         this.name = name;
@@ -106,5 +107,18 @@ abstract public class Instrument implements Serializable{
         return imgLoaded;
     }
     
+    public Image getIcon() {
+        String iconPath = img.substring(0,img.lastIndexOf("/"))+"/icon.png";
+        if(iconLoaded==null)
+            try {
+                iconLoaded = new Image(getClass().getClassLoader().getResource(iconPath).toString());
+                //System.out.println(name+"::"+imgLoaded.isError()+"::"+img);
+            } catch (Exception e) {
+                System.out.println("Icon not found: "+e.toString()+"\n"+iconPath);
+            }
+            
+        
+        return iconLoaded;
+    }
     
 }

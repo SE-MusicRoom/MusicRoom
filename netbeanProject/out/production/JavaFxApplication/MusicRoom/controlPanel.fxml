@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * Copyright (c) 2008, 2012 Oracle and/or its affiliates.
+ * All rights reserved. Use is subject to license terms.
+ *
+ * This file is available and licensed under the following license:
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *  - Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *  - Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the distribution.
+ *  - Neither the name of Oracle Corporation nor the names of its
+ *    contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminMenuController">
+  <children>
+      <ImageView fitHeight="700.0" fitWidth="1024.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/background_1024_700.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="698.0" stroke="BLACK" strokeType="INSIDE" width="53.0" />
+      <StackPane layoutX="90.0" layoutY="41.0" AnchorPane.leftAnchor="39.0" AnchorPane.topAnchor="41.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="59.0" stroke="TRANSPARENT" strokeType="INSIDE" width="274.0">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin></Rectangle>
+            <Text fill="#ff3900" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" styleClass="root" text="Control Panel" wrappingWidth="258.8040008544922">
+               <font>
+                  <Font name="Cloud-Bold" size="64.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets left="4.0" top="2.0" />
+               </StackPane.margin>
+            </Text>
+         </children>
+      </StackPane>
+      <VBox layoutX="60.0" layoutY="158.0" prefHeight="334.0" prefWidth="318.0" AnchorPane.leftAnchor="39.0" AnchorPane.topAnchor="158.0">
+         <children>
+        <Button fx:id="userBtn" alignment="CENTER" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickUsers" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 20;" text="Users" textFill="WHITE">
+               <font>
+                  <Font name="Cloud-Bold" size="25.0" fx:id="x5" />
+               </font>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="bandBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="60.0" maxHeight="2.147483647E9" onAction="#onClickBands" prefHeight="30.0" prefWidth="70.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" text="Bands" textFill="WHITE">
+               <font>
+                  <Font name="Cloud-Bold" size="25.0" fx:id="x51" />
+               </font>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="newsBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="101.0" maxHeight="2.147483647E9" onAction="#onClickNews" prefHeight="30.0" prefWidth="70.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" text="News" textFill="WHITE">
+               <font>
+                  <Font name="Cloud-Bold" size="25.0" fx:id="x511" />
+               </font>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="templateBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="142.0" maxHeight="2.147483647E9" onAction="#onClickTemplates" prefHeight="30.0" prefWidth="115.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" styleClass="root" stylesheets="@base.css" text="Templates" textFill="WHITE">
+               <font>
+                  <Font name="Cloud-Bold" size="25.0" fx:id="x5111" />
+               </font>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="instrumentBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="183.0" maxHeight="2.147483647E9" onAction="#onClickInstruments" prefHeight="30.0" prefWidth="134.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 20;" text="Instruments" textFill="WHITE">
+               <font>
+                  <Font name="Cloud-Bold" size="25.0" fx:id="x51111" />
+               </font>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="promotionCodeBtn" alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="224.0" maxHeight="2.147483647E9" onAction="#onClickPromotions" prefHeight="30.0" prefWidth="173.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" text="Promotion Code" textFill="WHITE">
+               <font>
+                  <Font name="Cloud-Bold" size="25.0" fx:id="x511111" />
+               </font>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <VBox layoutX="60.0" layoutY="642.0" prefHeight="37.0" prefWidth="83.0" AnchorPane.bottomAnchor="89.0" AnchorPane.leftAnchor="39.0">
+         <children>
+            <Button fx:id="logoutBtn" alignment="CENTER" defaultButton="true" maxHeight="2.147483647E9" onAction="#onClickLogOut" prefHeight="30.0" prefWidth="78.0" style="-fx-font-size: 20; -fx-background-color: rgb(255,30,0);" text="Logout" textFill="WHITE">
+               <font>
+                  <Font name="Cloud-Bold" size="25.0" fx:id="x52" />
+               </font>
+               <padding>
+                  <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="includePane" layoutX="250.0" layoutY="123.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.0" prefWidth="768.0" />
+  </children>
+   <stylesheets>
+      <URL value="@font.css" />
+      <URL value="@button.css" />
+   </stylesheets>
+</AnchorPane>

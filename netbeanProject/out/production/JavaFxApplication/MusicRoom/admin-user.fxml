@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * Copyright (c) 2008, 2012 Oracle and/or its affiliates.
+ * All rights reserved. Use is subject to license terms.
+ *
+ * This file is available and licensed under the following license:
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *  - Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *  - Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the distribution.
+ *  - Neither the name of Oracle Corporation nor the names of its
+ *    contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1300.0" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminUserController">
+   <children>
+      <StackPane layoutX="-1.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="89.0" stroke="TRANSPARENT" strokeType="INSIDE" width="179.0" />
+            <Text fill="#ff8200" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 50;" text="Users" />
+         </children>
+      </StackPane>
+      <StackPane layoutX="785.0" layoutY="18.0" prefHeight="75.0" prefWidth="516.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="81.0" stroke="TRANSPARENT" strokeType="INSIDE" width="513.0">
+               <StackPane.margin>
+                  <Insets top="-10.0" />
+               </StackPane.margin>
+            </Rectangle>
+            <HBox prefHeight="23.0" prefWidth="516.0">
+               <children>
+                  <Text fx:id="Search" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 28;" text="Search">
+                     <HBox.margin>
+                        <Insets left="20.0" top="17.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="searchBox" minWidth="200.0" prefHeight="27.0" prefWidth="341.0" style="-fx-background-color: #fff0e6; -fx-font-size: 25; -fx-border-width: 2; -fx-border-color: #ffd1b3;">
+                     <HBox.margin>
+                        <Insets left="10.0" top="9.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets top="1.0" />
+                     </padding>
+                  </TextField>
+                  <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/search.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" top="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </StackPane>
+      <ScrollPane layoutX="-1.0" layoutY="89.0" prefHeight="844.0" prefWidth="1302.0">
+         <content>
+            <VBox fx:id="userScroll" prefHeight="837.0" prefWidth="1281.0">
+               <children>
+                  <StackPane fx:id="userToken" prefHeight="175.0" prefWidth="1253.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffccb3" height="165.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1246.0">
+                           <StackPane.margin>
+                              <Insets top="10.0" />
+                           </StackPane.margin></Rectangle>
+                        <HBox prefHeight="145.0" prefWidth="1261.0">
+                           <children>
+                              <VBox prefHeight="99.0" prefWidth="285.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" text="User ID : " wrappingWidth="155.5199966430664" />
+                                          <Text fx:id="userID" fill="#a49d9d" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" text="#00001">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Text>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="25.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="170.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="120.0" prefWidth="477.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Name : " />
+                                          <TextField fx:id="name" style="-fx-font-size: 25; -fx-background-color: #fff0e6;" text="Example Example">
+                                             <padding>
+                                                <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
+                                             </padding>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Band name :  " />
+                                          <TextField fx:id="bandName" prefHeight="44.0" prefWidth="227.0" style="-fx-font-size: 25; -fx-background-color: #fff0e6;" text="Example">
+                                             <padding>
+                                                <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
+                                             </padding>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="170.0" top="-8.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="130.0" style="-fx-font-size: 30; -fx-background-color: rgb(255,30,0);" text="Remove" textFill="WHITE">
+                                 <padding>
+                                    <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="-20.0" top="35.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="8.0" />
+                           </padding>
+                           <StackPane.margin>
+                              <Insets top="30.0" />
+                           </StackPane.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </StackPane>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <Button layoutY="933.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="66.0" prefWidth="160.0" style="-fx-font-size: 45; -fx-background-color: rgb(255,130,0);" text="Back" textFill="WHITE">
+         <padding>
+            <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+         </padding>
+      </Button>
+      <Button layoutX="161.0" layoutY="933.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="160.0" style="-fx-font-size: 45; -fx-background-color: rgb(255,30,0);" text="Add" textFill="WHITE">
+         <padding>
+            <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+         </padding>
+      </Button>
+      <Button layoutX="322.0" layoutY="933.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="191.0" style="-fx-font-size: 45; -fx-background-color: rgb(255,30,0);" text="Update" textFill="WHITE">
+         <padding>
+            <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+         </padding>
+      </Button>
+   </children>
+   <stylesheets>
+      <URL value="@button.css" />
+      <URL value="@font.css" />
+   </stylesheets>
+</AnchorPane>
