@@ -25,6 +25,10 @@ public class Percussion extends Instrument{
     public String getPartName() {
         return partName;
     }
+
+    public void setPartName(String partName) {
+        this.partName = partName;
+    }
     
         @Override
     public String getClassPath() {

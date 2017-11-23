@@ -94,7 +94,29 @@ public class Main extends Application {
 //            updateRoomTemplateDB();
 //************create Database**********************************
 //             DatabaseManager.getInstance().createInstrumentDB();
-//            DatabaseManager.getInstance().updateInstrument();
+//*************************************************************
+
+//************update Database**********************************
+            /*Instrument x = ((Strings)getInstrument(154));
+            Instrument y = ((Strings)getInstrument(155));
+            Instrument z = ((Strings)getInstrument(156));
+            
+    
+            Instrument a = getInstrument(139);
+            Instrument b = getInstrument(128);
+                    
+            ((Strings)x).setType("ElectricGuitar");
+            ((Strings)y).setType("ElectricGuitar");
+            ((Strings)z).setType("ElectricGuitar");
+            
+            a.setName("Zildjian");
+            b.setImgPath("MusicRoom/img/Instruments/Percussion/Drums/CrashCymbal/crashcymball2.png");
+            
+            DatabaseManager.getInstance().updateInstrument(x);
+            DatabaseManager.getInstance().updateInstrument(y);
+            DatabaseManager.getInstance().updateInstrument(z);
+            DatabaseManager.getInstance().updateInstrument(a);
+            DatabaseManager.getInstance().updateInstrument(b);*/
 //*************************************************************
 
         } catch (Exception ex) {
