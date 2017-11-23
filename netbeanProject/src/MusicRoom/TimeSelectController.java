@@ -215,10 +215,14 @@ public class TimeSelectController extends AnchorPane implements Initializable{
                     } else {// if the last is new
                         System.out.println("last is new");
                         toAdd += lastHour + ":59)";
-                        selectedBox.getChildren().add(new Text(toAdd));
+                        Text text = new Text(toAdd);
+                        text.setStyle("-fx-font-size: 30px;");
+                        selectedBox.getChildren().add(text);
                         toAdd = format1.format(selectedTimes.get(i).getTime()) + thisHour + ":59)";
                     }
-                selectedBox.getChildren().add(new Text(toAdd));
+                Text text = new Text(toAdd);
+                text.setStyle("-fx-font-size: 30px;");
+                selectedBox.getChildren().add(text);
                 toAdd = format1.format(selectedTimes.get(i).getTime());
             }
             
