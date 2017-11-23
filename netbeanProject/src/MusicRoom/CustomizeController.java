@@ -283,7 +283,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
         // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
         CustomizeController cus = (CustomizeController)loader.getController();
         cus.setApp(this.parent);
-        cus.setAddedToken(selectedInstrument.getClass().getSimpleName()+": "+selectedInstrument.getName()+" "+selectedInstrument.getModel(),
+        cus.setAddedToken(selectedInstrument.getClassPath()+": "+selectedInstrument.getName()+" "+selectedInstrument.getModel(),
                             Float.toString(selectedInstrument.getRentPrice()));
         
         return newToken;
