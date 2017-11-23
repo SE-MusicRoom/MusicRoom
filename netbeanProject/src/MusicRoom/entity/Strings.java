@@ -31,6 +31,10 @@ public class Strings extends Instrument{
         return type;
     }
     
+    @Override
+    public String getClassPath() {
+        return type;
+    }
 }
 
 

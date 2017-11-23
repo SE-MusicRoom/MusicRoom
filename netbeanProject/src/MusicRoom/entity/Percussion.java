@@ -26,7 +26,10 @@ public class Percussion extends Instrument{
         return partName;
     }
     
-    
+        @Override
+    public String getClassPath() {
+        return partName;
+    }
 }
 
 
