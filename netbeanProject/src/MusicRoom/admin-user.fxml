@@ -84,7 +84,7 @@
                         <Insets top="1.0" />
                      </padding>
                   </TextField>
-                  <ImageView fitHeight="46.0" fitWidth="40.0" onMouseClicked="#onFind" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/search.png" />
                      </image>
