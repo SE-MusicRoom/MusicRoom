@@ -28,6 +28,11 @@ public class BrassWoodwind extends Instrument{
     public String getType() {
         return type;
     }
+
+    public String getSubtype() {
+        return subtype;
+    }
+    
     
 }
 

@@ -108,9 +108,9 @@ public class DatabaseManager {
         list.add(new Percussion("Cowbell","Rock Cowbell","CB-L",360,"MusicRoom/img/Instruments/Percussion/Drums/Cowbell/cowbell1.png")); 
         
         //CrashCymbal
-        list.add(new Percussion("CrashCymbal","Zildjian ","20″ Z3 MEDIUM CRASH",10200,"MusicRoom/img/Instruments/Percussion/Drums/crashcymbal/crashcymbal1.png"));
-        list.add(new Percussion("CrashCymbal","Sabian  ","XSR 14 Fast Crash",4000,"MusicRoom/img/Instruments/Percussion/Drums/crashcymbal/crashcymbal2.png"));
-        list.add(new Percussion("CrashCymbal","Istanbul ","Cymbals Agop 16\" MEDIUM CRASH",10200,"MusicRoom/img/Instruments/Percussion/Drums/crashcymbal/crashcymbal3.png"));
+        list.add(new Percussion("CrashCymbal","Zildjian ","20″ Z3 MEDIUM CRASH",10200,"MusicRoom/img/Instruments/Percussion/Drums/CrashCymbal/crashcymbal1.png"));
+        list.add(new Percussion("CrashCymbal","Sabian  ","XSR 14 Fast Crash",4000,"MusicRoom/img/Instruments/Percussion/Drums/CrashCymbal/crashcymbal2.png"));
+        list.add(new Percussion("CrashCymbal","Istanbul ","Agop 16″ MEDIUM CRASH",10200,"MusicRoom/img/Instruments/Percussion/Drums/CrashCymbal/crashcymbal3.png"));
         
         //FloorTom
         list.add(new Percussion("FloorTom","Pearl","Vision",3500,"MusicRoom/img/Instruments/Percussion/Drums/FloorTom/floortom1.png")); 
@@ -118,9 +118,9 @@ public class DatabaseManager {
         list.add(new Percussion("FloorTom","Ludwig","DW",3900,"MusicRoom/img/Instruments/Percussion/Drums/FloorTom/floortom3.png")); 
         
         //HiHat
-        list.add(new Percussion("HiHat","Zildjian","13″ K CUSTOM DARK HIHATS",14000,"MusicRoom/img/Instruments/Percussion/Drums/HiHat/hihat1.png")); 
-        list.add(new Percussion("HiHat","Zildjian","14″ K CUSTOM DARK HIHATS",15800,"MusicRoom/img/Instruments/Percussion/Drums/HiHat/hihat2.png")); 
-        list.add(new Percussion("HiHat","Istanbul","Cymbals 14\" AGOP HIHAT",13900,"MusicRoom/img/Instruments/Percussion/Drums/HiHat/hihat3.png")); 
+        list.add(new Percussion("HiHat","Zildjian","13″ K CUSTOM DARK",14000,"MusicRoom/img/Instruments/Percussion/Drums/HiHat/hihat1.png")); 
+        list.add(new Percussion("HiHat","Zildjian","14″ K CUSTOM DARK",15800,"MusicRoom/img/Instruments/Percussion/Drums/HiHat/hihat2.png")); 
+        list.add(new Percussion("HiHat","Istanbul","14″ AGOP HIHAT",13900,"MusicRoom/img/Instruments/Percussion/Drums/HiHat/hihat3.png")); 
         
         //RackTom
         list.add(new Percussion("RackTom","Pearl","EXL",3400,"MusicRoom/img/Instruments/Percussion/Drums/RackTom/racktom1.png")); 
@@ -130,17 +130,17 @@ public class DatabaseManager {
         //RideCymbal
         list.add(new Percussion("RideCymbal","Zildjian ","20″ K CUSTOM HYBRID RIDE",13000,"MusicRoom/img/Instruments/Percussion/Drums/RideCymbal/ridecymbal1.png"));
         list.add(new Percussion("RideCymbal","Sabian","AAX 22 Omni Ride",12000,"MusicRoom/img/Instruments/Percussion/Drums/RideCymbal/ridecymbal2.png")); 
-        list.add(new Percussion("RideCymbal","Istanbul","Cymbals Origin Dark Ride 22″",14200,"MusicRoom/img/Instruments/Percussion/Drums/RideCymbal/ridecymbal3.png"));
+        list.add(new Percussion("RideCymbal","Istanbul","Origin Dark Ride 22″",14200,"MusicRoom/img/Instruments/Percussion/Drums/RideCymbal/ridecymbal3.png"));
         
         //SnareDrum
-        list.add(new Percussion("SnareDrum","Pearl","J-1355 Joey Jordison",13175,"MusicRoom/img/Instruments/Percussion/Drums/SnareDum/snaredrum1.png")); 
-        list.add(new Percussion("SnareDrum","Ludwig","Centennial Snare Drum Lacquer Finish",5200,"MusicRoom/img/Instruments/Percussion/Drums/SnareDum/snaredrum2.png")); 
-        list.add(new Percussion("SnareDrum","DW","Design",11700,"MusicRoom/img/Instruments/Percussion/Drums/SnareDum/snaredrum3.png")); 
+        list.add(new Percussion("SnareDrum","Pearl","J-1355 Joey Jordison",13175,"MusicRoom/img/Instruments/Percussion/Drums/SnareDrum/snaredrum1.png")); 
+        list.add(new Percussion("SnareDrum","Ludwig","Centennial Snare Drum Lacquer Finish",5200,"MusicRoom/img/Instruments/Percussion/Drums/SnareDrum/snaredrum2.png")); 
+        list.add(new Percussion("SnareDrum","DW","Design",11700,"MusicRoom/img/Instruments/Percussion/Drums/SnareDrum/snaredrum3.png")); 
         
         //SplashCymbal
         list.add(new Percussion("SplashCymbal","Zildjian ","12″ Z3 SPLASH",4700,"MusicRoom/img/Instruments/Percussion/Drums/SplashCymbal/splashcymbal1.png")); 
         list.add(new Percussion("SplashCymbal","Sabian","AAX 8 Splash",4000,"MusicRoom/img/Instruments/Percussion/Drums/SplashCymbal/splashcymbal2.png")); 
-        list.add(new Percussion("SplashCymbal","Istanbul","Cymbals Agop 12″ Traditional Series Splash Cymbal",5200,"MusicRoom/img/Instruments/Percussion/Drums/SplashCymbal/splashcymbal3.png")); 
+        list.add(new Percussion("SplashCymbal","Istanbul","Agop 12″ Traditional Series Splash Cymbal",5200,"MusicRoom/img/Instruments/Percussion/Drums/SplashCymbal/splashcymbal3.png")); 
         
         //ElectricBass
         list.add(new Strings("ElectricBass","5","Squier","Affinity Jazz Bass V",8550,"MusicRoom/img/Instruments/Strings/BassGuitar/ElectricBass/ebass1.png"));
@@ -158,9 +158,9 @@ public class DatabaseManager {
         list.add(new Strings("ElectricBass","6","Gibson","Les Paul Custom Alphine White",153000,"MusicRoom/img/Instruments/Strings/Guitar/ElecticGuitar/eguitar3.png"));
         
         // Violin
-        list.add(new Strings("Violin","4","Andrea Schudtz","2800",50000,"MusicRoom/img/Instruments/Strings/Violin/vilon1.png"));
-        list.add(new Strings("Violin","4","Dario II Vettori","2006",600000,"MusicRoom/img/Instruments/Strings/Violin/vilon2.png"));
-        list.add(new Strings("Violin","4","Robert Lee","804",45000,"MusicRoom/img/Instruments/Violin/Strings/vilon3.png"));
+        list.add(new Strings("Violin","4","Andrea Schudtz","2800",50000,"MusicRoom/img/Instruments/Strings/Violin/violin1.png"));
+        list.add(new Strings("Violin","4","Dario II Vettori","2006",600000,"MusicRoom/img/Instruments/Strings/Violin/violin2.png"));
+        list.add(new Strings("Violin","4","Robert Lee","804",45000,"MusicRoom/img/Instruments/Strings/Violin/violin3.png"));
 
         //Microphone
         list.add(new Voice("Dynamic","Shure","PG58-LCV",2520,"MusicRoom/img/Instruments/Voice/Microphone/mic1.png"));
