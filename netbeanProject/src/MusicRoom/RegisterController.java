@@ -193,9 +193,11 @@ public class RegisterController extends AnchorPane implements Initializable {
             if (!validateEmail(email.getText())) {
                 emailWarningText.setStyle("-fx-fill: #ff0000;");
             } else {
-                Main.getInstance().createUser(username.getText(), password.getText(),
+                
+                DatabaseManager.getInstance().addUser(
+                        Main.getInstance().createUser(username.getText(), password.getText(),
                         name.getText(), surname.getText(),
-                        email.getText(), Band.findBand(bandName.getText()));
+                        email.getText(), Band.findBand(bandName.getText()),subscribed.isSelected()));
                 Main.getInstance().gotoRegisterConfirm();
             }
 

@@ -67,7 +67,6 @@ public class Main extends Application {
         if (instance == null) {
             System.out.println("[[[PROPERTIES DATA]]]]\n" + System.getProperties());
             Application.launch(Main.class, (java.lang.String[]) null);
-
         } else {
             // Error
         }
@@ -90,8 +89,7 @@ public class Main extends Application {
 
 //            updateBookingDB();
 //            updateInstrumentDB();
-//            DatabaseManager.getInstance().createDummyRoomTemplate();
-            updateRoomTemplateDB();
+
 //************create Database**********************************
 //             DatabaseManager.getInstance().createInstrumentDB();
 //*************************************************************
@@ -118,7 +116,8 @@ public class Main extends Application {
             DatabaseManager.getInstance().updateInstrument(a);
             DatabaseManager.getInstance().updateInstrument(b);*/
 //*************************************************************
-
+         //   DatabaseManager.getInstance().createDummyRoomTemplate();
+           // updateRoomTemplateDB();
         } catch (Exception ex) {
 
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -258,17 +257,20 @@ public class Main extends Application {
             if (users.get(i).getUsername().equals(userId)) {
                 if (users.get(i).getPassword().equals(password)) {
                     currentUser = users.get(i);
-
+                    
                     if (i != 0) // normal user
                     {
-                        gotoMainMenu();
+                        if(currentUser.isActivated()) {
+                            gotoMainMenu();
+                            showPopup("Welcome " + currentUser.getName(), "Let's play some music !");
+                        }
+                        else
+                            gotoRegisterConfirm();
                     } else // admin
                     {
                         gotoAdmin();
                     }
-
-                    showPopup("Welcome " + currentUser.getName(), "Let's play some music !");
-
+                    
                     return true;
                 } else {
                     return false;
@@ -294,8 +296,8 @@ public class Main extends Application {
     }
 
     public User createUser(String username, String password, String name, String surname,
-            String email, Band band) {
-        User newUser = new User(username, password, name, surname, email, band);
+            String email, Band band,boolean subscribe) {
+        User newUser = new User(username, password, name, surname, email, band, subscribe);
 
         currentUser = newUser;
         return newUser;

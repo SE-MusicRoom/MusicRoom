@@ -58,7 +58,7 @@ public class RegisterConfirmController extends AnchorPane implements Initializab
     
     public void onClickConfirm(ActionEvent event) {
         if(activateCode.getText().equals( activition ) ) {
-            DatabaseManager.getInstance().addUser(user);
+            DatabaseManager.getInstance().updateActivateUser(user);
             Main.getInstance().updateUserDB();
             Main.getInstance().gotoLogin();
         } else {

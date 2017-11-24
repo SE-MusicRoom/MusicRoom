@@ -41,7 +41,7 @@ public class DatabaseManager {
             this.emf = Persistence.createEntityManagerFactory(DbName);
             this.em = this.emf.createEntityManager();
         } catch (Exception ex) {
-            //System.out.println("ex");
+            System.out.println("Error creating EMF");
             //Main.getInstance().showErrorPopup("Error Connecting db", "\nClick confirm to try again");
             return false;
         }
@@ -66,10 +66,10 @@ public class DatabaseManager {
             return false;
         }
 
-        em.getTransaction().begin();
-        User l = new User("1234", "1234", "1234", "1234", "1234", null);
-        User m = new User("123", "123", "123", "123", "123", null);
-
+        
+        User l = new User("admin","1234","ADMIN","MUSICROOM","kmitlmusicroom@gmail.com",fetchBand("MasterBand"),true);
+        User m = new User("1234", "12345678", "Tester", "man", "p.i.t.a.wat@hotmail.com", fetchBand("MasterBand"),true);
+        l.setActivated(true);
         em.getTransaction().begin();
         em.persist(l);
         em.persist(m);
@@ -499,7 +499,10 @@ public class DatabaseManager {
 
         TypedQuery<User> query = em.createQuery("SELECT u FROM User u ", User.class);
         List<User> results = query.getResultList();
-
+        
+        if(results.isEmpty()) 
+            createDummyUser();
+        
         closeEMF();
         return results;
     }
@@ -657,6 +660,21 @@ public class DatabaseManager {
         query = query.setParameter("bookedTimes", user.getBookings());
         query.executeUpdate();
 
+        em.getTransaction().commit();
+        closeEMF();
+    }
+    
+    public void updateActivateUser(User user) {
+
+        if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
+            return;
+        }
+
+        TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.id =" + String.valueOf(user.getId()), User.class);
+        User result = query.getSingleResult();
+
+        em.getTransaction().begin();
+        result.setActivated(true);
         em.getTransaction().commit();
         closeEMF();
     }
