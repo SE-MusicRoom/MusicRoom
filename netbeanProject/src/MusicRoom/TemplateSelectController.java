@@ -27,10 +27,10 @@ import javafx.scene.text.Text;
  *
  * @author SE-MUSICROOM
  */
-public class TemplateController extends AnchorPane implements Initializable {
+public class TemplateSelectController extends AnchorPane implements Initializable {
     
     private MainMenuController mainmenu;
-    private TemplateController parent;
+    private TemplateSelectController parent;
     private RoomTemplate myTemplate;
     
     @FXML
@@ -65,7 +65,7 @@ public class TemplateController extends AnchorPane implements Initializable {
         
     }
     
-    public void setApp(TemplateController parent,MainMenuController mainmenu){
+    public void setApp(TemplateSelectController parent,MainMenuController mainmenu){
         this.parent = parent;
         this.mainmenu = mainmenu;
     }
@@ -86,7 +86,7 @@ public class TemplateController extends AnchorPane implements Initializable {
         AnchorPane newToken = (AnchorPane)loader.getNamespace().get("templateToken");
         
          // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
-        TemplateController cus = (TemplateController)loader.getController();
+        TemplateSelectController cus = (TemplateSelectController)loader.getController();
         cus.setApp(this,mainmenu);
         cus.setTemplateToken(new CustomRoomTemplate("Custom", "Custom your room as you wish", 0));
         
@@ -105,7 +105,7 @@ public class TemplateController extends AnchorPane implements Initializable {
         
         
          // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
-        TemplateController cus = (TemplateController)loader.getController();
+        TemplateSelectController cus = (TemplateSelectController)loader.getController();
         cus.setApp(this,mainmenu);
         cus.setTemplateToken(r);
         
