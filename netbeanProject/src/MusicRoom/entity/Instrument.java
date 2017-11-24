@@ -58,8 +58,15 @@ abstract public class Instrument implements Serializable{
         return img;
     }
     
+    @Override
     public String toString() {
         return name + " " + model + " (" + getClassPath() + ")";
+    }
+    
+    public String toDetailString() {
+        return name + "\n" +
+               model + "\n" +
+               price + "฿/pc.";
     }
     
     public String getName() {
