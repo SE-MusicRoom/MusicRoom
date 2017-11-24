@@ -24,7 +24,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -296,16 +295,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         
         Main.getInstance().setCurrentTimeTable(selectedTimes);
         
-        if(Main.getInstance().getCurrentRoom() instanceof CustomRoomTemplate)
-            DatabaseManager.getInstance().addCustomRoom((CustomRoomTemplate) Main.getInstance().getCurrentRoom());
-                    
-        Booking newBook = Main.getInstance().createBooking();
-        System.out.println(newBook);
-        Main.getInstance().getCurrentUser().addBookedTime(newBook);
-        DatabaseManager.getInstance().addBooking(newBook);
-        Main.getInstance().getCurrentRoom().addBooking(newBook);
-        Main.getInstance().updateBookingDB();
-        mainmenu.gotoSuccess(newBook);
+        Main.getInstance().showErrorPopup("Confirmation", "Confirm your reservation ?", "SUCCESS_CONFIRM");
     }
     
     public void onClickBack(ActionEvent event) {

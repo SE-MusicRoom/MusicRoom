@@ -19,8 +19,6 @@ import javafx.stage.Stage;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Properties;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -39,6 +37,7 @@ public class Main extends Application {
     // Element
     private Stage stage;
     private boolean popupOpen;
+    private MainMenuController mainmenu;
 
     // Properties
     private final double MINIMUM_WINDOW_WIDTH = 1024;
@@ -336,7 +335,8 @@ public class Main extends Application {
 
     public void gotoMainMenu() {
         try {
-            MainMenuController reg = (MainMenuController) replaceSceneContent("mainmenu.fxml");
+            MainMenuController mm = (MainMenuController) replaceSceneContent("mainmenu.fxml");
+            mainmenu = mm;
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -408,7 +408,6 @@ public class Main extends Application {
         });
 
         try {
-
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(from));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
@@ -422,6 +421,19 @@ public class Main extends Application {
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
+    }
+    
+    public void createConfirmedBooking() {
+        if(currentRoom instanceof CustomRoomTemplate)
+            DatabaseManager.getInstance().addCustomRoom((CustomRoomTemplate) currentRoom);
+                    
+        Booking newBook = createBooking();
+        System.out.println(newBook);
+        currentUser.addBookedTime(newBook);
+        DatabaseManager.getInstance().addBooking(newBook);
+        currentRoom.addBooking(newBook);
+        updateBookingDB();
+        mainmenu.gotoSuccess(newBook);
     }
 
 }

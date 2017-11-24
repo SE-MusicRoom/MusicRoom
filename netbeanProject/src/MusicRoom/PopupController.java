@@ -5,9 +5,7 @@
  */
 package MusicRoom;
 
-import MusicRoom.entity.Booking;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
@@ -15,11 +13,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -32,7 +27,9 @@ import javafx.util.Duration;
 public class PopupController extends AnchorPane implements Initializable {
     
     @FXML
-    private Button button;
+    private Button button1;
+    @FXML
+    private Button button2;
 
     @FXML
     private Text titleTxt;
@@ -84,7 +81,15 @@ public class PopupController extends AnchorPane implements Initializable {
             Main.getInstance().setPopupOpen(false);
             Main.getInstance().updateRoomTemplateDB();
         }
-    };    
+    }; 
+    private final EventHandler<ActionEvent> SUCCESS_CONFIRM = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            parent.getChildren().remove(me);
+            Main.getInstance().setPopupOpen(false);
+            Main.getInstance().createConfirmedBooking();
+        }
+    }; 
     
     public void setApp(String title,String detail,AnchorPane parent,AnchorPane me){
         titleTxt.setText(title);
@@ -112,29 +117,38 @@ public class PopupController extends AnchorPane implements Initializable {
         tt2.setToX( 0 );
         tt2.play();
         
-        button.requestFocus();
+        button1.requestFocus();
     }
-    
-
     
     public void onClickOK(ActionEvent event) {
         parent.getChildren().remove(me);
         Main.getInstance().setPopupOpen(false);
     }
-
-    public void addEventToButton(String event) {
-        if(event.equals("REFETCH_USER"))
-            button.setOnAction(REFETCH_USER);
-        else if(event.equals("REFETCH_BOOKING"))
-            button.setOnAction(REFETCH_BOOKING);
-        else if(event.equals("REFETCH_INSTRUMENT"))
-            button.setOnAction(REFETCH_INSTRUMENT);
-        else if(event.equals("REFETCH_ROOMTEMPLATE"))
-            button.setOnAction(REFETCH_ROOMTEMPLATE);
+    public void onClickCANCEL(ActionEvent event) {
+        parent.getChildren().remove(me);
+        Main.getInstance().setPopupOpen(false);
     }
     
-    
-    
-    
-    
+    public void addEventToButton(String event) {
+        switch (event) {
+            case "REFETCH_USER":
+                button1.setOnAction(REFETCH_USER);
+                break;
+            case "REFETCH_BOOKING":
+                button1.setOnAction(REFETCH_BOOKING);
+                break;
+            case "REFETCH_INSTRUMENT":
+                button1.setOnAction(REFETCH_INSTRUMENT);
+                break;
+            case "REFETCH_ROOMTEMPLATE":
+                button1.setOnAction(REFETCH_ROOMTEMPLATE);
+                break;
+            case "SUCCESS_CONFIRM":
+                button1.setOnAction(SUCCESS_CONFIRM);
+                button2.setVisible(true);
+                break;
+            default:
+                break;
+        }
+    } 
 }
