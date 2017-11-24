@@ -2,6 +2,7 @@ package MusicRoom;
 
 import MusicRoom.entity.User;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -19,6 +20,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
 
 
 public class AdminUserController extends AnchorPane implements Initializable {
@@ -50,7 +52,6 @@ public class AdminUserController extends AnchorPane implements Initializable {
         List<User> users = Main.getInstance().getUsers();
 
         for(int i = 0; i < users.size(); i++){
-
             userScroll.getChildren().add(copyUsersToken(users.get(i)));
         }
     }
@@ -78,7 +79,21 @@ public class AdminUserController extends AnchorPane implements Initializable {
         this.bandName.setPromptText(bandName);
     }
 
+    public VBox getUserScroll(){
+        return userScroll;
+    }
 
+
+    public void onClickAdd(ActionEvent event){
+
+    }
+
+    public void onClickRemove(ActionEvent event){
+        int selectID = Integer.parseInt(userID.getText());
+
+
+        parent.getUserScroll().getChildren().remove(((Button)event.getSource()).getParent().getParent());
+    }
 
     public void onClickBack(ActionEvent event) {
         mainmenu.hideIncludePane();
