@@ -21,6 +21,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Text;
 
 /**
@@ -49,14 +50,21 @@ public class TemplateSelectController extends AnchorPane implements Initializabl
     public void setApp(MainMenuController mainmenu){
         this.mainmenu = mainmenu;
         this.templateGrid.getChildren().clear();
-        templateGrid.setPrefHeight(200*Math.ceil(Main.getInstance().getRoomTemplete().size()/3));
+        templateGrid.setPrefHeight(400*templateGrid.getRowConstraints().size());
         int i=0;
         for (RoomTemplate r : Main.getInstance().getRoomTemplete()) {
             if(r instanceof CustomRoomTemplate)
                 continue;
             
             AnchorPane ac = copyTemplateToken(r);
-            templateGrid.add(ac,(i)%3,i/3);
+            
+            if(i%3 == 0 && i/3-1 > templateGrid.getRowConstraints().size())
+                templateGrid.getRowConstraints().add(new RowConstraints());
+            
+            templateGrid.add(ac,i%3,i/3);
+            templateGrid.getRowConstraints().get(i/3).setMinHeight(ac.getPrefHeight());
+            templateGrid.getRowConstraints().get(i/3).setPrefHeight(ac.getPrefHeight());
+            templateGrid.getRowConstraints().get(i/3).setMaxHeight(ac.getPrefHeight());
             i++;
         }
         

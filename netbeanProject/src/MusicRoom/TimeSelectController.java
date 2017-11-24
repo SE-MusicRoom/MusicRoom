@@ -219,10 +219,17 @@ public class TimeSelectController extends AnchorPane implements Initializable{
                         selectedBox.getChildren().add(text);
                         toAdd = format1.format(selectedTimes.get(i).getTime()) + thisHour + ":59)";
                     }
-                Text text = new Text(toAdd);
-                text.setStyle("-fx-font-size: 30px;");
-                selectedBox.getChildren().add(text);
+                else if(selectedTimes.size()==1) { // first and only one
+                    System.out.println("First only");
+                    toAdd = format1.format(selectedTimes.get(i).getTime()) + thisHour + ":59)";
+                }
+                if(!toAdd.equals("")) {
+                    Text text = new Text(toAdd);
+                    text.setStyle("-fx-font-size: 30px;");
+                    selectedBox.getChildren().add(text);
+                }
                 toAdd = format1.format(selectedTimes.get(i).getTime());
+                
             }
             
             lastDay = thisDay;
