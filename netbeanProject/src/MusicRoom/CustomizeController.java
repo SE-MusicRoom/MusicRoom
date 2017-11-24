@@ -25,6 +25,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -134,15 +135,29 @@ public class CustomizeController extends AnchorPane implements Initializable {
     }
 
     public void setEmojiGrid(ImageView img) {
-        emojiGrid.add(img, emojiGrid.getChildren().size() % emojiGrid.getColumnConstraints().size(), emojiGrid.getChildren().size() / (emojiGrid.getRowConstraints().size()+1));
+        int row = emojiGrid.getChildren().size() / (emojiGrid.getColumnConstraints().size());
+        int col = emojiGrid.getChildren().size() % emojiGrid.getColumnConstraints().size();
+        System.out.println(row+".."+col);
+        emojiGrid.setPrefHeight(img.getFitHeight()*(row+1));
+        System.out.println("Pref:"+emojiGrid.getPrefHeight());
+        
+        if(col == 0 && row+1>emojiGrid.getRowConstraints().size())
+            emojiGrid.getRowConstraints().add(new RowConstraints());
+
+        emojiGrid.add(img, col, row);
+        emojiGrid.getRowConstraints().get(row).setMinHeight(img.getFitHeight());
+        emojiGrid.getRowConstraints().get(row).setPrefHeight(img.getFitHeight());
+        emojiGrid.getRowConstraints().get(row).setMaxHeight(img.getFitHeight());
         
     }
 
     public void removeEmojiGrid(int id) {
         GridPane.clearConstraints(emojiGrid);
         emojiGrid.getChildren().remove(id);
+        int row = emojiGrid.getChildren().size() / (emojiGrid.getColumnConstraints().size());
+        emojiGrid.setPrefHeight(150*(row+1));
         for (int i = id; i < emojiGrid.getChildren().size(); i++) {
-            GridPane.setConstraints(emojiGrid.getChildren().get(i), i % emojiGrid.getColumnConstraints().size(), i / emojiGrid.getRowConstraints().size());
+            GridPane.setConstraints(emojiGrid.getChildren().get(i), i % emojiGrid.getColumnConstraints().size(), i / emojiGrid.getColumnConstraints().size());
         }
     }
 
