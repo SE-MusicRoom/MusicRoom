@@ -32,6 +32,14 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -46,11 +54,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="700.0" styleClass="pane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminUserController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="700.0" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminUserController">
    <children>
       <StackPane layoutX="-1.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8200" height="58.0" stroke="TRANSPARENT" strokeType="INSIDE" width="120.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="58.0" stroke="TRANSPARENT" strokeType="INSIDE" width="120.0" />
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" text="Users" />
          </children>
       </StackPane>
@@ -184,12 +192,12 @@
             </VBox>
          </content>
       </ScrollPane>
-      <Button layoutY="473.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="34.0" prefWidth="90.0" style="-fx-font-size: 20;" stylesheets="@button.css" text="Close" textFill="WHITE">
+      <Button layoutY="472.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="28.0" prefWidth="90.0" style="-fx-font-size: 30;" stylesheets="@button.css" text="Close" textFill="WHITE">
          <padding>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </padding>
       </Button>
-      <Button layoutX="90.0" layoutY="473.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="104.0" style="-fx-font-size: 30;" stylesheets="@button.css" text="Add" textFill="WHITE">
+      <Button layoutX="90.0" layoutY="473.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="104.0" style="-fx-font-size: 30;" styleClass="lightbutton" stylesheets="@button.css" text="Add" textFill="WHITE">
          <padding>
             <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
          </padding>

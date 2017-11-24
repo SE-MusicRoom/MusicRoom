@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
@@ -204,21 +205,29 @@
       </AnchorPane>
       <HBox layoutX="153.0" layoutY="1089.0" prefHeight="66.0" prefWidth="614.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="108.0" prefWidth="336.0" stylesheets="@button.css" text="Confirm" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#onClickBack" prefHeight="100.0" prefWidth="220.0" style="-fx-font-size: 45;" text="BACK" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
-                  <Font name="Cloud-Bold" size="50.0" />
+                  <Font name="Cloud-Bold" size="45.0" />
                </font>
+               <stylesheets>
+                  <URL value="@button.css" />
+                  <URL value="@font.css" />
+               </stylesheets>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onClickBack" prefHeight="67.0" prefWidth="158.0" stylesheets="@button.css" text="Back" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="108.0" prefWidth="336.0" style="-fx-font-size: 45px;" styleClass="lightbutton" text="CONFIRM" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
-                  <Font name="Cloud-Bold" size="35.0" />
+                  <Font name="Cloud-Bold" size="45.0" />
                </font>
+               <stylesheets>
+                  <URL value="@button.css" />
+                  <URL value="@font.css" />
+               </stylesheets>
             </Button>
          </children>
       </HBox>

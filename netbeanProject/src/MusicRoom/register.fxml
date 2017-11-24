@@ -32,6 +32,15 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Group?>
@@ -51,14 +60,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.RegisterController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.RegisterController">
   <children>
       <ImageView fitHeight="700.0" fitWidth="1134.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/background_1024_700.jpg" />
          </image>
       </ImageView>
-  <Button fx:id="back" defaultButton="true" layoutX="59.900001525878906" layoutY="594.9000244140625" maxHeight="2.147483647E9" minHeight="8.0" onAction="#onClickBack" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 28; -fx-padding: -2; -fx-text-fill: rgb(255,255,255);" text="BACK">
+  <Button fx:id="back" defaultButton="true" layoutX="60.0" layoutY="595.0" maxHeight="2.147483647E9" minHeight="8.0" onAction="#onClickBack" prefHeight="48.0" prefWidth="113.0" style=": ; -fx-font-size: 28; -fx-padding: -2;" stylesheets="@button.css" text="BACK">
          <font>
             <Font name="Cloud-Bold" size="25.0" fx:id="x5" />
          </font>
@@ -66,7 +75,7 @@
             <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
          </padding>
       </Button>
-  <Button fx:id="comfirm" defaultButton="true" layoutX="170.0" layoutY="595.0" maxHeight="2.147483647E9" onAction="#onClickConfirm" prefHeight="61.0" prefWidth="175.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 28; -fx-padding: 2; -fx-text-fill: ffffff;" text="CONFIRM" textFill="#ff6000">
+  <Button fx:id="comfirm" defaultButton="true" layoutX="173.0" layoutY="595.0" maxHeight="2.147483647E9" onAction="#onClickConfirm" prefHeight="26.0" prefWidth="153.0" style=": ; -fx-font-size: 28; -fx-padding: 2;" styleClass="lightbutton" stylesheets="@button.css" text="CONFIRM" textFill="#ff6000">
          <font>
             <Font name="Cloud-Bold" size="34.0" fx:id="x4" />
          </font>

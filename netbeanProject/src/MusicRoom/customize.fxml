@@ -233,18 +233,18 @@
       </AnchorPane>
       <HBox layoutX="142.0" layoutY="1090.0" prefHeight="66.0" prefWidth="614.0">
          <children>
-            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="63.0" prefWidth="158.0" style="-fx-font-size: 40; -fx-font-family: Cloud;" stylesheets="@button.css" text="Back" textFill="WHITE">
+            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="101.0" prefWidth="184.0" style="-fx-font-size: 45; -fx-font-family: Cloud;" stylesheets="@button.css" text="BACK" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
-                  <Font name="Cloud-Bold" size="35.0" />
+                  <Font name="Cloud-Bold" size="50.0" />
                </font>
                <padding>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </padding>
             </Button>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="93.0" prefWidth="402.0" style="-fx-font-size: 50px; -fx-font-family: cloud;" stylesheets="@button.css" text="CONFIRM!" textFill="WHITE">
+            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="64.0" prefWidth="402.0" style="-fx-font-size: 45px; -fx-font-family: cloud;" styleClass="lightbutton" stylesheets="@button.css" text="CONFIRM!" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
