@@ -7,11 +7,15 @@
     -fx-font-family: 'Cloud';
 }
 
-
 .pane {
     -fx-font-family: 'Cloud';
 }
 
 .button {
     -fx-font-family: 'Cloud';
+}
+
+.graytext{
+    -fx-font-family: 'Cloud';
+    -fx-text-fill: rgb(128,128,128);
 }

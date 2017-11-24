@@ -58,7 +58,7 @@
                <StackPane.margin>
                   <Insets />
                </StackPane.margin></Rectangle>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" text="Control Panel" wrappingWidth="258.8040008544922">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40; -fx-font-family: Cloud;" text="Control Panel" wrappingWidth="258.8040008544922">
                <font>
                   <Font name="Cloud-Bold" size="64.0" />
                </font>
