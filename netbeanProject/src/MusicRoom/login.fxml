@@ -40,13 +40,6 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -59,7 +52,7 @@ Contributor(s):
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1024.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1024.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.LoginController">
    <children>
       <VBox layoutX="178.0" layoutY="145.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.leftAnchor="200.0">
          <children>
@@ -76,7 +69,7 @@ Contributor(s):
                         <Insets bottom="-10.0" top="-10.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="btn_reg" mnemonicParsing="false" onAction="#onClickGoRegister" prefHeight="44.0" prefWidth="159.0" style="-fx-font-size: 28;" styleClass="lightbutton" stylesheets="@button.css" text="REGISTER" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="btn_reg" mnemonicParsing="false" onAction="#onClickGoRegister" prefHeight="44.0" prefWidth="159.0" style="-fx-font-size: 28;" stylesheets="@button.css" text="REGISTER" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Cloud-Bold" size="28.0" />
                      </font>
