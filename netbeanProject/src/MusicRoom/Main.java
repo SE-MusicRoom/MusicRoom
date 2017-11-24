@@ -116,7 +116,7 @@ public class Main extends Application {
             DatabaseManager.getInstance().updateInstrument(a);
             DatabaseManager.getInstance().updateInstrument(b);*/
 //*************************************************************
-         //   DatabaseManager.getInstance().createDummyRoomTemplate();
+           // DatabaseManager.getInstance().createDummyRoomTemplate();
            // updateRoomTemplateDB();
         } catch (Exception ex) {
 
