@@ -200,9 +200,7 @@ public class CustomizeController extends AnchorPane implements Initializable {
     public void onMouseEntered(MouseEvent event) {
         int selectedId = Integer.parseInt(((AnchorPane) event.getSource()).getId());
         Instrument instrument = Main.getInstance().getInstrument(selectedId);
-        Tooltip tooltip = new Tooltip(instrument.getName() + "\n" +
-                                      instrument.getModel() + "\n" +
-                                      instrument.getPrice());
+        Tooltip tooltip = new Tooltip(instrument.toDetailString());
         ImageView imgView = new ImageView(instrument.getImg());
         imgView.setFitWidth(200);
         imgView.setFitHeight(200);

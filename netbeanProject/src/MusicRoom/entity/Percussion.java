@@ -5,7 +5,6 @@
  */
 package MusicRoom.entity;
 
-import java.util.ArrayList;
 import javax.persistence.Entity;
 
 /**
@@ -30,9 +29,15 @@ public class Percussion extends Instrument{
         this.partName = partName;
     }
     
-        @Override
+    @Override
     public String getClassPath() {
         return partName;
+    }
+       
+    @Override
+    public String toDetailString() {
+        return super.toDetailString() + "\n" +
+               partName;
     }
 }
 

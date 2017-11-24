@@ -43,6 +43,13 @@ public class Strings extends Instrument{
     public String getClassPath() {
         return type;
     }
+    
+    @Override
+    public String toDetailString() {
+        return super.toDetailString() + "\n" +
+               type + "\n" +
+               number_of_strings + " Strings";
+    }
 }
 
 

@@ -35,6 +35,11 @@ public class Voice extends Instrument{
         return "Microphone";
     }
     
+    @Override
+    public String toDetailString() {
+        return super.toDetailString() + "\n" +
+               "FreqResp: " + frequencyResponse;
+    }
 }
 
 

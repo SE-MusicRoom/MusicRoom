@@ -6,8 +6,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.KeyFrame;
+import javafx.animation.ScaleTransition;
+import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,6 +28,8 @@ public class MainMenuController extends AnchorPane implements Initializable {
     private AnchorPane includePane;
     @FXML
     private Button reservationBtn;
+    @FXML
+    private Button historyBtn;
 
     
     private AnchorPane customizePane;
@@ -82,7 +88,9 @@ public class MainMenuController extends AnchorPane implements Initializable {
         }
         
         tt.setOnFinished((ActionEvent event) -> { 
-            hideIncludePane();
+            for(int i=0;i<includePane.getChildren().size();i++) 
+                includePane.getChildren().get(i).setVisible(false);
+            
             pane.setVisible(true);
             TranslateTransition tt2 = new TranslateTransition(Duration.seconds(0.1), includePane);
             tt2.setFromX( 1000 );
@@ -90,21 +98,26 @@ public class MainMenuController extends AnchorPane implements Initializable {
             tt2.play();
         });
         
-
-            
         tt.play();
-            
-        
     }
     
     public void hideIncludePane() {
+        for(int i=0;i<includePane.getChildren().size();i++) 
+            includePane.getChildren().get(i).setVisible(false);
 
-            for(int i=0;i<includePane.getChildren().size();i++) {
-                includePane.getChildren().get(i).setVisible(false);
-            }
+        Timeline tl = new Timeline();
+        tl.setCycleCount(50);
+        KeyFrame resizeBtn = new KeyFrame(Duration.seconds(0.001),
+                (ActionEvent event) -> {
+                        if(historyBtn.getPrefWidth()>180)
+                            historyBtn.setPrefWidth(historyBtn.getPrefWidth()-1);
+                        if(reservationBtn.getPrefWidth()>220)
+                            reservationBtn.setPrefWidth(reservationBtn.getPrefWidth()-1);
+                    }
+                );
 
-        
-        
+        tl.getKeyFrames().add(resizeBtn);
+        tl.play();
     }
     
     public void gotoCustomize() {
@@ -157,6 +170,20 @@ public class MainMenuController extends AnchorPane implements Initializable {
         }
         templateselectController.setApp(this);
         swapIncludePane(templateselectPane);
+        Timeline tl = new Timeline();
+        tl.setCycleCount(50);
+        tl.setDelay(Duration.seconds(0.05));
+        KeyFrame resizeBtn = new KeyFrame(Duration.seconds(0.001),
+            (ActionEvent event) -> {
+                if(historyBtn.getPrefWidth()>180)
+                            historyBtn.setPrefWidth(historyBtn.getPrefWidth()-1);
+                if(reservationBtn.getPrefWidth()<250)
+                    reservationBtn.setPrefWidth(reservationBtn.getPrefWidth()+1);
+            }
+       );
+
+        tl.getKeyFrames().add(resizeBtn);
+        tl.play();
     }
     
     public void gotoHistory() {
@@ -174,6 +201,21 @@ public class MainMenuController extends AnchorPane implements Initializable {
         }
         historyController.setApp(this);
         swapIncludePane(historyPane);
+        Timeline tl = new Timeline();
+        tl.setCycleCount(50);
+        tl.setDelay(Duration.seconds(0.05));
+        KeyFrame resizeBtn = new KeyFrame(Duration.seconds(0.001),
+            (ActionEvent event) -> {
+                if(historyBtn.getPrefWidth()<230)
+                    historyBtn.setPrefWidth(historyBtn.getPrefWidth()+1);
+                if(reservationBtn.getPrefWidth()>220)
+                            reservationBtn.setPrefWidth(reservationBtn.getPrefWidth()-1);
+            }
+        );
+
+        tl.getKeyFrames().add(resizeBtn);
+        tl.play();
+        
     }
     
     public void gotoSuccess(Booking newBooking) {
@@ -191,6 +233,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
         }
         successReservationController.setApp(this, newBooking);
         swapIncludePane(successReservationPane);
+
     }
     
     public void onClickReservation(ActionEvent event) {
