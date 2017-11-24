@@ -198,6 +198,7 @@ public class RegisterController extends AnchorPane implements Initializable {
                         Main.getInstance().createUser(username.getText(), password.getText(),
                         name.getText(), surname.getText(),
                         email.getText(), Band.findBand(bandName.getText()),subscribed.isSelected()));
+                Main.getInstance().updateUserDB();
                 Main.getInstance().gotoRegisterConfirm();
             }
 
