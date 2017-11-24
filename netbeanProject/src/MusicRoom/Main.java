@@ -91,7 +91,7 @@ public class Main extends Application {
 
 //            updateBookingDB();
 //            updateInstrumentDB();
-            DatabaseManager.getInstance().createDummyRoomTemplate();
+//            DatabaseManager.getInstance().createDummyRoomTemplate();
             updateRoomTemplateDB();
 //************create Database**********************************
 //             DatabaseManager.getInstance().createInstrumentDB();
