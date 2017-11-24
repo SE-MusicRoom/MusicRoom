@@ -183,9 +183,9 @@ public class DatabaseManager {
         list.add(new BrassWoodwind("Woodwind", "TenorSaxophone", "Yanagisawa", "T901S", 165000, "MusicRoom/img/Instruments/BrassWoodwind/Woodwind/Saxophone/TenorSaxophone/tenorsax2.png"));
         list.add(new BrassWoodwind("Woodwind", "TenorSaxophone", "Julius Keilwerth", "ST90", 45000, "MusicRoom/img/Instruments/BrassWoodwind/Woodwind/Saxophone/TenorSaxophone/tenorsax3.png"));
 
-        for (Instrument i : list) {
+        list.forEach((i) -> {
             em.persist(i);
-        }
+        });
 
         em.getTransaction().commit();
         closeEMF();

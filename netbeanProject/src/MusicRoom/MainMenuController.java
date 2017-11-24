@@ -34,7 +34,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
     
     private CustomizeController customizeController;
     private TimeSelectController timeselectorController;
-    private TemplateController templateselectController;
+    private TemplateSelectController templateselectController;
     private HistoryController historyController;
     private SuccessReservationController successReservationController;
     
@@ -152,7 +152,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
             }
             templateselectPane.setVisible(false);
             includePane.getChildren().add(templateselectPane);
-            templateselectController = (TemplateController) loader.getController();
+            templateselectController = (TemplateSelectController) loader.getController();
             
         }
         templateselectController.setApp(this);
