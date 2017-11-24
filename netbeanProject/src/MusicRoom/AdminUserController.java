@@ -91,6 +91,9 @@ public class AdminUserController extends AnchorPane implements Initializable {
     public void onClickRemove(ActionEvent event){
         int selectID = Integer.parseInt(userID.getText());
 
+        User user = Main.getInstance().getUsers().stream().filter(u -> u.getId() == selectID).findFirst().get();
+
+        DatabaseManager.getInstance().removeUser(user);
 
         parent.getUserScroll().getChildren().remove(((Button)event.getSource()).getParent().getParent());
     }

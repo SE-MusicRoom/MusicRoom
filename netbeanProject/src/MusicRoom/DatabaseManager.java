@@ -492,6 +492,19 @@ public class DatabaseManager {
         return true;
     }
 
+    public boolean removeUser(User user) {
+        if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
+            return false;
+        }
+
+        em.getTransaction().begin();
+        em.remove(em.contains(user) ? user : em.merge(user));
+        em.getTransaction().commit();
+
+        closeEMF();
+        return true;
+    }
+
     public List<User> fetchAllUser() {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return null;
