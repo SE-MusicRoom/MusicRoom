@@ -54,86 +54,89 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1300.0" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminUserController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="700.0" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminUserController">
    <children>
       <StackPane layoutX="-1.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="89.0" stroke="TRANSPARENT" strokeType="INSIDE" width="179.0" />
-            <Text fill="#ff8200" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 50;" text="Users" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="58.0" stroke="TRANSPARENT" strokeType="INSIDE" width="120.0" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" text="Users" />
          </children>
       </StackPane>
-      <StackPane layoutX="785.0" layoutY="18.0" prefHeight="75.0" prefWidth="516.0">
+      <StackPane layoutX="378.0" layoutY="14.0" prefHeight="50.0" prefWidth="312.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="81.0" stroke="TRANSPARENT" strokeType="INSIDE" width="513.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="44.0" stroke="TRANSPARENT" strokeType="INSIDE" width="320.0">
                <StackPane.margin>
                   <Insets top="-10.0" />
                </StackPane.margin>
             </Rectangle>
-            <HBox prefHeight="23.0" prefWidth="516.0">
+            <HBox prefHeight="50.0" prefWidth="299.0">
                <children>
-                  <Text fx:id="Search" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 28;" text="Search">
+                  <Text fx:id="Search" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="Search">
                      <HBox.margin>
-                        <Insets left="20.0" top="17.0" />
+                        <Insets left="5.0" top="10.0" />
                      </HBox.margin>
                   </Text>
-                  <TextField fx:id="searchBox" minWidth="200.0" prefHeight="27.0" prefWidth="341.0" style="-fx-background-color: #fff0e6; -fx-font-size: 25; -fx-border-width: 2; -fx-border-color: #ffd1b3;">
+                  <TextField fx:id="searchBox" minWidth="193.0" prefHeight="34.0" prefWidth="211.0" style="-fx-background-color: #fff0e6; -fx-font-size: 15; -fx-border-width: 2; -fx-border-color: #ffd1b3;">
                      <HBox.margin>
-                        <Insets left="10.0" top="9.0" />
+                        <Insets left="5.0" top="3.0" />
                      </HBox.margin>
                      <padding>
-                        <Insets top="1.0" />
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                      </padding>
                   </TextField>
-                  <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/search.png" />
                      </image>
                      <HBox.margin>
-                        <Insets left="5.0" top="15.0" />
+                        <Insets left="3.0" top="5.0" />
                      </HBox.margin>
                   </ImageView>
                </children>
             </HBox>
          </children>
       </StackPane>
-      <ScrollPane layoutX="-1.0" layoutY="89.0" prefHeight="844.0" prefWidth="1302.0">
+      <ScrollPane layoutX="-1.0" layoutY="57.0" prefHeight="416.0" prefWidth="700.0">
          <content>
-            <VBox fx:id="userScroll" prefHeight="837.0" prefWidth="1281.0">
+            <VBox fx:id="userScroll" prefHeight="389.0" prefWidth="690.0">
                <children>
-                  <StackPane fx:id="userToken" prefHeight="175.0" prefWidth="1253.0">
+                  <StackPane fx:id="userToken" prefHeight="100.0" prefWidth="690.0">
                      <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffccb3" height="165.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1246.0">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffccb3" height="102.0" stroke="TRANSPARENT" strokeType="INSIDE" width="681.0">
                            <StackPane.margin>
-                              <Insets top="10.0" />
+                              <Insets />
                            </StackPane.margin></Rectangle>
-                        <HBox prefHeight="145.0" prefWidth="1261.0">
+                        <HBox prefHeight="134.0" prefWidth="690.0">
                            <children>
-                              <VBox prefHeight="99.0" prefWidth="285.0">
+                              <VBox prefHeight="110.0" prefWidth="180.0">
                                  <children>
                                     <HBox>
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" text="User ID : " wrappingWidth="155.5199966430664" />
-                                          <Text fx:id="userID" fill="#a49d9d" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" text="#00001">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="User ID : " wrappingWidth="87.52001953125" />
+                                          <Text fx:id="userID" fill="#a49d9d" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="#00001">
                                              <HBox.margin>
                                                 <Insets />
                                              </HBox.margin>
                                           </Text>
                                        </children>
                                        <VBox.margin>
-                                          <Insets top="25.0" />
+                                          <Insets top="37.0" />
                                        </VBox.margin>
                                     </HBox>
                                  </children>
                                  <HBox.margin>
-                                    <Insets left="170.0" />
+                                    <Insets left="30.0" />
                                  </HBox.margin>
                               </VBox>
-                              <VBox prefHeight="120.0" prefWidth="477.0">
+                              <VBox prefHeight="102.0" prefWidth="351.0">
                                  <children>
                                     <HBox>
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Name : " />
-                                          <TextField fx:id="name" style="-fx-font-size: 25; -fx-background-color: #fff0e6;" text="Example Example">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Name : ">
+                                             <HBox.margin>
+                                                <Insets top="4.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="name" prefHeight="11.0" prefWidth="250.0" style="-fx-font-size: 20; -fx-background-color: #fff0e6;" text="Example Example">
                                              <padding>
                                                 <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                                              </padding>
@@ -143,10 +146,13 @@
                                           <Insets top="10.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <HBox>
+                                    <HBox prefHeight="34.0" prefWidth="347.0">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Band name :  " />
-                                          <TextField fx:id="bandName" prefHeight="44.0" prefWidth="227.0" style="-fx-font-size: 25; -fx-background-color: #fff0e6;" text="Example">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Band name :  " wrappingWidth="123.41999053955078">
+                                             <HBox.margin>
+                                                <Insets top="4.0" />
+                                             </HBox.margin></Text>
+                                          <TextField fx:id="bandName" prefHeight="34.0" prefWidth="196.0" style="-fx-font-size: 20; -fx-background-color: #fff0e6;" text="Example">
                                              <padding>
                                                 <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
                                              </padding>
@@ -155,48 +161,48 @@
                                        <VBox.margin>
                                           <Insets top="10.0" />
                                        </VBox.margin>
+                                       <opaqueInsets>
+                                          <Insets left="20.0" />
+                                       </opaqueInsets>
                                     </HBox>
                                  </children>
                                  <HBox.margin>
-                                    <Insets left="170.0" top="-8.0" />
+                                    <Insets left="30.0" />
                                  </HBox.margin>
                               </VBox>
-                              <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="130.0" style="-fx-font-size: 30; -fx-background-color: rgb(255,30,0);" text="Remove" textFill="WHITE">
+                              <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="87.0" style="-fx-font-size: 20;" stylesheets="@button.css" text="Remove" textFill="WHITE">
                                  <padding>
                                     <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
                                  </padding>
                                  <HBox.margin>
-                                    <Insets left="-20.0" top="35.0" />
+                                    <Insets left="-10.0" top="35.0" />
                                  </HBox.margin>
                               </Button>
                            </children>
-                           <padding>
-                              <Insets top="8.0" />
-                           </padding>
                            <StackPane.margin>
-                              <Insets top="30.0" />
+                              <Insets />
                            </StackPane.margin>
                         </HBox>
                      </children>
                      <VBox.margin>
-                        <Insets />
+                        <Insets top="10.0" />
                      </VBox.margin>
                   </StackPane>
                </children>
             </VBox>
          </content>
       </ScrollPane>
-      <Button layoutY="933.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="66.0" prefWidth="160.0" style="-fx-font-size: 45; -fx-background-color: rgb(255,130,0);" text="Back" textFill="WHITE">
+      <Button layoutY="472.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="28.0" prefWidth="90.0" style="-fx-font-size: 30;" stylesheets="@button.css" text="Close" textFill="WHITE">
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </Button>
+      <Button layoutX="90.0" layoutY="473.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="104.0" style="-fx-font-size: 30;" styleClass="lightbutton" stylesheets="@button.css" text="Add" textFill="WHITE">
          <padding>
             <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
          </padding>
       </Button>
-      <Button layoutX="161.0" layoutY="933.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="160.0" style="-fx-font-size: 45; -fx-background-color: rgb(255,30,0);" text="Add" textFill="WHITE">
-         <padding>
-            <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
-         </padding>
-      </Button>
-      <Button layoutX="322.0" layoutY="933.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="191.0" style="-fx-font-size: 45; -fx-background-color: rgb(255,30,0);" text="Update" textFill="WHITE">
+      <Button layoutX="194.0" layoutY="473.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="170.0" style="-fx-font-size: 30;" stylesheets="@button.css" text="Update" textFill="WHITE">
          <padding>
             <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
          </padding>

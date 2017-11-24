@@ -59,9 +59,9 @@ Contributor(s):
             <Rectangle fx:id="rect_1" arcHeight="5.0" arcWidth="5.0" fill="#ff8200" height="149.0" stroke="TRANSPARENT" strokeType="INSIDE" width="311.0" />
             <Rectangle fx:id="rect_2" arcHeight="5.0" arcWidth="5.0" fill="#0d0601" height="51.0" stroke="TRANSPARENT" strokeType="INSIDE" width="311.0" />
             <Rectangle fx:id="rect_3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="130.0" stroke="TRANSPARENT" strokeType="INSIDE" width="494.0" />
-            <HBox prefHeight="73.0" prefWidth="431.0">
+            <HBox prefHeight="73.0" prefWidth="431.0" stylesheets="@button.css">
                <children>
-                  <Button fx:id="btn_login" mnemonicParsing="false" onAction="#onClickLogin" prefHeight="64.0" prefWidth="170.0" style="-fx-font-size: 48; -fx-background-color: rgb(255,30,0);" text="LOGIN" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="btn_login" mnemonicParsing="false" onAction="#onClickLogin" prefHeight="64.0" prefWidth="170.0" style="-fx-font-size: 48;" stylesheets="@button.css" text="LOGIN" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Cloud-Bold" />
                      </font>
@@ -69,7 +69,7 @@ Contributor(s):
                         <Insets bottom="-10.0" top="-10.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="btn_reg" mnemonicParsing="false" onAction="#onClickGoRegister" prefHeight="44.0" prefWidth="159.0" style="-fx-background-color: rgb(255,30,0); -fx-font-size: 28;" text="REGISTER" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="btn_reg" mnemonicParsing="false" onAction="#onClickGoRegister" prefHeight="44.0" prefWidth="159.0" style="-fx-font-size: 28;" stylesheets="@button.css" text="REGISTER" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Cloud-Bold" size="28.0" />
                      </font>

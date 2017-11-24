@@ -5,6 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -15,7 +17,8 @@ import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-
+import javafx.scene.text.Text;
+import javafx.scene.control.TextField;
 
 
 public class AdminUserController extends AnchorPane implements Initializable {
@@ -27,9 +30,17 @@ public class AdminUserController extends AnchorPane implements Initializable {
     private AdminMenuController mainmenu;
     private AdminUserController parent;
 
+    // for token
+    @FXML private Text userID;
+    @FXML private TextField name;
+    @FXML private TextField bandName;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
+
+    public void setApp(AdminUserController parent){
+        this.parent = parent;
     }
 
     public void setApp(AdminMenuController mainmenu){
@@ -40,10 +51,11 @@ public class AdminUserController extends AnchorPane implements Initializable {
 
         for(int i = 0; i < users.size(); i++){
 
+            userScroll.getChildren().add(copyUsersToken(users.get(i)));
         }
     }
 
-    private StackPane creatUsersToken(User user){
+    private StackPane copyUsersToken(User user){
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("admin-user.fxml"));
         try {
             loader.load();
@@ -51,7 +63,19 @@ public class AdminUserController extends AnchorPane implements Initializable {
             Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
         StackPane newtoken = (StackPane)loader.getNamespace().get("userToken");
+        AdminUserController cus = (AdminUserController) loader.getController();
+        cus.setApp(this);
+        cus.setTokenData(String.valueOf(user.getId()),user.getName(),user.getBandName().getName());
+
         return newtoken;
+    }
+
+    private void setTokenData(String id, String name, String bandName){
+        this.userID.setText(id);
+        this.name.clear();
+        this.name.setPromptText(name);
+        this.bandName.clear();
+        this.bandName.setPromptText(bandName);
     }
 
 
