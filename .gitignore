@@ -21,3 +21,4 @@ netbeanProject/src/MusicRoom/database/user.odb
 *.odb
 *.log
 *.properties
+netbeanProject/nbproject/private/private.properties

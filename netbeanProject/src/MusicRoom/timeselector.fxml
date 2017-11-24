@@ -67,7 +67,7 @@
                         <AnchorPane layoutX="17.0" layoutY="130.0" prefHeight="286.0" prefWidth="506.0">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="285.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="508.0" />
-                              <ImageView fx:id="SummaryImgView" fitHeight="292.0" fitWidth="510.0" layoutX="-6.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="SummaryImgView" fitHeight="285.0" fitWidth="508.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </AnchorPane>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804100" height="107.0" layoutX="17.0" layoutY="730.0" stroke="#ffffff00" strokeType="INSIDE" width="528.0" />
@@ -115,7 +115,7 @@
                               </VBox>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="465.0" prefWidth="312.0" stylesheets="@button.css">
+                        <AnchorPane prefHeight="465.0" prefWidth="312.0">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#800f00" height="78.0" layoutX="19.0" layoutY="-7.0" stroke="TRANSPARENT" strokeType="INSIDE" width="380.0" />
                               <Text fill="WHITE" layoutX="23.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Selection">
@@ -123,7 +123,7 @@
                                     <Font name="Cloud-Bold" size="52.0" />
                                  </font>
                               </Text>
-                              <GridPane layoutX="23.0" layoutY="93.0" prefHeight="401.0" prefWidth="680.0" style="-fx-background-color: rgb(2;">
+                              <GridPane layoutX="23.0" layoutY="93.0" prefHeight="401.0" prefWidth="680.0" stylesheets="@button.css">
                                  <children>
                                     <Button fx:id="T_11_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="265.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="11:00" GridPane.columnIndex="1">
                                        <font>

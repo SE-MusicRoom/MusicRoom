@@ -1,4 +1,9 @@
 /* General Purpose */
+.defbutton {
+    -fx-background-color: rgba(232, 232, 232, 1);
+    -fx-text-fill: rgba(0, 0, 0 , 1);
+}
+
 .button {
     -fx-background-color: rgba(255, 34, 0, 1);
     -fx-text-fill: rgba(255 ,255 ,255 , 1);
@@ -41,12 +46,12 @@
 }
 
 .invisiblebutton:hover {
-    -fx-background-color: rgba(255, 130, 0, 0.3);
+    -fx-background-color: rgba(255, 130, 0, 0.5);
     -fx-background-radius: 0,0,0;
 }
 
 .invisiblebutton:pressed {
-    -fx-background-color: rgba(128, 65, 0, 0.3);
+    -fx-background-color: rgba(128, 65, 0, 0.5);
     -fx-background-radius: 0,0,0;
 }
 
