@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
@@ -15,7 +22,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TemplateController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TemplateController">
    <children>
       <AnchorPane layoutX="149.0" layoutY="98.0" prefHeight="968.0" prefWidth="1348.0">
          <children>
@@ -34,20 +41,20 @@
                       <RowConstraints maxHeight="200.0" minHeight="37.33331298828125" prefHeight="65.33331298828125" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <AnchorPane fx:id="templateToken" prefHeight="201.0" prefWidth="334.0">
+                        <AnchorPane fx:id="templateToken" prefHeight="363.0" prefWidth="433.0">
                            <children>
-                              <ImageView fx:id="templatePic" fitHeight="324.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true" />
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="63.0" layoutX="-5.0" layoutY="323.0" opacity="0.63" stroke="BLACK" strokeType="INSIDE" width="461.0" />
-                              <Text fx:id="templateName" layoutX="14.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TemplateNames">
+                              <ImageView fx:id="templatePic" fitHeight="290.0" fitWidth="415.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="57.0" layoutX="21.0" layoutY="305.0" opacity="0.63" stroke="BLACK" strokeType="INSIDE" width="415.0" />
+                              <Text fx:id="templateName" layoutX="25.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TemplateNames">
                                  <font>
                                     <Font name="Cloud-Bold" size="35.0" />
                                  </font></Text>
-                              <Button fx:id="selectBtn" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#onSelectTemplate" opacity="0.0" prefHeight="321.0" prefWidth="456.0" text="Select">
+                              <Button fx:id="selectBtn" layoutX="20.0" layoutY="17.0" mnemonicParsing="false" onAction="#onSelectTemplate" opacity="0.0" prefHeight="344.0" prefWidth="416.0" styleClass="invisiblebutton" stylesheets="@button.css" text="Select">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="detailBtn" layoutX="344.0" layoutY="324.0" mnemonicParsing="false" onAction="#onSelectDetail" prefHeight="60.0" prefWidth="112.0" style="-fx-font-size: 26;" stylesheets="@button.css" text="INFO" textFill="WHITE">
+                              <Button fx:id="detailBtn" layoutX="363.0" layoutY="33.0" mnemonicParsing="false" onAction="#onSelectDetail" prefHeight="60.0" prefWidth="59.0" style="-fx-font-size: 26; -fx-background-radius: 30;" stylesheets="@button.css" text="i" textFill="WHITE">
                                  <font>
                                     <Font name="Cloud-Bold" size="27.0" />
                                  </font>
@@ -62,33 +69,19 @@
       </AnchorPane>
       <HBox layoutX="147.0" layoutY="1085.0" prefHeight="123.0" prefWidth="861.0">
          <children>
-            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="50.0" prefWidth="170.0" style="-fx-font-size: 40;" stylesheets="@button.css" text="Close" textFill="WHITE">
+            <Button fx:id="reservationBtn1" mnemonicParsing="false" onAction="#onClickBack" prefHeight="75.0" prefWidth="177.0" style="-fx-font-size: 40;" stylesheets="@button.css" text="Close" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <font>
                   <Font name="Cloud-Bold" size="35.0" />
                </font>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-               <padding>
-                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-               </padding>
-            </Button>
-            <Button fx:id="reservationBtn" mnemonicParsing="false" onAction="#onClickCustomize" prefHeight="101.0" prefWidth="680.0" style="-fx-font-size: 50;" stylesheets="@button.css" text="or CUSTOMIZE IT!!" textFill="WHITE">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-               <font>
-                  <Font name="Cloud-Bold" size="50.0" />
-               </font>
             </Button>
          </children>
       </HBox>
       <AnchorPane layoutX="148.0" prefHeight="98.0" prefWidth="461.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="98.0" stroke="BLACK" strokeType="INSIDE" width="608.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8200" height="98.0" stroke="BLACK" strokeType="INSIDE" width="608.0" />
             <Text fill="WHITE" layoutX="17.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Template Select">
                <font>
                   <Font name="Cloud-Bold" size="60.0" />
@@ -98,7 +91,7 @@
       </AnchorPane>
       <AnchorPane layoutX="11.0" layoutY="12.0" prefHeight="133.0" prefWidth="126.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="132.0" layoutX="2.0" layoutY="2.0" stroke="#ff800000" strokeType="INSIDE" width="124.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804100" height="132.0" layoutX="2.0" layoutY="2.0" stroke="#ff800000" strokeType="INSIDE" width="124.0" />
             <Text fill="WHITE" layoutX="41.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
                <font>
                   <Font name="Cloud-Bold" size="78.0" />

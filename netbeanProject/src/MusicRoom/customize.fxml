@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -19,7 +28,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1500.0" styleClass="pane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.CustomizeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1500.0" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.CustomizeController">
    <children>
       <AnchorPane layoutX="143.0" layoutY="94.0" prefHeight="992.0" prefWidth="1357.0">
          <children>
@@ -59,13 +68,19 @@
                <content>
                   <VBox fx:id="listScroll" prefHeight="803.0" prefWidth="577.0">
                      <children>
-                        <AnchorPane fx:id="listToken" onMouseClicked="#onAddInstrument" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" prefHeight="121.0" prefWidth="577.0">
+                        <AnchorPane fx:id="listToken" onMouseClicked="#onAddInstrument" prefHeight="121.0" prefWidth="577.0">
                            <children>
                               <AnchorPane layoutX="12.0" layoutY="5.0" prefHeight="107.0" prefWidth="110.0">
                                  <children>
                                     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe56636" height="117.0" layoutX="-13.0" layoutY="-6.0" stroke="#ffffff00" strokeType="INSIDE" width="577.0" />
                                     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe9e7" height="111.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" width="111.0" />
                                     <ImageView id="listToken_pic" fx:id="listToken_pic" fitHeight="111.0" fitWidth="112.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Circle fill="#ff1e00" layoutX="107.0" layoutY="29.0" radius="20.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                                    <Text fill="WHITE" layoutX="95.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+" wrappingWidth="29.333999633789062">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
                                  </children>
                               </AnchorPane>
                               <Text fx:id="listToken_name" layoutX="142.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 28;" styleClass="root" text="Gibson V Flyer">
@@ -107,6 +122,12 @@
                                     <Font size="22.0" />
                                  </font>
                               </Text>
+                              <Circle fill="#ff1e00" layoutX="119.0" layoutY="31.0" radius="20.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                              <Text fill="WHITE" layoutX="108.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+" wrappingWidth="29.333999633789062">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Text>
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="listToken2" onMouseClicked="#onAddInstrument" prefHeight="121.0" prefWidth="577.0">
@@ -116,6 +137,12 @@
                                     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe56636" height="117.0" layoutX="-13.0" layoutY="-6.0" stroke="#ffffff00" strokeType="INSIDE" width="577.0" />
                                     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffe9e7" height="111.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" width="111.0" />
                                     <ImageView id="listToken_pic" fx:id="listToken_pic2" fitHeight="111.0" fitWidth="112.0" layoutX="-1.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Circle fill="#ff1e00" layoutX="108.0" layoutY="23.0" radius="20.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                                    <Text fill="WHITE" layoutX="96.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+" wrappingWidth="29.333999633789062">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
                                  </children>
                               </AnchorPane>
                               <Text fx:id="listToken_name2" layoutX="142.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 28;" styleClass="root" text="Gibson V Flyer">
@@ -154,13 +181,19 @@
                                  <font>
                                     <Font size="36.0" />
                                  </font></Text>
+                              <Circle fill="#ff1e00" layoutX="245.0" layoutY="32.0" radius="20.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                              <Text fx:id="addedToken_price1" fill="WHITE" layoutX="235.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 42;" text="–" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="42.0" />
+                                 </font>
+                              </Text>
                            </children>
                         </AnchorPane>
                      </children>
                   </VBox>
                </content>
             </ScrollPane>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#783200" height="101.0" layoutX="12.0" layoutY="882.0" stroke="TRANSPARENT" strokeType="INSIDE" width="715.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804a00" height="101.0" layoutX="10.0" layoutY="882.0" stroke="TRANSPARENT" strokeType="INSIDE" width="717.0" />
             <Text fill="WHITE" layoutX="21.0" layoutY="959.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL">
                <font>
                   <Font name="Cloud-Bold" size="34.0" />
@@ -175,7 +208,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="419.0" prefWidth="691.0">
                      <children>
-                        <GridPane fx:id="emojiGrid" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="695.0">
+                        <GridPane fx:id="emojiGrid" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="695.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -187,7 +220,6 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
                               <ImageView id="listToken_pic" fx:id="emojiToken" fitHeight="134.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
@@ -264,7 +296,7 @@
       </AnchorPane>
       <AnchorPane layoutX="7.0" layoutY="11.0" prefHeight="133.0" prefWidth="126.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="132.0" layoutX="2.0" layoutY="2.0" stroke="#ff800000" strokeType="INSIDE" width="124.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#801100" height="132.0" layoutX="2.0" layoutY="2.0" stroke="#ff800000" strokeType="INSIDE" width="124.0" />
             <Text fill="WHITE" layoutX="41.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
                <font>
                   <Font name="Cloud-Bold" size="78.0" />
