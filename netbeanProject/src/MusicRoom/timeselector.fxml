@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
@@ -20,36 +21,32 @@
    <children>
       <AnchorPane layoutX="155.0" layoutY="94.0" prefHeight="989.0" prefWidth="1344.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="994.0" layoutX="-1.0" layoutY="2.0" stroke="#ffffff00" strokeType="INSIDE" width="1348.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0f0f05b" height="994.0" layoutX="-1.0" layoutY="2.0" stroke="#ffffff00" strokeType="INSIDE" width="1348.0" />
             <HBox layoutX="-1.0" layoutY="7.0" prefHeight="981.0" prefWidth="1355.0">
                <children>
                   <AnchorPane prefHeight="854.0" prefWidth="559.0">
                      <children>
                         <ScrollPane layoutX="16.0" layoutY="427.0" prefHeight="271.0" prefWidth="508.0">
                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="499.0">
+                              <VBox fx:id="selectedBox" prefHeight="175.0" prefWidth="240.0">
                                  <children>
-                                    <VBox fx:id="selectedBox" prefHeight="175.0" prefWidth="240.0">
-                                       <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13/02/60 (13:00 - 16:59)">
-                                             <font>
-                                                <Font size="35.0" />
-                                             </font>
-                                          </Text>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35px;" text="14/02/60 (13:00 - 16:59)">
-                                             <font>
-                                                <Font size="35.0" />
-                                             </font>
-                                          </Text>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35px;" text="15/02/60 (13:00 - 16:59)">
-                                             <font>
-                                                <Font size="35.0" />
-                                             </font>
-                                          </Text>
-                                       </children>
-                                    </VBox>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13/02/60 (13:00 - 16:59)">
+                                       <font>
+                                          <Font size="35.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35px;" text="14/02/60 (13:00 - 16:59)">
+                                       <font>
+                                          <Font size="35.0" />
+                                       </font>
+                                    </Text>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35px;" text="15/02/60 (13:00 - 16:59)">
+                                       <font>
+                                          <Font size="35.0" />
+                                       </font>
+                                    </Text>
                                  </children>
-                              </AnchorPane>
+                              </VBox>
                           </content>
                         </ScrollPane>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#800f00" height="98.0" layoutX="17.0" layoutY="10.0" stroke="TRANSPARENT" strokeType="INSIDE" width="315.0" />
@@ -64,7 +61,7 @@
                               <ImageView fx:id="SummaryImgView" fitHeight="285.0" fitWidth="508.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </AnchorPane>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804100" height="107.0" layoutX="17.0" layoutY="730.0" stroke="#ffffff00" strokeType="INSIDE" width="528.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804100" height="107.0" layoutX="17.0" layoutY="730.0" stroke="#ffffff00" strokeType="INSIDE" width="508.0" />
                         <Text fill="WHITE" layoutX="25.0" layoutY="808.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price">
                            <font>
                               <Font name="Cloud-Bold" size="40.0" />
@@ -88,22 +85,31 @@
                                  </font>
                               </Text>
                               <DatePicker fx:id="datePicker" layoutX="18.0" layoutY="99.0" onAction="#onClickDatePicker" prefHeight="60.0" prefWidth="455.0" style="-fx-font-size: 24;" />
-                              <VBox layoutX="21.0" layoutY="182.0" prefHeight="222.0" prefWidth="301.0">
+                              <VBox layoutX="21.0" layoutY="182.0" prefHeight="115.0" prefWidth="474.0" style="-fx-background-color: black;">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="White - Available/Mostly Available ">
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="White - Available/Mostly Available ">
                                        <font>
-                                          <Font name="Cloud-Light" size="28.0" />
+                                          <Font name="Cloud-Bold" size="28.0" />
                                        </font>
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
                                     </Text>
-                                    <Text fill="#b1b100" strokeType="OUTSIDE" strokeWidth="0.0" text="Yellow - Nearly Full">
+                                    <Text fill="#fff200" strokeType="OUTSIDE" strokeWidth="0.0" text="Yellow - Nearly Full">
                                        <font>
-                                          <Font name="Cloud-Light" size="28.0" />
+                                          <Font name="Cloud-Bold" size="28.0" />
                                        </font>
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
                                     </Text>
                                     <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Red - Full/Can't Reserved">
                                        <font>
-                                          <Font name="Cloud-Light" size="28.0" />
+                                          <Font name="Cloud-Bold" size="28.0" />
                                        </font>
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
                                     </Text>
                                  </children>
                               </VBox>
@@ -117,76 +123,78 @@
                                     <Font name="Cloud-Bold" size="52.0" />
                                  </font>
                               </Text>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="405.0" layoutX="23.0" layoutY="90.0" stroke="TRANSPARENT" strokeType="INSIDE" width="453.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="328.0" layoutX="467.0" layoutY="90.0" stroke="TRANSPARENT" strokeType="INSIDE" width="237.0" />
                               <GridPane layoutX="23.0" layoutY="93.0" prefHeight="401.0" prefWidth="680.0" stylesheets="@button.css">
                                  <children>
-                                    <Button fx:id="T_11_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="265.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="11:00" GridPane.columnIndex="1">
+                                    <Button fx:id="T_11_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="11:00" GridPane.columnIndex="1">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_12_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="274.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="12:00" GridPane.columnIndex="2">
+                                    <Button fx:id="T_12_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="12:00" GridPane.columnIndex="2">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_13_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="271.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="13:00" GridPane.rowIndex="1">
+                                    <Button fx:id="T_13_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="13:00" GridPane.rowIndex="1">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_14_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="245.0" style="-fx-font-family: Cloud; -fx-font-size: 38px;" styleClass="available" text="14:00" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <Button fx:id="T_14_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-family: Cloud; -fx-font-size: 38px;" styleClass="available" text="14:00" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_15_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="247.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="15:00" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <Button fx:id="T_15_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="15:00" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_16_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="267.0" style="-fx-font-family: Cloud; -fx-font-size: 38px;" styleClass="available" text="16:00" GridPane.rowIndex="2">
+                                    <Button fx:id="T_16_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-family: Cloud; -fx-font-size: 38px;" styleClass="available" text="16:00" GridPane.rowIndex="2">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_17_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="278.0" style="-fx-font-family: Cloud; -fx-font-size: 38px;" styleClass="available" text="17:00" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <Button fx:id="T_17_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-family: Cloud; -fx-font-size: 38px;" styleClass="available" text="17:00" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_18_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="260.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="18:00" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                    <Button fx:id="T_18_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="18:00" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_19_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="112.0" prefWidth="253.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="19:00" GridPane.rowIndex="3">
+                                    <Button fx:id="T_19_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="19:00" GridPane.rowIndex="3">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_10_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="83.0" prefWidth="230.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="10:00">
+                                    <Button fx:id="T_10_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="10:00">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_20_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="283.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="20:00" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <Button fx:id="T_20_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="20:00" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_21_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="256.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="21:00" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                    <Button fx:id="T_21_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="21:00" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_22_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="295.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="22:00" GridPane.rowIndex="4">
+                                    <Button fx:id="T_22_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="22:00" GridPane.rowIndex="4">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
-                                    <Button fx:id="T_23_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="280.0" style="-fx-font-family: Cloud; -fx-font-size: 38px;" styleClass="available" text="23:00" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                    <Button fx:id="T_23_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="80.0" prefWidth="230.0" style="-fx-font-family: Cloud; -fx-font-size: 38px;" styleClass="available" text="23:00" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                        <font>
                                           <Font name="Cloud-Bold" size="38.0" />
                                        </font></Button>
                                  </children>
                                  <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="230.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="230.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="230.0" />
                                  </columnConstraints>
                                  <rowConstraints>
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
                                  </rowConstraints>
                               </GridPane>
                            </children>
