@@ -32,13 +32,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -51,7 +44,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.RegisterConfirmController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="background" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.RegisterConfirmController">
   <children>
       <StackPane layoutX="60.0" layoutY="35.0" prefHeight="497.0" prefWidth="668.0">
          <children>
@@ -63,7 +56,7 @@
             </VBox>
             <VBox prefHeight="515.0" prefWidth="668.0">
                <children>
-                  <Text fill="#ff8200" strokeType="OUTSIDE" strokeWidth="0.0" text="Only one step" wrappingWidth="449.8040008544922">
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Only one step" wrappingWidth="449.8040008544922">
                      <font>
                         <Font name="Cloud-Bold" size="64.0" />
                      </font>
