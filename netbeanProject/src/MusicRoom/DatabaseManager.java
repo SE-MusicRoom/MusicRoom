@@ -657,22 +657,31 @@ public class DatabaseManager {
     }
 
     public void updateUser(User user) {
-        User DbUser = fetchUser(user.getId());
-        createEMF("objectdb://" + ip + "/MusicRoom.odb;user=admin;password=admin");
+        //User DbUser = fetchUser(user.getId());
+
+        createEMF(ip + "/MusicRoom.odb;user=admin;password=admin");
         em.getTransaction().begin();
 
         Query query = em.createQuery(
-                "UPDATE User u SET name =\":name\", surname=\":surname\", bandname=\":bandname\", email=\":email\", username=\":username\", password=\":password\", bookedTimes=\":bookedTimes\" "
-                + "WHERE u.id < :id");
-        query = query.setParameter("name", user.getName());
-        query = query.setParameter("surname", user.getSurname());
-        query = query.setParameter("bandname", user.getBandName());
-        query = query.setParameter("email", user.getEmail());
-        query = query.setParameter("username", user.getUsername());
-        query = query.setParameter("password", user.getPassword());
-        query = query.setParameter("bookedTimes", user.getBookings());
+                "UPDATE User u SET name =\"" + user.getName() + "\", surname=\"" + user.getSurname() + "\"" + "WHERE u.id = " + String.valueOf(user.getId()));
         query.executeUpdate();
 
+        em.getTransaction().commit();
+        closeEMF();
+    }
+
+    public void updateUserBand(User user, Band b){
+
+
+        if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
+            return;
+        }
+
+        TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.id =" + String.valueOf(user.getId()), User.class);
+        User u = query.getSingleResult();
+
+        em.getTransaction().begin();
+        u.setBandName(b);
         em.getTransaction().commit();
         closeEMF();
     }

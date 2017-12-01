@@ -87,6 +87,10 @@ public class User {
         return name;
     }
 
+    public void setName(String name){
+        this.name = name;
+    }
+
     public String getSurname() {
         return surname;
     }
@@ -97,6 +101,10 @@ public class User {
 
     public Band getBandName() {
         return band;
+    }
+
+    public void setBandName(Band band){
+        this.band = band;
     }
 
     public boolean isActivated() {
