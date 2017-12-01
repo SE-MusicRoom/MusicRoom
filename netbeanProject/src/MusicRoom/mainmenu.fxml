@@ -81,7 +81,7 @@ Contributor(s):
       </StackPane>
       <VBox layoutX="14.0" layoutY="176.0" prefHeight="190.0" prefWidth="371.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="119.0">
          <children>
-            <Button fx:id="reservationBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="40.0" prefWidth="220.0" style="-fx-font-size: 22;" styleClass="root" stylesheets="@button.css" text="+ New Reservations" textFill="WHITE">
+            <Button fx:id="reservationBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="40.0" prefWidth="179.0" style="-fx-font-size: 18;" styleClass="root" stylesheets="@button.css" text="+ New Reservations" textFill="WHITE">
                <font>
                   <Font name="Cloud-Bold" size="26.0" />
                </font>
