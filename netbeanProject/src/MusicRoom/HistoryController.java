@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package MusicRoom;
 
 import MusicRoom.entity.Booking;
@@ -27,7 +22,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 /**
- *
+ * FXML's User's History Controller.
  * @author SE-MUSICROOM
  */
 public class HistoryController extends AnchorPane implements Initializable {
@@ -51,6 +46,9 @@ public class HistoryController extends AnchorPane implements Initializable {
     private MainMenuController mainmenu;
     private HistoryController parent;
     
+    /**
+    * called by MainMenuController
+    */
     public void setApp(MainMenuController mainmenu){
         this.mainmenu = mainmenu;
          historyScroll.getChildren().clear();
@@ -70,21 +68,33 @@ public class HistoryController extends AnchorPane implements Initializable {
         }
     }
     
+    /**
+    * (for 'historyToken' only, they use different HistoryController). 
+    * called by main HistoryController. 
+    */
     public void setApp(HistoryController parent){
         this.parent = parent;
     }
 
+    /**
+    *  init 
+    */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
+    /**
+    *  getHistoryScroll of main HistoryController, for historyToken to call and add/count child
+    */
     public VBox getHistoryScroll() {
         return historyScroll;
     }
     
     
-    
+    /**
+    * copy historyToken by loading it and set data
+    */
     private StackPane copyHistoryToken(Booking book) {
         
         
@@ -112,6 +122,9 @@ public class HistoryController extends AnchorPane implements Initializable {
         return newToken;
     }
     
+    /**
+    * (called by copyHistoryToken of main HistoryController) set text of historyToken
+    */
     protected void setTokenData(String id,String date,String template,String time,String price,String status) {
         this.showid.setText(id);
         this.date.setText(date);
@@ -121,6 +134,9 @@ public class HistoryController extends AnchorPane implements Initializable {
         this.status.setText(status);
     }
     
+    /**
+    *  find button handler
+    */
     @FXML
     void onFind(Event event) {
         historyScroll.getChildren().clear();
@@ -135,6 +151,9 @@ public class HistoryController extends AnchorPane implements Initializable {
         }
     }
 
+    /**
+    *  cancel button handler
+    */
     @FXML
     void onCancel(ActionEvent event) {
         
@@ -142,14 +161,13 @@ public class HistoryController extends AnchorPane implements Initializable {
         Booking selectedB = Main.getInstance().getBookings().stream().filter(item -> item.getID() == selectedId).findFirst().get();
         // Remove from db
         DatabaseManager.getInstance().removeBooking(selectedB);
-        // Remove from room
-        //Main.getInstance().getCurrentUser().getBookings().get(selectedId).getRoom().removeBooking(Main.getInstance().getCurrentUser().getBookings().get(selectedId));
         // Remove from user
         Main.getInstance().getCurrentUser().removeBookedTime(selectedB);
-
+        // Remove from Scroll
         parent.getHistoryScroll().getChildren().remove(((Button)event.getSource()).getParent().getParent());
         
-                Main.getInstance().sendEmail("Music Room Cancel Reservation",
+        // Send cancel reservation e-mail
+        Main.getInstance().sendEmail("Music Room Cancel Reservation",
                                 "<h1><span style=\"color: #FF0000;\"> ยกเลิกการจองสำเร็จ </span> </h1>"
                                 + "<br> <b>รหัสจอง:</b> " + selectedB.getID()
                                 + "<br> <b>ผู้จอง:</b> คุณ " + selectedB.getUser().toString()
@@ -163,6 +181,9 @@ public class HistoryController extends AnchorPane implements Initializable {
         
     }
     
+    /**
+    *  back button handler
+    */
     public void onClickBack(ActionEvent event) {
         mainmenu.hideIncludePane();
     }
