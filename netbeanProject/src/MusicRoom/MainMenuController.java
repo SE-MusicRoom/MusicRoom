@@ -20,7 +20,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 /**
- * Login Controller.
+ * FXML's Main menu (after logged in) Controller.
+ * @author SE-MUSICROOM
  */
 public class MainMenuController extends AnchorPane implements Initializable {
 
@@ -44,34 +45,17 @@ public class MainMenuController extends AnchorPane implements Initializable {
     private HistoryController historyController;
     private SuccessReservationController successReservationController;
     
-    public void setApp(){
-        
-    }
-    
+    /**
+    *  init
+    */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
     
-    
-    private Initializable showIncludePane(String fxml) throws IOException {
-        hideIncludePane();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-        AnchorPane page = null;
-        try {
-            page = (AnchorPane) loader.load();
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        includePane.getChildren().clear();
-        includePane.getChildren().add(page);
-        
-
-        
-        return (Initializable) loader.getController();
-    }
-    
+    /**
+    *  Swap pane to other page
+    */
     public void swapIncludePane(AnchorPane pane) {
         
         
@@ -101,6 +85,9 @@ public class MainMenuController extends AnchorPane implements Initializable {
         tt.play();
     }
     
+    /**
+    *  hide current page
+    */
     public void hideIncludePane() {
         for(int i=0;i<includePane.getChildren().size();i++) 
             includePane.getChildren().get(i).setVisible(false);
@@ -120,6 +107,9 @@ public class MainMenuController extends AnchorPane implements Initializable {
         tl.play();
     }
     
+    /**
+    *  Go to customize page
+    */
     public void gotoCustomize() {
         if(customizePane==null) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("customize.fxml"));
@@ -137,6 +127,9 @@ public class MainMenuController extends AnchorPane implements Initializable {
         
     }
     
+    /**
+    *  Go to time select page
+    */
      public void gotoTimeSelect() {
         if(timeselectorPane==null) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("timeselector.fxml"));
@@ -155,6 +148,9 @@ public class MainMenuController extends AnchorPane implements Initializable {
         swapIncludePane(timeselectorPane);
     }
     
+    /**
+    *  Go to room template select
+    */
     public void gotoTemplate() {
         if(templateselectPane==null) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("templateselect.fxml"));
@@ -186,6 +182,9 @@ public class MainMenuController extends AnchorPane implements Initializable {
         tl.play();
     }
     
+    /**
+    *  Go to history page
+    */
     public void gotoHistory() {
         if(historyPane==null) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("history.fxml"));
@@ -218,6 +217,9 @@ public class MainMenuController extends AnchorPane implements Initializable {
         
     }
     
+    /**
+    *  Go to reservation success page
+    */
     public void gotoSuccess(Booking newBooking) {
         if(successReservationPane==null) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("success_reservation.fxml"));
@@ -236,18 +238,30 @@ public class MainMenuController extends AnchorPane implements Initializable {
 
     }
     
+    /**
+    *  reserve button handler
+    */
     public void onClickReservation(ActionEvent event) {
         gotoTemplate();
     }
     
+    /**
+    *  history button handler
+    */
     public void onClickHistory(ActionEvent event) {
        gotoHistory();
     }
     
+    /**
+    *  log out button handler
+    */
      public void onClickLogOut(ActionEvent event) {
         Main.getInstance().gotoLogin();
     }
 
+    /**
+    *  remove loaded pages
+    */
     public void clearAllState() {
         customizePane = null;
         timeselectorPane = null;
