@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package MusicRoom;
 
 import MusicRoom.entity.CustomRoomTemplate;
@@ -20,7 +25,7 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Text;
 
 /**
- * FXML's Room Template (Preset) Selection Controller.
+ *
  * @author SE-MUSICROOM
  */
 public class TemplateSelectController extends AnchorPane implements Initializable {
@@ -29,15 +34,19 @@ public class TemplateSelectController extends AnchorPane implements Initializabl
     private TemplateSelectController parent;
     private RoomTemplate myTemplate;
     
-    @FXML    private Text templateName;
-    @FXML    private ImageView templatePic;
-    @FXML    private GridPane templateGrid;
-    @FXML    private Button selectBtn;
+    @FXML
+    private Text templateName;
+    @FXML
+    private ImageView templatePic;
+    @FXML
+    private AnchorPane templateToken;
+    @FXML
+    private GridPane templateGrid;
+    @FXML
+    private Button selectBtn;
     
     
-    /**
-    *  Called by MainMenuController
-    */
+    
     public void setApp(MainMenuController mainmenu){
         this.mainmenu = mainmenu;
         this.templateGrid.getChildren().clear();
@@ -64,26 +73,34 @@ public class TemplateSelectController extends AnchorPane implements Initializabl
         
     }
     
-    /**
-    * (for 'templateToken' only, they use different TemplateSelectController). 
-    * called by main TemplateSelectController. 
-    */
     public void setApp(TemplateSelectController parent,MainMenuController mainmenu){
         this.parent = parent;
         this.mainmenu = mainmenu;
     }
 
-    /**
-    * init
-    */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
     }
-
-    /**
-    * copy templateToken by loading it and set data
-    */
+    
+    private AnchorPane copyCustomTemplateToken() {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("templateselect.fxml"));
+        
+        try {   
+            loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        AnchorPane newToken = (AnchorPane)loader.getNamespace().get("templateToken");
+        
+         // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
+        TemplateSelectController cus = (TemplateSelectController)loader.getController();
+        cus.setApp(this,mainmenu);
+        cus.setTemplateToken(new CustomRoomTemplate("Custom", "Custom your room as you wish", 0));
+        
+        return newToken;
+    }
+    
     private AnchorPane copyTemplateToken(RoomTemplate r) {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("templateselect.fxml"));
         
@@ -103,56 +120,25 @@ public class TemplateSelectController extends AnchorPane implements Initializabl
         return newToken;
     }
     
-    /**
-    * add customize button as a new copy of templateToken by loading it and set data
-    */
-    private AnchorPane copyCustomTemplateToken() {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("templateselect.fxml"));
-        
-        try {   
-            loader.load();
-        } catch (IOException ex) {
-            Logger.getLogger(CustomizeController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        AnchorPane newToken = (AnchorPane)loader.getNamespace().get("templateToken");
-        
-         // Set parent = CustomizeController for new cloned button (It has different CustomizeController)
-        TemplateSelectController cus = (TemplateSelectController)loader.getController();
-        cus.setApp(this,mainmenu);
-        cus.setTemplateToken(new CustomRoomTemplate("Custom", "Custom your room as you wish", 0));
-        
-        return newToken;
-    }
-    
-    /**
-    * (called by copyTemplateToken of main TemplateSelectController) set image/text of templateToken
-    */
     private void setTemplateToken(RoomTemplate r) {
         myTemplate = r;
         templateName.setText(r.getName());
-        templatePic.setImage(r.getImg());
+        templatePic.setImage(r.getImg()); //new Image("MusicRoom/img/RoomTemplate/"+r.getName()+".jpg",imgV.getFitWidth(), imgV.getFitHeight(), false,true)
+       // templatePic.setFitHeight(templatePic.getFitHeight());
+        //templatePic.setFitWidth(templatePic.getFitWidth());
         templatePic.setPreserveRatio(false);
         if(r instanceof CustomRoomTemplate)
-            selectBtn.setOnAction((ActionEvent event) -> {onClickCustomize(null);});
+            selectBtn.setOnAction((event) -> {onClickCustomize(null);});
     }
     
-    /**
-    *  Customize button handler
-    */
     public void onClickCustomize(ActionEvent event) {
         mainmenu.gotoCustomize();
     }
     
-    /**
-    *  Back button handler
-    */
     public void onClickBack(ActionEvent event) {
         mainmenu.hideIncludePane();
     }
     
-    /**
-    *  template click handler
-    */
     public void onSelectTemplate(ActionEvent event) {
         Main.getInstance().setCurrentRoom(myTemplate);
         mainmenu.gotoTimeSelect();
@@ -160,9 +146,6 @@ public class TemplateSelectController extends AnchorPane implements Initializabl
         
     }
     
-    /**
-    *  detail button handler
-    */
     public void onSelectDetail(ActionEvent event) {
         Main.getInstance().showPopup(myTemplate.getName(), myTemplate.toString());
     }

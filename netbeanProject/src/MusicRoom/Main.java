@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package MusicRoom;
 
 import MusicRoom.entity.*;
@@ -24,7 +29,6 @@ import javax.mail.internet.MimeMessage;
 
 /**
  * Main Application. This class handles navigation and user session.
- * @author SE-MUSICROOM
  */
 public class Main extends Application {
 
@@ -115,28 +119,28 @@ public class Main extends Application {
            // DatabaseManager.getInstance().createDummyRoomTemplate();
            // updateRoomTemplateDB();
         } catch (Exception ex) {
+
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    /**
-    *  get Main's only instance (Singleton)
-    */ 
+    // Getters Setters    
     public static Main getInstance() {
         return instance;
+    }
+
+    public User getLoggedUser() {
+        return currentUser;
     }
 
     public void setCurrentPrice(float currentPrice) {
         this.currentPrice = currentPrice;
     }
+
     public RoomTemplate getCurrentRoom() {
         return currentRoom;
     }
-    
-    /**
-    *  get instrument by id
-     * @param id id of instrument
-    */
+
     public Instrument getInstrument(long id) {
         if (this.instruments == null) {
             updateInstrumentDB();
@@ -150,11 +154,6 @@ public class Main extends Application {
         return null;
     }
 
-    /**
-    *  get instrument by name
-     * @param name name of instrument
-     * @param model model of instrument
-    */
     public Instrument getInstrument(String name, String model) {
         if (this.instruments == null) {
             updateInstrumentDB();
@@ -212,9 +211,6 @@ public class Main extends Application {
         this.currentTimeTable = currentTimeTable;
     }
 
-    /**
-    *  update user list by fetching from database
-    */
     public void updateUserDB() {
         this.users = (List<User>) DatabaseManager.getInstance().fetchAllUser();
         if (this.users == null) {
@@ -223,9 +219,7 @@ public class Main extends Application {
         System.out.println("Fetch Main User:" + users.size());
 
     }
-    /**
-    *  update booking list by fetching from database
-    */
+
     public void updateBookingDB() {
         this.bookings = (List<Booking>) DatabaseManager.getInstance().fetchAllBooking();
         if (this.bookings == null) {
@@ -233,9 +227,7 @@ public class Main extends Application {
         }
         System.out.println("Fetch Main Booking:" + bookings.size());
     }
-    /**
-    *  update instrument list by fetching from database
-    */
+
     public void updateInstrumentDB() {
         this.instruments = DatabaseManager.getInstance().fetchAllInstrument();
         if (this.instruments == null) {
@@ -243,9 +235,7 @@ public class Main extends Application {
         }
         System.out.println("Fetch Main Instrument:" + instruments.size());
     }
-    /**
-    *  update room template list by fetching from database
-    */
+
     public void updateRoomTemplateDB() {
         this.roomTemplete = DatabaseManager.getInstance().fetchAllRoomTemplate();
         if (this.roomTemplete == null) {
@@ -253,24 +243,15 @@ public class Main extends Application {
         }
         System.out.println("Fetch Main Template:" + roomTemplete.size());
     }
-    /**
-    *  check if popup is already in present
-    */
+
     public boolean isPopupOpen() {
         return popupOpen;
     }
-    /**
-    *  set (only) when popup is opened/closed
-     * @param isPopup is opened or is closed
-    */
+
     public void setPopupOpen(boolean isPopup) {
         this.popupOpen = isPopup;
     }
 
-    /**
-    *  Simple authentication system
-     * @return return if logged in or not
-    */
     public boolean userLogging(String userId, String password) {
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).getUsername().equals(userId)) {
@@ -300,9 +281,6 @@ public class Main extends Application {
 
     }
 
-    /**
-    *  Call when user pressed logout
-    */
     public void userLogout() {
         currentUser = null;
         users = null;
@@ -312,17 +290,11 @@ public class Main extends Application {
         gotoLogin();
     }
 
-    /**
-    *  Create booking from current information
-    */
     public Booking createBooking() {
         Booking newBooking = new Booking(currentRoom, currentTimeTable, currentUser, currentPrice);
         return newBooking;
     }
 
-    /**
-    *  create and persist new user
-    */
     public User createUser(String username, String password, String name, String surname,
             String email, Band band,boolean subscribe) {
         User newUser = new User(username, password, name, surname, email, band, subscribe);
@@ -331,9 +303,7 @@ public class Main extends Application {
         return newUser;
     }
 
-    /**
-    *  Show popup in any page
-    */
+    // Popups
     public PopupController showPopup(String title, String detail) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("popup.fxml"));
         AnchorPane page = null;
@@ -350,17 +320,12 @@ public class Main extends Application {
         return pop;
     }
 
-    /**
-    *  Show Error popup (popup with different button handler) in any page
-     * @param event event handles OK button of the popup. Declared as static variable in PopupController
-    */
     public void showErrorPopup(String title, String detail, String event) {
         PopupController pop = showPopup(title, detail);
         pop.addEventToButton(event);
     }
 
-    //Navigation
-    
+    // Scene Control
     public void gotoLogin() {
         try {
             LoginController login = (LoginController) replaceSceneContent("login.fxml");
@@ -404,9 +369,6 @@ public class Main extends Application {
         }
     }
 
-    /**
-    *  Load and replace current page
-    */
     private Initializable replaceSceneContent(String fxml) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
         AnchorPane page = null;
@@ -422,9 +384,6 @@ public class Main extends Application {
         return (Initializable) loader.getController();
     }
 
-    /**
-    *  Send e-mail to user-specified e-mail address
-    */
     public void sendEmail(String title, String msg) {
 
         final String username = "kmitlmusicroom@gmail.com";
@@ -466,9 +425,6 @@ public class Main extends Application {
         }
     }
     
-    /**
-    *  Create, persist, update new booking
-    */
     public void createConfirmedBooking() {
         if(currentRoom instanceof CustomRoomTemplate)
             DatabaseManager.getInstance().addCustomRoom((CustomRoomTemplate) currentRoom);

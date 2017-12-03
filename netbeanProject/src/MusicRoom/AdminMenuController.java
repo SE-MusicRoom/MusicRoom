@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package MusicRoom;
 
 import java.io.IOException;
@@ -17,21 +22,48 @@ import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 /**
- * FXML's Admin:Main menu Controller.
+ *
  * @author SE-MUSICROOM
  */
 public class AdminMenuController  extends AnchorPane implements Initializable {
     
-    @FXML    private AnchorPane includePane;
-    @FXML    private AnchorPane adminUserPane;
-    
+    @FXML
+    private AnchorPane includePane;
+
+
+    private AnchorPane adminUserPane;
+
     private AdminUserController adminUserController;
+    
+    public void setApp(){
+        
+    }
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
     }
     
+    
+    private Initializable showIncludePane(String fxml) throws IOException {
+        
+        FXMLLoader loader = new FXMLLoader();
+        InputStream in = Main.class.getResourceAsStream(fxml);
+        loader.setBuilderFactory(new JavaFXBuilderFactory());
+        loader.setLocation(Main.class.getResource(fxml));
+        AnchorPane page;
+        try {
+            page = (AnchorPane) loader.load(in);
+        } finally {
+            in.close();
+        } 
+        
+        includePane.getChildren().clear();
+        includePane.getChildren().add(page);
+        
+        return (Initializable) loader.getController();
+    }
+
     public void swapIncludePane(AnchorPane pane) {
 
 
@@ -72,6 +104,9 @@ public class AdminMenuController  extends AnchorPane implements Initializable {
 
 
     }
+    
+
+    
     
     public void gotoLogOut() {
         Main.getInstance().gotoMainMenu();

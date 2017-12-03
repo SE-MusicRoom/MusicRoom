@@ -15,31 +15,28 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
 /**
- * FXML's Room Customization Controller.
+ *
  * @author SE-MUSICROOM
  */
 public class SuccessReservationController extends AnchorPane implements Initializable {
-
-    
-    @FXML    private Text idtxt;
-    @FXML    private Text emailtxt;
     
     private MainMenuController mainmenu;
     
+    @FXML
+    private Text idtxt;
+
+    @FXML
+    private Text emailtxt;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
     }
     
-    /**
-    *  Called by MainMenuController
-    */
     public void setApp(MainMenuController mainmenu, Booking newBooking){
         this.mainmenu = mainmenu;
         idtxt.setText(String.valueOf(newBooking.getID()));
         emailtxt.setText(Main.getInstance().getCurrentUser().getEmail());
-        
-        // Send activition e-mail
         Main.getInstance().sendEmail("Music Room Reservation Detail",
                                 "<h1><span style=\"color: #00AA00;\"> เพิ่มการจองสำเร็จ ! </span></h1>"
                                 + "<br> <b>รหัสจอง:</b> " + newBooking.getID()
@@ -52,9 +49,6 @@ public class SuccessReservationController extends AnchorPane implements Initiali
                                 + "<br> SE-MusicRoom</b>");
     }
     
-    /**
-    *  Back button handler
-    */
     public void onClickBack(ActionEvent event) {
         mainmenu.hideIncludePane();
         mainmenu.clearAllState();

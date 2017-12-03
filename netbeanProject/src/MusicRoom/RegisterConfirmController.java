@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package MusicRoom;
 
 import MusicRoom.entity.User;
@@ -12,29 +17,26 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
 /**
- * FXML's Register Confirmation Controller.
+ *
  * @author SE-MUSICROOM
  */
 public class RegisterConfirmController extends AnchorPane implements Initializable{
 
 
-    @FXML    private PasswordField activateCode;
-    @FXML    private Text emailTxt;
+    @FXML
+    private PasswordField activateCode;
+    
+    @FXML
+    private Text emailTxt;
     
     private User user;
-    private String activition;
     
-    /**
-    *  init
-    */
+    private String activition;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
     }
     
-    /**
-    *  Called by main
-    */
     public void setApp(User user){
         this.user = user;
         activition = encrypt(String.valueOf(Calendar.getInstance().get(Calendar.MILLISECOND)));
@@ -43,23 +45,17 @@ public class RegisterConfirmController extends AnchorPane implements Initializab
         onClickResend(null); // Send Email
     }
     
-    /**
-    *  Simple activation code encryption (nothing)
-    */
+    
+
+    
     private String encrypt(String src) {
         return src;
     }
     
-    /**
-    *  Back button handler
-    */
     public void onClickBack(ActionEvent event) {
         Main.getInstance().gotoLogin();
     }
     
-    /**
-    *  Confirm button handler
-    */
     public void onClickConfirm(ActionEvent event) {
         if(activateCode.getText().equals( activition ) ) {
             DatabaseManager.getInstance().updateActivateUser(user);
@@ -73,9 +69,6 @@ public class RegisterConfirmController extends AnchorPane implements Initializab
             
     }
     
-    /**
-    *  Resend button handler
-    */
     public void onClickResend(ActionEvent event) {
        Main.getInstance().sendEmail("Music Room Register Comfirmation",
                                 "<b>ขอบคุณที่สมัคร,<br>"

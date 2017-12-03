@@ -3,10 +3,12 @@ package MusicRoom;
 import MusicRoom.entity.Band;
 import MusicRoom.entity.User;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -22,40 +24,33 @@ import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 
+import javax.persistence.criteria.CriteriaBuilder;
 
-/**
- * FXML's Admin:User Controller.
- * @author SE-MUSICROOM
- */
+
 public class AdminUserController extends AnchorPane implements Initializable {
 
-    @FXML    private VBox userScroll;
-    // for token
-    @FXML private Text userID;
-    @FXML private TextField name;
-    @FXML private TextField bandName;
+    @FXML
+    private VBox userScroll;
+
 
     private AdminMenuController mainmenu;
     private AdminUserController parent;
     private List<AdminUserController> scrollCon = new ArrayList<AdminUserController>();
     private int state;
-    
+
+    // for token
+    @FXML private Text userID;
+    @FXML private TextField name;
+    @FXML private TextField bandName;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
-    /**
-    * (for 'userToken' only, they use same they use different AdminUserController). 
-    * called by main CustomizeController. 
-    */
     public void setApp(AdminUserController parent){
         this.parent = parent;
     }
 
-    /**
-    * called by main
-    */
     public void setApp(AdminMenuController mainmenu){
         this.mainmenu = mainmenu;
         userScroll.getChildren().clear();
@@ -68,9 +63,6 @@ public class AdminUserController extends AnchorPane implements Initializable {
         }
     }
 
-    /**
-    * copy userToken by loading it and set data
-    */
     private StackPane copyUsersToken(User user){
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("admin-user.fxml"));
         try {
@@ -86,9 +78,6 @@ public class AdminUserController extends AnchorPane implements Initializable {
         return newtoken;
     }
 
-    /**
-    * (called by copyUsersToken of main AdminMenuController) set image/text of userToken
-    */
     private void setTokenData(String id, String name, String bandName){
         this.userID.setText(id);
         this.name.clear();
@@ -113,16 +102,10 @@ public class AdminUserController extends AnchorPane implements Initializable {
         return userID;
     }
 
-    /**
-    *  add button handler
-    */
     public void onClickAdd(ActionEvent event){
 
     }
 
-    /**
-    *  remove button handler
-    */
     public void onClickRemove(ActionEvent event){
         int selectID = Integer.parseInt(userID.getText());
 
@@ -162,9 +145,6 @@ public class AdminUserController extends AnchorPane implements Initializable {
         }
     }
 
-    /**
-    *  back button handler
-    */
     public void onClickBack(ActionEvent event) {
         mainmenu.hideIncludePane();
     }

@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package MusicRoom;
 
 import MusicRoom.entity.Booking;
@@ -26,7 +31,7 @@ import javafx.scene.text.Text;
 import javafx.util.Callback;
 
 /**
- * FXML's Booking Time Selection Controller.
+ *
  * @author SE-MUSICROOM
  */
 public class TimeSelectController extends AnchorPane implements Initializable{
@@ -48,10 +53,16 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     @FXML    private Button T_21_Btn;
     @FXML    private Button T_22_Btn;
     @FXML    private Button T_23_Btn;
-      
-    @FXML    private ImageView SummaryImgView;
-    @FXML    private Text totalTxt;
-    @FXML    private VBox selectedBox;
+    
+    
+        @FXML
+    private ImageView SummaryImgView;
+        
+   @FXML
+    private Text totalTxt;
+
+    @FXML
+    private VBox selectedBox;
     
     private MainMenuController mainmenu;
     private List<Calendar> notAvailableTimes;
@@ -60,7 +71,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     private Button[] TimeBtn;
     private float total;
     
-    // Modify cells of calendar
+    
     final Callback<DatePicker, DateCell> dayCellFactory = 
             new Callback<DatePicker, DateCell>() {
                 @Override
@@ -71,7 +82,6 @@ public class TimeSelectController extends AnchorPane implements Initializable{
                             super.updateItem(item, empty);
                             this.setDisable(empty || item.isBefore(LocalDate.now()));
                             
-                            // Check selected time
                             int na = 0;
                             for (int i = 0; i < selectedTimes.size(); i++) {
                                 LocalDate d = selectedTimes.get(i).getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -80,7 +90,6 @@ public class TimeSelectController extends AnchorPane implements Initializable{
                                     return;
                                 }
                             }
-                            // Check unavailable (booked) hour
                             this.getStyleClass().remove("selected");
                             for (int i = 0; i < notAvailableTimes.size(); i++) {
                                 LocalDate d = notAvailableTimes.get(i).getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -101,9 +110,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     };
     
     
-    /**
-    * called by MainMenuController
-    */
+    
     public void setApp(MainMenuController mainmenu){
         this.mainmenu = mainmenu;
         this.selectedTimes = new ArrayList<Calendar>();
@@ -128,9 +135,6 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         listTime();
     }
 
-    /**
-    * called by init
-    */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
        datePicker.setEditable(false);
@@ -141,9 +145,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
        
     }
     
-    /**
-    * Date picker click handler
-    */
+    
     public void onClickDatePicker(ActionEvent event) {
         currentDate = datePicker.getValue();
         listTime();
@@ -155,11 +157,10 @@ public class TimeSelectController extends AnchorPane implements Initializable{
                 TimeBtn[hour].getStyleClass().add("selected");
             }
         }
+        
+        
     }
     
-    /**
-    * Set each TimeBtn
-    */
     private void listTime() {
         for (int i = 10; i < TimeBtn.length; i++) {
             //System.out.println(i+"set true");
@@ -168,8 +169,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
             TimeBtn[i].getStyleClass().remove("selected");
             TimeBtn[i].getStyleClass().add("available");
         }
-       
-        // Set unavailable (booked) hour button
+        int counter = 0;
         for (int i = 0; i < notAvailableTimes.size(); i++) {
             LocalDate d = notAvailableTimes.get(i).getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             if(d.isEqual(currentDate)) {
@@ -180,20 +180,17 @@ public class TimeSelectController extends AnchorPane implements Initializable{
                 TimeBtn[hour].getStyleClass().remove("available");
                 TimeBtn[hour].getStyleClass().remove("selected");
                 TimeBtn[hour].getStyleClass().add("full");
-            } 
+                counter++;
+            }
+                
+                //selectedTimes.add(selectedTimes.get(j).get(Calendar.HOUR_OF_DAY));
         }
-        
-        // Set unavailable (passed) hour button
-        int nowHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-        for (int hour = 10; hour <= nowHour; hour++) {
-            TimeBtn[hour].setDisable(true);
-        }
+
         
     }
     
-    /**
-    * Generate & Update SelectedTime text
-    */
+
+    
     private void updateSelectedTimeText() {
         selectedBox.getChildren().clear();
         int lastDay = -1;
@@ -240,14 +237,16 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         }
     }
     
-    /**
-    * Every time button handler
-    */
     public void onClickTime(ActionEvent event) {
         Button timeSelectedBtn = (Button)event.getSource();
         String timeSelectedName = timeSelectedBtn.getId();
         int timeSelectedID = Integer.parseInt(timeSelectedName.split("_")[1]);
         
+        //if(selectedHours.indexOf(timeSelectedID)<0) { //add
+        //    
+            
+        //} else { // remove
+            
 
             boolean isNew = true;
             for (int i = 0; i < selectedTimes.size(); i++) { // remove in selectedTimes
@@ -270,6 +269,12 @@ public class TimeSelectController extends AnchorPane implements Initializable{
                 selectedTimes.add(newCalendar);
                 System.out.println("ADDING");
             }
+            //selectedHours.remove(Integer.valueOf(timeSelectedID)); // remove in selectedHours
+            
+        //}
+        
+        
+            
 
         Collections.sort(selectedTimes, new Comparator<Calendar>() {
             @Override
@@ -287,9 +292,6 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         totalTxt.setText(total+"฿");
     }
     
-    /**
-    * Confirm button handler
-    */
     public void onClickConfirm(ActionEvent event) {
         
         if(selectedTimes.isEmpty()) {
@@ -303,9 +305,6 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         Main.getInstance().showErrorPopup("Confirmation", "Confirm your reservation ?", "SUCCESS_CONFIRM");
     }
     
-    /**
-    * Back button handler
-    */
     public void onClickBack(ActionEvent event) {
         if(Main.getInstance().getCurrentRoom() instanceof CustomRoomTemplate)
             mainmenu.gotoCustomize();

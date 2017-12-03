@@ -15,10 +15,6 @@ import java.util.ArrayList;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Database manager (connect/query)
- * @author SE-MUSICROOM
- */
 public class DatabaseManager {
 
     private static DatabaseManager instance;
@@ -31,9 +27,8 @@ public class DatabaseManager {
         ip = "objectdb://161.246.6.16:80";
     }
 
-    /**
-    *  get DatabaseManager's only instance (Singleton)
-    */ 
+    ;
+
     public static DatabaseManager getInstance() {
         if (instance == null) {
             instance = new DatabaseManager();
@@ -41,9 +36,6 @@ public class DatabaseManager {
         return instance;
     }
 
-    /**
-    *  Establish connection
-    */
     private boolean createEMF(String DbName) {
         try {
             this.emf = Persistence.createEntityManagerFactory(DbName);
@@ -58,18 +50,17 @@ public class DatabaseManager {
 
     }
 
-    /**
-    *  Close Connection
-    */
     private void closeEMF() {
         this.em.close();
         this.emf.close();
     }
 
-    /**
-    *  Create + Persist first and only admin user / dummy user
-    *  @return is creation succesful ?
-    */
+    public void createDummyAll() {
+        createInstrumentDB();
+        createDummyRoomTemplate();
+        createDummyUser();
+    }
+
     public boolean createDummyUser() {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return false;
@@ -89,10 +80,6 @@ public class DatabaseManager {
         return true;
     }
 
-    /**
-    *  Create + Persist starting instruments
-    * @return is creation succesful ?
-    */
     public boolean createInstrumentDB() {
 
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
@@ -205,10 +192,6 @@ public class DatabaseManager {
         return true;
     }
 
-    /**
-    *  Create + Persist starting room template
-     * @return is creation succesful ?
-    */
     public boolean createDummyRoomTemplate() {
 
         RoomTemplate reggae = new RoomTemplate("Reggae", "For the love of Bob", 6000);
@@ -431,10 +414,6 @@ public class DatabaseManager {
         return true;
     }
 
-    /**
-    *  Create + Persist new user
-    * @return is creation succesful ?
-    */
     public boolean addUser(User user) {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return false;
@@ -448,10 +427,6 @@ public class DatabaseManager {
         return true;
     }
 
-    /**
-    *  Create + Persist new band
-    * @return is creation succesful ?
-    */
     public boolean addBand(Band band) {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return false;
@@ -465,10 +440,6 @@ public class DatabaseManager {
         return true;
     }
 
-    /**
-    *  Create + Persist new room template
-    * @return is creation succesful ?
-    */
     public boolean addRoom(RoomTemplate roomTemplate) {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return false;
@@ -482,10 +453,6 @@ public class DatabaseManager {
         return true;
     }
 
-    /**
-    *  Create + Persist new custom room template
-    * @return is creation succesful ?
-    */
     public boolean addCustomRoom(CustomRoomTemplate roomTemplate) {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return false;
@@ -499,10 +466,6 @@ public class DatabaseManager {
         return true;
     }
 
-    /**
-    *  Create + Persist new booking
-    * @return is creation succesful ?
-    */
     public boolean addBooking(Booking booking) {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return false;
@@ -516,10 +479,6 @@ public class DatabaseManager {
         return true;
     }
 
-    /**
-    *  remove exist booking
-    * @return is succesful ?
-    */
     public boolean removeBooking(Booking booking) {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return false;
@@ -533,10 +492,6 @@ public class DatabaseManager {
         return true;
     }
 
-    /**
-    *  remove exist user
-    * @return is succesful ?
-    */
     public boolean removeUser(User user) {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return false;
@@ -550,10 +505,6 @@ public class DatabaseManager {
         return true;
     }
 
-    /**
-    *  Query for all users
-    * @return All users in database
-    */
     public List<User> fetchAllUser() {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return null;
@@ -568,11 +519,7 @@ public class DatabaseManager {
         closeEMF();
         return results;
     }
-    
-    /**
-    *  Query for all bookings
-    * @return All bookings in database
-    */
+
     public List<Booking> fetchAllBooking() {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return null;
@@ -585,10 +532,6 @@ public class DatabaseManager {
         return results;
     }
 
-    /**
-    *  Query for all instruments
-    * @return All instruments in database
-    */
     public List<Instrument> fetchAllInstrument() {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return null;
@@ -601,10 +544,6 @@ public class DatabaseManager {
         return results;
     }
 
-    /**
-    *  Query for all room template
-    * @return All room template in database
-    */
     public List<RoomTemplate> fetchAllRoomTemplate() {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return null;
@@ -617,10 +556,6 @@ public class DatabaseManager {
         return results;
     }
 
-    /**
-    *  Query for all custom room template
-    * @return All custom room template in database
-    */
     public List<Booking> fetchAllCustomBooking() {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return null;
@@ -632,10 +567,6 @@ public class DatabaseManager {
         return results;
     }
 
-    /**
-    *  Query for a room template with specified ID
-    * @return room template with same ID provided
-    */
     public List<Booking> fetchBookingByRoomID(int id) {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return null;
@@ -647,10 +578,6 @@ public class DatabaseManager {
         return results;
     }
 
-    /**
-    *  Query for a user with specified ID
-    * @return user with same ID provided
-    */
     public User fetchUser(long id) {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return null;
@@ -663,10 +590,6 @@ public class DatabaseManager {
         return result;
     }
 
-    /**
-    *  Check if user with specified username already exist
-    * @return is user exist ?
-    */
     public boolean isExistUser(String username) {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return false;
@@ -679,10 +602,6 @@ public class DatabaseManager {
         return count > 0;
     }
 
-    /**
-    *  Query for a user with specified name
-    * @return user with same name provided
-    */
     public Band fetchBand(String name) {
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
             return null;
@@ -700,9 +619,6 @@ public class DatabaseManager {
         return result;
     }
 
-    /**
-    *  Update an instrument in database 
-    */
     public void updateInstrument(Instrument instrument) {
 
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
@@ -740,9 +656,6 @@ public class DatabaseManager {
         closeEMF();
     }
 
-    /**
-    *  Update a user in database 
-    */
     public void updateUser(User user) {
         //User DbUser = fetchUser(user.getId());
 
@@ -757,9 +670,6 @@ public class DatabaseManager {
         closeEMF();
     }
 
-    /**
-    *  Update user's band in database 
-    */
     public void updateUserBand(User user, Band b){
 
 
@@ -776,9 +686,6 @@ public class DatabaseManager {
         closeEMF();
     }
     
-    /**
-    *  Activate a user
-    */
     public void updateActivateUser(User user) {
 
         if (!createEMF(ip + "/MusicRoom.odb;user=admin;password=admin")) {
