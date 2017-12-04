@@ -21,7 +21,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="986.0" layoutX="-3.0" layoutY="-1.0" stroke="#ffffff00" strokeType="INSIDE" width="1355.0" />
             <ScrollPane layoutX="-12.0" layoutY="3.0" prefHeight="986.0" prefWidth="1346.0" AnchorPane.bottomAnchor="61.0" AnchorPane.rightAnchor="129.0">
                <content>
-                  <GridPane fx:id="templateGrid" gridLinesVisible="true" maxHeight="1.7976931348623157E308" minHeight="200.0" minWidth="200.0" prefHeight="1093.0" prefWidth="1353.0">
+                  <GridPane fx:id="templateGrid" gridLinesVisible="true" maxHeight="1.7976931348623157E308" minHeight="200.0" minWidth="200.0" prefHeight="1093.0" prefWidth="1307.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
@@ -130,5 +130,6 @@
    <stylesheets>
       <URL value="@button.css" />
       <URL value="@font.css" />
+      <URL value="@base.css" />
    </stylesheets>
 </AnchorPane>

@@ -3,6 +3,10 @@
     -fx-background-size: cover;
 }
 
+.scroll-bar {
+    -fx-font-size: 30px;
+}
+
 /* For Calendar Only */
 .date-cell.warning { 
     /* Add 'warning' when nears full  */
