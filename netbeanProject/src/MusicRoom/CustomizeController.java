@@ -60,7 +60,6 @@ public class CustomizeController extends AnchorPane implements Initializable {
     */
     public void setApp(MainMenuController mainmenu) {
         // init
-        this.addedInstruments = new ArrayList<Instrument>();
         this.mainmenu = mainmenu;
 
         // add 'All' choice to Choice Box and select it as default
@@ -69,6 +68,10 @@ public class CustomizeController extends AnchorPane implements Initializable {
 
         // Get instrument from main. Add all class names as choice box's categories 
         List<Instrument> listedInstruments = Main.getInstance().getInstruments();
+        if(listedInstruments==null) {
+            mainmenu.hideIncludePane();
+            return;
+        }
         for (int i = 0; i < listedInstruments.size(); i++) {
             if (!choiceBox.getItems().contains(listedInstruments.get(i).getClass().getSimpleName())) {
                 choiceBox.getItems().add(listedInstruments.get(i).getClass().getSimpleName());
@@ -81,7 +84,19 @@ public class CustomizeController extends AnchorPane implements Initializable {
     * called by main CustomizeController. 
     */
     public void setApp(CustomizeController parent) {
+        this.addedInstruments = new ArrayList<Instrument>();
         this.parent = parent;
+    }
+    
+    /**
+    * Clear all to start
+    */
+    public void clearAll() {
+        addedInstruments = new ArrayList<Instrument>();
+        addedScroll.getChildren().clear();
+        listScroll.getChildren().clear();
+        iconGrid.getChildren().clear();
+        setTotal(0);
     }
 
     /**
@@ -89,11 +104,6 @@ public class CustomizeController extends AnchorPane implements Initializable {
     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        addedScroll.getChildren().clear();
-        listScroll.getChildren().clear();
-        iconGrid.getChildren().clear();
-        setTotal(0);
-
     }
     
     /**

@@ -4,6 +4,7 @@ import MusicRoom.entity.CustomRoomTemplate;
 import MusicRoom.entity.RoomTemplate;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,7 +13,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -34,7 +34,6 @@ public class TemplateSelectController extends AnchorPane implements Initializabl
     @FXML    private GridPane templateGrid;
     @FXML    private Button selectBtn;
     
-    
     /**
     *  Called by MainMenuController
     */
@@ -43,7 +42,12 @@ public class TemplateSelectController extends AnchorPane implements Initializabl
         this.templateGrid.getChildren().clear();
         templateGrid.setPrefHeight(400*templateGrid.getRowConstraints().size());
         int i=0;
-        for (RoomTemplate r : Main.getInstance().getRoomTemplete()) {
+        List<RoomTemplate> rlist = Main.getInstance().getRoomTemplete();
+        if(rlist==null) {
+            mainmenu.hideIncludePane();
+            return;
+        }
+        for (RoomTemplate r : rlist) {
             if(r instanceof CustomRoomTemplate)
                 continue;
             

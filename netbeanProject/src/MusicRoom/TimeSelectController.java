@@ -95,6 +95,8 @@ public class TimeSelectController extends AnchorPane implements Initializable{
                                     this.getStyleClass().add("warning");
 
                             }
+                            
+                            System.out.println(item+" "+this.getStyleClass());
                      }
               };
         }
@@ -118,6 +120,11 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         
         
         List<Booking> allBookings = Main.getInstance().getCurrentRoom().getBookings();
+        if(allBookings==null) {
+            System.out.println("load book fail");
+            mainmenu.hideIncludePane();
+            return;
+        }
         for (int i = 0; i < allBookings.size(); i++) {
             Booking booking = allBookings.get(i);
             for (int j = 0; j < booking.getTimeTable().size(); j++) {
@@ -133,6 +140,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+       datePicker.setShowWeekNumbers(false);
        datePicker.setEditable(false);
        datePicker.setValue(LocalDate.now());
        datePicker.setDayCellFactory(dayCellFactory);
@@ -185,7 +193,7 @@ public class TimeSelectController extends AnchorPane implements Initializable{
         
         // Set unavailable (passed) hour button
         int nowHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-        for (int hour = 10; hour <= nowHour; hour++) {
+        for (int hour = 10; hour <= nowHour && currentDate.isEqual(LocalDate.now()); hour++) {
             TimeBtn[hour].setDisable(true);
         }
         
