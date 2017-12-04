@@ -116,7 +116,7 @@ public class RoomTemplate {
                "\nInstruments:" + this.instruments.size();
                 for (int i = 0; i < this.instruments.size(); i++) {
                     if(this.instruments.get(i) != null)
-                        detail += "\n - " + this.instruments.get(i).toString();
+                        detail += "\n" + this.instruments.get(i).toString();
                 }
         return detail;
     }

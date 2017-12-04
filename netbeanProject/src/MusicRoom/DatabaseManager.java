@@ -49,7 +49,7 @@ public class DatabaseManager {
             this.emf = Persistence.createEntityManagerFactory(DbName);
             this.em = this.emf.createEntityManager();
         } catch (Exception ex) {
-            System.out.println("Error creating EMF: " + ex.getMessage());
+            System.out.println("Error creating EMF");
             //Main.getInstance().showErrorPopup("Error Connecting db", "\nClick confirm to try again");
             return false;
         }
