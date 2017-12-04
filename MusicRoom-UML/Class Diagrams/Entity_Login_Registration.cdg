@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="RegisterConfirmController" package="MusicRoom" visibility="public" xPosition="30.0" yPosition="442.0">
+      <Fields>
+        <Field name="activateCode" type="PasswordField" visibility="private"/>
+        <Field name="emailTxt" type="Text" visibility="private"/>
+        <Field name="user" type="User" visibility="private"/>
+        <Field name="activition" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="location"/>
+          <Argument type="ResourceBundle" name="resources"/>
+        </Method>
+        <Method name="setApp" returnType="void" visibility="public">
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="encrypt" returnType="String" visibility="private">
+          <Argument type="String" name="src"/>
+        </Method>
+        <Method name="onClickBack" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickConfirm" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickResend" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RegisterController" package="MusicRoom" visibility="public" xPosition="395.0" yPosition="21.0">
+      <Fields>
+        <Field name="message" type="Text" visibility="private"/>
+        <Field name="bandName" type="TextField" visibility="private"/>
+        <Field name="subscribed" type="CheckBox" visibility="private"/>
+        <Field name="password" type="PasswordField" visibility="private"/>
+        <Field name="surname" type="TextField" visibility="private"/>
+        <Field name="name" type="TextField" visibility="private"/>
+        <Field name="confirmPassword" type="PasswordField" visibility="private"/>
+        <Field name="email" type="TextField" visibility="private"/>
+        <Field name="username" type="TextField" visibility="private"/>
+        <Field name="usernameWarningText" type="Text" visibility="private"/>
+        <Field name="passwordWarningText" type="Text" visibility="private"/>
+        <Field name="confirmWarningText" type="Text" visibility="private"/>
+        <Field name="nameWarningText" type="Text" visibility="private"/>
+        <Field name="surnameWarningText" type="Text" visibility="private"/>
+        <Field name="bandNameWarningText" type="Text" visibility="private"/>
+        <Field name="emailWarningText" type="Text" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="location"/>
+          <Argument type="ResourceBundle" name="resources"/>
+        </Method>
+        <Method name="validation" returnType="boolean" visibility="private" isStatic="true">
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="str"/>
+        </Method>
+        <Method name="validateEmail" returnType="boolean" visibility="private" isStatic="true">
+          <Argument type="String" name="emailStr"/>
+        </Method>
+        <Method name="onClickConfirm" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickBack" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LoginController" package="MusicRoom" visibility="public" xPosition="30.0" yPosition="21.0">
+      <Fields>
+        <Field name="rect_1" type="Rectangle" visibility="private"/>
+        <Field name="rect_2" type="Rectangle" visibility="private"/>
+        <Field name="txt_BEYOURSELF" type="Text" visibility="private"/>
+        <Field name="password" type="PasswordField" visibility="private"/>
+        <Field name="btn_reg" type="Button" visibility="private"/>
+        <Field name="txt_MUSIC" type="Text" visibility="private"/>
+        <Field name="btn_login" type="Button" visibility="private"/>
+        <Field name="txt_ROOM" type="Text" visibility="private"/>
+        <Field name="txt_USERNAME" type="Text" visibility="private"/>
+        <Field name="txt_PASSWORD" type="Text" visibility="private"/>
+        <Field name="userId" type="TextField" visibility="private"/>
+        <Field name="rect_3" type="Rectangle" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setApp" returnType="void" visibility="public"/>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="location"/>
+          <Argument type="ResourceBundle" name="resources"/>
+        </Method>
+        <Method name="onClickLogin" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickGoRegister" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Band" package="MusicRoom.entity" visibility="public" xPosition="770.0" yPosition="537.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="User" package="MusicRoom.entity" visibility="public" xPosition="453.0" yPosition="537.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="MusicRoom.RegisterConfirmController" target="MusicRoom.entity.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.User" target="MusicRoom.entity.Band" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.Band" target="MusicRoom.entity.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="band" source="MusicRoom.entity.User" target="MusicRoom.entity.Band" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.Band" target="MusicRoom.entity.Band" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="user" source="MusicRoom.RegisterConfirmController" target="MusicRoom.entity.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="members" source="MusicRoom.entity.Band" target="MusicRoom.entity.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;User&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

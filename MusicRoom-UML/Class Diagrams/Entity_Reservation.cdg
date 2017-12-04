@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="CustomizeController" package="MusicRoom" visibility="public" xPosition="736.0" yPosition="648.0">
+      <Fields>
+        <Field name="iconToken" type="ImageView" visibility="private"/>
+        <Field name="iconGrid" type="GridPane" visibility="private"/>
+        <Field name="listToken_price" type="Text" visibility="private"/>
+        <Field name="searchTxtField" type="TextField" visibility="private"/>
+        <Field name="listToken_pic" type="ImageView" visibility="private"/>
+        <Field name="addedToken_name" type="Text" visibility="private"/>
+        <Field name="addedScroll" type="VBox" visibility="private"/>
+        <Field name="listToken_path" type="Text" visibility="private"/>
+        <Field name="total" type="Text" visibility="private"/>
+        <Field name="addedToken_price" type="Text" visibility="private"/>
+        <Field name="listToken" type="AnchorPane" visibility="private"/>
+        <Field name="listToken_name" type="Text" visibility="private"/>
+        <Field name="choiceBox" type="ChoiceBox&lt;String&gt;" visibility="private"/>
+        <Field name="listScroll" type="VBox" visibility="private"/>
+        <Field name="mainmenu" type="MainMenuController" visibility="private"/>
+        <Field name="parent" type="CustomizeController" visibility="private"/>
+        <Field name="instance" type="CustomizeController" visibility="public" isStatic="true"/>
+        <Field name="addedInstruments" type="List&lt;Instrument&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setApp" returnType="void" visibility="public">
+          <Argument type="MainMenuController" name="mainmenu"/>
+        </Method>
+        <Method name="setApp" returnType="void" visibility="public">
+          <Argument type="CustomizeController" name="parent"/>
+        </Method>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="location"/>
+          <Argument type="ResourceBundle" name="resources"/>
+        </Method>
+        <Method name="setTotal" returnType="void" visibility="public">
+          <Argument type="float" name="total"/>
+        </Method>
+        <Method name="getAddedInstruments" returnType="List&lt;Instrument&gt;" visibility="public"/>
+        <Method name="addInstrument" returnType="void" visibility="public">
+          <Argument type="Instrument" name="instrument"/>
+        </Method>
+        <Method name="removeInstrument" returnType="void" visibility="public">
+          <Argument type="Instrument" name="instrument"/>
+        </Method>
+        <Method name="removeInstrument" returnType="void" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getAddedScroll" returnType="VBox" visibility="protected"/>
+        <Method name="addIconGrid" returnType="void" visibility="public">
+          <Argument type="ImageView" name="img"/>
+        </Method>
+        <Method name="removeIconGrid" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="onClickGo" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onMouseEntered" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="event"/>
+        </Method>
+        <Method name="onAddInstrument" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="event"/>
+        </Method>
+        <Method name="onRemoveInstrument" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="event"/>
+        </Method>
+        <Method name="onClickBack" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickConfirm" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="calculateTotal" returnType="float" visibility="private"/>
+        <Method name="copyListToken" returnType="AnchorPane" visibility="private">
+          <Argument type="Instrument" name="instrument"/>
+        </Method>
+        <Method name="copyAddedToken" returnType="AnchorPane" visibility="private">
+          <Argument type="Instrument" name="selectedInstrument"/>
+        </Method>
+        <Method name="copyIconToken" returnType="ImageView" visibility="private">
+          <Argument type="Instrument" name="selectedInstrument"/>
+        </Method>
+        <Method name="setListToken" returnType="void" visibility="protected">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="path"/>
+          <Argument type="String" name="price"/>
+          <Argument type="Image" name="img"/>
+        </Method>
+        <Method name="setAddedToken" returnType="void" visibility="protected">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="price"/>
+        </Method>
+        <Method name="setIconToken" returnType="void" visibility="protected">
+          <Argument type="Image" name="img"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Booking" package="MusicRoom.entity" visibility="public" xPosition="471.0" yPosition="593.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="MainMenuController" package="MusicRoom" visibility="public" xPosition="808.0" yPosition="9.0">
+      <Fields>
+        <Field name="includePane" type="AnchorPane" visibility="private"/>
+        <Field name="reservationBtn" type="Button" visibility="private"/>
+        <Field name="historyBtn" type="Button" visibility="private"/>
+        <Field name="customizePane" type="AnchorPane" visibility="private"/>
+        <Field name="timeselectorPane" type="AnchorPane" visibility="private"/>
+        <Field name="templateselectPane" type="AnchorPane" visibility="private"/>
+        <Field name="historyPane" type="AnchorPane" visibility="private"/>
+        <Field name="successReservationPane" type="AnchorPane" visibility="private"/>
+        <Field name="customizeController" type="CustomizeController" visibility="private"/>
+        <Field name="timeselectorController" type="TimeSelectController" visibility="private"/>
+        <Field name="templateselectController" type="TemplateSelectController" visibility="private"/>
+        <Field name="historyController" type="HistoryController" visibility="private"/>
+        <Field name="successReservationController" type="SuccessReservationController" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="location"/>
+          <Argument type="ResourceBundle" name="resources"/>
+        </Method>
+        <Method name="swapIncludePane" returnType="void" visibility="public">
+          <Argument type="AnchorPane" name="pane"/>
+        </Method>
+        <Method name="hideIncludePane" returnType="void" visibility="public"/>
+        <Method name="gotoCustomize" returnType="void" visibility="public"/>
+        <Method name="gotoTimeSelect" returnType="void" visibility="public"/>
+        <Method name="gotoTemplate" returnType="void" visibility="public"/>
+        <Method name="gotoHistory" returnType="void" visibility="public"/>
+        <Method name="gotoSuccess" returnType="void" visibility="public">
+          <Argument type="Booking" name="newBooking"/>
+        </Method>
+        <Method name="onClickReservation" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickHistory" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickLogOut" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="clearAllState" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Strings" package="MusicRoom.entity" visibility="public" xPosition="122.0" yPosition="1136.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="CustomRoomTemplate" package="MusicRoom.entity" visibility="public" xPosition="471.0" yPosition="453.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Voice" package="MusicRoom.entity" visibility="public" xPosition="134.0" yPosition="1000.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Instrument" package="MusicRoom.entity" visibility="public" isAbstract="true" xPosition="355.0" yPosition="1096.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="BrassWoodwind" package="MusicRoom.entity" visibility="public" xPosition="168.0" yPosition="1275.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Percussion" package="MusicRoom.entity" visibility="public" xPosition="441.0" yPosition="1319.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="SuccessReservationController" package="MusicRoom" visibility="public" xPosition="1382.0" yPosition="23.0">
+      <Fields>
+        <Field name="idtxt" type="Text" visibility="private"/>
+        <Field name="emailtxt" type="Text" visibility="private"/>
+        <Field name="mainmenu" type="MainMenuController" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="location"/>
+          <Argument type="ResourceBundle" name="resources"/>
+        </Method>
+        <Method name="setApp" returnType="void" visibility="public">
+          <Argument type="MainMenuController" name="mainmenu"/>
+          <Argument type="Booking" name="newBooking"/>
+        </Method>
+        <Method name="onClickBack" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Band" package="MusicRoom.entity" visibility="public" xPosition="441.0" yPosition="876.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="RoomTemplate" package="MusicRoom.entity" visibility="public" xPosition="41.0" yPosition="493.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="User" package="MusicRoom.entity" visibility="public" xPosition="441.0" yPosition="732.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="TemplateSelectController" package="MusicRoom" visibility="public" xPosition="41.0" yPosition="23.0">
+      <Fields>
+        <Field name="mainmenu" type="MainMenuController" visibility="private"/>
+        <Field name="parent" type="TemplateSelectController" visibility="private"/>
+        <Field name="myTemplate" type="RoomTemplate" visibility="private"/>
+        <Field name="templateName" type="Text" visibility="private"/>
+        <Field name="templatePic" type="ImageView" visibility="private"/>
+        <Field name="templateGrid" type="GridPane" visibility="private"/>
+        <Field name="selectBtn" type="Button" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setApp" returnType="void" visibility="public">
+          <Argument type="MainMenuController" name="mainmenu"/>
+        </Method>
+        <Method name="setApp" returnType="void" visibility="public">
+          <Argument type="TemplateSelectController" name="parent"/>
+          <Argument type="MainMenuController" name="mainmenu"/>
+        </Method>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="location"/>
+          <Argument type="ResourceBundle" name="resources"/>
+        </Method>
+        <Method name="copyTemplateToken" returnType="AnchorPane" visibility="private">
+          <Argument type="RoomTemplate" name="r"/>
+        </Method>
+        <Method name="copyCustomTemplateToken" returnType="AnchorPane" visibility="private"/>
+        <Method name="setTemplateToken" returnType="void" visibility="private">
+          <Argument type="RoomTemplate" name="r"/>
+        </Method>
+        <Method name="onClickCustomize" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickBack" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onSelectTemplate" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onSelectDetail" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TimeSelectController" package="MusicRoom" visibility="public" xPosition="1395.0" yPosition="290.0">
+      <Fields>
+        <Field name="datePicker" type="DatePicker" visibility="private"/>
+        <Field name="T_10_Btn" type="Button" visibility="private"/>
+        <Field name="T_11_Btn" type="Button" visibility="private"/>
+        <Field name="T_12_Btn" type="Button" visibility="private"/>
+        <Field name="T_13_Btn" type="Button" visibility="private"/>
+        <Field name="T_14_Btn" type="Button" visibility="private"/>
+        <Field name="T_15_Btn" type="Button" visibility="private"/>
+        <Field name="T_16_Btn" type="Button" visibility="private"/>
+        <Field name="T_17_Btn" type="Button" visibility="private"/>
+        <Field name="T_18_Btn" type="Button" visibility="private"/>
+        <Field name="T_19_Btn" type="Button" visibility="private"/>
+        <Field name="T_20_Btn" type="Button" visibility="private"/>
+        <Field name="T_21_Btn" type="Button" visibility="private"/>
+        <Field name="T_22_Btn" type="Button" visibility="private"/>
+        <Field name="T_23_Btn" type="Button" visibility="private"/>
+        <Field name="SummaryImgView" type="ImageView" visibility="private"/>
+        <Field name="totalTxt" type="Text" visibility="private"/>
+        <Field name="selectedBox" type="VBox" visibility="private"/>
+        <Field name="mainmenu" type="MainMenuController" visibility="private"/>
+        <Field name="notAvailableTimes" type="List&lt;Calendar&gt;" visibility="private"/>
+        <Field name="selectedTimes" type="List&lt;Calendar&gt;" visibility="private"/>
+        <Field name="currentDate" type="LocalDate" visibility="private"/>
+        <Field name="TimeBtn" type="Button[]" visibility="private"/>
+        <Field name="total" type="float" visibility="private"/>
+        <Field name="dayCellFactory" type="Callback&lt;DatePicker, DateCell&gt;" visibility="package" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setApp" returnType="void" visibility="public">
+          <Argument type="MainMenuController" name="mainmenu"/>
+        </Method>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="location"/>
+          <Argument type="ResourceBundle" name="resources"/>
+        </Method>
+        <Method name="onClickDatePicker" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="listTime" returnType="void" visibility="private"/>
+        <Method name="updateSelectedTimeText" returnType="void" visibility="private"/>
+        <Method name="onClickTime" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickConfirm" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickBack" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="MusicRoom.entity.Percussion" target="MusicRoom.entity.Instrument"/>
+    <UseRelation source="MusicRoom.entity.Booking" target="MusicRoom.entity.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="band" source="MusicRoom.entity.User" target="MusicRoom.entity.Band" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.CustomizeController" target="MusicRoom.MainMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.TimeSelectController" target="MusicRoom.MainMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.Band" target="MusicRoom.entity.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bookings" source="MusicRoom.entity.CustomRoomTemplate" target="MusicRoom.entity.Booking" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Booking&gt;"/>
+    <HasRelation name="successReservationController" source="MusicRoom.MainMenuController" target="MusicRoom.SuccessReservationController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myTemplate" source="MusicRoom.TemplateSelectController" target="MusicRoom.entity.RoomTemplate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="user" source="MusicRoom.entity.Booking" target="MusicRoom.entity.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="templateselectController" source="MusicRoom.MainMenuController" target="MusicRoom.TemplateSelectController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="MusicRoom.entity.CustomRoomTemplate" target="MusicRoom.entity.RoomTemplate"/>
+    <UseRelation source="MusicRoom.TemplateSelectController" target="MusicRoom.MainMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.CustomRoomTemplate" target="MusicRoom.entity.Booking" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.User" target="MusicRoom.entity.Booking" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="room" source="MusicRoom.entity.Booking" target="MusicRoom.entity.RoomTemplate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="MusicRoom.entity.Voice" target="MusicRoom.entity.Instrument"/>
+    <HasRelation name="customizeController" source="MusicRoom.MainMenuController" target="MusicRoom.CustomizeController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.User" target="MusicRoom.entity.Band" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainmenu" source="MusicRoom.TimeSelectController" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.SuccessReservationController" target="MusicRoom.MainMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="members" source="MusicRoom.entity.Band" target="MusicRoom.entity.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;User&gt;"/>
+    <UseRelation source="MusicRoom.entity.RoomTemplate" target="MusicRoom.entity.Booking" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.Booking" target="MusicRoom.entity.RoomTemplate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bookings" source="MusicRoom.entity.RoomTemplate" target="MusicRoom.entity.Booking" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Booking&gt;"/>
+    <HasRelation name="parent" source="MusicRoom.CustomizeController" target="MusicRoom.CustomizeController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.CustomizeController" target="MusicRoom.CustomizeController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="parent" source="MusicRoom.TemplateSelectController" target="MusicRoom.TemplateSelectController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="MusicRoom.entity.BrassWoodwind" target="MusicRoom.entity.Instrument"/>
+    <IsRelation name="is" source="MusicRoom.entity.Strings" target="MusicRoom.entity.Instrument"/>
+    <HasRelation name="addedInstruments" source="MusicRoom.CustomizeController" target="MusicRoom.entity.Instrument" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Instrument&gt;"/>
+    <HasRelation name="instance" source="MusicRoom.CustomizeController" target="MusicRoom.CustomizeController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainmenu" source="MusicRoom.TemplateSelectController" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.TemplateSelectController" target="MusicRoom.TemplateSelectController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="timeselectorController" source="MusicRoom.MainMenuController" target="MusicRoom.TimeSelectController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.Band" target="MusicRoom.entity.Band" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.CustomizeController" target="MusicRoom.entity.Instrument" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.TemplateSelectController" target="MusicRoom.entity.RoomTemplate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.RoomTemplate" target="MusicRoom.entity.Instrument" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainmenu" source="MusicRoom.SuccessReservationController" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instruments" source="MusicRoom.entity.RoomTemplate" target="MusicRoom.entity.Instrument" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Instrument&gt;"/>
+    <HasRelation name="mainmenu" source="MusicRoom.CustomizeController" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.MainMenuController" target="MusicRoom.entity.Booking" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
