@@ -95,8 +95,6 @@ public class TimeSelectController extends AnchorPane implements Initializable{
                                     this.getStyleClass().add("warning");
 
                             }
-                            
-                            System.out.println(item+" "+this.getStyleClass());
                      }
               };
         }
