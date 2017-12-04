@@ -87,7 +87,7 @@
                                     <Font name="Cloud-Bold" size="52.0" />
                                  </font>
                               </Text>
-                              <DatePicker fx:id="datePicker" layoutX="18.0" layoutY="99.0" onAction="#onClickDatePicker" prefHeight="60.0" prefWidth="455.0" style="-fx-font-size: 24;" />
+                              <DatePicker fx:id="datePicker" layoutX="18.0" layoutY="99.0" onAction="#onClickDatePicker" prefHeight="60.0" prefWidth="455.0" style="-fx-font-size: 24;" stylesheets="@calendar.css" />
                               <VBox layoutX="21.0" layoutY="182.0" prefHeight="222.0" prefWidth="301.0">
                                  <children>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="White - Available/Mostly Available ">

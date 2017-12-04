@@ -7,9 +7,11 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.KeyFrame;
+import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -96,7 +98,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
                 (ActionEvent event) -> {
                         if(historyBtn.getPrefWidth()>180)
                             historyBtn.setPrefWidth(historyBtn.getPrefWidth()-1);
-                        if(reservationBtn.getPrefWidth()>180)
+                        if(reservationBtn.getPrefWidth()>220)
                             reservationBtn.setPrefWidth(reservationBtn.getPrefWidth()-1);
                     }
                 );
@@ -119,10 +121,10 @@ public class MainMenuController extends AnchorPane implements Initializable {
             customizePane.setVisible(false);
             includePane.getChildren().add(customizePane);
             customizeController = (CustomizeController) loader.getController();
-            customizeController.clearAll();
+            customizeController.setApp(this);
         }
         swapIncludePane(customizePane);
-        customizeController.setApp(this);
+        
     }
     
     /**
@@ -142,8 +144,8 @@ public class MainMenuController extends AnchorPane implements Initializable {
             
         }
         Main.getInstance().updateBookingDB();
-        swapIncludePane(timeselectorPane);
         timeselectorController.setApp(this);
+        swapIncludePane(timeselectorPane);
     }
     
     /**
@@ -162,8 +164,8 @@ public class MainMenuController extends AnchorPane implements Initializable {
             templateselectController = (TemplateSelectController) loader.getController();
             
         }
-        swapIncludePane(templateselectPane);
         templateselectController.setApp(this);
+        swapIncludePane(templateselectPane);
         Timeline tl = new Timeline();
         tl.setCycleCount(50);
         tl.setDelay(Duration.seconds(0.05));
@@ -171,7 +173,11 @@ public class MainMenuController extends AnchorPane implements Initializable {
             (ActionEvent event) -> {
                 if(historyBtn.getPrefWidth()>180)
                             historyBtn.setPrefWidth(historyBtn.getPrefWidth()-1);
+<<<<<<< HEAD
                 if(reservationBtn.getPrefWidth()<230)
+=======
+                if(reservationBtn.getPrefWidth()<250)
+>>>>>>> 236a9d010fba8d5883c5ee26a0201eda931cffa9
                     reservationBtn.setPrefWidth(reservationBtn.getPrefWidth()+1);
             }
        );
@@ -196,8 +202,8 @@ public class MainMenuController extends AnchorPane implements Initializable {
             historyController = (HistoryController) loader.getController();
             
         }
-        swapIncludePane(historyPane);
         historyController.setApp(this);
+        swapIncludePane(historyPane);
         Timeline tl = new Timeline();
         tl.setCycleCount(50);
         tl.setDelay(Duration.seconds(0.05));
@@ -205,7 +211,11 @@ public class MainMenuController extends AnchorPane implements Initializable {
             (ActionEvent event) -> {
                 if(historyBtn.getPrefWidth()<230)
                     historyBtn.setPrefWidth(historyBtn.getPrefWidth()+1);
+<<<<<<< HEAD
                 if(reservationBtn.getPrefWidth()>180)
+=======
+                if(reservationBtn.getPrefWidth()>220)
+>>>>>>> 236a9d010fba8d5883c5ee26a0201eda931cffa9
                             reservationBtn.setPrefWidth(reservationBtn.getPrefWidth()-1);
             }
         );
@@ -231,8 +241,8 @@ public class MainMenuController extends AnchorPane implements Initializable {
             successReservationController = (SuccessReservationController) loader.getController();
             
         }
-        swapIncludePane(successReservationPane);
         successReservationController.setApp(this, newBooking);
+        swapIncludePane(successReservationPane);
 
     }
     
