@@ -32,14 +32,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -54,7 +46,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="700.0" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminUserController">
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="700.0" styleClass="pane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.AdminUserController">
    <children>
       <StackPane layoutX="-1.0">
          <children>
@@ -98,7 +90,7 @@
       </StackPane>
       <ScrollPane layoutX="-1.0" layoutY="57.0" prefHeight="416.0" prefWidth="700.0">
          <content>
-            <VBox fx:id="userScroll" prefHeight="389.0" prefWidth="690.0">
+            <VBox fx:id="userScroll" prefHeight="418.0" prefWidth="681.0">
                <children>
                   <StackPane fx:id="userToken" prefHeight="100.0" prefWidth="690.0">
                      <children>

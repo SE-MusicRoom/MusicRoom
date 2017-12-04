@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -24,11 +15,12 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1500.0" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.CustomizeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1500.0" styleClass="pane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.CustomizeController">
    <children>
       <AnchorPane layoutX="143.0" layoutY="94.0" prefHeight="992.0" prefWidth="1357.0">
          <children>
@@ -181,8 +173,8 @@
                                  <font>
                                     <Font size="36.0" />
                                  </font></Text>
-                              <Circle fill="#ff1e00" layoutX="245.0" layoutY="32.0" radius="20.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-                              <Text fx:id="addedToken_price1" fill="WHITE" layoutX="235.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 42;" text="–" textAlignment="RIGHT">
+                              <Circle fill="#ff1e00" layoutX="668.0" layoutY="34.0" radius="20.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                              <Text fx:id="addedToken_price1" fill="WHITE" layoutX="658.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 42;" text="–" textAlignment="RIGHT">
                                  <font>
                                     <Font size="42.0" />
                                  </font>

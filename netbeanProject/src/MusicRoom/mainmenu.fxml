@@ -48,7 +48,7 @@ Contributor(s):
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1023.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.MainMenuController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1023.0" styleClass="background" stylesheets="@font.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.MainMenuController">
    <children>
       <ImageView fitHeight="700.0" fitWidth="1309.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -73,7 +73,7 @@ Contributor(s):
             </Text>
          </children>
       </StackPane>
-      <VBox layoutX="14.0" layoutY="176.0" prefHeight="190.0" prefWidth="371.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="119.0">
+      <VBox layoutX="14.0" layoutY="176.0" prefHeight="190.0" prefWidth="371.0" stylesheets="@button.css" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="119.0">
          <children>
             <Button fx:id="reservationBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onClickReservation" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 18;" styleClass="root" stylesheets="@button.css" text="+ New Reservations" textFill="WHITE">
                <font>
@@ -127,8 +127,4 @@ Contributor(s):
       <VBox layoutX="15.0" layoutY="572.0" prefHeight="44.0" prefWidth="107.0" AnchorPane.leftAnchor="15.0" />
       <AnchorPane fx:id="includePane" layoutX="-116.0" layoutY="-217.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1201.0" prefWidth="1510.0" scaleX="0.5" scaleY="0.5" />
    </children>
-   <stylesheets>
-      <URL value="@font.css" />
-      <URL value="@button.css" />
-   </stylesheets>
 </AnchorPane>
