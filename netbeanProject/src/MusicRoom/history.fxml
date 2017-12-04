@@ -148,39 +148,45 @@
                                     <Insets left="169.0" top="-16.0" />
                                  </HBox.margin>
                               </VBox>
-                              <VBox prefHeight="120.0" prefWidth="477.0">
+                              <AnchorPane prefHeight="137.0" prefWidth="82.0" />
+                              <AnchorPane prefHeight="137.0" prefWidth="82.0">
                                  <children>
-                                    <HBox>
-                                       <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Template : " />
-                                          <Text fx:id="template" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="My Custom">
-                                             <HBox.margin>
-                                                <Insets />
-                                             </HBox.margin>
-                                          </Text>
-                                       </children>
-                                    </HBox>
-                                    <HBox>
-                                       <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Time :  " />
-                                          <Text fx:id="time" layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="6:00-7:59 P.M.">
-                                             <HBox.margin>
-                                                <Insets />
-                                             </HBox.margin>
-                                          </Text>
-                                       </children>
-                                    </HBox>
-                                    <HBox>
-                                       <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Price :  " />
-                                          <Text fx:id="price" layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="฿ 1400" />
-                                       </children>
-                                    </HBox>
+                                    <ScrollPane layoutY="-2.0" prefHeight="124.0" prefWidth="624.0">
+                                       <content>
+                                          <VBox prefHeight="120.0" prefWidth="477.0">
+                                             <children>
+                                                <HBox>
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Template : " />
+                                                      <Text fx:id="template" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="My Custom">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Time :  " />
+                                                      <Text fx:id="time" layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="6:00-7:59 P.M.">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Price :  " />
+                                                      <Text fx:id="price" layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="฿ 1400" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
                                  </children>
-                                 <HBox.margin>
-                                    <Insets left="170.0" top="-12.0" />
-                                 </HBox.margin>
-                              </VBox>
+                              </AnchorPane>
                               <Button mnemonicParsing="false" onAction="#onCancel" prefHeight="66.0" prefWidth="178.0" style="-fx-font-size: 45;" stylesheets="@button.css" text="Cancel" textFill="WHITE">
                                  <padding>
                                     <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
