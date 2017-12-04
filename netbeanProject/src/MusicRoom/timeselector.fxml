@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1501.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TimeSelectController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1501.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TimeSelectController">
    <children>
       <AnchorPane layoutX="155.0" layoutY="94.0" prefHeight="989.0" prefWidth="1344.0">
          <children>
@@ -197,7 +197,7 @@
             </HBox>
          </children>
       </AnchorPane>
-      <HBox layoutX="153.0" layoutY="1089.0" prefHeight="66.0" prefWidth="614.0">
+      <HBox layoutX="153.0" layoutY="1089.0" prefHeight="66.0" prefWidth="614.0" stylesheets="@button.css">
          <children>
             <Button mnemonicParsing="false" onAction="#onClickBack" prefHeight="100.0" prefWidth="220.0" style="-fx-font-size: 45;" text="BACK" textFill="WHITE">
                <cursor>
@@ -207,7 +207,6 @@
                   <Font name="Cloud-Bold" size="45.0" />
                </font>
                <stylesheets>
-                  <URL value="@button.css" />
                   <URL value="@font.css" />
                </stylesheets>
             </Button>
@@ -219,7 +218,6 @@
                   <Font name="Cloud-Bold" size="45.0" />
                </font>
                <stylesheets>
-                  <URL value="@button.css" />
                   <URL value="@font.css" />
                </stylesheets>
             </Button>
