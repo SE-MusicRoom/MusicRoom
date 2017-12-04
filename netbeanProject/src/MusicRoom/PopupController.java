@@ -21,30 +21,20 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 /**
- *
+ * FXML's Popup Box Controller.
  * @author SE-MUSICROOM
  */
 public class PopupController extends AnchorPane implements Initializable {
     
-    @FXML
-    private Button button1;
-    @FXML
-    private Button button2;
+    @FXML    private Button button1;
+    @FXML    private Button button2;
 
-    @FXML
-    private Text titleTxt;
-
-    @FXML
-    private ScrollPane detailScroll;
+    @FXML    private Text titleTxt;
+    @FXML    private Text detailTxt;
+    @FXML    private ScrollPane detailScroll;
     
-    @FXML
-    private Rectangle bgrect;
-
-    @FXML
-    private Text detailTxt;
-
-    @FXML
-    private AnchorPane titleBox;
+    @FXML    private Rectangle bgrect;
+    @FXML    private AnchorPane titleBox;
         
     private AnchorPane parent;
     private AnchorPane me;
@@ -91,6 +81,9 @@ public class PopupController extends AnchorPane implements Initializable {
         }
     }; 
     
+    /**
+    *  Called by main
+    */
     public void setApp(String title,String detail,AnchorPane parent,AnchorPane me){
         titleTxt.setText(title);
         detailTxt.setText(detail);
@@ -98,10 +91,11 @@ public class PopupController extends AnchorPane implements Initializable {
         this.me = me;
     }
 
+    /**
+    *  init
+    */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
-        
         FadeTransition ft1 = new FadeTransition(Duration.seconds(0.5), bgrect);
         ft1.setFromValue(0.1);
         ft1.setToValue(1.0);
@@ -120,15 +114,24 @@ public class PopupController extends AnchorPane implements Initializable {
         button1.requestFocus();
     }
     
+    /**
+    *  OK button handler
+    */
     public void onClickOK(ActionEvent event) {
         parent.getChildren().remove(me);
         Main.getInstance().setPopupOpen(false);
     }
+    /**
+    *  Cancel button handler
+    */
     public void onClickCANCEL(ActionEvent event) {
         parent.getChildren().remove(me);
         Main.getInstance().setPopupOpen(false);
     }
     
+    /**
+    *  Add specified handler to OK button of Error popup
+    */
     public void addEventToButton(String event) {
         switch (event) {
             case "REFETCH_USER":

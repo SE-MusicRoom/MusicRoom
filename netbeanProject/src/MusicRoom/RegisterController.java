@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package MusicRoom;
 
 import MusicRoom.entity.Band;
@@ -23,72 +18,32 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
 /**
- *
+ * FXML's Register Controller.
  * @author SE-MUSICROOM
  */
 public class RegisterController extends AnchorPane implements Initializable {
 
-    @FXML
-    private Text message;
+    @FXML    private Text message;
+    @FXML    private TextField bandName;
+    @FXML    private CheckBox subscribed;
+    @FXML    private PasswordField password;
+    @FXML    private TextField surname;
+    @FXML    private TextField name;
+    @FXML    private PasswordField confirmPassword;
+    @FXML    private TextField email;
+    @FXML    private TextField username;
+    
+    @FXML    private Text usernameWarningText;
+    @FXML    private Text passwordWarningText;
+    @FXML    private Text confirmWarningText;
+    @FXML    private Text nameWarningText;
+    @FXML    private Text surnameWarningText;
+    @FXML    private Text bandNameWarningText;
+    @FXML    private Text emailWarningText;
 
-    @FXML
-    private Button back;
-
-    @FXML
-    private TextField bandName;
-
-    @FXML
-    private CheckBox subscribed;
-
-    @FXML
-    private PasswordField password;
-
-    @FXML
-    private TextField phone;
-
-    @FXML
-    private TextField surname;
-
-    @FXML
-    private TextField name;
-
-    @FXML
-    private PasswordField confirmPassword;
-
-    @FXML
-    private Button comfirm;
-
-    @FXML
-    private TextField email;
-
-    @FXML
-    private TextField username;
-
-    @FXML
-    private Text usernameWarningText;
-
-    @FXML
-    private Text passwordWarningText;
-
-    @FXML
-    private Text confirmWarningText;
-
-    @FXML
-    private Text nameWarningText;
-
-    @FXML
-    private Text surnameWarningText;
-
-    @FXML
-    private Text bandNameWarningText;
-
-    @FXML
-    private Text emailWarningText;
-
-    public void setApp(Main application) {
-
-    }
-
+    /**
+    *  Called by main
+    */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         message.setText("");
@@ -96,6 +51,9 @@ public class RegisterController extends AnchorPane implements Initializable {
 //        password.setPromptText("Enter your password");
     }
 
+    /**
+    *  input validation
+    */
     private static boolean validation(String password, String str) {
         Pattern letter = Pattern.compile("[a-zA-z]");
         Pattern digit = Pattern.compile("[0-9]");
@@ -113,13 +71,19 @@ public class RegisterController extends AnchorPane implements Initializable {
         }
     }
 
-    public static boolean validateEmail(String emailStr) {
+    /**
+    *  e-mail validation
+    */
+    private static boolean validateEmail(String emailStr) {
         Pattern VALID_EMAIL_ADDRESS_REGEX
                 = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
         return matcher.find();
     }
 
+    /**
+    *  Confirm button handler
+    */
     public void onClickConfirm(ActionEvent event) {
         if (Main.getInstance() == null) {
             // We are running in isolated FXML, possibly in Scene Builder.
@@ -203,10 +167,11 @@ public class RegisterController extends AnchorPane implements Initializable {
             }
 
         }
-        
-        
     }
 
+    /**
+    *  Back button handler
+    */
     public void onClickBack(ActionEvent event) {
         if (Main.getInstance() == null) {
             // We are running in isolated FXML, possibly in Scene Builder.
