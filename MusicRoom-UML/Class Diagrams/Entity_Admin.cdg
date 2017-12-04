@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="AdminMenuController" package="MusicRoom" visibility="public" xPosition="55.0" yPosition="84.0">
+      <Fields>
+        <Field name="includePane" type="AnchorPane" visibility="private"/>
+        <Field name="adminUserPane" type="AnchorPane" visibility="private"/>
+        <Field name="adminUserController" type="AdminUserController" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="location"/>
+          <Argument type="ResourceBundle" name="resources"/>
+        </Method>
+        <Method name="swapIncludePane" returnType="void" visibility="public">
+          <Argument type="AnchorPane" name="pane"/>
+        </Method>
+        <Method name="hideIncludePane" returnType="void" visibility="public"/>
+        <Method name="gotoLogOut" returnType="void" visibility="public"/>
+        <Method name="gotoUser" returnType="void" visibility="public"/>
+        <Method name="onClickUsers" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickBands" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickNews" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickTemplates" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickInstruments" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickPromotions" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickLogOut" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AdminUserController" package="MusicRoom" visibility="public" xPosition="549.0" yPosition="83.0">
+      <Fields>
+        <Field name="userScroll" type="VBox" visibility="private"/>
+        <Field name="userID" type="Text" visibility="private"/>
+        <Field name="name" type="TextField" visibility="private"/>
+        <Field name="bandName" type="TextField" visibility="private"/>
+        <Field name="mainmenu" type="AdminMenuController" visibility="private"/>
+        <Field name="parent" type="AdminUserController" visibility="private"/>
+        <Field name="scrollCon" type="List&lt;AdminUserController&gt;" visibility="private"/>
+        <Field name="state" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="location"/>
+          <Argument type="ResourceBundle" name="resources"/>
+        </Method>
+        <Method name="setApp" returnType="void" visibility="public">
+          <Argument type="AdminUserController" name="parent"/>
+        </Method>
+        <Method name="setApp" returnType="void" visibility="public">
+          <Argument type="AdminMenuController" name="mainmenu"/>
+        </Method>
+        <Method name="copyUsersToken" returnType="StackPane" visibility="private">
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="setTokenData" returnType="void" visibility="private">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="bandName"/>
+        </Method>
+        <Method name="getUserScroll" returnType="VBox" visibility="public"/>
+        <Method name="getName" returnType="TextField" visibility="public"/>
+        <Method name="getBandName" returnType="TextField" visibility="public"/>
+        <Method name="getUserID" returnType="Text" visibility="public"/>
+        <Method name="onClickAdd" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickRemove" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickUpdate" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickBack" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Band" package="MusicRoom.entity" visibility="public" xPosition="55.0" yPosition="517.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Booking" package="MusicRoom.entity" visibility="public" xPosition="350.0" yPosition="694.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="BrassWoodwind" package="MusicRoom.entity" visibility="public" xPosition="1165.0" yPosition="685.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="CustomRoomTemplate" package="MusicRoom.entity" visibility="public" xPosition="488.0" yPosition="890.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Instrument" package="MusicRoom.entity" visibility="public" isAbstract="true" xPosition="937.0" yPosition="685.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Percussion" package="MusicRoom.entity" visibility="public" xPosition="756.0" yPosition="890.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Strings" package="MusicRoom.entity" visibility="public" xPosition="1165.0" yPosition="858.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="RoomTemplate" package="MusicRoom.entity" visibility="public" xPosition="652.0" yPosition="694.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Voice" package="MusicRoom.entity" visibility="public" xPosition="971.0" yPosition="890.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="User" package="MusicRoom.entity" visibility="public" xPosition="350.0" yPosition="517.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="instruments" source="MusicRoom.entity.RoomTemplate" target="MusicRoom.entity.Instrument" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Instrument&gt;"/>
+    <UseRelation source="MusicRoom.entity.User" target="MusicRoom.entity.Booking" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="scrollCon" source="MusicRoom.AdminUserController" target="MusicRoom.AdminUserController" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;AdminUserController&gt;"/>
+    <UseRelation source="MusicRoom.entity.User" target="MusicRoom.entity.Band" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.RoomTemplate" target="MusicRoom.entity.Booking" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="MusicRoom.entity.Voice" target="MusicRoom.entity.Instrument"/>
+    <UseRelation source="MusicRoom.entity.Band" target="MusicRoom.entity.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bookings" source="MusicRoom.entity.RoomTemplate" target="MusicRoom.entity.Booking" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Booking&gt;"/>
+    <UseRelation source="MusicRoom.entity.RoomTemplate" target="MusicRoom.entity.Instrument" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="MusicRoom.entity.Percussion" target="MusicRoom.entity.Instrument"/>
+    <IsRelation name="is" source="MusicRoom.entity.CustomRoomTemplate" target="MusicRoom.entity.RoomTemplate"/>
+    <HasRelation name="members" source="MusicRoom.entity.Band" target="MusicRoom.entity.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;User&gt;"/>
+    <UseRelation source="MusicRoom.entity.Booking" target="MusicRoom.entity.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="room" source="MusicRoom.entity.Booking" target="MusicRoom.entity.RoomTemplate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="adminUserController" source="MusicRoom.AdminMenuController" target="MusicRoom.AdminUserController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.Booking" target="MusicRoom.entity.RoomTemplate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bookings" source="MusicRoom.entity.CustomRoomTemplate" target="MusicRoom.entity.Booking" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Booking&gt;"/>
+    <HasRelation name="parent" source="MusicRoom.AdminUserController" target="MusicRoom.AdminUserController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.CustomRoomTemplate" target="MusicRoom.entity.Booking" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="user" source="MusicRoom.entity.Booking" target="MusicRoom.entity.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="MusicRoom.entity.BrassWoodwind" target="MusicRoom.entity.Instrument"/>
+    <UseRelation source="MusicRoom.AdminUserController" target="MusicRoom.entity.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainmenu" source="MusicRoom.AdminUserController" target="MusicRoom.AdminMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.AdminUserController" target="MusicRoom.AdminMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="band" source="MusicRoom.entity.User" target="MusicRoom.entity.Band" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="MusicRoom.entity.Strings" target="MusicRoom.entity.Instrument"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

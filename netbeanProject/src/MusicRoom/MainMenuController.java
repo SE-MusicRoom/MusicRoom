@@ -173,11 +173,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
             (ActionEvent event) -> {
                 if(historyBtn.getPrefWidth()>180)
                             historyBtn.setPrefWidth(historyBtn.getPrefWidth()-1);
-<<<<<<< HEAD
                 if(reservationBtn.getPrefWidth()<230)
-=======
-                if(reservationBtn.getPrefWidth()<250)
->>>>>>> 236a9d010fba8d5883c5ee26a0201eda931cffa9
                     reservationBtn.setPrefWidth(reservationBtn.getPrefWidth()+1);
             }
        );
@@ -211,11 +207,7 @@ public class MainMenuController extends AnchorPane implements Initializable {
             (ActionEvent event) -> {
                 if(historyBtn.getPrefWidth()<230)
                     historyBtn.setPrefWidth(historyBtn.getPrefWidth()+1);
-<<<<<<< HEAD
                 if(reservationBtn.getPrefWidth()>180)
-=======
-                if(reservationBtn.getPrefWidth()>220)
->>>>>>> 236a9d010fba8d5883c5ee26a0201eda931cffa9
                             reservationBtn.setPrefWidth(reservationBtn.getPrefWidth()-1);
             }
         );
