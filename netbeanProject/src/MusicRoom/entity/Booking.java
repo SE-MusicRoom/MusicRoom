@@ -8,7 +8,6 @@ package MusicRoom.entity;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
-import javafx.scene.text.Text;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

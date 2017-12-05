@@ -122,7 +122,7 @@
                                     </HBox>
                                     <HBox>
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" text="Date : " />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" text="Create : " />
                                           <Text fx:id="date" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" text="18/2/2017">
                                              <HBox.margin>
                                                 <Insets />
@@ -167,18 +167,18 @@
                                                 </HBox>
                                                 <HBox>
                                                    <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Price :  " />
+                                                      <Text fx:id="price" layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="฿ 1400" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Time :  " />
                                                       <Text fx:id="time" layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="6:00-7:59 P.M.">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Text>
-                                                   </children>
-                                                </HBox>
-                                                <HBox>
-                                                   <children>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Price :  " />
-                                                      <Text fx:id="price" layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="฿ 1400" />
                                                    </children>
                                                 </HBox>
                                              </children>

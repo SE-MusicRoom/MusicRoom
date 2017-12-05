@@ -2,7 +2,7 @@
 
 <ClassDiagram name="Multi-file class diagram">
   <ClassDiagramComponents>
-    <Class name="AdminMenuController" package="MusicRoom" visibility="public" xPosition="167.0" yPosition="63.0">
+    <Class name="AdminMenuController" package="MusicRoom" visibility="public" xPosition="125.0" yPosition="51.0">
       <Fields>
         <Field name="includePane" type="AnchorPane" visibility="private"/>
         <Field name="adminUserPane" type="AnchorPane" visibility="private"/>
@@ -43,7 +43,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="AdminUserController" package="MusicRoom" visibility="public" xPosition="685.0" yPosition="51.0">
+    <Class name="AdminUserController" package="MusicRoom" visibility="public" xPosition="610.0" yPosition="32.0">
       <Fields>
         <Field name="userScroll" type="VBox" visibility="private"/>
         <Field name="userID" type="Text" visibility="private"/>
@@ -92,7 +92,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="CustomizeController" package="MusicRoom" visibility="public" xPosition="542.0" yPosition="592.0">
+    <Class name="CustomizeController" package="MusicRoom" visibility="public" xPosition="542.0" yPosition="571.0">
       <Fields>
         <Field name="iconToken" type="ImageView" visibility="private"/>
         <Field name="iconGrid" type="GridPane" visibility="private"/>
@@ -189,7 +189,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="DatabaseManager" package="MusicRoom" visibility="public" xPosition="2132.0" yPosition="1627.0">
+    <Class name="DatabaseManager" package="MusicRoom" visibility="public" xPosition="2101.0" yPosition="1435.0">
       <Fields>
         <Field name="instance" type="DatabaseManager" visibility="private" isStatic="true"/>
         <Field name="emf" type="EntityManagerFactory" visibility="private"/>
@@ -261,7 +261,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="HistoryController" package="MusicRoom" visibility="public" xPosition="1266.0" yPosition="247.0">
+    <Class name="HistoryController" package="MusicRoom" visibility="public" xPosition="1266.0" yPosition="51.0">
       <Fields>
         <Field name="searchBox" type="TextField" visibility="private"/>
         <Field name="historyScroll" type="VBox" visibility="private"/>
@@ -339,7 +339,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Main" package="MusicRoom" visibility="public" xPosition="1291.0" yPosition="1535.0">
+    <Class name="Main" package="MusicRoom" visibility="public" xPosition="1322.0" yPosition="1283.0">
       <Fields>
         <Field name="instance" type="Main" visibility="private" isStatic="true"/>
         <Field name="stage" type="Stage" visibility="private"/>
@@ -439,7 +439,7 @@
         <Method name="createConfirmedBooking" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="MainMenuController" package="MusicRoom" visibility="public" xPosition="1445.0" yPosition="868.0">
+    <Class name="MainMenuController" package="MusicRoom" visibility="public" xPosition="1355.0" yPosition="666.0">
       <Fields>
         <Field name="includePane" type="AnchorPane" visibility="private"/>
         <Field name="reservationBtn" type="Button" visibility="private"/>
@@ -484,7 +484,7 @@
         <Method name="clearAllState" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="PopupController" package="MusicRoom" visibility="public" xPosition="720.0" yPosition="1952.0">
+    <Class name="PopupController" package="MusicRoom" visibility="public" xPosition="694.0" yPosition="1771.0">
       <Fields>
         <Field name="button1" type="Button" visibility="private"/>
         <Field name="button2" type="Button" visibility="private"/>
@@ -594,7 +594,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="SuccessReservationController" package="MusicRoom" visibility="public" xPosition="833.0" yPosition="1590.0">
+    <Class name="SuccessReservationController" package="MusicRoom" visibility="public" xPosition="866.0" yPosition="1528.0">
       <Fields>
         <Field name="idtxt" type="Text" visibility="private"/>
         <Field name="emailtxt" type="Text" visibility="private"/>
@@ -615,7 +615,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="TemplateSelectController" package="MusicRoom" visibility="public" xPosition="1974.0" yPosition="304.0">
+    <Class name="TemplateSelectController" package="MusicRoom" visibility="public" xPosition="2023.0" yPosition="186.0">
       <Fields>
         <Field name="mainmenu" type="MainMenuController" visibility="private"/>
         <Field name="parent" type="TemplateSelectController" visibility="private"/>
@@ -659,7 +659,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="TimeSelectController" package="MusicRoom" visibility="public" xPosition="2132.0" yPosition="868.0">
+    <Class name="TimeSelectController" package="MusicRoom" visibility="public" xPosition="2132.0" yPosition="666.0">
       <Fields>
         <Field name="datePicker" type="DatePicker" visibility="private"/>
         <Field name="T_10_Btn" type="Button" visibility="private"/>
@@ -714,34 +714,34 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="mainmenu" source="MusicRoom.HistoryController" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="parent" source="MusicRoom.HistoryController" target="MusicRoom.HistoryController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="MusicRoom.HistoryController" target="MusicRoom.MainMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="MusicRoom.SuccessReservationController" target="MusicRoom.MainMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="instance" source="MusicRoom.DatabaseManager" target="MusicRoom.DatabaseManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="mainmenu" source="MusicRoom.Main" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="successReservationController" source="MusicRoom.MainMenuController" target="MusicRoom.SuccessReservationController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="scrollCon" source="MusicRoom.AdminUserController" target="MusicRoom.AdminUserController" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;AdminUserController&gt;"/>
-    <HasRelation name="mainmenu" source="MusicRoom.SuccessReservationController" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="templateselectController" source="MusicRoom.MainMenuController" target="MusicRoom.TemplateSelectController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="parent" source="MusicRoom.CustomizeController" target="MusicRoom.CustomizeController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="successReservationController" source="MusicRoom.MainMenuController" target="MusicRoom.SuccessReservationController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainmenu" source="MusicRoom.SuccessReservationController" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instance" source="MusicRoom.Main" target="MusicRoom.Main" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="MusicRoom.Main" target="MusicRoom.PopupController" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="MusicRoom.TimeSelectController" target="MusicRoom.MainMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="MusicRoom.TemplateSelectController" target="MusicRoom.TemplateSelectController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="parent" source="MusicRoom.TemplateSelectController" target="MusicRoom.TemplateSelectController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="parent" source="MusicRoom.HistoryController" target="MusicRoom.HistoryController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="parent" source="MusicRoom.AdminUserController" target="MusicRoom.AdminUserController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="templateselectController" source="MusicRoom.MainMenuController" target="MusicRoom.TemplateSelectController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.HistoryController" target="MusicRoom.MainMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="mainmenu" source="MusicRoom.CustomizeController" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="MusicRoom.TemplateSelectController" target="MusicRoom.MainMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="MusicRoom.AdminUserController" target="MusicRoom.AdminMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="adminUserController" source="MusicRoom.AdminMenuController" target="MusicRoom.AdminUserController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.SuccessReservationController" target="MusicRoom.MainMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.CustomizeController" target="MusicRoom.MainMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="mainmenu" source="MusicRoom.AdminUserController" target="MusicRoom.AdminMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.AdminUserController" target="MusicRoom.AdminMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.TimeSelectController" target="MusicRoom.MainMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainmenu" source="MusicRoom.Main" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instance" source="MusicRoom.DatabaseManager" target="MusicRoom.DatabaseManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="customizeController" source="MusicRoom.MainMenuController" target="MusicRoom.CustomizeController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainmenu" source="MusicRoom.HistoryController" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mainmenu" source="MusicRoom.TemplateSelectController" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="scrollCon" source="MusicRoom.AdminUserController" target="MusicRoom.AdminUserController" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;AdminUserController&gt;"/>
     <HasRelation name="timeselectorController" source="MusicRoom.MainMenuController" target="MusicRoom.TimeSelectController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="historyController" source="MusicRoom.MainMenuController" target="MusicRoom.HistoryController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="mainmenu" source="MusicRoom.TemplateSelectController" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="instance" source="MusicRoom.CustomizeController" target="MusicRoom.CustomizeController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="parent" source="MusicRoom.AdminUserController" target="MusicRoom.AdminUserController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="parent" source="MusicRoom.TemplateSelectController" target="MusicRoom.TemplateSelectController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.TemplateSelectController" target="MusicRoom.TemplateSelectController" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="mainmenu" source="MusicRoom.TimeSelectController" target="MusicRoom.MainMenuController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="MusicRoom.CustomizeController" target="MusicRoom.MainMenuController" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="instance" source="MusicRoom.Main" target="MusicRoom.Main" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="customizeController" source="MusicRoom.MainMenuController" target="MusicRoom.CustomizeController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="adminUserController" source="MusicRoom.AdminMenuController" target="MusicRoom.AdminUserController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instance" source="MusicRoom.CustomizeController" target="MusicRoom.CustomizeController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>

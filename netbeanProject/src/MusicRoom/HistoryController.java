@@ -27,13 +27,9 @@ import javafx.scene.text.Text;
  */
 public class HistoryController extends AnchorPane implements Initializable {
     
-    @FXML
-    private TextField searchBox;
+    @FXML    private TextField searchBox;
     
-    
-
-    @FXML
-    private VBox historyScroll;
+    @FXML    private VBox historyScroll;
 
     //For token
     @FXML    private Text showid;
@@ -111,11 +107,10 @@ public class HistoryController extends AnchorPane implements Initializable {
         HistoryController cus = (HistoryController)loader.getController();
         cus.setApp(this);
         SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yy");
-        SimpleDateFormat format2 = new SimpleDateFormat("HH:mm");
         cus.setTokenData(String.valueOf(book.getID()),
                         format1.format(book.getCreateTime().getTime()),
                          book.getRoom().getName(),
-                         format2.format(book.getTimeTable().get(0).getTime())+"-"+book.getTimeTable().get(0).get(Calendar.HOUR_OF_DAY)+":59",
+                         book.getTimeTableString(),
                          "฿ "+String.valueOf(book.getPrice()),
                          "OK");
         
