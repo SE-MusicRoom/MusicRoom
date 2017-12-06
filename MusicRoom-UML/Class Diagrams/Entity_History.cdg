@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Band" package="MusicRoom.entity" visibility="public" xPosition="64.0" yPosition="872.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Booking" package="MusicRoom.entity" visibility="public" xPosition="240.0" yPosition="553.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="BrassWoodwind" package="MusicRoom.entity" visibility="public" xPosition="659.0" yPosition="718.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="CustomRoomTemplate" package="MusicRoom.entity" visibility="public" xPosition="398.0" yPosition="741.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Instrument" package="MusicRoom.entity" visibility="public" isAbstract="true" xPosition="817.0" yPosition="558.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Percussion" package="MusicRoom.entity" visibility="public" xPosition="859.0" yPosition="718.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="RoomTemplate" package="MusicRoom.entity" visibility="public" xPosition="543.0" yPosition="567.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Strings" package="MusicRoom.entity" visibility="public" xPosition="1053.0" yPosition="567.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="User" package="MusicRoom.entity" visibility="public" xPosition="64.0" yPosition="718.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Voice" package="MusicRoom.entity" visibility="public" xPosition="1053.0" yPosition="718.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="HistoryController" package="MusicRoom" visibility="public" xPosition="44.0" yPosition="42.0">
+      <Fields>
+        <Field name="searchBox" type="TextField" visibility="private"/>
+        <Field name="historyScroll" type="VBox" visibility="private"/>
+        <Field name="showid" type="Text" visibility="private"/>
+        <Field name="date" type="Text" visibility="private"/>
+        <Field name="template" type="Text" visibility="private"/>
+        <Field name="time" type="Text" visibility="private"/>
+        <Field name="price" type="Text" visibility="private"/>
+        <Field name="status" type="Text" visibility="private"/>
+        <Field name="mainmenu" type="MainMenuController" visibility="private"/>
+        <Field name="parent" type="HistoryController" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setApp" returnType="void" visibility="public">
+          <Argument type="MainMenuController" name="mainmenu"/>
+        </Method>
+        <Method name="setApp" returnType="void" visibility="public">
+          <Argument type="HistoryController" name="parent"/>
+        </Method>
+        <Method name="initialize" returnType="void" visibility="public">
+          <Argument type="URL" name="location"/>
+          <Argument type="ResourceBundle" name="resources"/>
+        </Method>
+        <Method name="getHistoryScroll" returnType="VBox" visibility="public"/>
+        <Method name="copyHistoryToken" returnType="StackPane" visibility="private">
+          <Argument type="Booking" name="book"/>
+        </Method>
+        <Method name="setTokenData" returnType="void" visibility="protected">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="date"/>
+          <Argument type="String" name="template"/>
+          <Argument type="String" name="time"/>
+          <Argument type="String" name="price"/>
+          <Argument type="String" name="status"/>
+        </Method>
+        <Method name="onFind" returnType="void" visibility="package">
+          <Argument type="Event" name="event"/>
+        </Method>
+        <Method name="onCancel" returnType="void" visibility="package">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="onClickBack" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="MusicRoom.entity.Band" target="MusicRoom.entity.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.HistoryController" target="MusicRoom.entity.Booking" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="MusicRoom.entity.Strings" target="MusicRoom.entity.Instrument"/>
+    <IsRelation name="is" source="MusicRoom.entity.BrassWoodwind" target="MusicRoom.entity.Instrument"/>
+    <IsRelation name="is" source="MusicRoom.entity.CustomRoomTemplate" target="MusicRoom.entity.RoomTemplate"/>
+    <UseRelation source="MusicRoom.entity.RoomTemplate" target="MusicRoom.entity.Instrument" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="MusicRoom.entity.Percussion" target="MusicRoom.entity.Instrument"/>
+    <UseRelation source="MusicRoom.entity.Booking" target="MusicRoom.entity.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bookings" source="MusicRoom.entity.RoomTemplate" target="MusicRoom.entity.Booking" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Booking&gt;"/>
+    <UseRelation source="MusicRoom.entity.Band" target="MusicRoom.entity.Band" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bookings" source="MusicRoom.entity.CustomRoomTemplate" target="MusicRoom.entity.Booking" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Booking&gt;"/>
+    <HasRelation name="members" source="MusicRoom.entity.Band" target="MusicRoom.entity.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;User&gt;"/>
+    <HasRelation name="user" source="MusicRoom.entity.Booking" target="MusicRoom.entity.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.CustomRoomTemplate" target="MusicRoom.entity.Booking" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.User" target="MusicRoom.entity.Band" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.RoomTemplate" target="MusicRoom.entity.Booking" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="parent" source="MusicRoom.HistoryController" target="MusicRoom.HistoryController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.HistoryController" target="MusicRoom.HistoryController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MusicRoom.entity.User" target="MusicRoom.entity.Booking" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="band" source="MusicRoom.entity.User" target="MusicRoom.entity.Band" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="room" source="MusicRoom.entity.Booking" target="MusicRoom.entity.RoomTemplate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instruments" source="MusicRoom.entity.RoomTemplate" target="MusicRoom.entity.Instrument" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Instrument&gt;"/>
+    <UseRelation source="MusicRoom.entity.Booking" target="MusicRoom.entity.RoomTemplate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="MusicRoom.entity.Voice" target="MusicRoom.entity.Instrument"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

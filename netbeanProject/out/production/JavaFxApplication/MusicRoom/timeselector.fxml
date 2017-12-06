@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1501.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TimeSelectController">
+   <children>
+      <AnchorPane layoutX="155.0" layoutY="94.0" prefHeight="989.0" prefWidth="1344.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="994.0" layoutX="-1.0" layoutY="2.0" stroke="#ffffff00" strokeType="INSIDE" width="1348.0" />
+            <HBox layoutX="-1.0" layoutY="7.0" prefHeight="981.0" prefWidth="1355.0">
+               <children>
+                  <AnchorPane prefHeight="854.0" prefWidth="559.0">
+                     <children>
+                        <ScrollPane layoutX="16.0" layoutY="427.0" prefHeight="271.0" prefWidth="508.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="499.0">
+                                 <children>
+                                    <VBox fx:id="selectedBox" prefHeight="175.0" prefWidth="240.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35px;" text="13/02/60 (13:00 - 16:59)">
+                                             <font>
+                                                <Font size="35.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35px;" text="14/02/60 (13:00 - 16:59)">
+                                             <font>
+                                                <Font size="35.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35px;" text="15/02/60 (13:00 - 16:59)">
+                                             <font>
+                                                <Font size="35.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#800f00" height="98.0" layoutX="17.0" layoutY="10.0" stroke="TRANSPARENT" strokeType="INSIDE" width="315.0" />
+                        <Text fill="WHITE" layoutX="34.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summary">
+                           <font>
+                              <Font name="Cloud-Bold" size="65.0" />
+                           </font>
+                        </Text>
+                        <AnchorPane layoutX="17.0" layoutY="130.0" prefHeight="286.0" prefWidth="506.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="285.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" width="508.0" />
+                              <ImageView fx:id="SummaryImgView" fitHeight="285.0" fitWidth="508.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </AnchorPane>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804100" height="107.0" layoutX="17.0" layoutY="730.0" stroke="#ffffff00" strokeType="INSIDE" width="528.0" />
+                        <Text fill="WHITE" layoutX="25.0" layoutY="808.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price">
+                           <font>
+                              <Font name="Cloud-Bold" size="40.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="totalTxt" fill="WHITE" layoutX="124.0" layoutY="805.0" strokeType="OUTSIDE" strokeWidth="0.0" text="฿10000.0" textAlignment="RIGHT">
+                           <font>
+                              <Font name="Cloud-Bold" size="61.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <VBox prefHeight="835.0" prefWidth="632.0">
+                     <children>
+                        <AnchorPane prefHeight="465.0" prefWidth="312.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7d0f00" height="78.0" layoutX="14.0" layoutY="11.0" stroke="TRANSPARENT" strokeType="INSIDE" width="380.0" />
+                              <Text fill="WHITE" layoutX="23.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Selection">
+                                 <font>
+                                    <Font name="Cloud-Bold" size="52.0" />
+                                 </font>
+                              </Text>
+                              <DatePicker fx:id="datePicker" layoutX="18.0" layoutY="99.0" onAction="#onClickDatePicker" prefHeight="60.0" prefWidth="455.0" style="-fx-font-size: 24;" />
+                              <VBox layoutX="21.0" layoutY="182.0" prefHeight="222.0" prefWidth="301.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="White - Available/Mostly Available ">
+                                       <font>
+                                          <Font name="Cloud-Light" size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#b1b100" strokeType="OUTSIDE" strokeWidth="0.0" text="Yellow - Nearly Full">
+                                       <font>
+                                          <Font name="Cloud-Light" size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Red - Full/Can't Reserved">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="28.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="465.0" prefWidth="312.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#800f00" height="78.0" layoutX="19.0" layoutY="-7.0" stroke="TRANSPARENT" strokeType="INSIDE" width="380.0" />
+                              <Text fill="WHITE" layoutX="23.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Selection">
+                                 <font>
+                                    <Font name="Cloud-Bold" size="52.0" />
+                                 </font>
+                              </Text>
+                              <GridPane layoutX="23.0" layoutY="93.0" prefHeight="401.0" prefWidth="680.0" stylesheets="@button.css">
+                                 <children>
+                                    <Button fx:id="T_11_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="265.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="11:00" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                    <Button fx:id="T_12_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="274.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="12:00" GridPane.columnIndex="2">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                    <Button fx:id="T_13_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="271.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="13:00" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                    <Button fx:id="T_14_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="245.0" style="-fx-font-family: Cloud; -fx-font-size: 38px;" styleClass="available" text="14:00" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                    <Button fx:id="T_15_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="247.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="15:00" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                    <Button fx:id="T_16_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="267.0" style="-fx-font-family: Cloud; -fx-font-size: 38px;" styleClass="available" text="16:00" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                    <Button fx:id="T_17_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="278.0" style="-fx-font-family: Cloud; -fx-font-size: 38px;" styleClass="available" text="17:00" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                    <Button fx:id="T_18_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="260.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="18:00" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                    <Button fx:id="T_19_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="112.0" prefWidth="253.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="19:00" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                    <Button fx:id="T_10_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="83.0" prefWidth="230.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="10:00">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                    <Button fx:id="T_20_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="283.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="20:00" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                    <Button fx:id="T_21_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="256.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="21:00" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                    <Button fx:id="T_22_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="295.0" style="-fx-font-size: 38px; -fx-font-family: Cloud;" styleClass="available" text="22:00" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                    <Button fx:id="T_23_Btn" mnemonicParsing="false" onAction="#onClickTime" prefHeight="81.0" prefWidth="280.0" style="-fx-font-family: Cloud; -fx-font-size: 38px;" styleClass="available" text="23:00" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="Cloud-Bold" size="38.0" />
+                                       </font></Button>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="153.0" layoutY="1089.0" prefHeight="66.0" prefWidth="614.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onClickBack" prefHeight="100.0" prefWidth="220.0" style="-fx-font-size: 45;" text="BACK" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <font>
+                  <Font name="Cloud-Bold" size="45.0" />
+               </font>
+               <stylesheets>
+                  <URL value="@button.css" />
+                  <URL value="@font.css" />
+               </stylesheets>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onClickConfirm" prefHeight="108.0" prefWidth="336.0" style="-fx-font-size: 45px;" styleClass="lightbutton" text="CONFIRM" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <font>
+                  <Font name="Cloud-Bold" size="45.0" />
+               </font>
+               <stylesheets>
+                  <URL value="@button.css" />
+                  <URL value="@font.css" />
+               </stylesheets>
+            </Button>
+         </children>
+      </HBox>
+      <AnchorPane layoutX="155.0" layoutY="1.0" prefHeight="98.0" prefWidth="461.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#110800" height="98.0" stroke="BLACK" strokeType="INSIDE" width="665.0" />
+            <Text fill="WHITE" layoutX="17.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date &amp; Time Selection">
+               <font>
+                  <Font name="Cloud-Bold" size="60.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="15.0" layoutY="298.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutY="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="124.0" />
+            <Text fill="#ff8f00" layoutX="39.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font name="Cloud-Bold" size="78.0" />
+               </font>
+            </Text>
+            <Text fill="#ff8f00" layoutX="23.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm">
+               <font>
+                  <Font name="Cloud-Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="157.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804100" height="132.0" layoutX="2.0" layoutY="2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="124.0" />
+            <Text fill="WHITE" layoutX="39.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font name="Cloud-Bold" size="78.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="1.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Select">
+               <font>
+                  <Font name="Cloud-Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutX="2.0" layoutY="2.0" stroke="#ff800000" strokeType="INSIDE" width="124.0" />
+            <Text fill="#ff8200" layoutX="41.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font name="Cloud-Bold" size="78.0" />
+               </font>
+            </Text>
+            <Text fill="#ff8200" layoutX="3.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Detail">
+               <font>
+                  <Font name="Cloud-Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

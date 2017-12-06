@@ -1,0 +1,539 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-03 18:00:44 #1 store] 
+Database 'D:\database\instruments.odb' is opened by 9640@DESKTOP-EIUSTU3
+
+[2017-11-03 18:00:44 #2 store] 
+Configuration path: ?
+
+[2017-11-03 18:02:00 #3 explorer] 
+[ObjectDB 2.7.2] java.lang.IllegalArgumentException
+Attempt to lock a new (non stored yet) entity object [Instrument:1] (error 635)
+	at javax.swing.tree.DefaultTreeCellEditor.stopCellEditing(Unknown Source)
+	at javax.swing.plaf.basic.BasicTreeUI.stopEditing(Unknown Source)
+	at javax.swing.plaf.basic.BasicTreeUI$Handler.mousePressed(Unknown Source)
+	at java.awt.AWTEventMulticaster.mousePressed(Unknown Source)
+	at java.awt.AWTEventMulticaster.mousePressed(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+[2017-11-03 18:02:11 #4 explorer] 
+[ObjectDB 2.7.2] java.lang.IllegalArgumentException
+Attempt to lock a new (non stored yet) entity object [Instrument:1] (error 635)
+	at javax.swing.AbstractCellEditor.fireEditingStopped(Unknown Source)
+	at javax.swing.DefaultCellEditor$EditorDelegate.stopCellEditing(Unknown Source)
+	at javax.swing.DefaultCellEditor.stopCellEditing(Unknown Source)
+	at javax.swing.tree.DefaultTreeCellEditor.stopCellEditing(Unknown Source)
+	at javax.swing.plaf.basic.BasicTreeUI.stopEditing(Unknown Source)
+	at javax.swing.plaf.basic.BasicTreeUI$Handler.mousePressed(Unknown Source)
+	at java.awt.AWTEventMulticaster.mousePressed(Unknown Source)
+	at java.awt.AWTEventMulticaster.mousePressed(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+[2017-11-03 18:02:15 #5 explorer] 
+[ObjectDB 2.7.2] java.lang.IllegalArgumentException
+Attempt to lock a new (non stored yet) entity object [Instrument:1] (error 635)
+	at javax.swing.JTextField.fireActionPerformed(Unknown Source)
+	at javax.swing.JTextField.postActionEvent(Unknown Source)
+	at javax.swing.JTextField$NotifyAction.actionPerformed(Unknown Source)
+	at javax.swing.SwingUtilities.notifyAction(Unknown Source)
+	at javax.swing.JComponent.processKeyBinding(Unknown Source)
+	at javax.swing.JComponent.processKeyBindings(Unknown Source)
+	at javax.swing.JComponent.processKeyEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.KeyboardFocusManager.redispatchEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+[2017-11-03 18:02:20 #6 explorer] 
+[ObjectDB 2.7.2] java.lang.IllegalArgumentException
+Attempt to lock a new (non stored yet) entity object [Instrument:1] (error 635)
+	at javax.swing.JTextField.fireActionPerformed(Unknown Source)
+	at javax.swing.JTextField.postActionEvent(Unknown Source)
+	at javax.swing.JTextField$NotifyAction.actionPerformed(Unknown Source)
+	at javax.swing.SwingUtilities.notifyAction(Unknown Source)
+	at javax.swing.JComponent.processKeyBinding(Unknown Source)
+	at javax.swing.JComponent.processKeyBindings(Unknown Source)
+	at javax.swing.JComponent.processKeyEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.KeyboardFocusManager.redispatchEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+[2017-11-03 18:02:36 #7 explorer] 
+[ObjectDB 2.7.2] java.lang.IllegalArgumentException
+Attempt to lock a new (non stored yet) entity object [Instrument:2] (error 635)
+	at javax.swing.JTextField.fireActionPerformed(Unknown Source)
+	at javax.swing.JTextField.postActionEvent(Unknown Source)
+	at javax.swing.JTextField$NotifyAction.actionPerformed(Unknown Source)
+	at javax.swing.SwingUtilities.notifyAction(Unknown Source)
+	at javax.swing.JComponent.processKeyBinding(Unknown Source)
+	at javax.swing.JComponent.processKeyBindings(Unknown Source)
+	at javax.swing.JComponent.processKeyEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.KeyboardFocusManager.redispatchEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+[2017-11-03 18:02:45 #8 explorer] 
+[ObjectDB 2.7.2] java.lang.IllegalArgumentException
+Attempt to lock a new (non stored yet) entity object [Instrument:2] (error 635)
+	at javax.swing.JTextField.fireActionPerformed(Unknown Source)
+	at javax.swing.JTextField.postActionEvent(Unknown Source)
+	at javax.swing.JTextField$NotifyAction.actionPerformed(Unknown Source)
+	at javax.swing.SwingUtilities.notifyAction(Unknown Source)
+	at javax.swing.JComponent.processKeyBinding(Unknown Source)
+	at javax.swing.JComponent.processKeyBindings(Unknown Source)
+	at javax.swing.JComponent.processKeyEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.KeyboardFocusManager.redispatchEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+[2017-11-03 18:02:59 #9 explorer] 
+[ObjectDB 2.7.2] java.lang.IllegalArgumentException
+Attempt to lock a new (non stored yet) entity object [Instrument:2] (error 635)
+	at javax.swing.AbstractCellEditor.fireEditingStopped(Unknown Source)
+	at javax.swing.DefaultCellEditor$EditorDelegate.stopCellEditing(Unknown Source)
+	at javax.swing.DefaultCellEditor.stopCellEditing(Unknown Source)
+	at javax.swing.tree.DefaultTreeCellEditor.stopCellEditing(Unknown Source)
+	at javax.swing.plaf.basic.BasicTreeUI.stopEditing(Unknown Source)
+	at javax.swing.plaf.basic.BasicTreeUI$Handler.mousePressed(Unknown Source)
+	at java.awt.AWTEventMulticaster.mousePressed(Unknown Source)
+	at java.awt.AWTEventMulticaster.mousePressed(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+[2017-11-03 18:03:03 #10 explorer] 
+[ObjectDB 2.7.2] java.lang.IllegalArgumentException
+Attempt to lock a new (non stored yet) entity object [Instrument:2] (error 635)
+	at javax.swing.JTextField.fireActionPerformed(Unknown Source)
+	at javax.swing.JTextField.postActionEvent(Unknown Source)
+	at javax.swing.JTextField$NotifyAction.actionPerformed(Unknown Source)
+	at javax.swing.SwingUtilities.notifyAction(Unknown Source)
+	at javax.swing.JComponent.processKeyBinding(Unknown Source)
+	at javax.swing.JComponent.processKeyBindings(Unknown Source)
+	at javax.swing.JComponent.processKeyEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.KeyboardFocusManager.redispatchEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+[2017-11-03 18:03:06 #11 store] 
+Database 'D:\database\instruments.odb' is closed by 9640@DESKTOP-EIUSTU3
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-03 18:12:42 #1 explorer] 
+[ObjectDB 2.7.2] javax.persistence.PersistenceException
+Attempt to open a database file 'D:\database\instruments.odb' that is currently in use by another process (error 141)
+	at com.objectdb.Explorer$1.run(Explorer.java:57)
+	at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+Caused by: com.objectdb.o.UserException: Attempt to open a database file 'D:\database\instruments.odb' that is currently in use by another process
+	at com.objectdb.o.MSG.d(MSG.java:62)
+	at com.objectdb.o.LFL.F(LFL.java:929)
+	at com.objectdb.o.LFL.C(LFL.java:886)
+	at com.objectdb.o.LFL.C(LFL.java:796)
+	at com.objectdb.o.SFL.<init>(SFL.java:239)
+	at com.objectdb.o.MST.<init>(MST.java:123)
+	at com.objectdb.o.MST.aO(MST.java:105)
+	at com.objectdb.o.MSF.Vo(MSF.java:188)
+	at com.objectdb.o.OMF.an(OMF.java:782)
+	at com.objectdb.jpa.EMF.an(EMF.java:131)
+	at com.objectdb.o.OMF.am(OMF.java:693)
+	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:150)
+	... 17 more
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-03 18:12:58 #1 explorer] 
+[ObjectDB 2.7.2] javax.persistence.PersistenceException
+Attempt to open a database file 'D:\database\instruments.odb' that is currently in use by another process (error 141)
+	at com.objectdb.Explorer$1.run(Explorer.java:57)
+	at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+Caused by: com.objectdb.o.UserException: Attempt to open a database file 'D:\database\instruments.odb' that is currently in use by another process
+	at com.objectdb.o.MSG.d(MSG.java:62)
+	at com.objectdb.o.LFL.F(LFL.java:929)
+	at com.objectdb.o.LFL.C(LFL.java:886)
+	at com.objectdb.o.LFL.C(LFL.java:796)
+	at com.objectdb.o.SFL.<init>(SFL.java:239)
+	at com.objectdb.o.MST.<init>(MST.java:123)
+	at com.objectdb.o.MST.aO(MST.java:105)
+	at com.objectdb.o.MSF.Vo(MSF.java:188)
+	at com.objectdb.o.OMF.an(OMF.java:782)
+	at com.objectdb.jpa.EMF.an(EMF.java:131)
+	at com.objectdb.o.OMF.am(OMF.java:693)
+	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:150)
+	... 17 more
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-03 18:13:02 #1 store] 
+Database 'D:\database\instruments.odb' is opened by 3644@DESKTOP-EIUSTU3
+
+[2017-11-03 18:13:02 #2 store] 
+Configuration path: ?
+
+[2017-11-03 18:15:27 #3 store] 
+Database 'D:\database\instruments.odb' is closed by 3644@DESKTOP-EIUSTU3
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-03 18:17:17 #1 store] 
+Database 'D:\database\instruments.odb' is opened by 7144@DESKTOP-EIUSTU3
+
+[2017-11-03 18:17:17 #2 store] 
+Configuration path: ?
+
+[2017-11-03 18:17:38 #3 store] 
+Database 'D:\database\instruments.odb' is closed by 7144@DESKTOP-EIUSTU3
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-03 18:18:08 #1 store] 
+Database 'D:\database\instruments.odb' is opened by 14372@DESKTOP-EIUSTU3
+
+[2017-11-03 18:18:08 #2 store] 
+Configuration path: ?
+
+[2017-11-03 18:18:54 #3 store] 
+Database 'D:\database\instruments.odb' is closed by 14372@DESKTOP-EIUSTU3
+
+[2017-11-03 18:18:54 #4 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\Instruments.odb' is opened by 14372@DESKTOP-EIUSTU3
+
+[2017-11-03 18:18:54 #5 store] 
+Configuration path: ?
+
+[2017-11-03 18:19:30 #6 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\Instruments.odb' is closed by 14372@DESKTOP-EIUSTU3
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-03 18:24:19 #1 explorer] 
+[ObjectDB 2.7.2] javax.persistence.PersistenceException
+Attempt to open a database file 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\Instruments.odb' that is currently in use by another process (error 141)
+	at com.objectdb.Explorer$1.run(Explorer.java:57)
+	at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+Caused by: com.objectdb.o.UserException: Attempt to open a database file 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\Instruments.odb' that is currently in use by another process
+	at com.objectdb.o.MSG.d(MSG.java:62)
+	at com.objectdb.o.LFL.F(LFL.java:929)
+	at com.objectdb.o.LFL.C(LFL.java:886)
+	at com.objectdb.o.LFL.C(LFL.java:796)
+	at com.objectdb.o.SFL.<init>(SFL.java:239)
+	at com.objectdb.o.MST.<init>(MST.java:123)
+	at com.objectdb.o.MST.aO(MST.java:105)
+	at com.objectdb.o.MSF.Vo(MSF.java:188)
+	at com.objectdb.o.OMF.an(OMF.java:782)
+	at com.objectdb.jpa.EMF.an(EMF.java:131)
+	at com.objectdb.o.OMF.am(OMF.java:693)
+	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:150)
+	... 17 more
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-03 18:24:23 #1 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\Instruments.odb' is opened by 9200@DESKTOP-EIUSTU3
+
+[2017-11-03 18:24:23 #2 store] 
+Configuration path: ?
+
+[2017-11-03 18:26:59 #3 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\Instruments.odb' is closed by 9200@DESKTOP-EIUSTU3
+
+[2017-11-03 18:27:00 #4 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\databaseinstruments.odb' is opened by 9200@DESKTOP-EIUSTU3
+
+[2017-11-03 18:27:00 #5 store] 
+Configuration path: ?
+
+[2017-11-03 18:27:06 #6 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\databaseinstruments.odb' is closed by 9200@DESKTOP-EIUSTU3
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2017-11-03 18:28:42 #1 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\databaseinstruments.odb' is opened by 12404@DESKTOP-EIUSTU3
+
+[2017-11-03 18:28:42 #2 store] 
+Configuration path: ?
+
+[2017-11-03 18:28:57 #3 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\databaseinstruments.odb' is closed by 12404@DESKTOP-EIUSTU3
+
+[2017-11-03 18:28:57 #4 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\Instruments.odb' is opened by 12404@DESKTOP-EIUSTU3
+
+[2017-11-03 18:28:57 #5 store] 
+Configuration path: ?
+
+[2017-11-03 18:34:30 #6 store] 
+Database 'D:\MusicRoom\netbeanProject\src\MusicRoom\database\Instruments.odb' is closed by 12404@DESKTOP-EIUSTU3
+

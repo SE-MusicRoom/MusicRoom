@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * Copyright (c) 2008, 2012 Oracle and/or its affiliates.
+ * All rights reserved. Use is subject to license terms.
+ *
+ * This file is available and licensed under the following license:
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *  - Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *  - Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the distribution.
+ *  - Neither the name of Oracle Corporation nor the names of its
+ *    contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="Profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1500.0" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.SuccessReservationController">
+   <children>
+      <StackPane layoutX="168.0" layoutY="1.0" prefHeight="116.0" prefWidth="969.0">
+         <children>
+            <HBox prefHeight="102.0" prefWidth="958.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="89.0" stroke="TRANSPARENT" strokeType="INSIDE" width="298.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="116.0" prefWidth="475.0">
+               <children>
+                  <Text fill="#ff8200" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 50;" text="SUCCESS !!!">
+                     <HBox.margin>
+                        <Insets left="9.0" top="15.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </StackPane>
+      <StackPane layoutX="168.0" layoutY="87.0" prefHeight="1045.0" prefWidth="1339.0">
+         <children>
+            <ScrollPane prefHeight="512.0" prefWidth="874.0" style="-fx-background-color: #FFFFFF;" />
+            <VBox prefHeight="1045.0" prefWidth="1355.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 45;" styleClass="root" text="Your reservation ID is " wrappingWidth="509.34000396728516">
+                     <VBox.margin>
+                        <Insets left="60.0" top="25.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="72.0" />
+                     </font>
+                  </Text>
+                  <AnchorPane prefHeight="67.0" prefWidth="1200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804100" height="60.0" layoutX="50.0" layoutY="7.0" stroke="TRANSPARENT" strokeType="INSIDE" width="234.0" />
+                        <Text fx:id="idtxt" fill="WHITE" layoutX="72.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="root" text="..." wrappingWidth="227.34000396728516" />
+                     </children>
+                  </AnchorPane>
+                  <Text layoutX="70.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" styleClass="root" text="We have send e-mail to " wrappingWidth="480.34000396728516">
+                     <VBox.margin>
+                        <Insets left="60.0" top="25.0" />
+                     </VBox.margin>
+                  </Text>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804b00" height="60.0" layoutX="52.0" layoutY="14.0" stroke="TRANSPARENT" strokeType="INSIDE" width="873.0" />
+                        <Text fx:id="emailtxt" fill="WHITE" layoutX="70.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 35;" styleClass="root" text="....." wrappingWidth="816.3400068618357" />
+                     </children>
+                  </AnchorPane>
+                  <Text fill="#86817a" layoutX="70.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" styleClass="root" text="Remember comfirmation code and follow instructions" wrappingWidth="1040.3400039672852">
+                     <VBox.margin>
+                        <Insets left="60.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fill="#86817a" layoutX="10.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" styleClass="root" text="that we send to you." wrappingWidth="513.3400039672852">
+                     <VBox.margin>
+                        <Insets left="60.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fill="RED" layoutX="10.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" styleClass="root" text="If absent or cancel reservation, Your band will be in BLACKLIST." wrappingWidth="1203.0067520141602">
+                     <VBox.margin>
+                        <Insets left="60.0" top="20.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+      <Button fx:id="back" layoutX="169.0" layoutY="1132.0" mnemonicParsing="false" onAction="#onClickBack" prefHeight="66.0" prefWidth="160.0" style="-fx-font-size: 45;" stylesheets="@button.css" text="CLOSE" textFill="WHITE">
+         <padding>
+            <Insets bottom="-10.0" left="-10.0" right="-10.0" top="-10.0" />
+         </padding>
+      </Button>
+      <AnchorPane layoutX="22.0" layoutY="306.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804100" height="132.0" layoutY="1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="124.0" />
+            <Text fill="WHITE" layoutX="39.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font name="Cloud-Bold" size="78.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="23.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm">
+               <font>
+                  <Font name="Cloud-Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="21.0" layoutY="165.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutX="2.0" layoutY="2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="124.0" />
+            <Text fill="#ff8200" layoutX="39.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font name="Cloud-Bold" size="78.0" />
+               </font>
+            </Text>
+            <Text fill="#ff8200" layoutX="1.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Select">
+               <font>
+                  <Font name="Cloud-Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="21.0" layoutY="22.0" prefHeight="133.0" prefWidth="126.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutX="2.0" layoutY="2.0" stroke="#ff800000" strokeType="INSIDE" width="124.0" />
+            <Text fill="#ff8200" layoutX="41.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font name="Cloud-Bold" size="78.0" />
+               </font>
+            </Text>
+            <Text fill="#ff8200" layoutX="3.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: rgb(255,130,0);" text="Room Detail">
+               <font>
+                  <Font name="Cloud-Bold" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@font.css" />
+      <URL value="@button.css" />
+   </stylesheets>
+</AnchorPane>
