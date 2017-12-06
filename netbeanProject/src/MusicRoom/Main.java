@@ -76,7 +76,7 @@ public class Main extends Application {
             stage.setTitle("MusicRoom");
             stage.setMinWidth(MINIMUM_WINDOW_WIDTH);
             stage.setMinHeight(MINIMUM_WINDOW_HEIGHT);
-            
+
             primaryStage.show();
             primaryStage.setResizable(false);
 

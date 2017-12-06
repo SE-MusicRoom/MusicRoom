@@ -46,8 +46,10 @@ Contributor(s):
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
+
 <project name="MusicRoom" default="default" basedir="." xmlns:fx="javafx:com.sun.javafx.tools.ant">
     <description>Builds, tests, and runs the project .</description>
+
     <import file="nbproject/build-impl.xml"/>
     <!--
 
@@ -98,7 +100,5 @@ Contributor(s):
     nbproject/build-impl.xml and nbproject/jfx-impl.xml.
 
     -->
-    
-
 
 </project>
