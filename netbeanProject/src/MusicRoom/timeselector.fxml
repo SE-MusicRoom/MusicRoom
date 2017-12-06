@@ -12,22 +12,25 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1501.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TimeSelectController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1501.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicRoom.TimeSelectController">
    <children>
       <AnchorPane layoutX="155.0" layoutY="94.0" prefHeight="989.0" prefWidth="1344.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="994.0" layoutX="-1.0" layoutY="2.0" stroke="#ffffff00" strokeType="INSIDE" width="1348.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebebebf4" height="994.0" layoutX="-1.0" layoutY="2.0" stroke="#ffffff00" strokeType="INSIDE" width="1348.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3c1c1" height="996.0" stroke="TRANSPARENT" strokeType="INSIDE" width="559.0" />
             <HBox layoutX="-1.0" layoutY="7.0" prefHeight="981.0" prefWidth="1355.0">
                <children>
                   <AnchorPane prefHeight="854.0" prefWidth="559.0">
                      <children>
                         <ScrollPane layoutX="16.0" layoutY="427.0" prefHeight="271.0" prefWidth="508.0">
                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="499.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="471.0">
                                  <children>
                                     <VBox fx:id="selectedBox" prefHeight="175.0" prefWidth="240.0">
                                        <children>
@@ -64,7 +67,7 @@
                               <ImageView fx:id="SummaryImgView" fitHeight="285.0" fitWidth="508.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </AnchorPane>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804100" height="107.0" layoutX="17.0" layoutY="730.0" stroke="#ffffff00" strokeType="INSIDE" width="528.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804100" height="107.0" layoutX="17.0" layoutY="730.0" stroke="#ffffff00" strokeType="INSIDE" width="508.0" />
                         <Text fill="WHITE" layoutX="25.0" layoutY="808.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price">
                            <font>
                               <Font name="Cloud-Bold" size="40.0" />
@@ -250,8 +253,16 @@
       </AnchorPane>
       <AnchorPane layoutX="14.0" layoutY="157.0" prefHeight="133.0" prefWidth="126.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#804100" height="132.0" layoutX="2.0" layoutY="2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="124.0" />
-            <Text fill="WHITE" layoutX="39.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="132.0" layoutX="2.0" layoutY="2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="124.0">
+               <fill>
+                  <LinearGradient endX="0.03333333333333333" endY="1.0" startY="0.15714285714285714">
+                     <stops>
+                        <Stop color="#ffe4cd" />
+                        <Stop color="#f86c00" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill></Rectangle>
+            <Text fill="WHITE" layoutX="39.0" layoutY="79.0" stroke="#f86c00" strokeType="OUTSIDE" strokeWidth="2.0" text="2">
                <font>
                   <Font name="Cloud-Bold" size="78.0" />
                </font>
