@@ -38,6 +38,7 @@ public class HistoryController extends AnchorPane implements Initializable {
     @FXML    private Text time;
     @FXML    private Text price;
     @FXML    private Text status;
+    @FXML    private Button cancelBtn;
 
     private MainMenuController mainmenu;
     private HistoryController parent;
@@ -106,13 +107,8 @@ public class HistoryController extends AnchorPane implements Initializable {
         
         HistoryController cus = (HistoryController)loader.getController();
         cus.setApp(this);
-        SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yy");
-        cus.setTokenData(String.valueOf(book.getID()),
-                        format1.format(book.getCreateTime().getTime()),
-                         book.getRoom().getName(),
-                         book.getTimeTableString(),
-                         "฿ "+String.valueOf(book.getPrice()),
-                         "OK");
+        
+        cus.setTokenData(book);
         
         return newToken;
     }
@@ -120,13 +116,22 @@ public class HistoryController extends AnchorPane implements Initializable {
     /**
     * (called by copyHistoryToken of main HistoryController) set text of historyToken
     */
-    protected void setTokenData(String id,String date,String template,String time,String price,String status) {
-        this.showid.setText(id);
-        this.date.setText(date);
-        this.template.setText(template);
-        this.time.setText(time);
-        this.price.setText(price);
-        this.status.setText(status);
+    protected void setTokenData(Booking book) {
+        SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yy");
+        this.showid.setText(String.valueOf(book.getID()));
+        this.date.setText(format1.format(book.getCreateTime().getTime()));
+        this.template.setText(book.getRoom().getName());
+        this.time.setText(book.getTimeTableString());
+        this.price.setText("฿ "+String.valueOf(book.getPrice()));
+        
+        // Check if first one is already passed
+        if(book.getTimeTable().get(0).before(Calendar.getInstance())) {
+            this.cancelBtn.setDisable(true);
+            this.status.setText("PASSED");
+        } else {
+            this.status.setText("OK");
+        }
+        
     }
     
     /**
