@@ -83,37 +83,6 @@ public class Main extends Application {
             gotoLogin();
             updateUserDB();
             
-//            updateBookingDB();
-//            updateInstrumentDB();
-
-//************create Database**********************************
-//             DatabaseManager.getInstance().createInstrumentDB();
-//*************************************************************
-
-//************update Database**********************************
-            /*Instrument x = ((Strings)getInstrument(154));
-            Instrument y = ((Strings)getInstrument(155));
-            Instrument z = ((Strings)getInstrument(156));
-            
-    
-            Instrument a = getInstrument(139);
-            Instrument b = getInstrument(128);
-                    
-            ((Strings)x).setType("ElectricGuitar");
-            ((Strings)y).setType("ElectricGuitar");
-            ((Strings)z).setType("ElectricGuitar");
-            
-            a.setName("Zildjian");
-            b.setImgPath("MusicRoom/img/Instruments/Percussion/Drums/CrashCymbal/crashcymbal2.png");
-            
-            DatabaseManager.getInstance().updateInstrument(x);
-            DatabaseManager.getInstance().updateInstrument(y);
-            DatabaseManager.getInstance().updateInstrument(z);
-            DatabaseManager.getInstance().updateInstrument(a);
-            DatabaseManager.getInstance().updateInstrument(b);*/
-//*************************************************************
-           // DatabaseManager.getInstance().createDummyRoomTemplate();
-           // updateRoomTemplateDB();
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
