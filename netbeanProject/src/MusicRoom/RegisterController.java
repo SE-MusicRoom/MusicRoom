@@ -91,6 +91,7 @@ public class RegisterController extends AnchorPane implements Initializable {
             // We are running in isolated FXML, possibly in Scene Builder.
             // NO-OP.
         } else {
+            boolean errorTrigger = false;
             message.setText("");
             usernameWarningText.setStyle("-fx-fill: #999999;");
             passwordWarningText.setStyle("-fx-fill: #999999;");
@@ -102,63 +103,79 @@ public class RegisterController extends AnchorPane implements Initializable {
             if (username.getText().equals("")) {
                 message.setText("Please fill in the blanks");
                 usernameWarningText.setStyle("-fx-fill: #ff0000;");
+                errorTrigger = true;
             }
 
             if(DatabaseManager.getInstance().isExistUser(username.getText())) {
                 Main.getInstance().showPopup("Too bad", "This username is already exist");
+                errorTrigger = true;
             }
             
             if (password.getText().equals("")) {
                 message.setText("Please fill in the blanks");
                 passwordWarningText.setStyle("-fx-fill: #ff0000;");
+                errorTrigger = true;
             }
 
             if (confirmPassword.getText().equals("")) {
                 message.setText("Please fill in the blanks");
                 confirmWarningText.setStyle("-fx-fill: #ff0000;");
+                errorTrigger = true;
             }
 
             if (name.getText().equals("")) {
                 message.setText("Please fill in the blanks");
                 nameWarningText.setStyle("-fx-fill: #ff0000;");
+                errorTrigger = true;
             }
 
             if (surname.getText().equals("")) {
                 message.setText("Please fill in the blanks");
                 surnameWarningText.setStyle("-fx-fill: #ff0000;");
+                errorTrigger = true;
 
             }
 
             if (bandName.getText().equals("")) {
                 message.setText("Please fill in the blanks");
                 bandNameWarningText.setStyle("-fx-fill: #ff0000;");
+                errorTrigger = true;
             }
 
             if (username.getText().length() < 4 || !validation(username.getText(), "")) {
                 usernameWarningText.setStyle("-fx-fill: #ff0000;");
+                errorTrigger = true;
             }
 
-            if (password.getText().length() < 8 || validation(password.getText(), "password")) {
+            if (password.getText().length() < 8 || !validation(password.getText(), "password")) {
                 passwordWarningText.setStyle("-fx-fill: #ff0000;");
+                errorTrigger = true;
             }
 
             if (!confirmPassword.getText().equals(password.getText())) {
                 confirmWarningText.setStyle("-fx-fill: #ff0000;");
+                errorTrigger = true;
             }
 
             if (!validation(name.getText(), "")) {
                 nameWarningText.setStyle("-fx-fill: #ff0000;");
+                errorTrigger = true;
             }
 
             if (!validation(surname.getText(), "")) {
                 surnameWarningText.setStyle("-fx-fill: #ff0000;");
+                errorTrigger = true;
                 /*} else if (email.getText()) {
                 passwordWarningText.setStyle("-fx-fill: #ff0000;");*/
             }
 
             if (!validateEmail(email.getText())) {
                 emailWarningText.setStyle("-fx-fill: #ff0000;");
-            } else {
+                errorTrigger = true;
+            } 
+            
+            
+            if(!errorTrigger) {
                 
                 DatabaseManager.getInstance().addUser(
                         Main.getInstance().createUser(username.getText(), password.getText(),

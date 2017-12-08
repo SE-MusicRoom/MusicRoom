@@ -125,10 +125,13 @@
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Text fx:id="usernameWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Username must be atleast 4 characters with no special characters." wrappingWidth="411.19921875" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Text fx:id="usernameWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" text="Username must be atleast 4 characters with no special characters." wrappingWidth="682.19921875" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets top="5.0" />
                      </GridPane.margin>
+                     <font>
+                        <Font name="Cloud-Bold" size="12.0" />
+                     </font>
                   </Text>
                   <Label id="Label" prefHeight="30.0" prefWidth="186.0" style="-fx-font-size: 20;" text="Confirm Password" GridPane.rowIndex="4">
                      <font>
@@ -143,27 +146,33 @@
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
           </Label>
-                  <Text fx:id="passwordWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your password must be atleast 8 characters." wrappingWidth="259.19921875" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Text fx:id="confirmWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Confirm password again." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Text fx:id="passwordWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" text="Your password must be atleast 8 characters." wrappingWidth="662.19921875" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Cloud-Bold" size="15.0" />
+                     </font></Text>
+                  <Text fx:id="confirmWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm password again." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Cloud-Bold" size="15.0" />
+                     </font></Text>
             <Label id="Label" style="-fx-font-size: 20;" text="Surname" GridPane.rowIndex="8">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Text fx:id="nameWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Only letters." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <Text fx:id="surnameWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Only letters." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Text fx:id="nameWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" text="Only letters." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Text fx:id="surnameWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" text="Only letters." wrappingWidth="229.19921875" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                   <Label id="Label" style="-fx-font-size: 20;" text="Band Name" GridPane.rowIndex="10">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Text fx:id="bandNameWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your band name." wrappingWidth="299.19921875" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <Text fx:id="bandNameWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" text="Your band name." wrappingWidth="299.19921875" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                   <Label id="Label" style="-fx-font-size: 20;" text="E-Mail Subscribe" GridPane.rowIndex="14">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Text fx:id="emailWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12;" text="Your e-mail." wrappingWidth="299.19921875" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <Text fx:id="emailWarningText" fill="#8a8686" strokeType="OUTSIDE" strokeWidth="0.0" text="Your e-mail." wrappingWidth="299.19921875" GridPane.columnIndex="1" GridPane.rowIndex="13" />
                   <Label id="Label" style="-fx-font-size: 20;" text="E-Mail" GridPane.rowIndex="12">
                      <font>
                         <Font name="Cloud-Bold" size="20.0" />
